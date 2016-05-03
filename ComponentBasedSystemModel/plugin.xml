@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated componentBasedSystemModel -->
+      <package
+            uri="http://sdq.ipd.kit.edu/componentBasedSystemModel/core"
+            class="edu.kit.ipd.sdq.cbsm.core.CorePackage"
+            genModel="model/componentBasedSystemModel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated componentBasedSystemModel -->
+      <package
+            uri="http://sdq.ipd.kit.edu/componentBasedSystemModel/repository"
+            class="edu.kit.ipd.sdq.cbsm.repository.RepositoryPackage"
+            genModel="model/componentBasedSystemModel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated componentBasedSystemModel -->
+      <package
+            uri="http://sdq.ipd.kit.edu/componentBasedSystemModel/assembly"
+            class="edu.kit.ipd.sdq.cbsm.assembly.AssemblyPackage"
+            genModel="model/componentBasedSystemModel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated componentBasedSystemModel -->
+      <package
+            uri="http://sdq.ipd.kit.edu/componentBasedSystemModel/environment"
+            class="edu.kit.ipd.sdq.cbsm.environment.EnvironmentPackage"
+            genModel="model/componentBasedSystemModel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated componentBasedSystemModel -->
+      <package
+            uri="http://sdq.ipd.kit.edu/componentBasedSystemModel/allocation"
+            class="edu.kit.ipd.sdq.cbsm.allocation.AllocationPackage"
+            genModel="model/componentBasedSystemModel.genmodel"/>
+   </extension>
+
+</plugin>

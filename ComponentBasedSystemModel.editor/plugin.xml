@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated componentBasedSystemModel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="edu.kit.ipd.sdq.cbsm.core.presentation.CoreModelWizardID"
+            name="%_UI_CoreModelWizard_label"
+            class="edu.kit.ipd.sdq.cbsm.core.presentation.CoreModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/CoreModelFile.gif">
+         <description>%_UI_CoreModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated componentBasedSystemModel -->
+      <editor
+            id="edu.kit.ipd.sdq.cbsm.core.presentation.CoreEditorID"
+            name="%_UI_CoreEditor_label"
+            icon="icons/full/obj16/CoreModelFile.gif"
+            extensions="core"
+            class="edu.kit.ipd.sdq.cbsm.core.presentation.CoreEditor"
+            contributorClass="edu.kit.ipd.sdq.cbsm.core.presentation.CoreActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated componentBasedSystemModel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="edu.kit.ipd.sdq.cbsm.repository.presentation.RepositoryModelWizardID"
+            name="%_UI_RepositoryModelWizard_label"
+            class="edu.kit.ipd.sdq.cbsm.repository.presentation.RepositoryModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RepositoryModelFile.gif">
+         <description>%_UI_RepositoryModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated componentBasedSystemModel -->
+      <editor
+            id="edu.kit.ipd.sdq.cbsm.repository.presentation.RepositoryEditorID"
+            name="%_UI_RepositoryEditor_label"
+            icon="icons/full/obj16/RepositoryModelFile.gif"
+            extensions="repository"
+            class="edu.kit.ipd.sdq.cbsm.repository.presentation.RepositoryEditor"
+            contributorClass="edu.kit.ipd.sdq.cbsm.repository.presentation.RepositoryActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated componentBasedSystemModel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="edu.kit.ipd.sdq.cbsm.assembly.presentation.AssemblyModelWizardID"
+            name="%_UI_AssemblyModelWizard_label"
+            class="edu.kit.ipd.sdq.cbsm.assembly.presentation.AssemblyModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/AssemblyModelFile.gif">
+         <description>%_UI_AssemblyModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated componentBasedSystemModel -->
+      <editor
+            id="edu.kit.ipd.sdq.cbsm.assembly.presentation.AssemblyEditorID"
+            name="%_UI_AssemblyEditor_label"
+            icon="icons/full/obj16/AssemblyModelFile.gif"
+            extensions="assembly"
+            class="edu.kit.ipd.sdq.cbsm.assembly.presentation.AssemblyEditor"
+            contributorClass="edu.kit.ipd.sdq.cbsm.assembly.presentation.AssemblyActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated componentBasedSystemModel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="edu.kit.ipd.sdq.cbsm.environment.presentation.EnvironmentModelWizardID"
+            name="%_UI_EnvironmentModelWizard_label"
+            class="edu.kit.ipd.sdq.cbsm.environment.presentation.EnvironmentModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/EnvironmentModelFile.gif">
+         <description>%_UI_EnvironmentModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated componentBasedSystemModel -->
+      <editor
+            id="edu.kit.ipd.sdq.cbsm.environment.presentation.EnvironmentEditorID"
+            name="%_UI_EnvironmentEditor_label"
+            icon="icons/full/obj16/EnvironmentModelFile.gif"
+            extensions="environment"
+            class="edu.kit.ipd.sdq.cbsm.environment.presentation.EnvironmentEditor"
+            contributorClass="edu.kit.ipd.sdq.cbsm.environment.presentation.EnvironmentActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated componentBasedSystemModel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="edu.kit.ipd.sdq.cbsm.allocation.presentation.AllocationModelWizardID"
+            name="%_UI_AllocationModelWizard_label"
+            class="edu.kit.ipd.sdq.cbsm.allocation.presentation.AllocationModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/AllocationModelFile.gif">
+         <description>%_UI_AllocationModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated componentBasedSystemModel -->
+      <editor
+            id="edu.kit.ipd.sdq.cbsm.allocation.presentation.AllocationEditorID"
+            name="%_UI_AllocationEditor_label"
+            icon="icons/full/obj16/AllocationModelFile.gif"
+            extensions="allocation"
+            class="edu.kit.ipd.sdq.cbsm.allocation.presentation.AllocationEditor"
+            contributorClass="edu.kit.ipd.sdq.cbsm.allocation.presentation.AllocationActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

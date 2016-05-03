@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="componentBasedSystemModel" nsURI="http://sdq.ipd.kit.edu/componentBasedSystemModel"
+    nsPrefix="componentBasedSystemModel">
+  <eSubpackages name="core" nsURI="http://sdq.ipd.kit.edu/componentBasedSystemModel/core"
+      nsPrefix="core">
+    <eClassifiers xsi:type="ecore:EClass" name="NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="repository" nsURI="http://sdq.ipd.kit.edu/componentBasedSystemModel/repository"
+      nsPrefix="repository">
+    <eClassifiers xsi:type="ecore:EClass" name="Repository">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="interfaces" upperBound="-1"
+          eType="#//repository/Interface" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
+          eType="#//repository/Component" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="dataTypes" upperBound="-1"
+          eType="#//repository/DataType" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Interface" eSuperTypes="#//core/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="signatures" upperBound="-1"
+          eType="#//repository/Signature" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//core/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterfaces" upperBound="-1"
+          eType="#//repository/Interface"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterfaces" upperBound="-1"
+          eType="#//repository/Interface"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="providedServices" upperBound="-1"
+          eType="#//repository/Service" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="behaviorDescriptions"
+          upperBound="-1" eType="#//repository/BehaviorDescription" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Signature" eSuperTypes="#//core/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" lowerBound="1"
+          eType="#//repository/DataType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+          eType="#//repository/Parameter" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DataType"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="#//core/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
+          eType="#//repository/DataType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ComplexType"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SimpleType">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeInstance" lowerBound="1"
+          eType="#//repository/SimpleTypeInstance"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="SimpleTypeInstance">
+      <eLiterals name="Boolean" literal="Boolean"/>
+      <eLiterals name="Char" value="1" literal="Char"/>
+      <eLiterals name="Date" value="2" literal="Date"/>
+      <eLiterals name="Double" value="3" literal="Double"/>
+      <eLiterals name="Float" value="4" literal="Float"/>
+      <eLiterals name="List" value="5" literal="List"/>
+      <eLiterals name="Int" value="6" literal="Int"/>
+      <eLiterals name="Long" value="7" literal="Long"/>
+      <eLiterals name="Map" value="8" literal="Map"/>
+      <eLiterals name="String" value="9" literal="String"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Service">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="signatures" upperBound="-1"
+          eType="#//repository/Signature"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BehaviorDescription">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
+          eType="#//repository/Action" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Action"/>
+    <eClassifiers xsi:type="ecore:EClass" name="InternalAction" eSuperTypes="#//repository/Action"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ExternalCall" eSuperTypes="#//repository/Action">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="requiredService" lowerBound="1"
+          eType="#//repository/Service"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Loop" eSuperTypes="#//repository/Action"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Branch" eSuperTypes="#//repository/Action"/>
+  </eSubpackages>
+  <eSubpackages name="assembly" nsURI="http://sdq.ipd.kit.edu/componentBasedSystemModel/assembly"
+      nsPrefix="assembly">
+    <eClassifiers xsi:type="ecore:EClass" name="AssemblyContext" eSuperTypes="#//core/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="instantiatedComponent"
+          lowerBound="1" eType="#//repository/Component"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="providedRoles" upperBound="-1"
+          eType="#//assembly/ProvidedRole" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="requiredRoles" upperBound="-1"
+          eType="#//assembly/RequiredRole" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CompositeComponent" eSuperTypes="#//repository/Component">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="containedAssemblyContexts"
+          upperBound="-1" eType="#//assembly/AssemblyContext" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="System">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="containedAssemblyContexts"
+          upperBound="-1" eType="#//assembly/AssemblyContext" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterfaces" lowerBound="1"
+          upperBound="-1" eType="#//repository/Interface"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ProvidedRole">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterface" lowerBound="1"
+          eType="#//repository/Interface"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RequiredRole">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterface" lowerBound="1"
+          eType="#//repository/Interface"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DelegationConnector">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="providedRole" eType="#//assembly/ProvidedRole"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterface" eType="#//repository/Interface"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterface" eType="#//repository/Interface"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="requiredRole" eType="#//assembly/RequiredRole"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AssemblyConnector">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="providedRole" lowerBound="1"
+          eType="#//assembly/ProvidedRole"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="requiredRole" lowerBound="1"
+          eType="#//assembly/RequiredRole"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="environment" nsURI="http://sdq.ipd.kit.edu/componentBasedSystemModel/environment"
+      nsPrefix="environment">
+    <eClassifiers xsi:type="ecore:EClass" name="Environment">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="containers" upperBound="-1"
+          eType="#//environment/Container" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
+          eType="#//environment/Link" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Container" eSuperTypes="#//core/NamedElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Link" eSuperTypes="#//core/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="containers" lowerBound="2"
+          upperBound="-1" eType="#//environment/Container"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="allocation" nsURI="http://sdq.ipd.kit.edu/componentBasedSystemModel/allocation"
+      nsPrefix="allocation">
+    <eClassifiers xsi:type="ecore:EClass" name="Allocation">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="allocationContexts" upperBound="-1"
+          eType="#//allocation/AllocationContext" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AllocationContext">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="container" lowerBound="1"
+          eType="#//environment/Container"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyContext" lowerBound="1"
+          eType="#//assembly/AssemblyContext"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>
