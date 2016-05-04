@@ -63,25 +63,25 @@ public class SystemItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addProvidedInterfacesPropertyDescriptor(object);
+			addProvidedRolesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Provided Interfaces feature.
+	 * This adds a property descriptor for the Provided Roles feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addProvidedInterfacesPropertyDescriptor(Object object) {
+	protected void addProvidedRolesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_System_providedInterfaces_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_System_providedInterfaces_feature", "_UI_System_type"),
-				 AssemblyPackage.Literals.SYSTEM__PROVIDED_INTERFACES,
+				 getString("_UI_System_providedRoles_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_System_providedRoles_feature", "_UI_System_type"),
+				 AssemblyPackage.Literals.SYSTEM__PROVIDED_ROLES,
 				 true,
 				 false,
 				 true,
@@ -103,6 +103,7 @@ public class SystemItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(AssemblyPackage.Literals.SYSTEM__CONTAINED_ASSEMBLY_CONTEXTS);
+			childrenFeatures.add(AssemblyPackage.Literals.SYSTEM__CONNECTORS);
 		}
 		return childrenFeatures;
 	}
@@ -156,6 +157,7 @@ public class SystemItemProvider
 
 		switch (notification.getFeatureID(edu.kit.ipd.sdq.cbsm.assembly.System.class)) {
 			case AssemblyPackage.SYSTEM__CONTAINED_ASSEMBLY_CONTEXTS:
+			case AssemblyPackage.SYSTEM__CONNECTORS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -177,6 +179,31 @@ public class SystemItemProvider
 			(createChildParameter
 				(AssemblyPackage.Literals.SYSTEM__CONTAINED_ASSEMBLY_CONTEXTS,
 				 AssemblyFactory.eINSTANCE.createAssemblyContext()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(AssemblyPackage.Literals.SYSTEM__CONNECTORS,
+				 AssemblyFactory.eINSTANCE.createConnector()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(AssemblyPackage.Literals.SYSTEM__CONNECTORS,
+				 AssemblyFactory.eINSTANCE.createDelegationConnector()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(AssemblyPackage.Literals.SYSTEM__CONNECTORS,
+				 AssemblyFactory.eINSTANCE.createProvidedDelegationConnector()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(AssemblyPackage.Literals.SYSTEM__CONNECTORS,
+				 AssemblyFactory.eINSTANCE.createRequiredDelegationConnector()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(AssemblyPackage.Literals.SYSTEM__CONNECTORS,
+				 AssemblyFactory.eINSTANCE.createAssemblyConnector()));
 	}
 
 	/**

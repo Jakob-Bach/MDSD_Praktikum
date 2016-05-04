@@ -2,6 +2,7 @@
  */
 package edu.kit.ipd.sdq.cbsm.allocation;
 
+import edu.kit.ipd.sdq.cbsm.core.CorePackage;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -103,13 +104,22 @@ public interface AllocationPackage extends EPackage {
 	int ALLOCATION_CONTEXT = 1;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALLOCATION_CONTEXT__NAME = CorePackage.NAMED_ELEMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Container</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ALLOCATION_CONTEXT__CONTAINER = 0;
+	int ALLOCATION_CONTEXT__CONTAINER = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Assembly Context</b></em>' reference.
@@ -118,7 +128,7 @@ public interface AllocationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ALLOCATION_CONTEXT__ASSEMBLY_CONTEXT = 1;
+	int ALLOCATION_CONTEXT__ASSEMBLY_CONTEXT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Context</em>' class.
@@ -127,7 +137,7 @@ public interface AllocationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ALLOCATION_CONTEXT_FEATURE_COUNT = 2;
+	int ALLOCATION_CONTEXT_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Context</em>' class.
@@ -136,7 +146,7 @@ public interface AllocationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ALLOCATION_CONTEXT_OPERATION_COUNT = 0;
+	int ALLOCATION_CONTEXT_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 
 	/**

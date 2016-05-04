@@ -4,9 +4,6 @@ package edu.kit.ipd.sdq.cbsm.assembly.tests;
 
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyConnector;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyFactory;
-
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 /**
@@ -15,15 +12,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AssemblyConnectorTest extends TestCase {
-
-	/**
-	 * The fixture for this Connector test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AssemblyConnector fixture = null;
+public class AssemblyConnectorTest extends ConnectorTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +34,14 @@ public class AssemblyConnectorTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Connector test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(AssemblyConnector fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Connector test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected AssemblyConnector getFixture() {
-		return fixture;
+		return (AssemblyConnector)fixture;
 	}
 
 	/**

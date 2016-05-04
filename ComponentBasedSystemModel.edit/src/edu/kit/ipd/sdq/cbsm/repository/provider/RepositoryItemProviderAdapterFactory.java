@@ -141,6 +141,75 @@ public class RepositoryItemProviderAdapterFactory extends RepositoryAdapterFacto
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.cbsm.repository.ProvidedRole} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ProvidedRoleItemProvider providedRoleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link edu.kit.ipd.sdq.cbsm.repository.ProvidedRole}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createProvidedRoleAdapter() {
+		if (providedRoleItemProvider == null) {
+			providedRoleItemProvider = new ProvidedRoleItemProvider(this);
+		}
+
+		return providedRoleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.cbsm.repository.RequiredRole} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RequiredRoleItemProvider requiredRoleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link edu.kit.ipd.sdq.cbsm.repository.RequiredRole}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRequiredRoleAdapter() {
+		if (requiredRoleItemProvider == null) {
+			requiredRoleItemProvider = new RequiredRoleItemProvider(this);
+		}
+
+		return requiredRoleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.cbsm.repository.CompositeComponent} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CompositeComponentItemProvider compositeComponentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link edu.kit.ipd.sdq.cbsm.repository.CompositeComponent}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCompositeComponentAdapter() {
+		if (compositeComponentItemProvider == null) {
+			compositeComponentItemProvider = new CompositeComponentItemProvider(this);
+		}
+
+		return compositeComponentItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.cbsm.repository.Signature} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -256,167 +325,6 @@ public class RepositoryItemProviderAdapterFactory extends RepositoryAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.cbsm.repository.Service} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ServiceItemProvider serviceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link edu.kit.ipd.sdq.cbsm.repository.Service}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createServiceAdapter() {
-		if (serviceItemProvider == null) {
-			serviceItemProvider = new ServiceItemProvider(this);
-		}
-
-		return serviceItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.cbsm.repository.BehaviorDescription} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected BehaviorDescriptionItemProvider behaviorDescriptionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link edu.kit.ipd.sdq.cbsm.repository.BehaviorDescription}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createBehaviorDescriptionAdapter() {
-		if (behaviorDescriptionItemProvider == null) {
-			behaviorDescriptionItemProvider = new BehaviorDescriptionItemProvider(this);
-		}
-
-		return behaviorDescriptionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.cbsm.repository.Action} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ActionItemProvider actionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link edu.kit.ipd.sdq.cbsm.repository.Action}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createActionAdapter() {
-		if (actionItemProvider == null) {
-			actionItemProvider = new ActionItemProvider(this);
-		}
-
-		return actionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.cbsm.repository.InternalAction} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected InternalActionItemProvider internalActionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link edu.kit.ipd.sdq.cbsm.repository.InternalAction}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createInternalActionAdapter() {
-		if (internalActionItemProvider == null) {
-			internalActionItemProvider = new InternalActionItemProvider(this);
-		}
-
-		return internalActionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.cbsm.repository.ExternalCall} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ExternalCallItemProvider externalCallItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link edu.kit.ipd.sdq.cbsm.repository.ExternalCall}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createExternalCallAdapter() {
-		if (externalCallItemProvider == null) {
-			externalCallItemProvider = new ExternalCallItemProvider(this);
-		}
-
-		return externalCallItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.cbsm.repository.Loop} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected LoopItemProvider loopItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link edu.kit.ipd.sdq.cbsm.repository.Loop}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createLoopAdapter() {
-		if (loopItemProvider == null) {
-			loopItemProvider = new LoopItemProvider(this);
-		}
-
-		return loopItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.cbsm.repository.Branch} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected BranchItemProvider branchItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link edu.kit.ipd.sdq.cbsm.repository.Branch}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createBranchAdapter() {
-		if (branchItemProvider == null) {
-			branchItemProvider = new BranchItemProvider(this);
-		}
-
-		return branchItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -518,18 +426,14 @@ public class RepositoryItemProviderAdapterFactory extends RepositoryAdapterFacto
 		if (repositoryItemProvider != null) repositoryItemProvider.dispose();
 		if (interfaceItemProvider != null) interfaceItemProvider.dispose();
 		if (componentItemProvider != null) componentItemProvider.dispose();
+		if (providedRoleItemProvider != null) providedRoleItemProvider.dispose();
+		if (requiredRoleItemProvider != null) requiredRoleItemProvider.dispose();
+		if (compositeComponentItemProvider != null) compositeComponentItemProvider.dispose();
 		if (signatureItemProvider != null) signatureItemProvider.dispose();
 		if (dataTypeItemProvider != null) dataTypeItemProvider.dispose();
 		if (parameterItemProvider != null) parameterItemProvider.dispose();
 		if (complexTypeItemProvider != null) complexTypeItemProvider.dispose();
 		if (simpleTypeItemProvider != null) simpleTypeItemProvider.dispose();
-		if (serviceItemProvider != null) serviceItemProvider.dispose();
-		if (behaviorDescriptionItemProvider != null) behaviorDescriptionItemProvider.dispose();
-		if (actionItemProvider != null) actionItemProvider.dispose();
-		if (internalActionItemProvider != null) internalActionItemProvider.dispose();
-		if (externalCallItemProvider != null) externalCallItemProvider.dispose();
-		if (loopItemProvider != null) loopItemProvider.dispose();
-		if (branchItemProvider != null) branchItemProvider.dispose();
 	}
 
 }

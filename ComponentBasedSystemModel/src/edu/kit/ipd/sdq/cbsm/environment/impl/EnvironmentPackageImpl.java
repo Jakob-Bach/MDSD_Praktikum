@@ -21,6 +21,8 @@ import edu.kit.ipd.sdq.cbsm.environment.Link;
 
 import edu.kit.ipd.sdq.cbsm.repository.RepositoryPackage;
 
+import edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorPackage;
+import edu.kit.ipd.sdq.cbsm.repository.behavior.impl.BehaviorPackageImpl;
 import edu.kit.ipd.sdq.cbsm.repository.impl.RepositoryPackageImpl;
 
 import org.eclipse.emf.ecore.EClass;
@@ -106,6 +108,7 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		// Obtain or create and register interdependencies
 		CorePackageImpl theCorePackage = (CorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) instanceof CorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) : CorePackage.eINSTANCE);
 		RepositoryPackageImpl theRepositoryPackage = (RepositoryPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RepositoryPackage.eNS_URI) instanceof RepositoryPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RepositoryPackage.eNS_URI) : RepositoryPackage.eINSTANCE);
+		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 		AssemblyPackageImpl theAssemblyPackage = (AssemblyPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AssemblyPackage.eNS_URI) instanceof AssemblyPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AssemblyPackage.eNS_URI) : AssemblyPackage.eINSTANCE);
 		AllocationPackageImpl theAllocationPackage = (AllocationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AllocationPackage.eNS_URI) instanceof AllocationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AllocationPackage.eNS_URI) : AllocationPackage.eINSTANCE);
 
@@ -113,6 +116,7 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		theEnvironmentPackage.createPackageContents();
 		theCorePackage.createPackageContents();
 		theRepositoryPackage.createPackageContents();
+		theBehaviorPackage.createPackageContents();
 		theAssemblyPackage.createPackageContents();
 		theAllocationPackage.createPackageContents();
 
@@ -120,6 +124,7 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		theEnvironmentPackage.initializePackageContents();
 		theCorePackage.initializePackageContents();
 		theRepositoryPackage.initializePackageContents();
+		theBehaviorPackage.initializePackageContents();
 		theAssemblyPackage.initializePackageContents();
 		theAllocationPackage.initializePackageContents();
 

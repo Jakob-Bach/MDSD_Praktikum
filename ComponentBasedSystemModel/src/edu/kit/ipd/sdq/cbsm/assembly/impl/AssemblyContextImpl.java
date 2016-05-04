@@ -4,27 +4,22 @@ package edu.kit.ipd.sdq.cbsm.assembly.impl;
 
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyContext;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyPackage;
-import edu.kit.ipd.sdq.cbsm.assembly.ProvidedRole;
-import edu.kit.ipd.sdq.cbsm.assembly.RequiredRole;
-
 import edu.kit.ipd.sdq.cbsm.core.impl.NamedElementImpl;
 
 import edu.kit.ipd.sdq.cbsm.repository.Component;
 
+import edu.kit.ipd.sdq.cbsm.repository.ProvidedRole;
+import edu.kit.ipd.sdq.cbsm.repository.RequiredRole;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -53,7 +48,7 @@ public class AssemblyContextImpl extends NamedElementImpl implements AssemblyCon
 	protected Component instantiatedComponent;
 
 	/**
-	 * The cached value of the '{@link #getProvidedRoles() <em>Provided Roles</em>}' containment reference list.
+	 * The cached value of the '{@link #getProvidedRoles() <em>Provided Roles</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getProvidedRoles()
@@ -63,7 +58,7 @@ public class AssemblyContextImpl extends NamedElementImpl implements AssemblyCon
 	protected EList<ProvidedRole> providedRoles;
 
 	/**
-	 * The cached value of the '{@link #getRequiredRoles() <em>Required Roles</em>}' containment reference list.
+	 * The cached value of the '{@link #getRequiredRoles() <em>Required Roles</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRequiredRoles()
@@ -136,7 +131,7 @@ public class AssemblyContextImpl extends NamedElementImpl implements AssemblyCon
 	 */
 	public EList<ProvidedRole> getProvidedRoles() {
 		if (providedRoles == null) {
-			providedRoles = new EObjectContainmentEList<ProvidedRole>(ProvidedRole.class, this, AssemblyPackage.ASSEMBLY_CONTEXT__PROVIDED_ROLES);
+			providedRoles = new EObjectResolvingEList<ProvidedRole>(ProvidedRole.class, this, AssemblyPackage.ASSEMBLY_CONTEXT__PROVIDED_ROLES);
 		}
 		return providedRoles;
 	}
@@ -148,25 +143,9 @@ public class AssemblyContextImpl extends NamedElementImpl implements AssemblyCon
 	 */
 	public EList<RequiredRole> getRequiredRoles() {
 		if (requiredRoles == null) {
-			requiredRoles = new EObjectContainmentEList<RequiredRole>(RequiredRole.class, this, AssemblyPackage.ASSEMBLY_CONTEXT__REQUIRED_ROLES);
+			requiredRoles = new EObjectResolvingEList<RequiredRole>(RequiredRole.class, this, AssemblyPackage.ASSEMBLY_CONTEXT__REQUIRED_ROLES);
 		}
 		return requiredRoles;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case AssemblyPackage.ASSEMBLY_CONTEXT__PROVIDED_ROLES:
-				return ((InternalEList<?>)getProvidedRoles()).basicRemove(otherEnd, msgs);
-			case AssemblyPackage.ASSEMBLY_CONTEXT__REQUIRED_ROLES:
-				return ((InternalEList<?>)getRequiredRoles()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

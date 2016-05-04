@@ -2,11 +2,9 @@
  */
 package edu.kit.ipd.sdq.cbsm.repository.tests;
 
+import edu.kit.ipd.sdq.cbsm.core.tests.NamedElementTest;
 import edu.kit.ipd.sdq.cbsm.repository.ComplexType;
 import edu.kit.ipd.sdq.cbsm.repository.RepositoryFactory;
-
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 /**
@@ -15,15 +13,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComplexTypeTest extends TestCase {
-
-	/**
-	 * The fixture for this Complex Type test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ComplexType fixture = null;
+public class ComplexTypeTest extends NamedElementTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +35,14 @@ public class ComplexTypeTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Complex Type test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(ComplexType fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Complex Type test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected ComplexType getFixture() {
-		return fixture;
+		return (ComplexType)fixture;
 	}
 
 	/**

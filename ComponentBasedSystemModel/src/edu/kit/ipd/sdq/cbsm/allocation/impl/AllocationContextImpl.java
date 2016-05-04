@@ -7,13 +7,13 @@ import edu.kit.ipd.sdq.cbsm.allocation.AllocationPackage;
 
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyContext;
 
+import edu.kit.ipd.sdq.cbsm.core.impl.NamedElementImpl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class AllocationContextImpl extends MinimalEObjectImpl.Container implements AllocationContext {
+public class AllocationContextImpl extends NamedElementImpl implements AllocationContext {
 	/**
 	 * The cached value of the '{@link #getContainer() <em>Container</em>}' reference.
 	 * <!-- begin-user-doc -->

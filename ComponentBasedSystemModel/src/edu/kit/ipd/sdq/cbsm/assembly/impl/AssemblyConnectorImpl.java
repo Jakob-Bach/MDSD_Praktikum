@@ -4,16 +4,14 @@ package edu.kit.ipd.sdq.cbsm.assembly.impl;
 
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyConnector;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyPackage;
-import edu.kit.ipd.sdq.cbsm.assembly.ProvidedRole;
-import edu.kit.ipd.sdq.cbsm.assembly.RequiredRole;
-
+import edu.kit.ipd.sdq.cbsm.repository.ProvidedRole;
+import edu.kit.ipd.sdq.cbsm.repository.RequiredRole;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +27,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class AssemblyConnectorImpl extends MinimalEObjectImpl.Container implements AssemblyConnector {
+public class AssemblyConnectorImpl extends ConnectorImpl implements AssemblyConnector {
 	/**
 	 * The cached value of the '{@link #getProvidedRole() <em>Provided Role</em>}' reference.
 	 * <!-- begin-user-doc -->

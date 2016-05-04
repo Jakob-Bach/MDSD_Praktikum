@@ -4,9 +4,8 @@ package edu.kit.ipd.sdq.cbsm.allocation;
 
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyContext;
 
+import edu.kit.ipd.sdq.cbsm.core.NamedElement;
 import edu.kit.ipd.sdq.cbsm.environment.Container;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface AllocationContext extends EObject {
+public interface AllocationContext extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Container</b></em>' reference.
 	 * <!-- begin-user-doc -->

@@ -4,12 +4,12 @@ package edu.kit.ipd.sdq.cbsm.assembly.provider;
 
 
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyContext;
-import edu.kit.ipd.sdq.cbsm.assembly.AssemblyFactory;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyPackage;
 
 import edu.kit.ipd.sdq.cbsm.core.provider.ComponentBasedSystemModelEditPlugin;
 import edu.kit.ipd.sdq.cbsm.core.provider.NamedElementItemProvider;
 
+import edu.kit.ipd.sdq.cbsm.repository.RepositoryFactory;
 import java.util.Collection;
 import java.util.List;
 
@@ -170,12 +170,12 @@ public class AssemblyContextItemProvider extends NamedElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(AssemblyPackage.Literals.ASSEMBLY_CONTEXT__PROVIDED_ROLES,
-				 AssemblyFactory.eINSTANCE.createProvidedRole()));
+				 RepositoryFactory.eINSTANCE.createProvidedRole()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(AssemblyPackage.Literals.ASSEMBLY_CONTEXT__REQUIRED_ROLES,
-				 AssemblyFactory.eINSTANCE.createRequiredRole()));
+				 RepositoryFactory.eINSTANCE.createRequiredRole()));
 	}
 
 	/**

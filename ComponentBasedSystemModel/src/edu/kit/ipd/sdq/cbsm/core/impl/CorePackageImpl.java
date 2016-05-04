@@ -20,6 +20,8 @@ import edu.kit.ipd.sdq.cbsm.environment.impl.EnvironmentPackageImpl;
 
 import edu.kit.ipd.sdq.cbsm.repository.RepositoryPackage;
 
+import edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorPackage;
+import edu.kit.ipd.sdq.cbsm.repository.behavior.impl.BehaviorPackageImpl;
 import edu.kit.ipd.sdq.cbsm.repository.impl.RepositoryPackageImpl;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -90,6 +92,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 
 		// Obtain or create and register interdependencies
 		RepositoryPackageImpl theRepositoryPackage = (RepositoryPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RepositoryPackage.eNS_URI) instanceof RepositoryPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RepositoryPackage.eNS_URI) : RepositoryPackage.eINSTANCE);
+		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 		AssemblyPackageImpl theAssemblyPackage = (AssemblyPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AssemblyPackage.eNS_URI) instanceof AssemblyPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AssemblyPackage.eNS_URI) : AssemblyPackage.eINSTANCE);
 		EnvironmentPackageImpl theEnvironmentPackage = (EnvironmentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) instanceof EnvironmentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) : EnvironmentPackage.eINSTANCE);
 		AllocationPackageImpl theAllocationPackage = (AllocationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AllocationPackage.eNS_URI) instanceof AllocationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AllocationPackage.eNS_URI) : AllocationPackage.eINSTANCE);
@@ -97,6 +100,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		// Create package meta-data objects
 		theCorePackage.createPackageContents();
 		theRepositoryPackage.createPackageContents();
+		theBehaviorPackage.createPackageContents();
 		theAssemblyPackage.createPackageContents();
 		theEnvironmentPackage.createPackageContents();
 		theAllocationPackage.createPackageContents();
@@ -104,6 +108,7 @@ public class CorePackageImpl extends EPackageImpl implements CorePackage {
 		// Initialize created meta-data
 		theCorePackage.initializePackageContents();
 		theRepositoryPackage.initializePackageContents();
+		theBehaviorPackage.initializePackageContents();
 		theAssemblyPackage.initializePackageContents();
 		theEnvironmentPackage.initializePackageContents();
 		theAllocationPackage.initializePackageContents();

@@ -2,7 +2,7 @@
  */
 package edu.kit.ipd.sdq.cbsm.repository;
 
-import org.eclipse.emf.ecore.EObject;
+import edu.kit.ipd.sdq.cbsm.core.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,5 +14,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface ComplexType extends EObject {
+public interface ComplexType extends NamedElement {
 } // ComplexType

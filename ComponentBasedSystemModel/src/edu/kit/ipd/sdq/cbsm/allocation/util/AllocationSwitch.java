@@ -4,6 +4,7 @@ package edu.kit.ipd.sdq.cbsm.allocation.util;
 
 import edu.kit.ipd.sdq.cbsm.allocation.*;
 
+import edu.kit.ipd.sdq.cbsm.core.NamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -75,6 +76,7 @@ public class AllocationSwitch<T> extends Switch<T> {
 			case AllocationPackage.ALLOCATION_CONTEXT: {
 				AllocationContext allocationContext = (AllocationContext)theEObject;
 				T result = caseAllocationContext(allocationContext);
+				if (result == null) result = caseNamedElement(allocationContext);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -109,6 +111,21 @@ public class AllocationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAllocationContext(AllocationContext object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNamedElement(NamedElement object) {
 		return null;
 	}
 

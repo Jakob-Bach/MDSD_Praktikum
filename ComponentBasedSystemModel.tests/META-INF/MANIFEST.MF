@@ -11,6 +11,7 @@ Export-Package: edu.kit.ipd.sdq.cbsm.allocation.tests,
  edu.kit.ipd.sdq.cbsm.assembly.tests,
  edu.kit.ipd.sdq.cbsm.core.tests,
  edu.kit.ipd.sdq.cbsm.environment.tests,
+ edu.kit.ipd.sdq.cbsm.repository.behavior.tests,
  edu.kit.ipd.sdq.cbsm.repository.tests
 Require-Bundle: org.eclipse.core.runtime,
  ComponentBasedSystemModel;visibility:=reexport,

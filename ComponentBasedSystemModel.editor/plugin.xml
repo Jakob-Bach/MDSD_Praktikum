@@ -68,6 +68,34 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
+            id="edu.kit.ipd.sdq.cbsm.repository.behavior.presentation.BehaviorModelWizardID"
+            name="%_UI_BehaviorModelWizard_label"
+            class="edu.kit.ipd.sdq.cbsm.repository.behavior.presentation.BehaviorModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/BehaviorModelFile.gif">
+         <description>%_UI_BehaviorModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated componentBasedSystemModel -->
+      <editor
+            id="edu.kit.ipd.sdq.cbsm.repository.behavior.presentation.BehaviorEditorID"
+            name="%_UI_BehaviorEditor_label"
+            icon="icons/full/obj16/BehaviorModelFile.gif"
+            extensions="behavior"
+            class="edu.kit.ipd.sdq.cbsm.repository.behavior.presentation.BehaviorEditor"
+            contributorClass="edu.kit.ipd.sdq.cbsm.repository.behavior.presentation.BehaviorActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated componentBasedSystemModel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
             id="edu.kit.ipd.sdq.cbsm.assembly.presentation.AssemblyModelWizardID"
             name="%_UI_AssemblyModelWizard_label"
             class="edu.kit.ipd.sdq.cbsm.assembly.presentation.AssemblyModelWizard"

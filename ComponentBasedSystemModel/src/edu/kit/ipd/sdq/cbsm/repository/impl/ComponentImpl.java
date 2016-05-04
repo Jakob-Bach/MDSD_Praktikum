@@ -3,15 +3,14 @@
 package edu.kit.ipd.sdq.cbsm.repository.impl;
 
 import edu.kit.ipd.sdq.cbsm.core.impl.NamedElementImpl;
-
-import edu.kit.ipd.sdq.cbsm.repository.BehaviorDescription;
 import edu.kit.ipd.sdq.cbsm.repository.Component;
-import edu.kit.ipd.sdq.cbsm.repository.Interface;
+import edu.kit.ipd.sdq.cbsm.repository.ProvidedRole;
 import edu.kit.ipd.sdq.cbsm.repository.RepositoryPackage;
-import edu.kit.ipd.sdq.cbsm.repository.Service;
-
+import edu.kit.ipd.sdq.cbsm.repository.RequiredRole;
+import edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorDescription;
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -19,8 +18,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -31,54 +30,43 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link edu.kit.ipd.sdq.cbsm.repository.impl.ComponentImpl#getProvidedInterfaces <em>Provided Interfaces</em>}</li>
- *   <li>{@link edu.kit.ipd.sdq.cbsm.repository.impl.ComponentImpl#getRequiredInterfaces <em>Required Interfaces</em>}</li>
- *   <li>{@link edu.kit.ipd.sdq.cbsm.repository.impl.ComponentImpl#getProvidedServices <em>Provided Services</em>}</li>
- *   <li>{@link edu.kit.ipd.sdq.cbsm.repository.impl.ComponentImpl#getBehaviorDescriptions <em>Behavior Descriptions</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.cbsm.repository.impl.ComponentImpl#getProvidedRoles <em>Provided Roles</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.cbsm.repository.impl.ComponentImpl#getRequiredRole <em>Required Role</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.cbsm.repository.impl.ComponentImpl#getBehaviorDescription <em>Behavior Description</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ComponentImpl extends NamedElementImpl implements Component {
 	/**
-	 * The cached value of the '{@link #getProvidedInterfaces() <em>Provided Interfaces</em>}' reference list.
+	 * The cached value of the '{@link #getProvidedRoles() <em>Provided Roles</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProvidedInterfaces()
+	 * @see #getProvidedRoles()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Interface> providedInterfaces;
+	protected EList<ProvidedRole> providedRoles;
 
 	/**
-	 * The cached value of the '{@link #getRequiredInterfaces() <em>Required Interfaces</em>}' reference list.
+	 * The cached value of the '{@link #getRequiredRole() <em>Required Role</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRequiredInterfaces()
+	 * @see #getRequiredRole()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Interface> requiredInterfaces;
+	protected EList<RequiredRole> requiredRole;
 
 	/**
-	 * The cached value of the '{@link #getProvidedServices() <em>Provided Services</em>}' containment reference list.
+	 * The cached value of the '{@link #getBehaviorDescription() <em>Behavior Description</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProvidedServices()
+	 * @see #getBehaviorDescription()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Service> providedServices;
-
-	/**
-	 * The cached value of the '{@link #getBehaviorDescriptions() <em>Behavior Descriptions</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBehaviorDescriptions()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<BehaviorDescription> behaviorDescriptions;
+	protected BehaviorDescription behaviorDescription;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -104,11 +92,11 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Interface> getProvidedInterfaces() {
-		if (providedInterfaces == null) {
-			providedInterfaces = new EObjectResolvingEList<Interface>(Interface.class, this, RepositoryPackage.COMPONENT__PROVIDED_INTERFACES);
+	public EList<ProvidedRole> getProvidedRoles() {
+		if (providedRoles == null) {
+			providedRoles = new EObjectContainmentEList<ProvidedRole>(ProvidedRole.class, this, RepositoryPackage.COMPONENT__PROVIDED_ROLES);
 		}
-		return providedInterfaces;
+		return providedRoles;
 	}
 
 	/**
@@ -116,11 +104,11 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Interface> getRequiredInterfaces() {
-		if (requiredInterfaces == null) {
-			requiredInterfaces = new EObjectResolvingEList<Interface>(Interface.class, this, RepositoryPackage.COMPONENT__REQUIRED_INTERFACES);
+	public EList<RequiredRole> getRequiredRole() {
+		if (requiredRole == null) {
+			requiredRole = new EObjectContainmentEList<RequiredRole>(RequiredRole.class, this, RepositoryPackage.COMPONENT__REQUIRED_ROLE);
 		}
-		return requiredInterfaces;
+		return requiredRole;
 	}
 
 	/**
@@ -128,11 +116,8 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Service> getProvidedServices() {
-		if (providedServices == null) {
-			providedServices = new EObjectContainmentEList<Service>(Service.class, this, RepositoryPackage.COMPONENT__PROVIDED_SERVICES);
-		}
-		return providedServices;
+	public BehaviorDescription getBehaviorDescription() {
+		return behaviorDescription;
 	}
 
 	/**
@@ -140,11 +125,33 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<BehaviorDescription> getBehaviorDescriptions() {
-		if (behaviorDescriptions == null) {
-			behaviorDescriptions = new EObjectContainmentEList<BehaviorDescription>(BehaviorDescription.class, this, RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTIONS);
+	public NotificationChain basicSetBehaviorDescription(BehaviorDescription newBehaviorDescription, NotificationChain msgs) {
+		BehaviorDescription oldBehaviorDescription = behaviorDescription;
+		behaviorDescription = newBehaviorDescription;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTION, oldBehaviorDescription, newBehaviorDescription);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return behaviorDescriptions;
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBehaviorDescription(BehaviorDescription newBehaviorDescription) {
+		if (newBehaviorDescription != behaviorDescription) {
+			NotificationChain msgs = null;
+			if (behaviorDescription != null)
+				msgs = ((InternalEObject)behaviorDescription).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTION, null, msgs);
+			if (newBehaviorDescription != null)
+				msgs = ((InternalEObject)newBehaviorDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTION, null, msgs);
+			msgs = basicSetBehaviorDescription(newBehaviorDescription, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTION, newBehaviorDescription, newBehaviorDescription));
 	}
 
 	/**
@@ -155,10 +162,12 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RepositoryPackage.COMPONENT__PROVIDED_SERVICES:
-				return ((InternalEList<?>)getProvidedServices()).basicRemove(otherEnd, msgs);
-			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTIONS:
-				return ((InternalEList<?>)getBehaviorDescriptions()).basicRemove(otherEnd, msgs);
+			case RepositoryPackage.COMPONENT__PROVIDED_ROLES:
+				return ((InternalEList<?>)getProvidedRoles()).basicRemove(otherEnd, msgs);
+			case RepositoryPackage.COMPONENT__REQUIRED_ROLE:
+				return ((InternalEList<?>)getRequiredRole()).basicRemove(otherEnd, msgs);
+			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTION:
+				return basicSetBehaviorDescription(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -171,14 +180,12 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RepositoryPackage.COMPONENT__PROVIDED_INTERFACES:
-				return getProvidedInterfaces();
-			case RepositoryPackage.COMPONENT__REQUIRED_INTERFACES:
-				return getRequiredInterfaces();
-			case RepositoryPackage.COMPONENT__PROVIDED_SERVICES:
-				return getProvidedServices();
-			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTIONS:
-				return getBehaviorDescriptions();
+			case RepositoryPackage.COMPONENT__PROVIDED_ROLES:
+				return getProvidedRoles();
+			case RepositoryPackage.COMPONENT__REQUIRED_ROLE:
+				return getRequiredRole();
+			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTION:
+				return getBehaviorDescription();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -192,21 +199,16 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RepositoryPackage.COMPONENT__PROVIDED_INTERFACES:
-				getProvidedInterfaces().clear();
-				getProvidedInterfaces().addAll((Collection<? extends Interface>)newValue);
+			case RepositoryPackage.COMPONENT__PROVIDED_ROLES:
+				getProvidedRoles().clear();
+				getProvidedRoles().addAll((Collection<? extends ProvidedRole>)newValue);
 				return;
-			case RepositoryPackage.COMPONENT__REQUIRED_INTERFACES:
-				getRequiredInterfaces().clear();
-				getRequiredInterfaces().addAll((Collection<? extends Interface>)newValue);
+			case RepositoryPackage.COMPONENT__REQUIRED_ROLE:
+				getRequiredRole().clear();
+				getRequiredRole().addAll((Collection<? extends RequiredRole>)newValue);
 				return;
-			case RepositoryPackage.COMPONENT__PROVIDED_SERVICES:
-				getProvidedServices().clear();
-				getProvidedServices().addAll((Collection<? extends Service>)newValue);
-				return;
-			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTIONS:
-				getBehaviorDescriptions().clear();
-				getBehaviorDescriptions().addAll((Collection<? extends BehaviorDescription>)newValue);
+			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTION:
+				setBehaviorDescription((BehaviorDescription)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -220,17 +222,14 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RepositoryPackage.COMPONENT__PROVIDED_INTERFACES:
-				getProvidedInterfaces().clear();
+			case RepositoryPackage.COMPONENT__PROVIDED_ROLES:
+				getProvidedRoles().clear();
 				return;
-			case RepositoryPackage.COMPONENT__REQUIRED_INTERFACES:
-				getRequiredInterfaces().clear();
+			case RepositoryPackage.COMPONENT__REQUIRED_ROLE:
+				getRequiredRole().clear();
 				return;
-			case RepositoryPackage.COMPONENT__PROVIDED_SERVICES:
-				getProvidedServices().clear();
-				return;
-			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTIONS:
-				getBehaviorDescriptions().clear();
+			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTION:
+				setBehaviorDescription((BehaviorDescription)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -244,14 +243,12 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RepositoryPackage.COMPONENT__PROVIDED_INTERFACES:
-				return providedInterfaces != null && !providedInterfaces.isEmpty();
-			case RepositoryPackage.COMPONENT__REQUIRED_INTERFACES:
-				return requiredInterfaces != null && !requiredInterfaces.isEmpty();
-			case RepositoryPackage.COMPONENT__PROVIDED_SERVICES:
-				return providedServices != null && !providedServices.isEmpty();
-			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTIONS:
-				return behaviorDescriptions != null && !behaviorDescriptions.isEmpty();
+			case RepositoryPackage.COMPONENT__PROVIDED_ROLES:
+				return providedRoles != null && !providedRoles.isEmpty();
+			case RepositoryPackage.COMPONENT__REQUIRED_ROLE:
+				return requiredRole != null && !requiredRole.isEmpty();
+			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTION:
+				return behaviorDescription != null;
 		}
 		return super.eIsSet(featureID);
 	}

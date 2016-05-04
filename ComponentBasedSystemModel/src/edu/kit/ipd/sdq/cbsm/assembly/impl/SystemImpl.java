@@ -5,8 +5,8 @@ package edu.kit.ipd.sdq.cbsm.assembly.impl;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyContext;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyPackage;
 
-import edu.kit.ipd.sdq.cbsm.repository.Interface;
-
+import edu.kit.ipd.sdq.cbsm.assembly.Connector;
+import edu.kit.ipd.sdq.cbsm.repository.ProvidedRole;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -31,7 +31,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link edu.kit.ipd.sdq.cbsm.assembly.impl.SystemImpl#getContainedAssemblyContexts <em>Contained Assembly Contexts</em>}</li>
- *   <li>{@link edu.kit.ipd.sdq.cbsm.assembly.impl.SystemImpl#getProvidedInterfaces <em>Provided Interfaces</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.cbsm.assembly.impl.SystemImpl#getProvidedRoles <em>Provided Roles</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.cbsm.assembly.impl.SystemImpl#getConnectors <em>Connectors</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,14 +49,24 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements edu.kit.
 	protected EList<AssemblyContext> containedAssemblyContexts;
 
 	/**
-	 * The cached value of the '{@link #getProvidedInterfaces() <em>Provided Interfaces</em>}' reference list.
+	 * The cached value of the '{@link #getProvidedRoles() <em>Provided Roles</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProvidedInterfaces()
+	 * @see #getProvidedRoles()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Interface> providedInterfaces;
+	protected EList<ProvidedRole> providedRoles;
+
+	/**
+	 * The cached value of the '{@link #getConnectors() <em>Connectors</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConnectors()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Connector> connectors;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -93,11 +104,23 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements edu.kit.
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Interface> getProvidedInterfaces() {
-		if (providedInterfaces == null) {
-			providedInterfaces = new EObjectResolvingEList<Interface>(Interface.class, this, AssemblyPackage.SYSTEM__PROVIDED_INTERFACES);
+	public EList<ProvidedRole> getProvidedRoles() {
+		if (providedRoles == null) {
+			providedRoles = new EObjectResolvingEList<ProvidedRole>(ProvidedRole.class, this, AssemblyPackage.SYSTEM__PROVIDED_ROLES);
 		}
-		return providedInterfaces;
+		return providedRoles;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Connector> getConnectors() {
+		if (connectors == null) {
+			connectors = new EObjectContainmentEList<Connector>(Connector.class, this, AssemblyPackage.SYSTEM__CONNECTORS);
+		}
+		return connectors;
 	}
 
 	/**
@@ -110,6 +133,8 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements edu.kit.
 		switch (featureID) {
 			case AssemblyPackage.SYSTEM__CONTAINED_ASSEMBLY_CONTEXTS:
 				return ((InternalEList<?>)getContainedAssemblyContexts()).basicRemove(otherEnd, msgs);
+			case AssemblyPackage.SYSTEM__CONNECTORS:
+				return ((InternalEList<?>)getConnectors()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -124,8 +149,10 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements edu.kit.
 		switch (featureID) {
 			case AssemblyPackage.SYSTEM__CONTAINED_ASSEMBLY_CONTEXTS:
 				return getContainedAssemblyContexts();
-			case AssemblyPackage.SYSTEM__PROVIDED_INTERFACES:
-				return getProvidedInterfaces();
+			case AssemblyPackage.SYSTEM__PROVIDED_ROLES:
+				return getProvidedRoles();
+			case AssemblyPackage.SYSTEM__CONNECTORS:
+				return getConnectors();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -143,9 +170,13 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements edu.kit.
 				getContainedAssemblyContexts().clear();
 				getContainedAssemblyContexts().addAll((Collection<? extends AssemblyContext>)newValue);
 				return;
-			case AssemblyPackage.SYSTEM__PROVIDED_INTERFACES:
-				getProvidedInterfaces().clear();
-				getProvidedInterfaces().addAll((Collection<? extends Interface>)newValue);
+			case AssemblyPackage.SYSTEM__PROVIDED_ROLES:
+				getProvidedRoles().clear();
+				getProvidedRoles().addAll((Collection<? extends ProvidedRole>)newValue);
+				return;
+			case AssemblyPackage.SYSTEM__CONNECTORS:
+				getConnectors().clear();
+				getConnectors().addAll((Collection<? extends Connector>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -162,8 +193,11 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements edu.kit.
 			case AssemblyPackage.SYSTEM__CONTAINED_ASSEMBLY_CONTEXTS:
 				getContainedAssemblyContexts().clear();
 				return;
-			case AssemblyPackage.SYSTEM__PROVIDED_INTERFACES:
-				getProvidedInterfaces().clear();
+			case AssemblyPackage.SYSTEM__PROVIDED_ROLES:
+				getProvidedRoles().clear();
+				return;
+			case AssemblyPackage.SYSTEM__CONNECTORS:
+				getConnectors().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -179,8 +213,10 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements edu.kit.
 		switch (featureID) {
 			case AssemblyPackage.SYSTEM__CONTAINED_ASSEMBLY_CONTEXTS:
 				return containedAssemblyContexts != null && !containedAssemblyContexts.isEmpty();
-			case AssemblyPackage.SYSTEM__PROVIDED_INTERFACES:
-				return providedInterfaces != null && !providedInterfaces.isEmpty();
+			case AssemblyPackage.SYSTEM__PROVIDED_ROLES:
+				return providedRoles != null && !providedRoles.isEmpty();
+			case AssemblyPackage.SYSTEM__CONNECTORS:
+				return connectors != null && !connectors.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

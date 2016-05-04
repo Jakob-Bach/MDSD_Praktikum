@@ -5,8 +5,7 @@ package edu.kit.ipd.sdq.cbsm.allocation.tests;
 import edu.kit.ipd.sdq.cbsm.allocation.AllocationContext;
 import edu.kit.ipd.sdq.cbsm.allocation.AllocationFactory;
 
-import junit.framework.TestCase;
-
+import edu.kit.ipd.sdq.cbsm.core.tests.NamedElementTest;
 import junit.textui.TestRunner;
 
 /**
@@ -15,15 +14,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AllocationContextTest extends TestCase {
-
-	/**
-	 * The fixture for this Context test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AllocationContext fixture = null;
+public class AllocationContextTest extends NamedElementTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +36,14 @@ public class AllocationContextTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Context test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(AllocationContext fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Context test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected AllocationContext getFixture() {
-		return fixture;
+		return (AllocationContext)fixture;
 	}
 
 	/**

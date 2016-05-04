@@ -162,6 +162,7 @@ import edu.kit.ipd.sdq.cbsm.assembly.provider.AssemblyItemProviderAdapterFactory
 
 import edu.kit.ipd.sdq.cbsm.environment.provider.EnvironmentItemProviderAdapterFactory;
 
+import edu.kit.ipd.sdq.cbsm.repository.behavior.provider.BehaviorItemProviderAdapterFactory;
 import edu.kit.ipd.sdq.cbsm.repository.provider.RepositoryItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
@@ -711,6 +712,7 @@ public class CoreEditor
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new CoreItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new RepositoryItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new BehaviorItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new AssemblyItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new EnvironmentItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new AllocationItemProviderAdapterFactory());

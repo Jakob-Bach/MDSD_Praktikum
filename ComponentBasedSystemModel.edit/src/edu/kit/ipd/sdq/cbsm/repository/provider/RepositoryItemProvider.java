@@ -3,8 +3,6 @@
 package edu.kit.ipd.sdq.cbsm.repository.provider;
 
 
-import edu.kit.ipd.sdq.cbsm.assembly.AssemblyFactory;
-
 import edu.kit.ipd.sdq.cbsm.core.provider.ComponentBasedSystemModelEditPlugin;
 
 import edu.kit.ipd.sdq.cbsm.repository.Repository;
@@ -169,7 +167,7 @@ public class RepositoryItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(RepositoryPackage.Literals.REPOSITORY__COMPONENTS,
-				 AssemblyFactory.eINSTANCE.createCompositeComponent()));
+				 RepositoryFactory.eINSTANCE.createCompositeComponent()));
 
 		newChildDescriptors.add
 			(createChildParameter

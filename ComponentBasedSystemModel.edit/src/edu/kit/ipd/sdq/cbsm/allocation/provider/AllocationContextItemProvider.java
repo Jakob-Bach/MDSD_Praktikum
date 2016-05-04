@@ -3,10 +3,12 @@
 package edu.kit.ipd.sdq.cbsm.allocation.provider;
 
 
+import edu.kit.ipd.sdq.cbsm.allocation.AllocationContext;
 import edu.kit.ipd.sdq.cbsm.allocation.AllocationPackage;
 
 import edu.kit.ipd.sdq.cbsm.core.provider.ComponentBasedSystemModelEditPlugin;
 
+import edu.kit.ipd.sdq.cbsm.core.provider.NamedElementItemProvider;
 import java.util.Collection;
 import java.util.List;
 
@@ -16,13 +18,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
 /**
  * This is the item provider adapter for a {@link edu.kit.ipd.sdq.cbsm.allocation.AllocationContext} object.
@@ -31,13 +27,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
  * @generated
  */
 public class AllocationContextItemProvider 
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -128,7 +118,10 @@ public class AllocationContextItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_AllocationContext_type");
+		String label = ((AllocationContext)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_AllocationContext_type") :
+			getString("_UI_AllocationContext_type") + " " + label;
 	}
 	
 

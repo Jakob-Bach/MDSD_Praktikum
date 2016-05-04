@@ -31,15 +31,6 @@ public interface AssemblyFactory extends EFactory {
 	AssemblyContext createAssemblyContext();
 
 	/**
-	 * Returns a new object of class '<em>Composite Component</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Composite Component</em>'.
-	 * @generated
-	 */
-	CompositeComponent createCompositeComponent();
-
-	/**
 	 * Returns a new object of class '<em>System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -49,22 +40,13 @@ public interface AssemblyFactory extends EFactory {
 	System createSystem();
 
 	/**
-	 * Returns a new object of class '<em>Provided Role</em>'.
+	 * Returns a new object of class '<em>Connector</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Provided Role</em>'.
+	 * @return a new object of class '<em>Connector</em>'.
 	 * @generated
 	 */
-	ProvidedRole createProvidedRole();
-
-	/**
-	 * Returns a new object of class '<em>Required Role</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Required Role</em>'.
-	 * @generated
-	 */
-	RequiredRole createRequiredRole();
+	Connector createConnector();
 
 	/**
 	 * Returns a new object of class '<em>Delegation Connector</em>'.
@@ -74,6 +56,24 @@ public interface AssemblyFactory extends EFactory {
 	 * @generated
 	 */
 	DelegationConnector createDelegationConnector();
+
+	/**
+	 * Returns a new object of class '<em>Provided Delegation Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Provided Delegation Connector</em>'.
+	 * @generated
+	 */
+	ProvidedDelegationConnector createProvidedDelegationConnector();
+
+	/**
+	 * Returns a new object of class '<em>Required Delegation Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Required Delegation Connector</em>'.
+	 * @generated
+	 */
+	RequiredDelegationConnector createRequiredDelegationConnector();
 
 	/**
 	 * Returns a new object of class '<em>Connector</em>'.

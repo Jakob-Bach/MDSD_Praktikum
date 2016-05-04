@@ -21,6 +21,8 @@ import edu.kit.ipd.sdq.cbsm.environment.impl.EnvironmentPackageImpl;
 
 import edu.kit.ipd.sdq.cbsm.repository.RepositoryPackage;
 
+import edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorPackage;
+import edu.kit.ipd.sdq.cbsm.repository.behavior.impl.BehaviorPackageImpl;
 import edu.kit.ipd.sdq.cbsm.repository.impl.RepositoryPackageImpl;
 
 import org.eclipse.emf.ecore.EClass;
@@ -99,6 +101,7 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		// Obtain or create and register interdependencies
 		CorePackageImpl theCorePackage = (CorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) instanceof CorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) : CorePackage.eINSTANCE);
 		RepositoryPackageImpl theRepositoryPackage = (RepositoryPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RepositoryPackage.eNS_URI) instanceof RepositoryPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RepositoryPackage.eNS_URI) : RepositoryPackage.eINSTANCE);
+		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 		AssemblyPackageImpl theAssemblyPackage = (AssemblyPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AssemblyPackage.eNS_URI) instanceof AssemblyPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AssemblyPackage.eNS_URI) : AssemblyPackage.eINSTANCE);
 		EnvironmentPackageImpl theEnvironmentPackage = (EnvironmentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) instanceof EnvironmentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) : EnvironmentPackage.eINSTANCE);
 
@@ -106,6 +109,7 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		theAllocationPackage.createPackageContents();
 		theCorePackage.createPackageContents();
 		theRepositoryPackage.createPackageContents();
+		theBehaviorPackage.createPackageContents();
 		theAssemblyPackage.createPackageContents();
 		theEnvironmentPackage.createPackageContents();
 
@@ -113,6 +117,7 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		theAllocationPackage.initializePackageContents();
 		theCorePackage.initializePackageContents();
 		theRepositoryPackage.initializePackageContents();
+		theBehaviorPackage.initializePackageContents();
 		theAssemblyPackage.initializePackageContents();
 		theEnvironmentPackage.initializePackageContents();
 
@@ -230,6 +235,7 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
 		EnvironmentPackage theEnvironmentPackage = (EnvironmentPackage)EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI);
 		AssemblyPackage theAssemblyPackage = (AssemblyPackage)EPackage.Registry.INSTANCE.getEPackage(AssemblyPackage.eNS_URI);
 
@@ -238,6 +244,7 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		allocationContextEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(allocationEClass, Allocation.class, "Allocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

@@ -95,29 +95,6 @@ public class AssemblyItemProviderAdapterFactory extends AssemblyAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.cbsm.assembly.CompositeComponent} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CompositeComponentItemProvider compositeComponentItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link edu.kit.ipd.sdq.cbsm.assembly.CompositeComponent}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCompositeComponentAdapter() {
-		if (compositeComponentItemProvider == null) {
-			compositeComponentItemProvider = new CompositeComponentItemProvider(this);
-		}
-
-		return compositeComponentItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.cbsm.assembly.System} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -141,49 +118,26 @@ public class AssemblyItemProviderAdapterFactory extends AssemblyAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.cbsm.assembly.ProvidedRole} instances.
+	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.cbsm.assembly.Connector} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ProvidedRoleItemProvider providedRoleItemProvider;
+	protected ConnectorItemProvider connectorItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link edu.kit.ipd.sdq.cbsm.assembly.ProvidedRole}.
+	 * This creates an adapter for a {@link edu.kit.ipd.sdq.cbsm.assembly.Connector}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createProvidedRoleAdapter() {
-		if (providedRoleItemProvider == null) {
-			providedRoleItemProvider = new ProvidedRoleItemProvider(this);
+	public Adapter createConnectorAdapter() {
+		if (connectorItemProvider == null) {
+			connectorItemProvider = new ConnectorItemProvider(this);
 		}
 
-		return providedRoleItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.cbsm.assembly.RequiredRole} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RequiredRoleItemProvider requiredRoleItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link edu.kit.ipd.sdq.cbsm.assembly.RequiredRole}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRequiredRoleAdapter() {
-		if (requiredRoleItemProvider == null) {
-			requiredRoleItemProvider = new RequiredRoleItemProvider(this);
-		}
-
-		return requiredRoleItemProvider;
+		return connectorItemProvider;
 	}
 
 	/**
@@ -207,6 +161,52 @@ public class AssemblyItemProviderAdapterFactory extends AssemblyAdapterFactory i
 		}
 
 		return delegationConnectorItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.cbsm.assembly.ProvidedDelegationConnector} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ProvidedDelegationConnectorItemProvider providedDelegationConnectorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link edu.kit.ipd.sdq.cbsm.assembly.ProvidedDelegationConnector}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createProvidedDelegationConnectorAdapter() {
+		if (providedDelegationConnectorItemProvider == null) {
+			providedDelegationConnectorItemProvider = new ProvidedDelegationConnectorItemProvider(this);
+		}
+
+		return providedDelegationConnectorItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.cbsm.assembly.RequiredDelegationConnector} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RequiredDelegationConnectorItemProvider requiredDelegationConnectorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link edu.kit.ipd.sdq.cbsm.assembly.RequiredDelegationConnector}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRequiredDelegationConnectorAdapter() {
+		if (requiredDelegationConnectorItemProvider == null) {
+			requiredDelegationConnectorItemProvider = new RequiredDelegationConnectorItemProvider(this);
+		}
+
+		return requiredDelegationConnectorItemProvider;
 	}
 
 	/**
@@ -332,11 +332,11 @@ public class AssemblyItemProviderAdapterFactory extends AssemblyAdapterFactory i
 	 */
 	public void dispose() {
 		if (assemblyContextItemProvider != null) assemblyContextItemProvider.dispose();
-		if (compositeComponentItemProvider != null) compositeComponentItemProvider.dispose();
 		if (systemItemProvider != null) systemItemProvider.dispose();
-		if (providedRoleItemProvider != null) providedRoleItemProvider.dispose();
-		if (requiredRoleItemProvider != null) requiredRoleItemProvider.dispose();
+		if (connectorItemProvider != null) connectorItemProvider.dispose();
 		if (delegationConnectorItemProvider != null) delegationConnectorItemProvider.dispose();
+		if (providedDelegationConnectorItemProvider != null) providedDelegationConnectorItemProvider.dispose();
+		if (requiredDelegationConnectorItemProvider != null) requiredDelegationConnectorItemProvider.dispose();
 		if (assemblyConnectorItemProvider != null) assemblyConnectorItemProvider.dispose();
 	}
 

@@ -2,12 +2,11 @@
  */
 package edu.kit.ipd.sdq.cbsm.repository.impl;
 
+import edu.kit.ipd.sdq.cbsm.core.impl.NamedElementImpl;
 import edu.kit.ipd.sdq.cbsm.repository.ComplexType;
 import edu.kit.ipd.sdq.cbsm.repository.RepositoryPackage;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,7 +15,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class ComplexTypeImpl extends MinimalEObjectImpl.Container implements ComplexType {
+public class ComplexTypeImpl extends NamedElementImpl implements ComplexType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

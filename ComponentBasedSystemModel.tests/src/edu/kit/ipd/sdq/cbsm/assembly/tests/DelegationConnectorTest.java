@@ -4,9 +4,6 @@ package edu.kit.ipd.sdq.cbsm.assembly.tests;
 
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyFactory;
 import edu.kit.ipd.sdq.cbsm.assembly.DelegationConnector;
-
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 /**
@@ -15,15 +12,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DelegationConnectorTest extends TestCase {
-
-	/**
-	 * The fixture for this Delegation Connector test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DelegationConnector fixture = null;
+public class DelegationConnectorTest extends ConnectorTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +34,14 @@ public class DelegationConnectorTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Delegation Connector test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(DelegationConnector fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Delegation Connector test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected DelegationConnector getFixture() {
-		return fixture;
+		return (DelegationConnector)fixture;
 	}
 
 	/**

@@ -12,6 +12,7 @@ Export-Package: edu.kit.ipd.sdq.cbsm.allocation.presentation,
  edu.kit.ipd.sdq.cbsm.assembly.presentation,
  edu.kit.ipd.sdq.cbsm.core.presentation,
  edu.kit.ipd.sdq.cbsm.environment.presentation,
+ edu.kit.ipd.sdq.cbsm.repository.behavior.presentation,
  edu.kit.ipd.sdq.cbsm.repository.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,

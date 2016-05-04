@@ -49,6 +49,33 @@ public interface RepositoryFactory extends EFactory {
 	Component createComponent();
 
 	/**
+	 * Returns a new object of class '<em>Provided Role</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Provided Role</em>'.
+	 * @generated
+	 */
+	ProvidedRole createProvidedRole();
+
+	/**
+	 * Returns a new object of class '<em>Required Role</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Required Role</em>'.
+	 * @generated
+	 */
+	RequiredRole createRequiredRole();
+
+	/**
+	 * Returns a new object of class '<em>Composite Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Composite Component</em>'.
+	 * @generated
+	 */
+	CompositeComponent createCompositeComponent();
+
+	/**
 	 * Returns a new object of class '<em>Signature</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -92,69 +119,6 @@ public interface RepositoryFactory extends EFactory {
 	 * @generated
 	 */
 	SimpleType createSimpleType();
-
-	/**
-	 * Returns a new object of class '<em>Service</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Service</em>'.
-	 * @generated
-	 */
-	Service createService();
-
-	/**
-	 * Returns a new object of class '<em>Behavior Description</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Behavior Description</em>'.
-	 * @generated
-	 */
-	BehaviorDescription createBehaviorDescription();
-
-	/**
-	 * Returns a new object of class '<em>Action</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Action</em>'.
-	 * @generated
-	 */
-	Action createAction();
-
-	/**
-	 * Returns a new object of class '<em>Internal Action</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Internal Action</em>'.
-	 * @generated
-	 */
-	InternalAction createInternalAction();
-
-	/**
-	 * Returns a new object of class '<em>External Call</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>External Call</em>'.
-	 * @generated
-	 */
-	ExternalCall createExternalCall();
-
-	/**
-	 * Returns a new object of class '<em>Loop</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Loop</em>'.
-	 * @generated
-	 */
-	Loop createLoop();
-
-	/**
-	 * Returns a new object of class '<em>Branch</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Branch</em>'.
-	 * @generated
-	 */
-	Branch createBranch();
 
 	/**
 	 * Returns the package supported by this factory.

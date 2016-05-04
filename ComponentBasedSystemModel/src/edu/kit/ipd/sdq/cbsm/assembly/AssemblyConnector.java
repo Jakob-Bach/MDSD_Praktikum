@@ -2,7 +2,8 @@
  */
 package edu.kit.ipd.sdq.cbsm.assembly;
 
-import org.eclipse.emf.ecore.EObject;
+import edu.kit.ipd.sdq.cbsm.repository.ProvidedRole;
+import edu.kit.ipd.sdq.cbsm.repository.RequiredRole;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface AssemblyConnector extends EObject {
+public interface AssemblyConnector extends Connector {
 	/**
 	 * Returns the value of the '<em><b>Provided Role</b></em>' reference.
 	 * <!-- begin-user-doc -->

@@ -17,26 +17,23 @@ import edu.kit.ipd.sdq.cbsm.core.impl.CorePackageImpl;
 import edu.kit.ipd.sdq.cbsm.environment.EnvironmentPackage;
 
 import edu.kit.ipd.sdq.cbsm.environment.impl.EnvironmentPackageImpl;
-
-import edu.kit.ipd.sdq.cbsm.repository.Action;
-import edu.kit.ipd.sdq.cbsm.repository.BehaviorDescription;
-import edu.kit.ipd.sdq.cbsm.repository.Branch;
 import edu.kit.ipd.sdq.cbsm.repository.ComplexType;
 import edu.kit.ipd.sdq.cbsm.repository.Component;
+import edu.kit.ipd.sdq.cbsm.repository.CompositeComponent;
 import edu.kit.ipd.sdq.cbsm.repository.DataType;
-import edu.kit.ipd.sdq.cbsm.repository.ExternalCall;
 import edu.kit.ipd.sdq.cbsm.repository.Interface;
-import edu.kit.ipd.sdq.cbsm.repository.InternalAction;
-import edu.kit.ipd.sdq.cbsm.repository.Loop;
 import edu.kit.ipd.sdq.cbsm.repository.Parameter;
+import edu.kit.ipd.sdq.cbsm.repository.ProvidedRole;
 import edu.kit.ipd.sdq.cbsm.repository.Repository;
 import edu.kit.ipd.sdq.cbsm.repository.RepositoryFactory;
 import edu.kit.ipd.sdq.cbsm.repository.RepositoryPackage;
-import edu.kit.ipd.sdq.cbsm.repository.Service;
+import edu.kit.ipd.sdq.cbsm.repository.RequiredRole;
 import edu.kit.ipd.sdq.cbsm.repository.Signature;
 import edu.kit.ipd.sdq.cbsm.repository.SimpleType;
 import edu.kit.ipd.sdq.cbsm.repository.SimpleTypeInstance;
 
+import edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorPackage;
+import edu.kit.ipd.sdq.cbsm.repository.behavior.impl.BehaviorPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -78,6 +75,27 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass providedRoleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass requiredRoleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass compositeComponentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass signatureEClass = null;
 
 	/**
@@ -107,55 +125,6 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 	 * @generated
 	 */
 	private EClass simpleTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass serviceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass behaviorDescriptionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass actionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass internalActionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass externalCallEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass loopEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass branchEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,6 +181,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
 		// Obtain or create and register interdependencies
 		CorePackageImpl theCorePackage = (CorePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) instanceof CorePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI) : CorePackage.eINSTANCE);
+		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 		AssemblyPackageImpl theAssemblyPackage = (AssemblyPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AssemblyPackage.eNS_URI) instanceof AssemblyPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AssemblyPackage.eNS_URI) : AssemblyPackage.eINSTANCE);
 		EnvironmentPackageImpl theEnvironmentPackage = (EnvironmentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) instanceof EnvironmentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) : EnvironmentPackage.eINSTANCE);
 		AllocationPackageImpl theAllocationPackage = (AllocationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AllocationPackage.eNS_URI) instanceof AllocationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AllocationPackage.eNS_URI) : AllocationPackage.eINSTANCE);
@@ -219,6 +189,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 		// Create package meta-data objects
 		theRepositoryPackage.createPackageContents();
 		theCorePackage.createPackageContents();
+		theBehaviorPackage.createPackageContents();
 		theAssemblyPackage.createPackageContents();
 		theEnvironmentPackage.createPackageContents();
 		theAllocationPackage.createPackageContents();
@@ -226,6 +197,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 		// Initialize created meta-data
 		theRepositoryPackage.initializePackageContents();
 		theCorePackage.initializePackageContents();
+		theBehaviorPackage.initializePackageContents();
 		theAssemblyPackage.initializePackageContents();
 		theEnvironmentPackage.initializePackageContents();
 		theAllocationPackage.initializePackageContents();
@@ -307,7 +279,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComponent_ProvidedInterfaces() {
+	public EReference getComponent_ProvidedRoles() {
 		return (EReference)componentEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -316,7 +288,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComponent_RequiredInterfaces() {
+	public EReference getComponent_RequiredRole() {
 		return (EReference)componentEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -325,7 +297,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComponent_ProvidedServices() {
+	public EReference getComponent_BehaviorDescription() {
 		return (EReference)componentEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -334,8 +306,53 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComponent_BehaviorDescriptions() {
-		return (EReference)componentEClass.getEStructuralFeatures().get(3);
+	public EClass getProvidedRole() {
+		return providedRoleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getProvidedRole_ProvidedInterface() {
+		return (EReference)providedRoleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRequiredRole() {
+		return requiredRoleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRequiredRole_RequiredInterface() {
+		return (EReference)requiredRoleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCompositeComponent() {
+		return compositeComponentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCompositeComponent_ContainedAssemblyContexts() {
+		return (EReference)compositeComponentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -424,96 +441,6 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getService() {
-		return serviceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getService_Signatures() {
-		return (EReference)serviceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getBehaviorDescription() {
-		return behaviorDescriptionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getBehaviorDescription_Actions() {
-		return (EReference)behaviorDescriptionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getAction() {
-		return actionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getInternalAction() {
-		return internalActionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getExternalCall() {
-		return externalCallEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getExternalCall_RequiredService() {
-		return (EReference)externalCallEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getLoop() {
-		return loopEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getBranch() {
-		return branchEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EEnum getSimpleTypeInstance() {
 		return simpleTypeInstanceEEnum;
 	}
@@ -555,10 +482,18 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 		createEReference(interfaceEClass, INTERFACE__SIGNATURES);
 
 		componentEClass = createEClass(COMPONENT);
-		createEReference(componentEClass, COMPONENT__PROVIDED_INTERFACES);
-		createEReference(componentEClass, COMPONENT__REQUIRED_INTERFACES);
-		createEReference(componentEClass, COMPONENT__PROVIDED_SERVICES);
-		createEReference(componentEClass, COMPONENT__BEHAVIOR_DESCRIPTIONS);
+		createEReference(componentEClass, COMPONENT__PROVIDED_ROLES);
+		createEReference(componentEClass, COMPONENT__REQUIRED_ROLE);
+		createEReference(componentEClass, COMPONENT__BEHAVIOR_DESCRIPTION);
+
+		providedRoleEClass = createEClass(PROVIDED_ROLE);
+		createEReference(providedRoleEClass, PROVIDED_ROLE__PROVIDED_INTERFACE);
+
+		requiredRoleEClass = createEClass(REQUIRED_ROLE);
+		createEReference(requiredRoleEClass, REQUIRED_ROLE__REQUIRED_INTERFACE);
+
+		compositeComponentEClass = createEClass(COMPOSITE_COMPONENT);
+		createEReference(compositeComponentEClass, COMPOSITE_COMPONENT__CONTAINED_ASSEMBLY_CONTEXTS);
 
 		signatureEClass = createEClass(SIGNATURE);
 		createEReference(signatureEClass, SIGNATURE__RETURN_TYPE);
@@ -573,23 +508,6 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
 		simpleTypeEClass = createEClass(SIMPLE_TYPE);
 		createEAttribute(simpleTypeEClass, SIMPLE_TYPE__TYPE_INSTANCE);
-
-		serviceEClass = createEClass(SERVICE);
-		createEReference(serviceEClass, SERVICE__SIGNATURES);
-
-		behaviorDescriptionEClass = createEClass(BEHAVIOR_DESCRIPTION);
-		createEReference(behaviorDescriptionEClass, BEHAVIOR_DESCRIPTION__ACTIONS);
-
-		actionEClass = createEClass(ACTION);
-
-		internalActionEClass = createEClass(INTERNAL_ACTION);
-
-		externalCallEClass = createEClass(EXTERNAL_CALL);
-		createEReference(externalCallEClass, EXTERNAL_CALL__REQUIRED_SERVICE);
-
-		loopEClass = createEClass(LOOP);
-
-		branchEClass = createEClass(BRANCH);
 
 		// Create enums
 		simpleTypeInstanceEEnum = createEEnum(SIMPLE_TYPE_INSTANCE);
@@ -619,7 +537,12 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		BehaviorPackage theBehaviorPackage = (BehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI);
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		AssemblyPackage theAssemblyPackage = (AssemblyPackage)EPackage.Registry.INSTANCE.getEPackage(AssemblyPackage.eNS_URI);
+
+		// Add subpackages
+		getESubpackages().add(theBehaviorPackage);
 
 		// Create type parameters
 
@@ -628,12 +551,12 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 		// Add supertypes to classes
 		interfaceEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		componentEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		providedRoleEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		requiredRoleEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		compositeComponentEClass.getESuperTypes().add(this.getComponent());
 		signatureEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		parameterEClass.getESuperTypes().add(theCorePackage.getNamedElement());
-		internalActionEClass.getESuperTypes().add(this.getAction());
-		externalCallEClass.getESuperTypes().add(this.getAction());
-		loopEClass.getESuperTypes().add(this.getAction());
-		branchEClass.getESuperTypes().add(this.getAction());
+		complexTypeEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(repositoryEClass, Repository.class, "Repository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -645,10 +568,18 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 		initEReference(getInterface_Signatures(), this.getSignature(), null, "signatures", null, 0, -1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getComponent_ProvidedInterfaces(), this.getInterface(), null, "providedInterfaces", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponent_RequiredInterfaces(), this.getInterface(), null, "requiredInterfaces", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponent_ProvidedServices(), this.getService(), null, "providedServices", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponent_BehaviorDescriptions(), this.getBehaviorDescription(), null, "behaviorDescriptions", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_ProvidedRoles(), this.getProvidedRole(), null, "providedRoles", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_RequiredRole(), this.getRequiredRole(), null, "requiredRole", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_BehaviorDescription(), theBehaviorPackage.getBehaviorDescription(), null, "behaviorDescription", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(providedRoleEClass, ProvidedRole.class, "ProvidedRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getProvidedRole_ProvidedInterface(), this.getInterface(), null, "providedInterface", null, 1, 1, ProvidedRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(requiredRoleEClass, RequiredRole.class, "RequiredRole", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRequiredRole_RequiredInterface(), this.getInterface(), null, "requiredInterface", null, 1, 1, RequiredRole.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(compositeComponentEClass, CompositeComponent.class, "CompositeComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCompositeComponent_ContainedAssemblyContexts(), theAssemblyPackage.getAssemblyContext(), null, "containedAssemblyContexts", null, 0, -1, CompositeComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(signatureEClass, Signature.class, "Signature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSignature_ReturnType(), this.getDataType(), null, "returnType", null, 1, 1, Signature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -663,23 +594,6 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
 		initEClass(simpleTypeEClass, SimpleType.class, "SimpleType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSimpleType_TypeInstance(), this.getSimpleTypeInstance(), "typeInstance", null, 1, 1, SimpleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getService_Signatures(), this.getSignature(), null, "signatures", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(behaviorDescriptionEClass, BehaviorDescription.class, "BehaviorDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBehaviorDescription_Actions(), this.getAction(), null, "actions", null, 0, -1, BehaviorDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(internalActionEClass, InternalAction.class, "InternalAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(externalCallEClass, ExternalCall.class, "ExternalCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExternalCall_RequiredService(), this.getService(), null, "requiredService", null, 1, 1, ExternalCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(loopEClass, Loop.class, "Loop", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(branchEClass, Branch.class, "Branch", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(simpleTypeInstanceEEnum, SimpleTypeInstance.class, "SimpleTypeInstance");

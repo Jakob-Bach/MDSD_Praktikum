@@ -10,6 +10,7 @@ import edu.kit.ipd.sdq.cbsm.repository.Component;
 import edu.kit.ipd.sdq.cbsm.repository.RepositoryFactory;
 import edu.kit.ipd.sdq.cbsm.repository.RepositoryPackage;
 
+import edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorFactory;
 import java.util.Collection;
 import java.util.List;
 
@@ -19,8 +20,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -52,54 +51,8 @@ public class ComponentItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addProvidedInterfacesPropertyDescriptor(object);
-			addRequiredInterfacesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Provided Interfaces feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addProvidedInterfacesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Component_providedInterfaces_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Component_providedInterfaces_feature", "_UI_Component_type"),
-				 RepositoryPackage.Literals.COMPONENT__PROVIDED_INTERFACES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Required Interfaces feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRequiredInterfacesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Component_requiredInterfaces_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Component_requiredInterfaces_feature", "_UI_Component_type"),
-				 RepositoryPackage.Literals.COMPONENT__REQUIRED_INTERFACES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -114,8 +67,9 @@ public class ComponentItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RepositoryPackage.Literals.COMPONENT__PROVIDED_SERVICES);
-			childrenFeatures.add(RepositoryPackage.Literals.COMPONENT__BEHAVIOR_DESCRIPTIONS);
+			childrenFeatures.add(RepositoryPackage.Literals.COMPONENT__PROVIDED_ROLES);
+			childrenFeatures.add(RepositoryPackage.Literals.COMPONENT__REQUIRED_ROLE);
+			childrenFeatures.add(RepositoryPackage.Literals.COMPONENT__BEHAVIOR_DESCRIPTION);
 		}
 		return childrenFeatures;
 	}
@@ -171,8 +125,9 @@ public class ComponentItemProvider extends NamedElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Component.class)) {
-			case RepositoryPackage.COMPONENT__PROVIDED_SERVICES:
-			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTIONS:
+			case RepositoryPackage.COMPONENT__PROVIDED_ROLES:
+			case RepositoryPackage.COMPONENT__REQUIRED_ROLE:
+			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -192,13 +147,18 @@ public class ComponentItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RepositoryPackage.Literals.COMPONENT__PROVIDED_SERVICES,
-				 RepositoryFactory.eINSTANCE.createService()));
+				(RepositoryPackage.Literals.COMPONENT__PROVIDED_ROLES,
+				 RepositoryFactory.eINSTANCE.createProvidedRole()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RepositoryPackage.Literals.COMPONENT__BEHAVIOR_DESCRIPTIONS,
-				 RepositoryFactory.eINSTANCE.createBehaviorDescription()));
+				(RepositoryPackage.Literals.COMPONENT__REQUIRED_ROLE,
+				 RepositoryFactory.eINSTANCE.createRequiredRole()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RepositoryPackage.Literals.COMPONENT__BEHAVIOR_DESCRIPTION,
+				 BehaviorFactory.eINSTANCE.createBehaviorDescription()));
 	}
 
 	/**

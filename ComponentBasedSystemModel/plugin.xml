@@ -25,6 +25,14 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated componentBasedSystemModel -->
       <package
+            uri="http://sdq.ipd.kit.edu/componentBasedSystemModel/repository/behavior"
+            class="edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorPackage"
+            genModel="model/componentBasedSystemModel.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated componentBasedSystemModel -->
+      <package
             uri="http://sdq.ipd.kit.edu/componentBasedSystemModel/assembly"
             class="edu.kit.ipd.sdq.cbsm.assembly.AssemblyPackage"
             genModel="model/componentBasedSystemModel.genmodel"/>

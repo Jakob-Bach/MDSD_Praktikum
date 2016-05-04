@@ -60,18 +60,14 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
 			case RepositoryPackage.REPOSITORY: return createRepository();
 			case RepositoryPackage.INTERFACE: return createInterface();
 			case RepositoryPackage.COMPONENT: return createComponent();
+			case RepositoryPackage.PROVIDED_ROLE: return createProvidedRole();
+			case RepositoryPackage.REQUIRED_ROLE: return createRequiredRole();
+			case RepositoryPackage.COMPOSITE_COMPONENT: return createCompositeComponent();
 			case RepositoryPackage.SIGNATURE: return createSignature();
 			case RepositoryPackage.DATA_TYPE: return createDataType();
 			case RepositoryPackage.PARAMETER: return createParameter();
 			case RepositoryPackage.COMPLEX_TYPE: return createComplexType();
 			case RepositoryPackage.SIMPLE_TYPE: return createSimpleType();
-			case RepositoryPackage.SERVICE: return createService();
-			case RepositoryPackage.BEHAVIOR_DESCRIPTION: return createBehaviorDescription();
-			case RepositoryPackage.ACTION: return createAction();
-			case RepositoryPackage.INTERNAL_ACTION: return createInternalAction();
-			case RepositoryPackage.EXTERNAL_CALL: return createExternalCall();
-			case RepositoryPackage.LOOP: return createLoop();
-			case RepositoryPackage.BRANCH: return createBranch();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -142,6 +138,36 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ProvidedRole createProvidedRole() {
+		ProvidedRoleImpl providedRole = new ProvidedRoleImpl();
+		return providedRole;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RequiredRole createRequiredRole() {
+		RequiredRoleImpl requiredRole = new RequiredRoleImpl();
+		return requiredRole;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CompositeComponent createCompositeComponent() {
+		CompositeComponentImpl compositeComponent = new CompositeComponentImpl();
+		return compositeComponent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Signature createSignature() {
 		SignatureImpl signature = new SignatureImpl();
 		return signature;
@@ -185,76 +211,6 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
 	public SimpleType createSimpleType() {
 		SimpleTypeImpl simpleType = new SimpleTypeImpl();
 		return simpleType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Service createService() {
-		ServiceImpl service = new ServiceImpl();
-		return service;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BehaviorDescription createBehaviorDescription() {
-		BehaviorDescriptionImpl behaviorDescription = new BehaviorDescriptionImpl();
-		return behaviorDescription;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Action createAction() {
-		ActionImpl action = new ActionImpl();
-		return action;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public InternalAction createInternalAction() {
-		InternalActionImpl internalAction = new InternalActionImpl();
-		return internalAction;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ExternalCall createExternalCall() {
-		ExternalCallImpl externalCall = new ExternalCallImpl();
-		return externalCall;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Loop createLoop() {
-		LoopImpl loop = new LoopImpl();
-		return loop;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Branch createBranch() {
-		BranchImpl branch = new BranchImpl();
-		return branch;
 	}
 
 	/**

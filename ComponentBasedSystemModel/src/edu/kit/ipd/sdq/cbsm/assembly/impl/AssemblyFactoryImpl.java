@@ -6,11 +6,10 @@ import edu.kit.ipd.sdq.cbsm.assembly.AssemblyConnector;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyContext;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyFactory;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyPackage;
-import edu.kit.ipd.sdq.cbsm.assembly.CompositeComponent;
+import edu.kit.ipd.sdq.cbsm.assembly.Connector;
 import edu.kit.ipd.sdq.cbsm.assembly.DelegationConnector;
-import edu.kit.ipd.sdq.cbsm.assembly.ProvidedRole;
-import edu.kit.ipd.sdq.cbsm.assembly.RequiredRole;
-
+import edu.kit.ipd.sdq.cbsm.assembly.ProvidedDelegationConnector;
+import edu.kit.ipd.sdq.cbsm.assembly.RequiredDelegationConnector;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -64,11 +63,11 @@ public class AssemblyFactoryImpl extends EFactoryImpl implements AssemblyFactory
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case AssemblyPackage.ASSEMBLY_CONTEXT: return createAssemblyContext();
-			case AssemblyPackage.COMPOSITE_COMPONENT: return createCompositeComponent();
 			case AssemblyPackage.SYSTEM: return createSystem();
-			case AssemblyPackage.PROVIDED_ROLE: return createProvidedRole();
-			case AssemblyPackage.REQUIRED_ROLE: return createRequiredRole();
+			case AssemblyPackage.CONNECTOR: return createConnector();
 			case AssemblyPackage.DELEGATION_CONNECTOR: return createDelegationConnector();
+			case AssemblyPackage.PROVIDED_DELEGATION_CONNECTOR: return createProvidedDelegationConnector();
+			case AssemblyPackage.REQUIRED_DELEGATION_CONNECTOR: return createRequiredDelegationConnector();
 			case AssemblyPackage.ASSEMBLY_CONNECTOR: return createAssemblyConnector();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -90,16 +89,6 @@ public class AssemblyFactoryImpl extends EFactoryImpl implements AssemblyFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CompositeComponent createCompositeComponent() {
-		CompositeComponentImpl compositeComponent = new CompositeComponentImpl();
-		return compositeComponent;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public edu.kit.ipd.sdq.cbsm.assembly.System createSystem() {
 		SystemImpl system = new SystemImpl();
 		return system;
@@ -110,19 +99,9 @@ public class AssemblyFactoryImpl extends EFactoryImpl implements AssemblyFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProvidedRole createProvidedRole() {
-		ProvidedRoleImpl providedRole = new ProvidedRoleImpl();
-		return providedRole;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RequiredRole createRequiredRole() {
-		RequiredRoleImpl requiredRole = new RequiredRoleImpl();
-		return requiredRole;
+	public Connector createConnector() {
+		ConnectorImpl connector = new ConnectorImpl();
+		return connector;
 	}
 
 	/**
@@ -133,6 +112,26 @@ public class AssemblyFactoryImpl extends EFactoryImpl implements AssemblyFactory
 	public DelegationConnector createDelegationConnector() {
 		DelegationConnectorImpl delegationConnector = new DelegationConnectorImpl();
 		return delegationConnector;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProvidedDelegationConnector createProvidedDelegationConnector() {
+		ProvidedDelegationConnectorImpl providedDelegationConnector = new ProvidedDelegationConnectorImpl();
+		return providedDelegationConnector;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RequiredDelegationConnector createRequiredDelegationConnector() {
+		RequiredDelegationConnectorImpl requiredDelegationConnector = new RequiredDelegationConnectorImpl();
+		return requiredDelegationConnector;
 	}
 
 	/**

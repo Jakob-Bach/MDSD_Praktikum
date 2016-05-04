@@ -5,15 +5,11 @@ package edu.kit.ipd.sdq.cbsm.assembly.util;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyConnector;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyContext;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyPackage;
-import edu.kit.ipd.sdq.cbsm.assembly.CompositeComponent;
+import edu.kit.ipd.sdq.cbsm.assembly.Connector;
 import edu.kit.ipd.sdq.cbsm.assembly.DelegationConnector;
-import edu.kit.ipd.sdq.cbsm.assembly.ProvidedRole;
-import edu.kit.ipd.sdq.cbsm.assembly.RequiredRole;
-
+import edu.kit.ipd.sdq.cbsm.assembly.ProvidedDelegationConnector;
+import edu.kit.ipd.sdq.cbsm.assembly.RequiredDelegationConnector;
 import edu.kit.ipd.sdq.cbsm.core.NamedElement;
-
-import edu.kit.ipd.sdq.cbsm.repository.Component;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -83,41 +79,50 @@ public class AssemblySwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AssemblyPackage.COMPOSITE_COMPONENT: {
-				CompositeComponent compositeComponent = (CompositeComponent)theEObject;
-				T result = caseCompositeComponent(compositeComponent);
-				if (result == null) result = caseComponent(compositeComponent);
-				if (result == null) result = caseNamedElement(compositeComponent);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case AssemblyPackage.SYSTEM: {
 				edu.kit.ipd.sdq.cbsm.assembly.System system = (edu.kit.ipd.sdq.cbsm.assembly.System)theEObject;
 				T result = caseSystem(system);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AssemblyPackage.PROVIDED_ROLE: {
-				ProvidedRole providedRole = (ProvidedRole)theEObject;
-				T result = caseProvidedRole(providedRole);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case AssemblyPackage.REQUIRED_ROLE: {
-				RequiredRole requiredRole = (RequiredRole)theEObject;
-				T result = caseRequiredRole(requiredRole);
+			case AssemblyPackage.CONNECTOR: {
+				Connector connector = (Connector)theEObject;
+				T result = caseConnector(connector);
+				if (result == null) result = caseNamedElement(connector);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case AssemblyPackage.DELEGATION_CONNECTOR: {
 				DelegationConnector delegationConnector = (DelegationConnector)theEObject;
 				T result = caseDelegationConnector(delegationConnector);
+				if (result == null) result = caseConnector(delegationConnector);
+				if (result == null) result = caseNamedElement(delegationConnector);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AssemblyPackage.PROVIDED_DELEGATION_CONNECTOR: {
+				ProvidedDelegationConnector providedDelegationConnector = (ProvidedDelegationConnector)theEObject;
+				T result = caseProvidedDelegationConnector(providedDelegationConnector);
+				if (result == null) result = caseDelegationConnector(providedDelegationConnector);
+				if (result == null) result = caseConnector(providedDelegationConnector);
+				if (result == null) result = caseNamedElement(providedDelegationConnector);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AssemblyPackage.REQUIRED_DELEGATION_CONNECTOR: {
+				RequiredDelegationConnector requiredDelegationConnector = (RequiredDelegationConnector)theEObject;
+				T result = caseRequiredDelegationConnector(requiredDelegationConnector);
+				if (result == null) result = caseDelegationConnector(requiredDelegationConnector);
+				if (result == null) result = caseConnector(requiredDelegationConnector);
+				if (result == null) result = caseNamedElement(requiredDelegationConnector);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case AssemblyPackage.ASSEMBLY_CONNECTOR: {
 				AssemblyConnector assemblyConnector = (AssemblyConnector)theEObject;
 				T result = caseAssemblyConnector(assemblyConnector);
+				if (result == null) result = caseConnector(assemblyConnector);
+				if (result == null) result = caseNamedElement(assemblyConnector);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -141,21 +146,6 @@ public class AssemblySwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Composite Component</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Composite Component</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCompositeComponent(CompositeComponent object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>System</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -171,32 +161,17 @@ public class AssemblySwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Provided Role</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Connector</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Provided Role</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Connector</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseProvidedRole(ProvidedRole object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Required Role</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Required Role</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRequiredRole(RequiredRole object) {
+	public T caseConnector(Connector object) {
 		return null;
 	}
 
@@ -212,6 +187,36 @@ public class AssemblySwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDelegationConnector(DelegationConnector object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Provided Delegation Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Provided Delegation Connector</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProvidedDelegationConnector(ProvidedDelegationConnector object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Required Delegation Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Required Delegation Connector</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRequiredDelegationConnector(RequiredDelegationConnector object) {
 		return null;
 	}
 
@@ -242,21 +247,6 @@ public class AssemblySwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNamedElement(NamedElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Component</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Component</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseComponent(Component object) {
 		return null;
 	}
 

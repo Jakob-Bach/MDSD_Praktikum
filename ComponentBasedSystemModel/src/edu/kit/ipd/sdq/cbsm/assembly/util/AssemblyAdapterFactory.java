@@ -5,15 +5,11 @@ package edu.kit.ipd.sdq.cbsm.assembly.util;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyConnector;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyContext;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyPackage;
-import edu.kit.ipd.sdq.cbsm.assembly.CompositeComponent;
+import edu.kit.ipd.sdq.cbsm.assembly.Connector;
 import edu.kit.ipd.sdq.cbsm.assembly.DelegationConnector;
-import edu.kit.ipd.sdq.cbsm.assembly.ProvidedRole;
-import edu.kit.ipd.sdq.cbsm.assembly.RequiredRole;
-
+import edu.kit.ipd.sdq.cbsm.assembly.ProvidedDelegationConnector;
+import edu.kit.ipd.sdq.cbsm.assembly.RequiredDelegationConnector;
 import edu.kit.ipd.sdq.cbsm.core.NamedElement;
-
-import edu.kit.ipd.sdq.cbsm.repository.Component;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -82,24 +78,24 @@ public class AssemblyAdapterFactory extends AdapterFactoryImpl {
 				return createAssemblyContextAdapter();
 			}
 			@Override
-			public Adapter caseCompositeComponent(CompositeComponent object) {
-				return createCompositeComponentAdapter();
-			}
-			@Override
 			public Adapter caseSystem(edu.kit.ipd.sdq.cbsm.assembly.System object) {
 				return createSystemAdapter();
 			}
 			@Override
-			public Adapter caseProvidedRole(ProvidedRole object) {
-				return createProvidedRoleAdapter();
-			}
-			@Override
-			public Adapter caseRequiredRole(RequiredRole object) {
-				return createRequiredRoleAdapter();
+			public Adapter caseConnector(Connector object) {
+				return createConnectorAdapter();
 			}
 			@Override
 			public Adapter caseDelegationConnector(DelegationConnector object) {
 				return createDelegationConnectorAdapter();
+			}
+			@Override
+			public Adapter caseProvidedDelegationConnector(ProvidedDelegationConnector object) {
+				return createProvidedDelegationConnectorAdapter();
+			}
+			@Override
+			public Adapter caseRequiredDelegationConnector(RequiredDelegationConnector object) {
+				return createRequiredDelegationConnectorAdapter();
 			}
 			@Override
 			public Adapter caseAssemblyConnector(AssemblyConnector object) {
@@ -108,10 +104,6 @@ public class AssemblyAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseNamedElement(NamedElement object) {
 				return createNamedElementAdapter();
-			}
-			@Override
-			public Adapter caseComponent(Component object) {
-				return createComponentAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -148,20 +140,6 @@ public class AssemblyAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.cbsm.assembly.CompositeComponent <em>Composite Component</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see edu.kit.ipd.sdq.cbsm.assembly.CompositeComponent
-	 * @generated
-	 */
-	public Adapter createCompositeComponentAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.cbsm.assembly.System <em>System</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -176,30 +154,16 @@ public class AssemblyAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.cbsm.assembly.ProvidedRole <em>Provided Role</em>}'.
+	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.cbsm.assembly.Connector <em>Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see edu.kit.ipd.sdq.cbsm.assembly.ProvidedRole
+	 * @see edu.kit.ipd.sdq.cbsm.assembly.Connector
 	 * @generated
 	 */
-	public Adapter createProvidedRoleAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.cbsm.assembly.RequiredRole <em>Required Role</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see edu.kit.ipd.sdq.cbsm.assembly.RequiredRole
-	 * @generated
-	 */
-	public Adapter createRequiredRoleAdapter() {
+	public Adapter createConnectorAdapter() {
 		return null;
 	}
 
@@ -214,6 +178,34 @@ public class AssemblyAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDelegationConnectorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.cbsm.assembly.ProvidedDelegationConnector <em>Provided Delegation Connector</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see edu.kit.ipd.sdq.cbsm.assembly.ProvidedDelegationConnector
+	 * @generated
+	 */
+	public Adapter createProvidedDelegationConnectorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.cbsm.assembly.RequiredDelegationConnector <em>Required Delegation Connector</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see edu.kit.ipd.sdq.cbsm.assembly.RequiredDelegationConnector
+	 * @generated
+	 */
+	public Adapter createRequiredDelegationConnectorAdapter() {
 		return null;
 	}
 
@@ -242,20 +234,6 @@ public class AssemblyAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNamedElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.cbsm.repository.Component <em>Component</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see edu.kit.ipd.sdq.cbsm.repository.Component
-	 * @generated
-	 */
-	public Adapter createComponentAdapter() {
 		return null;
 	}
 

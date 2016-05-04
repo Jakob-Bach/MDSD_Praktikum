@@ -82,6 +82,18 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
 				return createComponentAdapter();
 			}
 			@Override
+			public Adapter caseProvidedRole(ProvidedRole object) {
+				return createProvidedRoleAdapter();
+			}
+			@Override
+			public Adapter caseRequiredRole(RequiredRole object) {
+				return createRequiredRoleAdapter();
+			}
+			@Override
+			public Adapter caseCompositeComponent(CompositeComponent object) {
+				return createCompositeComponentAdapter();
+			}
+			@Override
 			public Adapter caseSignature(Signature object) {
 				return createSignatureAdapter();
 			}
@@ -100,34 +112,6 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseSimpleType(SimpleType object) {
 				return createSimpleTypeAdapter();
-			}
-			@Override
-			public Adapter caseService(Service object) {
-				return createServiceAdapter();
-			}
-			@Override
-			public Adapter caseBehaviorDescription(BehaviorDescription object) {
-				return createBehaviorDescriptionAdapter();
-			}
-			@Override
-			public Adapter caseAction(Action object) {
-				return createActionAdapter();
-			}
-			@Override
-			public Adapter caseInternalAction(InternalAction object) {
-				return createInternalActionAdapter();
-			}
-			@Override
-			public Adapter caseExternalCall(ExternalCall object) {
-				return createExternalCallAdapter();
-			}
-			@Override
-			public Adapter caseLoop(Loop object) {
-				return createLoopAdapter();
-			}
-			@Override
-			public Adapter caseBranch(Branch object) {
-				return createBranchAdapter();
 			}
 			@Override
 			public Adapter caseNamedElement(NamedElement object) {
@@ -192,6 +176,48 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createComponentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.cbsm.repository.ProvidedRole <em>Provided Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see edu.kit.ipd.sdq.cbsm.repository.ProvidedRole
+	 * @generated
+	 */
+	public Adapter createProvidedRoleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.cbsm.repository.RequiredRole <em>Required Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see edu.kit.ipd.sdq.cbsm.repository.RequiredRole
+	 * @generated
+	 */
+	public Adapter createRequiredRoleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.cbsm.repository.CompositeComponent <em>Composite Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see edu.kit.ipd.sdq.cbsm.repository.CompositeComponent
+	 * @generated
+	 */
+	public Adapter createCompositeComponentAdapter() {
 		return null;
 	}
 
@@ -262,104 +288,6 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSimpleTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.cbsm.repository.Service <em>Service</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see edu.kit.ipd.sdq.cbsm.repository.Service
-	 * @generated
-	 */
-	public Adapter createServiceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.cbsm.repository.BehaviorDescription <em>Behavior Description</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see edu.kit.ipd.sdq.cbsm.repository.BehaviorDescription
-	 * @generated
-	 */
-	public Adapter createBehaviorDescriptionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.cbsm.repository.Action <em>Action</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see edu.kit.ipd.sdq.cbsm.repository.Action
-	 * @generated
-	 */
-	public Adapter createActionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.cbsm.repository.InternalAction <em>Internal Action</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see edu.kit.ipd.sdq.cbsm.repository.InternalAction
-	 * @generated
-	 */
-	public Adapter createInternalActionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.cbsm.repository.ExternalCall <em>External Call</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see edu.kit.ipd.sdq.cbsm.repository.ExternalCall
-	 * @generated
-	 */
-	public Adapter createExternalCallAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.cbsm.repository.Loop <em>Loop</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see edu.kit.ipd.sdq.cbsm.repository.Loop
-	 * @generated
-	 */
-	public Adapter createLoopAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.cbsm.repository.Branch <em>Branch</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see edu.kit.ipd.sdq.cbsm.repository.Branch
-	 * @generated
-	 */
-	public Adapter createBranchAdapter() {
 		return null;
 	}
 
