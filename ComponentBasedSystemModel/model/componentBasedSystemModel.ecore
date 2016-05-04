@@ -28,10 +28,12 @@
           eType="#//repository/Interface"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterfaces" upperBound="-1"
           eType="#//repository/Interface"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="providedServices" upperBound="-1"
-          eType="#//repository/Service" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="behaviorDescriptions"
           upperBound="-1" eType="#//repository/BehaviorDescription" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CompositeComponent" eSuperTypes="#//repository/Component">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="containedAssemblyContexts"
+          upperBound="-1" eType="#//assembly/AssemblyContext" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Signature" eSuperTypes="#//core/NamedElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" lowerBound="1"
@@ -61,10 +63,6 @@
       <eLiterals name="Map" value="8" literal="Map"/>
       <eLiterals name="String" value="9" literal="String"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Service">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="signatures" upperBound="-1"
-          eType="#//repository/Signature"/>
-    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="BehaviorDescription">
       <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
           eType="#//repository/Action" containment="true"/>
@@ -73,7 +71,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="InternalAction" eSuperTypes="#//repository/Action"/>
     <eClassifiers xsi:type="ecore:EClass" name="ExternalCall" eSuperTypes="#//repository/Action">
       <eStructuralFeatures xsi:type="ecore:EReference" name="requiredService" lowerBound="1"
-          eType="#//repository/Service"/>
+          eType="#//repository/Signature"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Loop" eSuperTypes="#//repository/Action"/>
     <eClassifiers xsi:type="ecore:EClass" name="Branch" eSuperTypes="#//repository/Action"/>
@@ -87,10 +85,6 @@
           eType="#//assembly/ProvidedRole" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="requiredRoles" upperBound="-1"
           eType="#//assembly/RequiredRole" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="CompositeComponent" eSuperTypes="#//repository/Component">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="containedAssemblyContexts"
-          upperBound="-1" eType="#//assembly/AssemblyContext" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="System">
       <eStructuralFeatures xsi:type="ecore:EReference" name="containedAssemblyContexts"
