@@ -67,14 +67,27 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
           eType="#//repository/Action" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Action"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Action">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="predecessor" eType="#//repository/Action"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="successor" eType="#//repository/Action"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="InternalAction" eSuperTypes="#//repository/Action"/>
     <eClassifiers xsi:type="ecore:EClass" name="ExternalCall" eSuperTypes="#//repository/Action">
       <eStructuralFeatures xsi:type="ecore:EReference" name="requiredService" lowerBound="1"
           eType="#//repository/Signature"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Loop" eSuperTypes="#//repository/Action"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Branch" eSuperTypes="#//repository/Action"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Loop" eSuperTypes="#//repository/Action">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="loopActions" upperBound="-1"
+          eType="#//repository/Action" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Branch" eSuperTypes="#//repository/Action">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="branchPaths" upperBound="-1"
+          eType="#//repository/BranchPath" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BranchPath">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="pathActions" upperBound="-1"
+          eType="#//repository/Action" containment="true"/>
+    </eClassifiers>
   </eSubpackages>
   <eSubpackages name="assembly" nsURI="http://sdq.ipd.kit.edu/componentBasedSystemModel/assembly"
       nsPrefix="assembly">
