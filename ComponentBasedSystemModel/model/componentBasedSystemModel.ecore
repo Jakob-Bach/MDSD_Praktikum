@@ -28,14 +28,14 @@
           eType="#//repository/ProvidedRole" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="requiredRole" upperBound="-1"
           eType="#//repository/RequiredRole" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="behaviorDescriptions"
-          upperBound="-1" eType="#//repository/behavior/BehaviorDescription" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="behaviorDescription"
+          eType="#//repository/behavior/BehaviorDescription" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ProvidedRole">
+    <eClassifiers xsi:type="ecore:EClass" name="ProvidedRole" eSuperTypes="#//core/NamedElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterface" lowerBound="1"
           eType="#//repository/Interface"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="RequiredRole">
+    <eClassifiers xsi:type="ecore:EClass" name="RequiredRole" eSuperTypes="#//core/NamedElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterface" lowerBound="1"
           eType="#//repository/Interface"/>
     </eClassifiers>
@@ -54,7 +54,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
           eType="#//repository/DataType"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ComplexType"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ComplexType" eSuperTypes="#//core/NamedElement"/>
     <eClassifiers xsi:type="ecore:EClass" name="SimpleType">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeInstance" lowerBound="1"
           eType="#//repository/SimpleTypeInstance"/>
@@ -77,7 +77,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
             eType="#//repository/behavior/Action" containment="true"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Action">
+      <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//core/NamedElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="predecessor" eType="#//repository/behavior/Action"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="successor" eType="#//repository/behavior/Action"/>
       </eClassifiers>
@@ -94,7 +94,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="branchPaths" upperBound="-1"
             eType="#//repository/behavior/BranchPath" containment="true"/>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="BranchPath">
+      <eClassifiers xsi:type="ecore:EClass" name="BranchPath" eSuperTypes="#//core/NamedElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="pathActions" upperBound="-1"
             eType="#//repository/behavior/Action" containment="true"/>
       </eClassifiers>
@@ -118,7 +118,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1"
           eType="#//assembly/Connector" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Connector"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Connector" eSuperTypes="#//core/NamedElement"/>
     <eClassifiers xsi:type="ecore:EClass" name="DelegationConnector" eSuperTypes="#//assembly/Connector"/>
     <eClassifiers xsi:type="ecore:EClass" name="ProvidedDelegationConnector" eSuperTypes="#//assembly/DelegationConnector">
       <eStructuralFeatures xsi:type="ecore:EReference" name="innerProvidedRole" lowerBound="1"
@@ -159,7 +159,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="allocationContexts" upperBound="-1"
           eType="#//allocation/AllocationContext" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="AllocationContext">
+    <eClassifiers xsi:type="ecore:EClass" name="AllocationContext" eSuperTypes="#//core/NamedElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="container" lowerBound="1"
           eType="#//environment/Container"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyContext" lowerBound="1"
