@@ -24,12 +24,20 @@
           eType="#//repository/Signature" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//core/NamedElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterfaces" upperBound="-1"
-          eType="#//repository/Interface"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterfaces" upperBound="-1"
-          eType="#//repository/Interface"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="providedRoles" upperBound="-1"
+          eType="#//repository/ProvidedRole" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="requiredRole" upperBound="-1"
+          eType="#//repository/RequiredRole" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="behaviorDescriptions"
           upperBound="-1" eType="#//repository/BehaviorDescription" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ProvidedRole">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterface" lowerBound="1"
+          eType="#//repository/Interface"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RequiredRole">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterface" lowerBound="1"
+          eType="#//repository/Interface"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="CompositeComponent" eSuperTypes="#//repository/Component">
       <eStructuralFeatures xsi:type="ecore:EReference" name="containedAssemblyContexts"
@@ -95,35 +103,34 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="instantiatedComponent"
           lowerBound="1" eType="#//repository/Component"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="providedRoles" upperBound="-1"
-          eType="#//assembly/ProvidedRole" containment="true"/>
+          eType="#//repository/ProvidedRole" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="requiredRoles" upperBound="-1"
-          eType="#//assembly/RequiredRole" containment="true"/>
+          eType="#//repository/RequiredRole" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="System">
       <eStructuralFeatures xsi:type="ecore:EReference" name="containedAssemblyContexts"
           upperBound="-1" eType="#//assembly/AssemblyContext" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterfaces" lowerBound="1"
-          upperBound="-1" eType="#//repository/Interface"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="providedRoles" lowerBound="1"
+          upperBound="-1" eType="#//repository/ProvidedRole" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ProvidedRole">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterface" lowerBound="1"
-          eType="#//repository/Interface"/>
+    <eClassifiers xsi:type="ecore:EClass" name="DelegationConnector"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ProvidedDelegationConnector" eSuperTypes="#//assembly/DelegationConnector">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="innerProvidedRole" lowerBound="1"
+          eType="#//repository/ProvidedRole" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="outerProvidedRole" lowerBound="1"
+          eType="#//repository/ProvidedRole"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="RequiredRole">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterface" lowerBound="1"
-          eType="#//repository/Interface"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="DelegationConnector">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="providedRole" eType="#//assembly/ProvidedRole"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterface" eType="#//repository/Interface"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterface" eType="#//repository/Interface"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="requiredRole" eType="#//assembly/RequiredRole"/>
+    <eClassifiers xsi:type="ecore:EClass" name="RequiredDelegationConnector" eSuperTypes="#//assembly/DelegationConnector">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="innerRequiredRole" lowerBound="1"
+          eType="#//repository/RequiredRole"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="outerRequiredRole" lowerBound="1"
+          eType="#//repository/RequiredRole"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AssemblyConnector">
       <eStructuralFeatures xsi:type="ecore:EReference" name="providedRole" lowerBound="1"
-          eType="#//assembly/ProvidedRole"/>
+          eType="#//repository/ProvidedRole"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="requiredRole" lowerBound="1"
-          eType="#//assembly/RequiredRole"/>
+          eType="#//repository/RequiredRole"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="environment" nsURI="http://sdq.ipd.kit.edu/componentBasedSystemModel/environment"
