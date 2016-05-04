@@ -106,20 +106,23 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="instantiatedComponent"
           lowerBound="1" eType="#//repository/Component"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="providedRoles" upperBound="-1"
-          eType="#//repository/ProvidedRole" containment="true"/>
+          eType="#//repository/ProvidedRole"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="requiredRoles" upperBound="-1"
-          eType="#//repository/RequiredRole" containment="true"/>
+          eType="#//repository/RequiredRole"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="System">
       <eStructuralFeatures xsi:type="ecore:EReference" name="containedAssemblyContexts"
           upperBound="-1" eType="#//assembly/AssemblyContext" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="providedRoles" lowerBound="1"
-          upperBound="-1" eType="#//repository/ProvidedRole" containment="true"/>
+          upperBound="-1" eType="#//repository/ProvidedRole"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1"
+          eType="#//assembly/Connector" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="DelegationConnector"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Connector"/>
+    <eClassifiers xsi:type="ecore:EClass" name="DelegationConnector" eSuperTypes="#//assembly/Connector"/>
     <eClassifiers xsi:type="ecore:EClass" name="ProvidedDelegationConnector" eSuperTypes="#//assembly/DelegationConnector">
       <eStructuralFeatures xsi:type="ecore:EReference" name="innerProvidedRole" lowerBound="1"
-          eType="#//repository/ProvidedRole" containment="true"/>
+          eType="#//repository/ProvidedRole"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="outerProvidedRole" lowerBound="1"
           eType="#//repository/ProvidedRole"/>
     </eClassifiers>
@@ -129,7 +132,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="outerRequiredRole" lowerBound="1"
           eType="#//repository/RequiredRole"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="AssemblyConnector">
+    <eClassifiers xsi:type="ecore:EClass" name="AssemblyConnector" eSuperTypes="#//assembly/Connector">
       <eStructuralFeatures xsi:type="ecore:EReference" name="providedRole" lowerBound="1"
           eType="#//repository/ProvidedRole"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="requiredRole" lowerBound="1"
