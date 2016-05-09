@@ -106,17 +106,19 @@
     <eClassifiers xsi:type="ecore:EClass" name="AssemblyContext" eSuperTypes="#//core/NamedElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="instantiatedComponent"
           lowerBound="1" eType="#//repository/Component"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="providedRoles" upperBound="-1"
-          eType="#//repository/ProvidedRole" volatile="true" transient="true" derived="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="requiredRoles" upperBound="-1"
-          eType="#//repository/RequiredRole" volatile="true" transient="true" derived="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyContextProvidedRoles"
+          upperBound="-1" eType="#//repository/ProvidedRole" volatile="true" transient="true"
+          derived="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyContextRequiredRoles"
+          upperBound="-1" eType="#//repository/RequiredRole" volatile="true" transient="true"
+          derived="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="System">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="containedAssemblyContexts"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="systemAssemblyContexts"
           upperBound="-1" eType="#//assembly/AssemblyContext" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="providedRoles" lowerBound="1"
-          upperBound="-1" eType="#//repository/ProvidedRole"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="systemProvidedRoles"
+          lowerBound="1" upperBound="-1" eType="#//repository/ProvidedRole"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="systemConnectors" upperBound="-1"
           eType="#//assembly/Connector" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Connector" abstract="true" eSuperTypes="#//core/NamedElement"/>
@@ -135,10 +137,10 @@
           eType="#//repository/RequiredRole"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AssemblyConnector" eSuperTypes="#//assembly/Connector">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="providedRole" lowerBound="1"
-          eType="#//repository/ProvidedRole"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="requiredRole" lowerBound="1"
-          eType="#//repository/RequiredRole"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="connectedProvidedRole"
+          lowerBound="1" eType="#//repository/ProvidedRole"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="connectedRequiredRole"
+          lowerBound="1" eType="#//repository/RequiredRole"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="environment" nsURI="http://sdq.ipd.kit.edu/componentBasedSystemModel/environment"
@@ -151,7 +153,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Container" eSuperTypes="#//core/NamedElement"/>
     <eClassifiers xsi:type="ecore:EClass" name="Link" eSuperTypes="#//core/NamedElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="containers" lowerBound="2"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="linkedContainers" lowerBound="2"
           upperBound="-1" eType="#//environment/Container"/>
     </eClassifiers>
   </eSubpackages>
@@ -162,10 +164,10 @@
           eType="#//allocation/AllocationContext" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AllocationContext" eSuperTypes="#//core/NamedElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="container" lowerBound="1"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="allocatedContainer" lowerBound="1"
           eType="#//environment/Container"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyContext" lowerBound="1"
-          eType="#//assembly/AssemblyContext"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="allocatedAssemblyContext"
+          lowerBound="1" eType="#//assembly/AssemblyContext"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>
