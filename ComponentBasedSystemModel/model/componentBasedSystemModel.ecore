@@ -118,6 +118,8 @@
           upperBound="-1" eType="#//assembly/AssemblyContext" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="systemProvidedRoles"
           lowerBound="1" upperBound="-1" eType="#//repository/ProvidedRole"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="systemRequiredRoles"
+          upperBound="-1" eType="#//repository/RequiredRole"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="systemConnectors" upperBound="-1"
           eType="#//assembly/Connector" containment="true"/>
     </eClassifiers>
