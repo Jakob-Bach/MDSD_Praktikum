@@ -170,6 +170,12 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="CompositeComponent" eSuperTypes="#//repository/Component #//assembly/CompositeProvidingAndRequiringElement"/>
     <eClassifiers xsi:type="ecore:EClass" name="System" eSuperTypes="#//assembly/CompositeProvidingAndRequiringElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="ProvidesAtLeastOneInterface"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="ProvidesAtLeastOneInterface" value="not self.providedRoles->isEmpty()"/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="systemConnectors" upperBound="-1"
           eType="#//assembly/Connector" containment="true"/>
     </eClassifiers>
