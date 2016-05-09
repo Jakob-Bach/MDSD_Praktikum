@@ -240,23 +240,46 @@
       nsPrefix="environment">
     <eClassifiers xsi:type="ecore:EClass" name="Environment">
       <eStructuralFeatures xsi:type="ecore:EReference" name="containers" upperBound="-1"
-          eType="#//environment/Container" containment="true"/>
+          eType="#//environment/Container" containment="true" eOpposite="#//environment/Container/parentEnvironment"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
-          eType="#//environment/Link" containment="true"/>
+          eType="#//environment/Link" containment="true" eOpposite="#//environment/Link/parentEnvironment"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Container" eSuperTypes="#//core/NamedElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Container" eSuperTypes="#//core/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parentEnvironment" lowerBound="1"
+          eType="#//environment/Environment" eOpposite="#//environment/Environment/containers"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Link" eSuperTypes="#//core/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parentEnvironment" lowerBound="1"
+          eType="#//environment/Environment" eOpposite="#//environment/Environment/links"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="linkedContainers" lowerBound="2"
           upperBound="-1" eType="#//environment/Container"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="allocation" nsURI="http://sdq.ipd.kit.edu/componentBasedSystemModel/allocation"
       nsPrefix="allocation">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="Allocation">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="AssemblyContextsConnectedByAssemblyConnectorAllocatedOnSameOrLinkedContainers"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="AssemblyContextsConnectedByAssemblyConnectorAllocatedOnSameOrLinkedContainers"
+            value="&#xA;&#x9;&#x9;&#x9;&#x9;-- get all AssemblyConnectors from System (assuming that only top-level&#xA;&#x9;&#x9;&#x9;&#x9;-- AssemblyContexts are allocated&#xA;&#x9;&#x9;&#x9;&#x9;self.allocationContexts->first().allocatedAssemblyContext.parentCompositeElement.&#xA;&#x9;&#x9;&#x9;&#x9;oclAsType(assembly::System).systemConnectors->select(connector|&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;connector.oclIsKindOf(assembly::AssemblyConnector))->forAll(assemblyConnector|&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;-- get AllocationContexts for the two connected AssemblyContexts, check if&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;-- same Container&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;self.allocationContexts->select(allocationContext|&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;allocationContext.allocatedAssemblyContext = assemblyConnector.oclAsType(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;assembly::AssemblyConnector).connectedProvidedAssemblyContext &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;or allocationContext.allocatedAssemblyContext = assemblyConnector.oclAsType(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;assembly::AssemblyConnector).connectedRequiredAssemblyContext&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;).allocatedContainer->asSet()->size() = 1 &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;-- get all Links, check if there is one whose Containers contain both of the two&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;-- connected AssemblyContexts&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;or self.allocationContexts->first().allocatedContainer.parentEnvironment.links->exists(link|&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;link.linkedContainers->includes(assemblyConnector.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;oclAsType(assembly::AssemblyConnector).connectedProvidedAssemblyContext&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;and link.linkedContainers->includes(assemblyConnector.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;oclAsType(assembly::AssemblyConnector).connectedRequiredAssemblyContext&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)"/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="allocationContexts" upperBound="-1"
           eType="#//allocation/AllocationContext" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AllocationContext" eSuperTypes="#//core/NamedElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="OnlyTopLevelAssemblyContextsAllocated"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="OnlyTopLevelAssemblyContextsAllocated" value="self.allocatedAssemblyContext.parentCompositeElement.&#xA;&#x9;&#x9;&#x9;&#x9;oclIsTypeOf(assembly::System)"/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="allocatedContainer" lowerBound="1"
           eType="#//environment/Container"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="allocatedAssemblyContext"
