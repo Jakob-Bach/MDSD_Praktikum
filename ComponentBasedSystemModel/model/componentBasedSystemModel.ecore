@@ -4,7 +4,7 @@
     nsPrefix="componentBasedSystemModel">
   <eSubpackages name="core" nsURI="http://sdq.ipd.kit.edu/componentBasedSystemModel/core"
       nsPrefix="core">
-    <eClassifiers xsi:type="ecore:EClass" name="NamedElement">
+    <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
@@ -31,7 +31,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="behaviorDescription"
           eType="#//repository/behavior/BehaviorDescription" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="#//core/NamedElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Role" abstract="true" eSuperTypes="#//core/NamedElement"/>
     <eClassifiers xsi:type="ecore:EClass" name="ProvidedRole" eSuperTypes="#//repository/Role">
       <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterface" lowerBound="1"
           eType="#//repository/Interface"/>
@@ -50,7 +50,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
           eType="#//repository/Parameter" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="DataType"/>
+    <eClassifiers xsi:type="ecore:EClass" name="DataType" abstract="true"/>
     <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="#//core/NamedElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1"
           eType="#//repository/DataType"/>
@@ -119,8 +119,9 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1"
           eType="#//assembly/Connector" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Connector" eSuperTypes="#//core/NamedElement"/>
-    <eClassifiers xsi:type="ecore:EClass" name="DelegationConnector" eSuperTypes="#//assembly/Connector"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Connector" abstract="true" eSuperTypes="#//core/NamedElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="DelegationConnector" abstract="true"
+        eSuperTypes="#//assembly/Connector"/>
     <eClassifiers xsi:type="ecore:EClass" name="ProvidedDelegationConnector" eSuperTypes="#//assembly/DelegationConnector">
       <eStructuralFeatures xsi:type="ecore:EReference" name="innerProvidedRole" lowerBound="1"
           eType="#//repository/ProvidedRole"/>
