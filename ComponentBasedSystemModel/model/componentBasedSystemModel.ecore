@@ -107,9 +107,9 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="instantiatedComponent"
           lowerBound="1" eType="#//repository/Component"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="providedRoles" upperBound="-1"
-          eType="#//repository/ProvidedRole"/>
+          eType="#//repository/ProvidedRole" volatile="true" transient="true" derived="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="requiredRoles" upperBound="-1"
-          eType="#//repository/RequiredRole"/>
+          eType="#//repository/RequiredRole" volatile="true" transient="true" derived="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="System">
       <eStructuralFeatures xsi:type="ecore:EReference" name="containedAssemblyContexts"
