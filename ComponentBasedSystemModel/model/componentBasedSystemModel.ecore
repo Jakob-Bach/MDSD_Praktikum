@@ -218,15 +218,22 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AssemblyConnector" eSuperTypes="#//assembly/Connector">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="SameInterfaceInConnectedRoles"/>
+        <details key="constraints" value="ProvidedRoleBelongsToProvidedAssemblyContext RequiredRoleBelongsToRequiredAssemblyContext SameInterfaceInConnectedRoles DifferentContextsOfConnectedRoles"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="ProvidedRoleBelongsToProvidedAssemblyContext" value="self.connectedProvidedAssemblyContext.assemblyContextProvidedRoles&#xA;&#x9;&#x9;&#x9;&#x9;->includes(self.connectedProvidedRole&#xA;&#x9;&#x9;&#x9;)"/>
+        <details key="RequiredRoleBelongsToRequiredAssemblyContext" value="self.connectedRequiredAssemblyContext.assemblyContextRequiredRoles&#xA;&#x9;&#x9;&#x9;&#x9;->includes(self.connectedRequiredRole&#xA;&#x9;&#x9;&#x9;)"/>
         <details key="SameInterfaceInConnectedRoles" value="self.connectedProvidedRole.providedInterface =&#xA;&#x9;&#x9;&#x9;&#x9;self.connectedRequiredRole.requiredInterface"/>
+        <details key="DifferentContextsOfConnectedRoles" value="self.connectedProvidedAssemblyContext &lt;> &#xA;&#x9;&#x9;&#x9;&#x9;self.connectedRequiredAssemblyContext"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectedProvidedRole"
           lowerBound="1" eType="#//repository/ProvidedRole"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectedRequiredRole"
           lowerBound="1" eType="#//repository/RequiredRole"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="connectedProvidedAssemblyContext"
+          lowerBound="1" eType="#//assembly/AssemblyContext"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="connectedRequiredAssemblyContext"
+          lowerBound="1" eType="#//assembly/AssemblyContext"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="environment" nsURI="http://sdq.ipd.kit.edu/componentBasedSystemModel/environment"
