@@ -5,6 +5,7 @@ package edu.kit.ipd.sdq.cbsm.repository.impl;
 import edu.kit.ipd.sdq.cbsm.core.impl.NamedElementImpl;
 import edu.kit.ipd.sdq.cbsm.repository.Component;
 import edu.kit.ipd.sdq.cbsm.repository.ProvidedRole;
+import edu.kit.ipd.sdq.cbsm.repository.ProvidingAndRequiringElement;
 import edu.kit.ipd.sdq.cbsm.repository.RepositoryPackage;
 import edu.kit.ipd.sdq.cbsm.repository.RequiredRole;
 import edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorDescription;
@@ -31,7 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link edu.kit.ipd.sdq.cbsm.repository.impl.ComponentImpl#getProvidedRoles <em>Provided Roles</em>}</li>
- *   <li>{@link edu.kit.ipd.sdq.cbsm.repository.impl.ComponentImpl#getRequiredRole <em>Required Role</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.cbsm.repository.impl.ComponentImpl#getRequiredRoles <em>Required Roles</em>}</li>
  *   <li>{@link edu.kit.ipd.sdq.cbsm.repository.impl.ComponentImpl#getBehaviorDescription <em>Behavior Description</em>}</li>
  * </ul>
  *
@@ -49,14 +50,14 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 	protected EList<ProvidedRole> providedRoles;
 
 	/**
-	 * The cached value of the '{@link #getRequiredRole() <em>Required Role</em>}' containment reference list.
+	 * The cached value of the '{@link #getRequiredRoles() <em>Required Roles</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRequiredRole()
+	 * @see #getRequiredRoles()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<RequiredRole> requiredRole;
+	protected EList<RequiredRole> requiredRoles;
 
 	/**
 	 * The cached value of the '{@link #getBehaviorDescription() <em>Behavior Description</em>}' containment reference.
@@ -104,11 +105,11 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<RequiredRole> getRequiredRole() {
-		if (requiredRole == null) {
-			requiredRole = new EObjectContainmentEList<RequiredRole>(RequiredRole.class, this, RepositoryPackage.COMPONENT__REQUIRED_ROLE);
+	public EList<RequiredRole> getRequiredRoles() {
+		if (requiredRoles == null) {
+			requiredRoles = new EObjectContainmentEList<RequiredRole>(RequiredRole.class, this, RepositoryPackage.COMPONENT__REQUIRED_ROLES);
 		}
-		return requiredRole;
+		return requiredRoles;
 	}
 
 	/**
@@ -164,8 +165,8 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 		switch (featureID) {
 			case RepositoryPackage.COMPONENT__PROVIDED_ROLES:
 				return ((InternalEList<?>)getProvidedRoles()).basicRemove(otherEnd, msgs);
-			case RepositoryPackage.COMPONENT__REQUIRED_ROLE:
-				return ((InternalEList<?>)getRequiredRole()).basicRemove(otherEnd, msgs);
+			case RepositoryPackage.COMPONENT__REQUIRED_ROLES:
+				return ((InternalEList<?>)getRequiredRoles()).basicRemove(otherEnd, msgs);
 			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTION:
 				return basicSetBehaviorDescription(null, msgs);
 		}
@@ -182,8 +183,8 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 		switch (featureID) {
 			case RepositoryPackage.COMPONENT__PROVIDED_ROLES:
 				return getProvidedRoles();
-			case RepositoryPackage.COMPONENT__REQUIRED_ROLE:
-				return getRequiredRole();
+			case RepositoryPackage.COMPONENT__REQUIRED_ROLES:
+				return getRequiredRoles();
 			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTION:
 				return getBehaviorDescription();
 		}
@@ -203,9 +204,9 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 				getProvidedRoles().clear();
 				getProvidedRoles().addAll((Collection<? extends ProvidedRole>)newValue);
 				return;
-			case RepositoryPackage.COMPONENT__REQUIRED_ROLE:
-				getRequiredRole().clear();
-				getRequiredRole().addAll((Collection<? extends RequiredRole>)newValue);
+			case RepositoryPackage.COMPONENT__REQUIRED_ROLES:
+				getRequiredRoles().clear();
+				getRequiredRoles().addAll((Collection<? extends RequiredRole>)newValue);
 				return;
 			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTION:
 				setBehaviorDescription((BehaviorDescription)newValue);
@@ -225,8 +226,8 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 			case RepositoryPackage.COMPONENT__PROVIDED_ROLES:
 				getProvidedRoles().clear();
 				return;
-			case RepositoryPackage.COMPONENT__REQUIRED_ROLE:
-				getRequiredRole().clear();
+			case RepositoryPackage.COMPONENT__REQUIRED_ROLES:
+				getRequiredRoles().clear();
 				return;
 			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTION:
 				setBehaviorDescription((BehaviorDescription)null);
@@ -245,12 +246,46 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 		switch (featureID) {
 			case RepositoryPackage.COMPONENT__PROVIDED_ROLES:
 				return providedRoles != null && !providedRoles.isEmpty();
-			case RepositoryPackage.COMPONENT__REQUIRED_ROLE:
-				return requiredRole != null && !requiredRole.isEmpty();
+			case RepositoryPackage.COMPONENT__REQUIRED_ROLES:
+				return requiredRoles != null && !requiredRoles.isEmpty();
 			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTION:
 				return behaviorDescription != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == ProvidingAndRequiringElement.class) {
+			switch (derivedFeatureID) {
+				case RepositoryPackage.COMPONENT__PROVIDED_ROLES: return RepositoryPackage.PROVIDING_AND_REQUIRING_ELEMENT__PROVIDED_ROLES;
+				case RepositoryPackage.COMPONENT__REQUIRED_ROLES: return RepositoryPackage.PROVIDING_AND_REQUIRING_ELEMENT__REQUIRED_ROLES;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == ProvidingAndRequiringElement.class) {
+			switch (baseFeatureID) {
+				case RepositoryPackage.PROVIDING_AND_REQUIRING_ELEMENT__PROVIDED_ROLES: return RepositoryPackage.COMPONENT__PROVIDED_ROLES;
+				case RepositoryPackage.PROVIDING_AND_REQUIRING_ELEMENT__REQUIRED_ROLES: return RepositoryPackage.COMPONENT__REQUIRED_ROLES;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //ComponentImpl

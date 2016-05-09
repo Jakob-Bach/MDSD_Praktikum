@@ -123,13 +123,22 @@ public interface EnvironmentPackage extends EPackage {
 	int CONTAINER__NAME = CorePackage.NAMED_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Parent Environment</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__PARENT_ENVIRONMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Container</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINER_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int CONTAINER_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Container</em>' class.
@@ -160,13 +169,22 @@ public interface EnvironmentPackage extends EPackage {
 	int LINK__NAME = CorePackage.NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Containers</b></em>' reference list.
+	 * The feature id for the '<em><b>Parent Environment</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINK__CONTAINERS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int LINK__PARENT_ENVIRONMENT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Linked Containers</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK__LINKED_CONTAINERS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Link</em>' class.
@@ -175,7 +193,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int LINK_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Link</em>' class.
@@ -230,6 +248,17 @@ public interface EnvironmentPackage extends EPackage {
 	EClass getContainer();
 
 	/**
+	 * Returns the meta object for the container reference '{@link edu.kit.ipd.sdq.cbsm.environment.Container#getParentEnvironment <em>Parent Environment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Parent Environment</em>'.
+	 * @see edu.kit.ipd.sdq.cbsm.environment.Container#getParentEnvironment()
+	 * @see #getContainer()
+	 * @generated
+	 */
+	EReference getContainer_ParentEnvironment();
+
+	/**
 	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.cbsm.environment.Link <em>Link</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -240,15 +269,26 @@ public interface EnvironmentPackage extends EPackage {
 	EClass getLink();
 
 	/**
-	 * Returns the meta object for the reference list '{@link edu.kit.ipd.sdq.cbsm.environment.Link#getContainers <em>Containers</em>}'.
+	 * Returns the meta object for the container reference '{@link edu.kit.ipd.sdq.cbsm.environment.Link#getParentEnvironment <em>Parent Environment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Containers</em>'.
-	 * @see edu.kit.ipd.sdq.cbsm.environment.Link#getContainers()
+	 * @return the meta object for the container reference '<em>Parent Environment</em>'.
+	 * @see edu.kit.ipd.sdq.cbsm.environment.Link#getParentEnvironment()
 	 * @see #getLink()
 	 * @generated
 	 */
-	EReference getLink_Containers();
+	EReference getLink_ParentEnvironment();
+
+	/**
+	 * Returns the meta object for the reference list '{@link edu.kit.ipd.sdq.cbsm.environment.Link#getLinkedContainers <em>Linked Containers</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Linked Containers</em>'.
+	 * @see edu.kit.ipd.sdq.cbsm.environment.Link#getLinkedContainers()
+	 * @see #getLink()
+	 * @generated
+	 */
+	EReference getLink_LinkedContainers();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -310,6 +350,14 @@ public interface EnvironmentPackage extends EPackage {
 		EClass CONTAINER = eINSTANCE.getContainer();
 
 		/**
+		 * The meta object literal for the '<em><b>Parent Environment</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTAINER__PARENT_ENVIRONMENT = eINSTANCE.getContainer_ParentEnvironment();
+
+		/**
 		 * The meta object literal for the '{@link edu.kit.ipd.sdq.cbsm.environment.impl.LinkImpl <em>Link</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -320,12 +368,20 @@ public interface EnvironmentPackage extends EPackage {
 		EClass LINK = eINSTANCE.getLink();
 
 		/**
-		 * The meta object literal for the '<em><b>Containers</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Parent Environment</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LINK__CONTAINERS = eINSTANCE.getLink_Containers();
+		EReference LINK__PARENT_ENVIRONMENT = eINSTANCE.getLink_ParentEnvironment();
+
+		/**
+		 * The meta object literal for the '<em><b>Linked Containers</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LINK__LINKED_CONTAINERS = eINSTANCE.getLink_LinkedContainers();
 
 	}
 

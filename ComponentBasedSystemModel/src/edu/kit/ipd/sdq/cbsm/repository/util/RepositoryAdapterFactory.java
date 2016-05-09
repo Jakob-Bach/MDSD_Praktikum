@@ -78,8 +78,8 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
 				return createInterfaceAdapter();
 			}
 			@Override
-			public Adapter caseComponent(Component object) {
-				return createComponentAdapter();
+			public Adapter caseRole(Role object) {
+				return createRoleAdapter();
 			}
 			@Override
 			public Adapter caseProvidedRole(ProvidedRole object) {
@@ -90,8 +90,12 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
 				return createRequiredRoleAdapter();
 			}
 			@Override
-			public Adapter caseCompositeComponent(CompositeComponent object) {
-				return createCompositeComponentAdapter();
+			public Adapter caseProvidingAndRequiringElement(ProvidingAndRequiringElement object) {
+				return createProvidingAndRequiringElementAdapter();
+			}
+			@Override
+			public Adapter caseComponent(Component object) {
+				return createComponentAdapter();
 			}
 			@Override
 			public Adapter caseSignature(Signature object) {
@@ -166,6 +170,20 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.cbsm.repository.Role <em>Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see edu.kit.ipd.sdq.cbsm.repository.Role
+	 * @generated
+	 */
+	public Adapter createRoleAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.cbsm.repository.Component <em>Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -208,16 +226,16 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.cbsm.repository.CompositeComponent <em>Composite Component</em>}'.
+	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.cbsm.repository.ProvidingAndRequiringElement <em>Providing And Requiring Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see edu.kit.ipd.sdq.cbsm.repository.CompositeComponent
+	 * @see edu.kit.ipd.sdq.cbsm.repository.ProvidingAndRequiringElement
 	 * @generated
 	 */
-	public Adapter createCompositeComponentAdapter() {
+	public Adapter createProvidingAndRequiringElementAdapter() {
 		return null;
 	}
 

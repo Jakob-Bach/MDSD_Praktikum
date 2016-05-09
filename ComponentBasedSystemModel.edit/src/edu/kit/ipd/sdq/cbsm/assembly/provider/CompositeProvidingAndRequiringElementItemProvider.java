@@ -1,12 +1,15 @@
 /**
  */
-package edu.kit.ipd.sdq.cbsm.repository.provider;
+package edu.kit.ipd.sdq.cbsm.assembly.provider;
 
 
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyFactory;
+import edu.kit.ipd.sdq.cbsm.assembly.AssemblyPackage;
+import edu.kit.ipd.sdq.cbsm.assembly.CompositeProvidingAndRequiringElement;
 
-import edu.kit.ipd.sdq.cbsm.repository.CompositeComponent;
-import edu.kit.ipd.sdq.cbsm.repository.RepositoryPackage;
+import edu.kit.ipd.sdq.cbsm.core.provider.ComponentBasedSystemModelEditPlugin;
+
+import edu.kit.ipd.sdq.cbsm.repository.provider.ProvidingAndRequiringElementItemProvider;
 
 import java.util.Collection;
 import java.util.List;
@@ -14,25 +17,27 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link edu.kit.ipd.sdq.cbsm.repository.CompositeComponent} object.
+ * This is the item provider adapter for a {@link edu.kit.ipd.sdq.cbsm.assembly.CompositeProvidingAndRequiringElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class CompositeComponentItemProvider extends ComponentItemProvider {
+public class CompositeProvidingAndRequiringElementItemProvider extends ProvidingAndRequiringElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CompositeComponentItemProvider(AdapterFactory adapterFactory) {
+	public CompositeProvidingAndRequiringElementItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -63,7 +68,7 @@ public class CompositeComponentItemProvider extends ComponentItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RepositoryPackage.Literals.COMPOSITE_COMPONENT__CONTAINED_ASSEMBLY_CONTEXTS);
+			childrenFeatures.add(AssemblyPackage.Literals.COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONTAINED_ASSEMBLY_CONTEXTS);
 		}
 		return childrenFeatures;
 	}
@@ -82,17 +87,6 @@ public class CompositeComponentItemProvider extends ComponentItemProvider {
 	}
 
 	/**
-	 * This returns CompositeComponent.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/CompositeComponent"));
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -100,10 +94,7 @@ public class CompositeComponentItemProvider extends ComponentItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((CompositeComponent)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_CompositeComponent_type") :
-			getString("_UI_CompositeComponent_type") + " " + label;
+		return getString("_UI_CompositeProvidingAndRequiringElement_type");
 	}
 	
 
@@ -118,8 +109,8 @@ public class CompositeComponentItemProvider extends ComponentItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(CompositeComponent.class)) {
-			case RepositoryPackage.COMPOSITE_COMPONENT__CONTAINED_ASSEMBLY_CONTEXTS:
+		switch (notification.getFeatureID(CompositeProvidingAndRequiringElement.class)) {
+			case AssemblyPackage.COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONTAINED_ASSEMBLY_CONTEXTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -139,8 +130,19 @@ public class CompositeComponentItemProvider extends ComponentItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RepositoryPackage.Literals.COMPOSITE_COMPONENT__CONTAINED_ASSEMBLY_CONTEXTS,
+				(AssemblyPackage.Literals.COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONTAINED_ASSEMBLY_CONTEXTS,
 				 AssemblyFactory.eINSTANCE.createAssemblyContext()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return ComponentBasedSystemModelEditPlugin.INSTANCE;
 	}
 
 }

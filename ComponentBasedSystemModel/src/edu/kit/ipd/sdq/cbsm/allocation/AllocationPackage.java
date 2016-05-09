@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see edu.kit.ipd.sdq.cbsm.allocation.AllocationFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot'"
  * @generated
  */
 public interface AllocationPackage extends EPackage {
@@ -113,22 +114,22 @@ public interface AllocationPackage extends EPackage {
 	int ALLOCATION_CONTEXT__NAME = CorePackage.NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Container</b></em>' reference.
+	 * The feature id for the '<em><b>Allocated Container</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ALLOCATION_CONTEXT__CONTAINER = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int ALLOCATION_CONTEXT__ALLOCATED_CONTAINER = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Assembly Context</b></em>' reference.
+	 * The feature id for the '<em><b>Allocated Assembly Context</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ALLOCATION_CONTEXT__ASSEMBLY_CONTEXT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int ALLOCATION_CONTEXT__ALLOCATED_ASSEMBLY_CONTEXT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Context</em>' class.
@@ -181,26 +182,26 @@ public interface AllocationPackage extends EPackage {
 	EClass getAllocationContext();
 
 	/**
-	 * Returns the meta object for the reference '{@link edu.kit.ipd.sdq.cbsm.allocation.AllocationContext#getContainer <em>Container</em>}'.
+	 * Returns the meta object for the reference '{@link edu.kit.ipd.sdq.cbsm.allocation.AllocationContext#getAllocatedContainer <em>Allocated Container</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Container</em>'.
-	 * @see edu.kit.ipd.sdq.cbsm.allocation.AllocationContext#getContainer()
+	 * @return the meta object for the reference '<em>Allocated Container</em>'.
+	 * @see edu.kit.ipd.sdq.cbsm.allocation.AllocationContext#getAllocatedContainer()
 	 * @see #getAllocationContext()
 	 * @generated
 	 */
-	EReference getAllocationContext_Container();
+	EReference getAllocationContext_AllocatedContainer();
 
 	/**
-	 * Returns the meta object for the reference '{@link edu.kit.ipd.sdq.cbsm.allocation.AllocationContext#getAssemblyContext <em>Assembly Context</em>}'.
+	 * Returns the meta object for the reference '{@link edu.kit.ipd.sdq.cbsm.allocation.AllocationContext#getAllocatedAssemblyContext <em>Allocated Assembly Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Assembly Context</em>'.
-	 * @see edu.kit.ipd.sdq.cbsm.allocation.AllocationContext#getAssemblyContext()
+	 * @return the meta object for the reference '<em>Allocated Assembly Context</em>'.
+	 * @see edu.kit.ipd.sdq.cbsm.allocation.AllocationContext#getAllocatedAssemblyContext()
 	 * @see #getAllocationContext()
 	 * @generated
 	 */
-	EReference getAllocationContext_AssemblyContext();
+	EReference getAllocationContext_AllocatedAssemblyContext();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -254,20 +255,20 @@ public interface AllocationPackage extends EPackage {
 		EClass ALLOCATION_CONTEXT = eINSTANCE.getAllocationContext();
 
 		/**
-		 * The meta object literal for the '<em><b>Container</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Allocated Container</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ALLOCATION_CONTEXT__CONTAINER = eINSTANCE.getAllocationContext_Container();
+		EReference ALLOCATION_CONTEXT__ALLOCATED_CONTAINER = eINSTANCE.getAllocationContext_AllocatedContainer();
 
 		/**
-		 * The meta object literal for the '<em><b>Assembly Context</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Allocated Assembly Context</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ALLOCATION_CONTEXT__ASSEMBLY_CONTEXT = eINSTANCE.getAllocationContext_AssemblyContext();
+		EReference ALLOCATION_CONTEXT__ALLOCATED_ASSEMBLY_CONTEXT = eINSTANCE.getAllocationContext_AllocatedAssemblyContext();
 
 	}
 

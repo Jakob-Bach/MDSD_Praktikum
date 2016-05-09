@@ -5,11 +5,15 @@ package edu.kit.ipd.sdq.cbsm.assembly.util;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyConnector;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyContext;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyPackage;
+import edu.kit.ipd.sdq.cbsm.assembly.CompositeComponent;
+import edu.kit.ipd.sdq.cbsm.assembly.CompositeProvidingAndRequiringElement;
 import edu.kit.ipd.sdq.cbsm.assembly.Connector;
 import edu.kit.ipd.sdq.cbsm.assembly.DelegationConnector;
 import edu.kit.ipd.sdq.cbsm.assembly.ProvidedDelegationConnector;
 import edu.kit.ipd.sdq.cbsm.assembly.RequiredDelegationConnector;
 import edu.kit.ipd.sdq.cbsm.core.NamedElement;
+import edu.kit.ipd.sdq.cbsm.repository.Component;
+import edu.kit.ipd.sdq.cbsm.repository.ProvidingAndRequiringElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -79,9 +83,28 @@ public class AssemblySwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case AssemblyPackage.COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT: {
+				CompositeProvidingAndRequiringElement compositeProvidingAndRequiringElement = (CompositeProvidingAndRequiringElement)theEObject;
+				T result = caseCompositeProvidingAndRequiringElement(compositeProvidingAndRequiringElement);
+				if (result == null) result = caseProvidingAndRequiringElement(compositeProvidingAndRequiringElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AssemblyPackage.COMPOSITE_COMPONENT: {
+				CompositeComponent compositeComponent = (CompositeComponent)theEObject;
+				T result = caseCompositeComponent(compositeComponent);
+				if (result == null) result = caseComponent(compositeComponent);
+				if (result == null) result = caseCompositeProvidingAndRequiringElement(compositeComponent);
+				if (result == null) result = caseNamedElement(compositeComponent);
+				if (result == null) result = caseProvidingAndRequiringElement(compositeComponent);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case AssemblyPackage.SYSTEM: {
 				edu.kit.ipd.sdq.cbsm.assembly.System system = (edu.kit.ipd.sdq.cbsm.assembly.System)theEObject;
 				T result = caseSystem(system);
+				if (result == null) result = caseCompositeProvidingAndRequiringElement(system);
+				if (result == null) result = caseProvidingAndRequiringElement(system);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -142,6 +165,36 @@ public class AssemblySwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAssemblyContext(AssemblyContext object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Composite Providing And Requiring Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Composite Providing And Requiring Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCompositeProvidingAndRequiringElement(CompositeProvidingAndRequiringElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Composite Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Composite Component</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCompositeComponent(CompositeComponent object) {
 		return null;
 	}
 
@@ -247,6 +300,36 @@ public class AssemblySwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNamedElement(NamedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Providing And Requiring Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Providing And Requiring Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProvidingAndRequiringElement(ProvidingAndRequiringElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Component</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComponent(Component object) {
 		return null;
 	}
 

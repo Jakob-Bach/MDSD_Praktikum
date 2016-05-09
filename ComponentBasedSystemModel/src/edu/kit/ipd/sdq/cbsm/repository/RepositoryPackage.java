@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see edu.kit.ipd.sdq.cbsm.repository.RepositoryFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot'"
  * @generated
  */
 public interface RepositoryPackage extends EPackage {
@@ -161,6 +162,43 @@ public interface RepositoryPackage extends EPackage {
 	int INTERFACE_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link edu.kit.ipd.sdq.cbsm.repository.impl.RoleImpl <em>Role</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see edu.kit.ipd.sdq.cbsm.repository.impl.RoleImpl
+	 * @see edu.kit.ipd.sdq.cbsm.repository.impl.RepositoryPackageImpl#getRole()
+	 * @generated
+	 */
+	int ROLE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__NAME = CorePackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Role</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Role</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link edu.kit.ipd.sdq.cbsm.repository.impl.ComponentImpl <em>Component</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -168,7 +206,145 @@ public interface RepositoryPackage extends EPackage {
 	 * @see edu.kit.ipd.sdq.cbsm.repository.impl.RepositoryPackageImpl#getComponent()
 	 * @generated
 	 */
-	int COMPONENT = 2;
+	int COMPONENT = 6;
+
+	/**
+	 * The meta object id for the '{@link edu.kit.ipd.sdq.cbsm.repository.impl.ProvidedRoleImpl <em>Provided Role</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see edu.kit.ipd.sdq.cbsm.repository.impl.ProvidedRoleImpl
+	 * @see edu.kit.ipd.sdq.cbsm.repository.impl.RepositoryPackageImpl#getProvidedRole()
+	 * @generated
+	 */
+	int PROVIDED_ROLE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVIDED_ROLE__NAME = ROLE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Provided Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVIDED_ROLE__PROVIDED_INTERFACE = ROLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Provided Role</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVIDED_ROLE_FEATURE_COUNT = ROLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Provided Role</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVIDED_ROLE_OPERATION_COUNT = ROLE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link edu.kit.ipd.sdq.cbsm.repository.impl.RequiredRoleImpl <em>Required Role</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see edu.kit.ipd.sdq.cbsm.repository.impl.RequiredRoleImpl
+	 * @see edu.kit.ipd.sdq.cbsm.repository.impl.RepositoryPackageImpl#getRequiredRole()
+	 * @generated
+	 */
+	int REQUIRED_ROLE = 4;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_ROLE__NAME = ROLE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Required Interface</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_ROLE__REQUIRED_INTERFACE = ROLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Required Role</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_ROLE_FEATURE_COUNT = ROLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Required Role</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_ROLE_OPERATION_COUNT = ROLE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link edu.kit.ipd.sdq.cbsm.repository.impl.ProvidingAndRequiringElementImpl <em>Providing And Requiring Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see edu.kit.ipd.sdq.cbsm.repository.impl.ProvidingAndRequiringElementImpl
+	 * @see edu.kit.ipd.sdq.cbsm.repository.impl.RepositoryPackageImpl#getProvidingAndRequiringElement()
+	 * @generated
+	 */
+	int PROVIDING_AND_REQUIRING_ELEMENT = 5;
+
+	/**
+	 * The feature id for the '<em><b>Provided Roles</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVIDING_AND_REQUIRING_ELEMENT__PROVIDED_ROLES = 0;
+
+	/**
+	 * The feature id for the '<em><b>Required Roles</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVIDING_AND_REQUIRING_ELEMENT__REQUIRED_ROLES = 1;
+
+	/**
+	 * The number of structural features of the '<em>Providing And Requiring Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVIDING_AND_REQUIRING_ELEMENT_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Providing And Requiring Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVIDING_AND_REQUIRING_ELEMENT_OPERATION_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -189,13 +365,13 @@ public interface RepositoryPackage extends EPackage {
 	int COMPONENT__PROVIDED_ROLES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Required Role</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Required Roles</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__REQUIRED_ROLE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int COMPONENT__REQUIRED_ROLES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Behavior Description</b></em>' containment reference.
@@ -225,171 +401,6 @@ public interface RepositoryPackage extends EPackage {
 	int COMPONENT_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link edu.kit.ipd.sdq.cbsm.repository.impl.ProvidedRoleImpl <em>Provided Role</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see edu.kit.ipd.sdq.cbsm.repository.impl.ProvidedRoleImpl
-	 * @see edu.kit.ipd.sdq.cbsm.repository.impl.RepositoryPackageImpl#getProvidedRole()
-	 * @generated
-	 */
-	int PROVIDED_ROLE = 3;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROVIDED_ROLE__NAME = CorePackage.NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Provided Interface</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROVIDED_ROLE__PROVIDED_INTERFACE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Provided Role</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROVIDED_ROLE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Provided Role</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROVIDED_ROLE_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link edu.kit.ipd.sdq.cbsm.repository.impl.RequiredRoleImpl <em>Required Role</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see edu.kit.ipd.sdq.cbsm.repository.impl.RequiredRoleImpl
-	 * @see edu.kit.ipd.sdq.cbsm.repository.impl.RepositoryPackageImpl#getRequiredRole()
-	 * @generated
-	 */
-	int REQUIRED_ROLE = 4;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REQUIRED_ROLE__NAME = CorePackage.NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Required Interface</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REQUIRED_ROLE__REQUIRED_INTERFACE = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Required Role</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REQUIRED_ROLE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Required Role</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REQUIRED_ROLE_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link edu.kit.ipd.sdq.cbsm.repository.impl.CompositeComponentImpl <em>Composite Component</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see edu.kit.ipd.sdq.cbsm.repository.impl.CompositeComponentImpl
-	 * @see edu.kit.ipd.sdq.cbsm.repository.impl.RepositoryPackageImpl#getCompositeComponent()
-	 * @generated
-	 */
-	int COMPOSITE_COMPONENT = 5;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_COMPONENT__NAME = COMPONENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Provided Roles</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_COMPONENT__PROVIDED_ROLES = COMPONENT__PROVIDED_ROLES;
-
-	/**
-	 * The feature id for the '<em><b>Required Role</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_COMPONENT__REQUIRED_ROLE = COMPONENT__REQUIRED_ROLE;
-
-	/**
-	 * The feature id for the '<em><b>Behavior Description</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_COMPONENT__BEHAVIOR_DESCRIPTION = COMPONENT__BEHAVIOR_DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Contained Assembly Contexts</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_COMPONENT__CONTAINED_ASSEMBLY_CONTEXTS = COMPONENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Composite Component</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_COMPONENT_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Composite Component</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_COMPONENT_OPERATION_COUNT = COMPONENT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link edu.kit.ipd.sdq.cbsm.repository.impl.SignatureImpl <em>Signature</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -397,7 +408,7 @@ public interface RepositoryPackage extends EPackage {
 	 * @see edu.kit.ipd.sdq.cbsm.repository.impl.RepositoryPackageImpl#getSignature()
 	 * @generated
 	 */
-	int SIGNATURE = 6;
+	int SIGNATURE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -452,7 +463,7 @@ public interface RepositoryPackage extends EPackage {
 	 * @see edu.kit.ipd.sdq.cbsm.repository.impl.RepositoryPackageImpl#getDataType()
 	 * @generated
 	 */
-	int DATA_TYPE = 7;
+	int DATA_TYPE = 8;
 
 	/**
 	 * The number of structural features of the '<em>Data Type</em>' class.
@@ -480,7 +491,7 @@ public interface RepositoryPackage extends EPackage {
 	 * @see edu.kit.ipd.sdq.cbsm.repository.impl.RepositoryPackageImpl#getParameter()
 	 * @generated
 	 */
-	int PARAMETER = 8;
+	int PARAMETER = 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -526,7 +537,7 @@ public interface RepositoryPackage extends EPackage {
 	 * @see edu.kit.ipd.sdq.cbsm.repository.impl.RepositoryPackageImpl#getComplexType()
 	 * @generated
 	 */
-	int COMPLEX_TYPE = 9;
+	int COMPLEX_TYPE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -563,7 +574,7 @@ public interface RepositoryPackage extends EPackage {
 	 * @see edu.kit.ipd.sdq.cbsm.repository.impl.RepositoryPackageImpl#getSimpleType()
 	 * @generated
 	 */
-	int SIMPLE_TYPE = 10;
+	int SIMPLE_TYPE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Type Instance</b></em>' attribute.
@@ -600,7 +611,7 @@ public interface RepositoryPackage extends EPackage {
 	 * @see edu.kit.ipd.sdq.cbsm.repository.impl.RepositoryPackageImpl#getSimpleTypeInstance()
 	 * @generated
 	 */
-	int SIMPLE_TYPE_INSTANCE = 11;
+	int SIMPLE_TYPE_INSTANCE = 12;
 
 
 	/**
@@ -668,6 +679,16 @@ public interface RepositoryPackage extends EPackage {
 	EReference getInterface_Signatures();
 
 	/**
+	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.cbsm.repository.Role <em>Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Role</em>'.
+	 * @see edu.kit.ipd.sdq.cbsm.repository.Role
+	 * @generated
+	 */
+	EClass getRole();
+
+	/**
 	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.cbsm.repository.Component <em>Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -676,28 +697,6 @@ public interface RepositoryPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getComponent();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.cbsm.repository.Component#getProvidedRoles <em>Provided Roles</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Provided Roles</em>'.
-	 * @see edu.kit.ipd.sdq.cbsm.repository.Component#getProvidedRoles()
-	 * @see #getComponent()
-	 * @generated
-	 */
-	EReference getComponent_ProvidedRoles();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.cbsm.repository.Component#getRequiredRole <em>Required Role</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Required Role</em>'.
-	 * @see edu.kit.ipd.sdq.cbsm.repository.Component#getRequiredRole()
-	 * @see #getComponent()
-	 * @generated
-	 */
-	EReference getComponent_RequiredRole();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link edu.kit.ipd.sdq.cbsm.repository.Component#getBehaviorDescription <em>Behavior Description</em>}'.
@@ -753,25 +752,36 @@ public interface RepositoryPackage extends EPackage {
 	EReference getRequiredRole_RequiredInterface();
 
 	/**
-	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.cbsm.repository.CompositeComponent <em>Composite Component</em>}'.
+	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.cbsm.repository.ProvidingAndRequiringElement <em>Providing And Requiring Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Composite Component</em>'.
-	 * @see edu.kit.ipd.sdq.cbsm.repository.CompositeComponent
+	 * @return the meta object for class '<em>Providing And Requiring Element</em>'.
+	 * @see edu.kit.ipd.sdq.cbsm.repository.ProvidingAndRequiringElement
 	 * @generated
 	 */
-	EClass getCompositeComponent();
+	EClass getProvidingAndRequiringElement();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.cbsm.repository.CompositeComponent#getContainedAssemblyContexts <em>Contained Assembly Contexts</em>}'.
+	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.cbsm.repository.ProvidingAndRequiringElement#getProvidedRoles <em>Provided Roles</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Contained Assembly Contexts</em>'.
-	 * @see edu.kit.ipd.sdq.cbsm.repository.CompositeComponent#getContainedAssemblyContexts()
-	 * @see #getCompositeComponent()
+	 * @return the meta object for the containment reference list '<em>Provided Roles</em>'.
+	 * @see edu.kit.ipd.sdq.cbsm.repository.ProvidingAndRequiringElement#getProvidedRoles()
+	 * @see #getProvidingAndRequiringElement()
 	 * @generated
 	 */
-	EReference getCompositeComponent_ContainedAssemblyContexts();
+	EReference getProvidingAndRequiringElement_ProvidedRoles();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.cbsm.repository.ProvidingAndRequiringElement#getRequiredRoles <em>Required Roles</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Required Roles</em>'.
+	 * @see edu.kit.ipd.sdq.cbsm.repository.ProvidingAndRequiringElement#getRequiredRoles()
+	 * @see #getProvidingAndRequiringElement()
+	 * @generated
+	 */
+	EReference getProvidingAndRequiringElement_RequiredRoles();
 
 	/**
 	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.cbsm.repository.Signature <em>Signature</em>}'.
@@ -953,6 +963,16 @@ public interface RepositoryPackage extends EPackage {
 		EReference INTERFACE__SIGNATURES = eINSTANCE.getInterface_Signatures();
 
 		/**
+		 * The meta object literal for the '{@link edu.kit.ipd.sdq.cbsm.repository.impl.RoleImpl <em>Role</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see edu.kit.ipd.sdq.cbsm.repository.impl.RoleImpl
+		 * @see edu.kit.ipd.sdq.cbsm.repository.impl.RepositoryPackageImpl#getRole()
+		 * @generated
+		 */
+		EClass ROLE = eINSTANCE.getRole();
+
+		/**
 		 * The meta object literal for the '{@link edu.kit.ipd.sdq.cbsm.repository.impl.ComponentImpl <em>Component</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -961,22 +981,6 @@ public interface RepositoryPackage extends EPackage {
 		 * @generated
 		 */
 		EClass COMPONENT = eINSTANCE.getComponent();
-
-		/**
-		 * The meta object literal for the '<em><b>Provided Roles</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPONENT__PROVIDED_ROLES = eINSTANCE.getComponent_ProvidedRoles();
-
-		/**
-		 * The meta object literal for the '<em><b>Required Role</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPONENT__REQUIRED_ROLE = eINSTANCE.getComponent_RequiredRole();
 
 		/**
 		 * The meta object literal for the '<em><b>Behavior Description</b></em>' containment reference feature.
@@ -1023,22 +1027,30 @@ public interface RepositoryPackage extends EPackage {
 		EReference REQUIRED_ROLE__REQUIRED_INTERFACE = eINSTANCE.getRequiredRole_RequiredInterface();
 
 		/**
-		 * The meta object literal for the '{@link edu.kit.ipd.sdq.cbsm.repository.impl.CompositeComponentImpl <em>Composite Component</em>}' class.
+		 * The meta object literal for the '{@link edu.kit.ipd.sdq.cbsm.repository.impl.ProvidingAndRequiringElementImpl <em>Providing And Requiring Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see edu.kit.ipd.sdq.cbsm.repository.impl.CompositeComponentImpl
-		 * @see edu.kit.ipd.sdq.cbsm.repository.impl.RepositoryPackageImpl#getCompositeComponent()
+		 * @see edu.kit.ipd.sdq.cbsm.repository.impl.ProvidingAndRequiringElementImpl
+		 * @see edu.kit.ipd.sdq.cbsm.repository.impl.RepositoryPackageImpl#getProvidingAndRequiringElement()
 		 * @generated
 		 */
-		EClass COMPOSITE_COMPONENT = eINSTANCE.getCompositeComponent();
+		EClass PROVIDING_AND_REQUIRING_ELEMENT = eINSTANCE.getProvidingAndRequiringElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Contained Assembly Contexts</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Provided Roles</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPOSITE_COMPONENT__CONTAINED_ASSEMBLY_CONTEXTS = eINSTANCE.getCompositeComponent_ContainedAssemblyContexts();
+		EReference PROVIDING_AND_REQUIRING_ELEMENT__PROVIDED_ROLES = eINSTANCE.getProvidingAndRequiringElement_ProvidedRoles();
+
+		/**
+		 * The meta object literal for the '<em><b>Required Roles</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROVIDING_AND_REQUIRING_ELEMENT__REQUIRED_ROLES = eINSTANCE.getProvidingAndRequiringElement_RequiredRoles();
 
 		/**
 		 * The meta object literal for the '{@link edu.kit.ipd.sdq.cbsm.repository.impl.SignatureImpl <em>Signature</em>}' class.

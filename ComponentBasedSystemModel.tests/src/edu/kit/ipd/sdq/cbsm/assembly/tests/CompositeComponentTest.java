@@ -1,9 +1,11 @@
 /**
  */
-package edu.kit.ipd.sdq.cbsm.repository.tests;
+package edu.kit.ipd.sdq.cbsm.assembly.tests;
 
-import edu.kit.ipd.sdq.cbsm.repository.CompositeComponent;
-import edu.kit.ipd.sdq.cbsm.repository.RepositoryFactory;
+import edu.kit.ipd.sdq.cbsm.assembly.AssemblyFactory;
+import edu.kit.ipd.sdq.cbsm.assembly.CompositeComponent;
+
+import edu.kit.ipd.sdq.cbsm.repository.tests.ComponentTest;
 
 import junit.textui.TestRunner;
 
@@ -53,7 +55,7 @@ public class CompositeComponentTest extends ComponentTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(RepositoryFactory.eINSTANCE.createCompositeComponent());
+		setFixture(AssemblyFactory.eINSTANCE.createCompositeComponent());
 	}
 
 	/**

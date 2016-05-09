@@ -2,6 +2,7 @@
  */
 package edu.kit.ipd.sdq.cbsm.repository.behavior.impl;
 
+import edu.kit.ipd.sdq.cbsm.repository.RequiredRole;
 import edu.kit.ipd.sdq.cbsm.repository.Signature;
 
 import edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorPackage;
@@ -23,6 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link edu.kit.ipd.sdq.cbsm.repository.behavior.impl.ExternalCallImpl#getRequiredService <em>Required Service</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.cbsm.repository.behavior.impl.ExternalCallImpl#getRequiredRoleOfService <em>Required Role Of Service</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,6 +39,16 @@ public class ExternalCallImpl extends ActionImpl implements ExternalCall {
 	 * @ordered
 	 */
 	protected Signature requiredService;
+
+	/**
+	 * The cached value of the '{@link #getRequiredRoleOfService() <em>Required Role Of Service</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequiredRoleOfService()
+	 * @generated
+	 * @ordered
+	 */
+	protected RequiredRole requiredRoleOfService;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -100,12 +112,53 @@ public class ExternalCallImpl extends ActionImpl implements ExternalCall {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public RequiredRole getRequiredRoleOfService() {
+		if (requiredRoleOfService != null && requiredRoleOfService.eIsProxy()) {
+			InternalEObject oldRequiredRoleOfService = (InternalEObject)requiredRoleOfService;
+			requiredRoleOfService = (RequiredRole)eResolveProxy(oldRequiredRoleOfService);
+			if (requiredRoleOfService != oldRequiredRoleOfService) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorPackage.EXTERNAL_CALL__REQUIRED_ROLE_OF_SERVICE, oldRequiredRoleOfService, requiredRoleOfService));
+			}
+		}
+		return requiredRoleOfService;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RequiredRole basicGetRequiredRoleOfService() {
+		return requiredRoleOfService;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRequiredRoleOfService(RequiredRole newRequiredRoleOfService) {
+		RequiredRole oldRequiredRoleOfService = requiredRoleOfService;
+		requiredRoleOfService = newRequiredRoleOfService;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.EXTERNAL_CALL__REQUIRED_ROLE_OF_SERVICE, oldRequiredRoleOfService, requiredRoleOfService));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case BehaviorPackage.EXTERNAL_CALL__REQUIRED_SERVICE:
 				if (resolve) return getRequiredService();
 				return basicGetRequiredService();
+			case BehaviorPackage.EXTERNAL_CALL__REQUIRED_ROLE_OF_SERVICE:
+				if (resolve) return getRequiredRoleOfService();
+				return basicGetRequiredRoleOfService();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -120,6 +173,9 @@ public class ExternalCallImpl extends ActionImpl implements ExternalCall {
 		switch (featureID) {
 			case BehaviorPackage.EXTERNAL_CALL__REQUIRED_SERVICE:
 				setRequiredService((Signature)newValue);
+				return;
+			case BehaviorPackage.EXTERNAL_CALL__REQUIRED_ROLE_OF_SERVICE:
+				setRequiredRoleOfService((RequiredRole)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -136,6 +192,9 @@ public class ExternalCallImpl extends ActionImpl implements ExternalCall {
 			case BehaviorPackage.EXTERNAL_CALL__REQUIRED_SERVICE:
 				setRequiredService((Signature)null);
 				return;
+			case BehaviorPackage.EXTERNAL_CALL__REQUIRED_ROLE_OF_SERVICE:
+				setRequiredRoleOfService((RequiredRole)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -150,6 +209,8 @@ public class ExternalCallImpl extends ActionImpl implements ExternalCall {
 		switch (featureID) {
 			case BehaviorPackage.EXTERNAL_CALL__REQUIRED_SERVICE:
 				return requiredService != null;
+			case BehaviorPackage.EXTERNAL_CALL__REQUIRED_ROLE_OF_SERVICE:
+				return requiredRoleOfService != null;
 		}
 		return super.eIsSet(featureID);
 	}

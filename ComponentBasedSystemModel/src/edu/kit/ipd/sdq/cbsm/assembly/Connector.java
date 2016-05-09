@@ -11,7 +11,7 @@ import edu.kit.ipd.sdq.cbsm.core.NamedElement;
  *
  *
  * @see edu.kit.ipd.sdq.cbsm.assembly.AssemblyPackage#getConnector()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Connector extends NamedElement {

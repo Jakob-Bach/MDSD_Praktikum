@@ -3,12 +3,14 @@
 package edu.kit.ipd.sdq.cbsm.assembly.provider;
 
 
+import edu.kit.ipd.sdq.cbsm.assembly.AssemblyPackage;
 import edu.kit.ipd.sdq.cbsm.assembly.DelegationConnector;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
@@ -40,8 +42,54 @@ public class DelegationConnectorItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addInnerAssemblyContextPropertyDescriptor(object);
+			addOuterAssemblyContextPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Inner Assembly Context feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInnerAssemblyContextPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DelegationConnector_innerAssemblyContext_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DelegationConnector_innerAssemblyContext_feature", "_UI_DelegationConnector_type"),
+				 AssemblyPackage.Literals.DELEGATION_CONNECTOR__INNER_ASSEMBLY_CONTEXT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Outer Assembly Context feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOuterAssemblyContextPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DelegationConnector_outerAssemblyContext_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DelegationConnector_outerAssemblyContext_feature", "_UI_DelegationConnector_type"),
+				 AssemblyPackage.Literals.DELEGATION_CONNECTOR__OUTER_ASSEMBLY_CONTEXT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

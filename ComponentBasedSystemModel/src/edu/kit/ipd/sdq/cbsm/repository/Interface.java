@@ -19,7 +19,8 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see edu.kit.ipd.sdq.cbsm.repository.RepositoryPackage#getInterface()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NoSignaturesEquivalent'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot NoSignaturesEquivalent='self.signatures->forAll(signature1|\n\t\t\t\tnot(self.signatures->exists(signature2|\n\t\t\t\t\tsignature1 <> signature2 and \n\t\t\t\t\tsignature1.name = signature2.name and\n\t\t\t\t\tsignature1.parameters->size() = signature2.parameters->size() and\n\t\t\t\t\tsignature1.parameters->forAll(parameter1|\n\t\t\t\t\t\tsignature2.parameters->at(signature1.parameters->indexOf(parameter1)).type = parameter1.type)\n\t\t\t\t))\n\t\t\t)'"
  * @generated
  */
 public interface Interface extends NamedElement {

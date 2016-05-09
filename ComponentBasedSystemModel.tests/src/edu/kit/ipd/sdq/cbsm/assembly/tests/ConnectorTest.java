@@ -2,12 +2,9 @@
  */
 package edu.kit.ipd.sdq.cbsm.assembly.tests;
 
-import edu.kit.ipd.sdq.cbsm.assembly.AssemblyFactory;
 import edu.kit.ipd.sdq.cbsm.assembly.Connector;
 
 import edu.kit.ipd.sdq.cbsm.core.tests.NamedElementTest;
-
-import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,16 +12,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ConnectorTest extends NamedElementTest {
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static void main(String[] args) {
-		TestRunner.run(ConnectorTest.class);
-	}
+public abstract class ConnectorTest extends NamedElementTest {
 
 	/**
 	 * Constructs a new Connector test case with the given name.
@@ -45,28 +33,6 @@ public class ConnectorTest extends NamedElementTest {
 	@Override
 	protected Connector getFixture() {
 		return (Connector)fixture;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#setUp()
-	 * @generated
-	 */
-	@Override
-	protected void setUp() throws Exception {
-		setFixture(AssemblyFactory.eINSTANCE.createConnector());
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#tearDown()
-	 * @generated
-	 */
-	@Override
-	protected void tearDown() throws Exception {
-		setFixture(null);
 	}
 
 } //ConnectorTest

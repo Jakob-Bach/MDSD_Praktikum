@@ -44,6 +44,7 @@ public class ExternalCallItemProvider extends ActionItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addRequiredServicePropertyDescriptor(object);
+			addRequiredRoleOfServicePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -62,6 +63,28 @@ public class ExternalCallItemProvider extends ActionItemProvider {
 				 getString("_UI_ExternalCall_requiredService_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ExternalCall_requiredService_feature", "_UI_ExternalCall_type"),
 				 BehaviorPackage.Literals.EXTERNAL_CALL__REQUIRED_SERVICE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Required Role Of Service feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequiredRoleOfServicePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ExternalCall_requiredRoleOfService_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ExternalCall_requiredRoleOfService_feature", "_UI_ExternalCall_type"),
+				 BehaviorPackage.Literals.EXTERNAL_CALL__REQUIRED_ROLE_OF_SERVICE,
 				 true,
 				 false,
 				 true,

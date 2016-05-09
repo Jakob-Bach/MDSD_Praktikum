@@ -2,6 +2,7 @@
  */
 package edu.kit.ipd.sdq.cbsm.core.tests;
 
+import edu.kit.ipd.sdq.cbsm.assembly.tests.AssemblyTests;
 import junit.framework.Test;
 import junit.framework.TestSuite;
 
@@ -31,6 +32,7 @@ public class ComponentBasedSystemModelAllTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new ComponentBasedSystemModelAllTests("ComponentBasedSystemModel Tests");
+		suite.addTest(AssemblyTests.suite());
 		return suite;
 	}
 

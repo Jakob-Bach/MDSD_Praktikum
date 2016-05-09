@@ -12,34 +12,6 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="edu.kit.ipd.sdq.cbsm.core.presentation.CoreModelWizardID"
-            name="%_UI_CoreModelWizard_label"
-            class="edu.kit.ipd.sdq.cbsm.core.presentation.CoreModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/CoreModelFile.gif">
-         <description>%_UI_CoreModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
-
-   <extension point="org.eclipse.ui.editors">
-      <!-- @generated componentBasedSystemModel -->
-      <editor
-            id="edu.kit.ipd.sdq.cbsm.core.presentation.CoreEditorID"
-            name="%_UI_CoreEditor_label"
-            icon="icons/full/obj16/CoreModelFile.gif"
-            extensions="core"
-            class="edu.kit.ipd.sdq.cbsm.core.presentation.CoreEditor"
-            contributorClass="edu.kit.ipd.sdq.cbsm.core.presentation.CoreActionBarContributor">
-      </editor>
-   </extension>
-
-   <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated componentBasedSystemModel -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
             id="edu.kit.ipd.sdq.cbsm.repository.presentation.RepositoryModelWizardID"
             name="%_UI_RepositoryModelWizard_label"
             class="edu.kit.ipd.sdq.cbsm.repository.presentation.RepositoryModelWizard"

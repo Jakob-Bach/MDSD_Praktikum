@@ -2,8 +2,6 @@
  */
 package edu.kit.ipd.sdq.cbsm.repository.impl;
 
-import edu.kit.ipd.sdq.cbsm.core.impl.NamedElementImpl;
-
 import edu.kit.ipd.sdq.cbsm.repository.Interface;
 import edu.kit.ipd.sdq.cbsm.repository.ProvidedRole;
 import edu.kit.ipd.sdq.cbsm.repository.RepositoryPackage;
@@ -28,7 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class ProvidedRoleImpl extends NamedElementImpl implements ProvidedRole {
+public class ProvidedRoleImpl extends RoleImpl implements ProvidedRole {
 	/**
 	 * The cached value of the '{@link #getProvidedInterface() <em>Provided Interface</em>}' reference.
 	 * <!-- begin-user-doc -->

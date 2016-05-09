@@ -81,16 +81,17 @@ public class RepositorySwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RepositoryPackage.COMPONENT: {
-				Component component = (Component)theEObject;
-				T result = caseComponent(component);
-				if (result == null) result = caseNamedElement(component);
+			case RepositoryPackage.ROLE: {
+				Role role = (Role)theEObject;
+				T result = caseRole(role);
+				if (result == null) result = caseNamedElement(role);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case RepositoryPackage.PROVIDED_ROLE: {
 				ProvidedRole providedRole = (ProvidedRole)theEObject;
 				T result = caseProvidedRole(providedRole);
+				if (result == null) result = caseRole(providedRole);
 				if (result == null) result = caseNamedElement(providedRole);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -98,15 +99,22 @@ public class RepositorySwitch<T> extends Switch<T> {
 			case RepositoryPackage.REQUIRED_ROLE: {
 				RequiredRole requiredRole = (RequiredRole)theEObject;
 				T result = caseRequiredRole(requiredRole);
+				if (result == null) result = caseRole(requiredRole);
 				if (result == null) result = caseNamedElement(requiredRole);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RepositoryPackage.COMPOSITE_COMPONENT: {
-				CompositeComponent compositeComponent = (CompositeComponent)theEObject;
-				T result = caseCompositeComponent(compositeComponent);
-				if (result == null) result = caseComponent(compositeComponent);
-				if (result == null) result = caseNamedElement(compositeComponent);
+			case RepositoryPackage.PROVIDING_AND_REQUIRING_ELEMENT: {
+				ProvidingAndRequiringElement providingAndRequiringElement = (ProvidingAndRequiringElement)theEObject;
+				T result = caseProvidingAndRequiringElement(providingAndRequiringElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RepositoryPackage.COMPONENT: {
+				Component component = (Component)theEObject;
+				T result = caseComponent(component);
+				if (result == null) result = caseNamedElement(component);
+				if (result == null) result = caseProvidingAndRequiringElement(component);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -178,6 +186,21 @@ public class RepositorySwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Role</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Role</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRole(Role object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Component</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -223,17 +246,17 @@ public class RepositorySwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Composite Component</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Providing And Requiring Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Composite Component</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Providing And Requiring Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCompositeComponent(CompositeComponent object) {
+	public T caseProvidingAndRequiringElement(ProvidingAndRequiringElement object) {
 		return null;
 	}
 

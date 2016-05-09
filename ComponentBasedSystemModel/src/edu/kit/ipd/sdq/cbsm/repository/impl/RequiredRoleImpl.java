@@ -2,8 +2,6 @@
  */
 package edu.kit.ipd.sdq.cbsm.repository.impl;
 
-import edu.kit.ipd.sdq.cbsm.core.impl.NamedElementImpl;
-
 import edu.kit.ipd.sdq.cbsm.repository.Interface;
 import edu.kit.ipd.sdq.cbsm.repository.RepositoryPackage;
 import edu.kit.ipd.sdq.cbsm.repository.RequiredRole;
@@ -28,7 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class RequiredRoleImpl extends NamedElementImpl implements RequiredRole {
+public class RequiredRoleImpl extends RoleImpl implements RequiredRole {
 	/**
 	 * The cached value of the '{@link #getRequiredInterface() <em>Required Interface</em>}' reference.
 	 * <!-- begin-user-doc -->

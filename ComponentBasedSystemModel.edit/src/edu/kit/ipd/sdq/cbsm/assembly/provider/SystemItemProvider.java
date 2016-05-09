@@ -5,27 +5,13 @@ package edu.kit.ipd.sdq.cbsm.assembly.provider;
 
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyFactory;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyPackage;
-
-import edu.kit.ipd.sdq.cbsm.core.provider.ComponentBasedSystemModelEditPlugin;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
@@ -35,13 +21,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class SystemItemProvider 
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends CompositeProvidingAndRequiringElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -63,31 +43,8 @@ public class SystemItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addProvidedRolesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Provided Roles feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addProvidedRolesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_System_providedRoles_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_System_providedRoles_feature", "_UI_System_type"),
-				 AssemblyPackage.Literals.SYSTEM__PROVIDED_ROLES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -102,8 +59,7 @@ public class SystemItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(AssemblyPackage.Literals.SYSTEM__CONTAINED_ASSEMBLY_CONTEXTS);
-			childrenFeatures.add(AssemblyPackage.Literals.SYSTEM__CONNECTORS);
+			childrenFeatures.add(AssemblyPackage.Literals.SYSTEM__SYSTEM_CONNECTORS);
 		}
 		return childrenFeatures;
 	}
@@ -156,8 +112,7 @@ public class SystemItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(edu.kit.ipd.sdq.cbsm.assembly.System.class)) {
-			case AssemblyPackage.SYSTEM__CONTAINED_ASSEMBLY_CONTEXTS:
-			case AssemblyPackage.SYSTEM__CONNECTORS:
+			case AssemblyPackage.SYSTEM__SYSTEM_CONNECTORS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -177,44 +132,18 @@ public class SystemItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(AssemblyPackage.Literals.SYSTEM__CONTAINED_ASSEMBLY_CONTEXTS,
-				 AssemblyFactory.eINSTANCE.createAssemblyContext()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(AssemblyPackage.Literals.SYSTEM__CONNECTORS,
-				 AssemblyFactory.eINSTANCE.createConnector()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(AssemblyPackage.Literals.SYSTEM__CONNECTORS,
-				 AssemblyFactory.eINSTANCE.createDelegationConnector()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(AssemblyPackage.Literals.SYSTEM__CONNECTORS,
+				(AssemblyPackage.Literals.SYSTEM__SYSTEM_CONNECTORS,
 				 AssemblyFactory.eINSTANCE.createProvidedDelegationConnector()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(AssemblyPackage.Literals.SYSTEM__CONNECTORS,
+				(AssemblyPackage.Literals.SYSTEM__SYSTEM_CONNECTORS,
 				 AssemblyFactory.eINSTANCE.createRequiredDelegationConnector()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(AssemblyPackage.Literals.SYSTEM__CONNECTORS,
+				(AssemblyPackage.Literals.SYSTEM__SYSTEM_CONNECTORS,
 				 AssemblyFactory.eINSTANCE.createAssemblyConnector()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return ComponentBasedSystemModelEditPlugin.INSTANCE;
 	}
 
 }

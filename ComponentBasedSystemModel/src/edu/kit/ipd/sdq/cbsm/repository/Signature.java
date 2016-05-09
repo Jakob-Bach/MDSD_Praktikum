@@ -20,7 +20,8 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see edu.kit.ipd.sdq.cbsm.repository.RepositoryPackage#getSignature()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NoParameterWithSameName'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot NoParameterWithSameName='self.parameters->forAll(parameter1|\n\t\t\t\tnot(self.parameters->exists(parameter2|\n\t\t\t\t\tparameter1 <> parameter2 and \n\t\t\t\t\tparameter1.name = parameter2.name\n\t\t\t\t))\n\t\t\t)'"
  * @generated
  */
 public interface Signature extends NamedElement {

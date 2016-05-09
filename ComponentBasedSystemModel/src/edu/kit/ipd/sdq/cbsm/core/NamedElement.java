@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see edu.kit.ipd.sdq.cbsm.core.CorePackage#getNamedElement()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface NamedElement extends EObject {

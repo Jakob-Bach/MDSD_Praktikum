@@ -67,8 +67,8 @@ public class ComponentItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RepositoryPackage.Literals.COMPONENT__PROVIDED_ROLES);
-			childrenFeatures.add(RepositoryPackage.Literals.COMPONENT__REQUIRED_ROLE);
+			childrenFeatures.add(RepositoryPackage.Literals.PROVIDING_AND_REQUIRING_ELEMENT__PROVIDED_ROLES);
+			childrenFeatures.add(RepositoryPackage.Literals.PROVIDING_AND_REQUIRING_ELEMENT__REQUIRED_ROLES);
 			childrenFeatures.add(RepositoryPackage.Literals.COMPONENT__BEHAVIOR_DESCRIPTION);
 		}
 		return childrenFeatures;
@@ -126,7 +126,7 @@ public class ComponentItemProvider extends NamedElementItemProvider {
 
 		switch (notification.getFeatureID(Component.class)) {
 			case RepositoryPackage.COMPONENT__PROVIDED_ROLES:
-			case RepositoryPackage.COMPONENT__REQUIRED_ROLE:
+			case RepositoryPackage.COMPONENT__REQUIRED_ROLES:
 			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -147,12 +147,12 @@ public class ComponentItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RepositoryPackage.Literals.COMPONENT__PROVIDED_ROLES,
+				(RepositoryPackage.Literals.PROVIDING_AND_REQUIRING_ELEMENT__PROVIDED_ROLES,
 				 RepositoryFactory.eINSTANCE.createProvidedRole()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RepositoryPackage.Literals.COMPONENT__REQUIRED_ROLE,
+				(RepositoryPackage.Literals.PROVIDING_AND_REQUIRING_ELEMENT__REQUIRED_ROLES,
 				 RepositoryFactory.eINSTANCE.createRequiredRole()));
 
 		newChildDescriptors.add

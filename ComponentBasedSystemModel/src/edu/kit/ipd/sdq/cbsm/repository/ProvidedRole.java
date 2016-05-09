@@ -2,8 +2,6 @@
  */
 package edu.kit.ipd.sdq.cbsm.repository;
 
-import edu.kit.ipd.sdq.cbsm.core.NamedElement;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Provided Role</b></em>'.
@@ -20,7 +18,7 @@ import edu.kit.ipd.sdq.cbsm.core.NamedElement;
  * @model
  * @generated
  */
-public interface ProvidedRole extends NamedElement {
+public interface ProvidedRole extends Role {
 	/**
 	 * Returns the value of the '<em><b>Provided Interface</b></em>' reference.
 	 * <!-- begin-user-doc -->

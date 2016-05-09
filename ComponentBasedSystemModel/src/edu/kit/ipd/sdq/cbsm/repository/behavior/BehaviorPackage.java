@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot'"
  * @generated
  */
 public interface BehaviorPackage extends EPackage {
@@ -251,13 +252,22 @@ public interface BehaviorPackage extends EPackage {
 	int EXTERNAL_CALL__REQUIRED_SERVICE = ACTION_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Required Role Of Service</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTERNAL_CALL__REQUIRED_ROLE_OF_SERVICE = ACTION_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>External Call</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTERNAL_CALL_FEATURE_COUNT = ACTION_FEATURE_COUNT + 1;
+	int EXTERNAL_CALL_FEATURE_COUNT = ACTION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>External Call</em>' class.
@@ -528,6 +538,17 @@ public interface BehaviorPackage extends EPackage {
 	EReference getExternalCall_RequiredService();
 
 	/**
+	 * Returns the meta object for the reference '{@link edu.kit.ipd.sdq.cbsm.repository.behavior.ExternalCall#getRequiredRoleOfService <em>Required Role Of Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Required Role Of Service</em>'.
+	 * @see edu.kit.ipd.sdq.cbsm.repository.behavior.ExternalCall#getRequiredRoleOfService()
+	 * @see #getExternalCall()
+	 * @generated
+	 */
+	EReference getExternalCall_RequiredRoleOfService();
+
+	/**
 	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.cbsm.repository.behavior.Loop <em>Loop</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -684,6 +705,14 @@ public interface BehaviorPackage extends EPackage {
 		 * @generated
 		 */
 		EReference EXTERNAL_CALL__REQUIRED_SERVICE = eINSTANCE.getExternalCall_RequiredService();
+
+		/**
+		 * The meta object literal for the '<em><b>Required Role Of Service</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXTERNAL_CALL__REQUIRED_ROLE_OF_SERVICE = eINSTANCE.getExternalCall_RequiredRoleOfService();
 
 		/**
 		 * The meta object literal for the '{@link edu.kit.ipd.sdq.cbsm.repository.behavior.impl.LoopImpl <em>Loop</em>}' class.

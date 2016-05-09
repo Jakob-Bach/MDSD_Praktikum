@@ -5,11 +5,15 @@ package edu.kit.ipd.sdq.cbsm.assembly.util;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyConnector;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyContext;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyPackage;
+import edu.kit.ipd.sdq.cbsm.assembly.CompositeComponent;
+import edu.kit.ipd.sdq.cbsm.assembly.CompositeProvidingAndRequiringElement;
 import edu.kit.ipd.sdq.cbsm.assembly.Connector;
 import edu.kit.ipd.sdq.cbsm.assembly.DelegationConnector;
 import edu.kit.ipd.sdq.cbsm.assembly.ProvidedDelegationConnector;
 import edu.kit.ipd.sdq.cbsm.assembly.RequiredDelegationConnector;
 import edu.kit.ipd.sdq.cbsm.core.NamedElement;
+import edu.kit.ipd.sdq.cbsm.repository.Component;
+import edu.kit.ipd.sdq.cbsm.repository.ProvidingAndRequiringElement;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -78,6 +82,14 @@ public class AssemblyAdapterFactory extends AdapterFactoryImpl {
 				return createAssemblyContextAdapter();
 			}
 			@Override
+			public Adapter caseCompositeProvidingAndRequiringElement(CompositeProvidingAndRequiringElement object) {
+				return createCompositeProvidingAndRequiringElementAdapter();
+			}
+			@Override
+			public Adapter caseCompositeComponent(CompositeComponent object) {
+				return createCompositeComponentAdapter();
+			}
+			@Override
 			public Adapter caseSystem(edu.kit.ipd.sdq.cbsm.assembly.System object) {
 				return createSystemAdapter();
 			}
@@ -104,6 +116,14 @@ public class AssemblyAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseNamedElement(NamedElement object) {
 				return createNamedElementAdapter();
+			}
+			@Override
+			public Adapter caseProvidingAndRequiringElement(ProvidingAndRequiringElement object) {
+				return createProvidingAndRequiringElementAdapter();
+			}
+			@Override
+			public Adapter caseComponent(Component object) {
+				return createComponentAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -136,6 +156,34 @@ public class AssemblyAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAssemblyContextAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.cbsm.assembly.CompositeProvidingAndRequiringElement <em>Composite Providing And Requiring Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see edu.kit.ipd.sdq.cbsm.assembly.CompositeProvidingAndRequiringElement
+	 * @generated
+	 */
+	public Adapter createCompositeProvidingAndRequiringElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.cbsm.assembly.CompositeComponent <em>Composite Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see edu.kit.ipd.sdq.cbsm.assembly.CompositeComponent
+	 * @generated
+	 */
+	public Adapter createCompositeComponentAdapter() {
 		return null;
 	}
 
@@ -234,6 +282,34 @@ public class AssemblyAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.cbsm.repository.ProvidingAndRequiringElement <em>Providing And Requiring Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see edu.kit.ipd.sdq.cbsm.repository.ProvidingAndRequiringElement
+	 * @generated
+	 */
+	public Adapter createProvidingAndRequiringElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.cbsm.repository.Component <em>Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see edu.kit.ipd.sdq.cbsm.repository.Component
+	 * @generated
+	 */
+	public Adapter createComponentAdapter() {
 		return null;
 	}
 

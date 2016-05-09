@@ -6,8 +6,7 @@ import edu.kit.ipd.sdq.cbsm.assembly.AssemblyConnector;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyContext;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyFactory;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyPackage;
-import edu.kit.ipd.sdq.cbsm.assembly.Connector;
-import edu.kit.ipd.sdq.cbsm.assembly.DelegationConnector;
+import edu.kit.ipd.sdq.cbsm.assembly.CompositeComponent;
 import edu.kit.ipd.sdq.cbsm.assembly.ProvidedDelegationConnector;
 import edu.kit.ipd.sdq.cbsm.assembly.RequiredDelegationConnector;
 import org.eclipse.emf.ecore.EClass;
@@ -63,9 +62,8 @@ public class AssemblyFactoryImpl extends EFactoryImpl implements AssemblyFactory
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case AssemblyPackage.ASSEMBLY_CONTEXT: return createAssemblyContext();
+			case AssemblyPackage.COMPOSITE_COMPONENT: return createCompositeComponent();
 			case AssemblyPackage.SYSTEM: return createSystem();
-			case AssemblyPackage.CONNECTOR: return createConnector();
-			case AssemblyPackage.DELEGATION_CONNECTOR: return createDelegationConnector();
 			case AssemblyPackage.PROVIDED_DELEGATION_CONNECTOR: return createProvidedDelegationConnector();
 			case AssemblyPackage.REQUIRED_DELEGATION_CONNECTOR: return createRequiredDelegationConnector();
 			case AssemblyPackage.ASSEMBLY_CONNECTOR: return createAssemblyConnector();
@@ -89,29 +87,19 @@ public class AssemblyFactoryImpl extends EFactoryImpl implements AssemblyFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public CompositeComponent createCompositeComponent() {
+		CompositeComponentImpl compositeComponent = new CompositeComponentImpl();
+		return compositeComponent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public edu.kit.ipd.sdq.cbsm.assembly.System createSystem() {
 		SystemImpl system = new SystemImpl();
 		return system;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Connector createConnector() {
-		ConnectorImpl connector = new ConnectorImpl();
-		return connector;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DelegationConnector createDelegationConnector() {
-		DelegationConnectorImpl delegationConnector = new DelegationConnectorImpl();
-		return delegationConnector;
 	}
 
 	/**

@@ -49,26 +49,26 @@ public class AllocationContextItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addContainerPropertyDescriptor(object);
-			addAssemblyContextPropertyDescriptor(object);
+			addAllocatedContainerPropertyDescriptor(object);
+			addAllocatedAssemblyContextPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Container feature.
+	 * This adds a property descriptor for the Allocated Container feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addContainerPropertyDescriptor(Object object) {
+	protected void addAllocatedContainerPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_AllocationContext_container_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AllocationContext_container_feature", "_UI_AllocationContext_type"),
-				 AllocationPackage.Literals.ALLOCATION_CONTEXT__CONTAINER,
+				 getString("_UI_AllocationContext_allocatedContainer_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AllocationContext_allocatedContainer_feature", "_UI_AllocationContext_type"),
+				 AllocationPackage.Literals.ALLOCATION_CONTEXT__ALLOCATED_CONTAINER,
 				 true,
 				 false,
 				 true,
@@ -78,19 +78,19 @@ public class AllocationContextItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Assembly Context feature.
+	 * This adds a property descriptor for the Allocated Assembly Context feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAssemblyContextPropertyDescriptor(Object object) {
+	protected void addAllocatedAssemblyContextPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_AllocationContext_assemblyContext_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AllocationContext_assemblyContext_feature", "_UI_AllocationContext_type"),
-				 AllocationPackage.Literals.ALLOCATION_CONTEXT__ASSEMBLY_CONTEXT,
+				 getString("_UI_AllocationContext_allocatedAssemblyContext_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AllocationContext_allocatedAssemblyContext_feature", "_UI_AllocationContext_type"),
+				 AllocationPackage.Literals.ALLOCATION_CONTEXT__ALLOCATED_ASSEMBLY_CONTEXT,
 				 true,
 				 false,
 				 true,

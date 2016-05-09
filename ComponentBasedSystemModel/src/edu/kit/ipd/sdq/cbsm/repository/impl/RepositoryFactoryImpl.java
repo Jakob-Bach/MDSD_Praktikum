@@ -59,12 +59,10 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
 		switch (eClass.getClassifierID()) {
 			case RepositoryPackage.REPOSITORY: return createRepository();
 			case RepositoryPackage.INTERFACE: return createInterface();
-			case RepositoryPackage.COMPONENT: return createComponent();
 			case RepositoryPackage.PROVIDED_ROLE: return createProvidedRole();
 			case RepositoryPackage.REQUIRED_ROLE: return createRequiredRole();
-			case RepositoryPackage.COMPOSITE_COMPONENT: return createCompositeComponent();
+			case RepositoryPackage.COMPONENT: return createComponent();
 			case RepositoryPackage.SIGNATURE: return createSignature();
-			case RepositoryPackage.DATA_TYPE: return createDataType();
 			case RepositoryPackage.PARAMETER: return createParameter();
 			case RepositoryPackage.COMPLEX_TYPE: return createComplexType();
 			case RepositoryPackage.SIMPLE_TYPE: return createSimpleType();
@@ -158,29 +156,9 @@ public class RepositoryFactoryImpl extends EFactoryImpl implements RepositoryFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CompositeComponent createCompositeComponent() {
-		CompositeComponentImpl compositeComponent = new CompositeComponentImpl();
-		return compositeComponent;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Signature createSignature() {
 		SignatureImpl signature = new SignatureImpl();
 		return signature;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DataType createDataType() {
-		DataTypeImpl dataType = new DataTypeImpl();
-		return dataType;
 	}
 
 	/**

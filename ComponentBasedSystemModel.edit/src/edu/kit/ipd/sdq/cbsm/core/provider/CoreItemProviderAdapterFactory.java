@@ -72,29 +72,6 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.cbsm.core.NamedElement} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected NamedElementItemProvider namedElementItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link edu.kit.ipd.sdq.cbsm.core.NamedElement}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createNamedElementAdapter() {
-		if (namedElementItemProvider == null) {
-			namedElementItemProvider = new NamedElementItemProvider(this);
-		}
-
-		return namedElementItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -193,7 +170,6 @@ public class CoreItemProviderAdapterFactory extends CoreAdapterFactory implement
 	 * @generated
 	 */
 	public void dispose() {
-		if (namedElementItemProvider != null) namedElementItemProvider.dispose();
 	}
 
 }

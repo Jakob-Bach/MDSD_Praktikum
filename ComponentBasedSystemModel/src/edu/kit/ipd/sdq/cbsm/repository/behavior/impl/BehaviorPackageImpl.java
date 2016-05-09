@@ -30,12 +30,14 @@ import edu.kit.ipd.sdq.cbsm.repository.behavior.ExternalCall;
 import edu.kit.ipd.sdq.cbsm.repository.behavior.InternalAction;
 import edu.kit.ipd.sdq.cbsm.repository.behavior.Loop;
 
+import edu.kit.ipd.sdq.cbsm.repository.behavior.util.BehaviorValidator;
 import edu.kit.ipd.sdq.cbsm.repository.impl.RepositoryPackageImpl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -163,6 +165,15 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		theEnvironmentPackage.initializePackageContents();
 		theAllocationPackage.initializePackageContents();
 
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theBehaviorPackage, 
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return BehaviorValidator.INSTANCE;
+				 }
+			 });
+
 		// Mark meta-data to indicate it can't be changed
 		theBehaviorPackage.freeze();
 
@@ -242,6 +253,15 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 */
 	public EReference getExternalCall_RequiredService() {
 		return (EReference)externalCallEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getExternalCall_RequiredRoleOfService() {
+		return (EReference)externalCallEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -337,6 +357,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 
 		externalCallEClass = createEClass(EXTERNAL_CALL);
 		createEReference(externalCallEClass, EXTERNAL_CALL__REQUIRED_SERVICE);
+		createEReference(externalCallEClass, EXTERNAL_CALL__REQUIRED_ROLE_OF_SERVICE);
 
 		loopEClass = createEClass(LOOP);
 		createEReference(loopEClass, LOOP__LOOP_ACTIONS);
@@ -399,6 +420,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 
 		initEClass(externalCallEClass, ExternalCall.class, "ExternalCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getExternalCall_RequiredService(), theRepositoryPackage.getSignature(), null, "requiredService", null, 1, 1, ExternalCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExternalCall_RequiredRoleOfService(), theRepositoryPackage.getRequiredRole(), null, "requiredRoleOfService", null, 1, 1, ExternalCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(loopEClass, Loop.class, "Loop", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLoop_LoopActions(), this.getAction(), null, "loopActions", null, 0, -1, Loop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -408,6 +430,52 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 
 		initEClass(branchPathEClass, BranchPath.class, "BranchPath", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBranchPath_PathActions(), this.getAction(), null, "pathActions", null, 0, -1, BranchPath.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
+		createPivotAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+		   });	
+		addAnnotation
+		  (externalCallEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "RequiredRolesInterfaceContainsSignature"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createPivotAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";	
+		addAnnotation
+		  (externalCallEClass, 
+		   source, 
+		   new String[] {
+			 "RequiredRolesInterfaceContainsSignature", "\n\t\t\t\t\tself.requiredRoleOfService.requiredInterface.signatures->exists(signature|\n\t\t\t\t\t\tsignature = self.requiredService\n\t\t\t\t\t)"
+		   });
 	}
 
 } //BehaviorPackageImpl

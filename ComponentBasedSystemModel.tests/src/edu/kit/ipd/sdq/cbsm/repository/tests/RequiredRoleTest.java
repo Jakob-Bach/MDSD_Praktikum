@@ -2,8 +2,6 @@
  */
 package edu.kit.ipd.sdq.cbsm.repository.tests;
 
-import edu.kit.ipd.sdq.cbsm.core.tests.NamedElementTest;
-
 import edu.kit.ipd.sdq.cbsm.repository.RepositoryFactory;
 import edu.kit.ipd.sdq.cbsm.repository.RequiredRole;
 
@@ -15,7 +13,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class RequiredRoleTest extends NamedElementTest {
+public class RequiredRoleTest extends RoleTest {
 
 	/**
 	 * <!-- begin-user-doc -->

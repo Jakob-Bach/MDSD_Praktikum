@@ -42,26 +42,28 @@ public class AssemblyConnectorItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addProvidedRolePropertyDescriptor(object);
-			addRequiredRolePropertyDescriptor(object);
+			addConnectedProvidedRolePropertyDescriptor(object);
+			addConnectedRequiredRolePropertyDescriptor(object);
+			addConnectedProvidedAssemblyContextPropertyDescriptor(object);
+			addConnectedRequiredAssemblyContextPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Provided Role feature.
+	 * This adds a property descriptor for the Connected Provided Role feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addProvidedRolePropertyDescriptor(Object object) {
+	protected void addConnectedProvidedRolePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_AssemblyConnector_providedRole_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AssemblyConnector_providedRole_feature", "_UI_AssemblyConnector_type"),
-				 AssemblyPackage.Literals.ASSEMBLY_CONNECTOR__PROVIDED_ROLE,
+				 getString("_UI_AssemblyConnector_connectedProvidedRole_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssemblyConnector_connectedProvidedRole_feature", "_UI_AssemblyConnector_type"),
+				 AssemblyPackage.Literals.ASSEMBLY_CONNECTOR__CONNECTED_PROVIDED_ROLE,
 				 true,
 				 false,
 				 true,
@@ -71,19 +73,63 @@ public class AssemblyConnectorItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Required Role feature.
+	 * This adds a property descriptor for the Connected Required Role feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRequiredRolePropertyDescriptor(Object object) {
+	protected void addConnectedRequiredRolePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_AssemblyConnector_requiredRole_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AssemblyConnector_requiredRole_feature", "_UI_AssemblyConnector_type"),
-				 AssemblyPackage.Literals.ASSEMBLY_CONNECTOR__REQUIRED_ROLE,
+				 getString("_UI_AssemblyConnector_connectedRequiredRole_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssemblyConnector_connectedRequiredRole_feature", "_UI_AssemblyConnector_type"),
+				 AssemblyPackage.Literals.ASSEMBLY_CONNECTOR__CONNECTED_REQUIRED_ROLE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Connected Provided Assembly Context feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addConnectedProvidedAssemblyContextPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AssemblyConnector_connectedProvidedAssemblyContext_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssemblyConnector_connectedProvidedAssemblyContext_feature", "_UI_AssemblyConnector_type"),
+				 AssemblyPackage.Literals.ASSEMBLY_CONNECTOR__CONNECTED_PROVIDED_ASSEMBLY_CONTEXT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Connected Required Assembly Context feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addConnectedRequiredAssemblyContextPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AssemblyConnector_connectedRequiredAssemblyContext_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AssemblyConnector_connectedRequiredAssemblyContext_feature", "_UI_AssemblyConnector_type"),
+				 AssemblyPackage.Literals.ASSEMBLY_CONNECTOR__CONNECTED_REQUIRED_ASSEMBLY_CONTEXT,
 				 true,
 				 false,
 				 true,

@@ -2,13 +2,8 @@
  */
 package edu.kit.ipd.sdq.cbsm.core.tests;
 
-import edu.kit.ipd.sdq.cbsm.core.CoreFactory;
 import edu.kit.ipd.sdq.cbsm.core.CorePackage;
-import edu.kit.ipd.sdq.cbsm.core.NamedElement;
-
 import java.io.File;
-import java.io.IOException;
-
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.URI;
 
@@ -57,16 +52,7 @@ public class CoreExample {
 		// If there are no arguments, emit an appropriate usage message.
 		//
 		if (args.length == 0) {
-			System.out.println("Enter a list of file paths or URIs that have content like this:");
-			try {
-				Resource resource = resourceSet.createResource(URI.createURI("http:///My.core"));
-				NamedElement root = CoreFactory.eINSTANCE.createNamedElement();
-				resource.getContents().add(root);
-				resource.save(System.out, null);
-			}
-			catch (IOException exception) {
-				exception.printStackTrace();
-			}
+			System.out.println("Enter a list of file paths or URIs");
 		}
 		else {
 			// Iterate over all the arguments.

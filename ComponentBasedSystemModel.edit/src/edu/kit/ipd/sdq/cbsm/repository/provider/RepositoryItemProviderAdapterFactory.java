@@ -187,29 +187,6 @@ public class RepositoryItemProviderAdapterFactory extends RepositoryAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.cbsm.repository.CompositeComponent} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CompositeComponentItemProvider compositeComponentItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link edu.kit.ipd.sdq.cbsm.repository.CompositeComponent}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCompositeComponentAdapter() {
-		if (compositeComponentItemProvider == null) {
-			compositeComponentItemProvider = new CompositeComponentItemProvider(this);
-		}
-
-		return compositeComponentItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.cbsm.repository.Signature} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -230,29 +207,6 @@ public class RepositoryItemProviderAdapterFactory extends RepositoryAdapterFacto
 		}
 
 		return signatureItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.cbsm.repository.DataType} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DataTypeItemProvider dataTypeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link edu.kit.ipd.sdq.cbsm.repository.DataType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDataTypeAdapter() {
-		if (dataTypeItemProvider == null) {
-			dataTypeItemProvider = new DataTypeItemProvider(this);
-		}
-
-		return dataTypeItemProvider;
 	}
 
 	/**
@@ -425,12 +379,10 @@ public class RepositoryItemProviderAdapterFactory extends RepositoryAdapterFacto
 	public void dispose() {
 		if (repositoryItemProvider != null) repositoryItemProvider.dispose();
 		if (interfaceItemProvider != null) interfaceItemProvider.dispose();
-		if (componentItemProvider != null) componentItemProvider.dispose();
 		if (providedRoleItemProvider != null) providedRoleItemProvider.dispose();
 		if (requiredRoleItemProvider != null) requiredRoleItemProvider.dispose();
-		if (compositeComponentItemProvider != null) compositeComponentItemProvider.dispose();
+		if (componentItemProvider != null) componentItemProvider.dispose();
 		if (signatureItemProvider != null) signatureItemProvider.dispose();
-		if (dataTypeItemProvider != null) dataTypeItemProvider.dispose();
 		if (parameterItemProvider != null) parameterItemProvider.dispose();
 		if (complexTypeItemProvider != null) complexTypeItemProvider.dispose();
 		if (simpleTypeItemProvider != null) simpleTypeItemProvider.dispose();

@@ -13,6 +13,13 @@ import junit.textui.TestRunner;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Context</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are tested:
+ * <ul>
+ *   <li>{@link edu.kit.ipd.sdq.cbsm.assembly.AssemblyContext#getAssemblyContextProvidedRoles() <em>Assembly Context Provided Roles</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.cbsm.assembly.AssemblyContext#getAssemblyContextRequiredRoles() <em>Assembly Context Required Roles</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class AssemblyContextTest extends NamedElementTest {
@@ -67,6 +74,32 @@ public class AssemblyContextTest extends NamedElementTest {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link edu.kit.ipd.sdq.cbsm.assembly.AssemblyContext#getAssemblyContextProvidedRoles() <em>Assembly Context Provided Roles</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see edu.kit.ipd.sdq.cbsm.assembly.AssemblyContext#getAssemblyContextProvidedRoles()
+	 * @generated
+	 */
+	public void testGetAssemblyContextProvidedRoles() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link edu.kit.ipd.sdq.cbsm.assembly.AssemblyContext#getAssemblyContextRequiredRoles() <em>Assembly Context Required Roles</em>}' feature getter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see edu.kit.ipd.sdq.cbsm.assembly.AssemblyContext#getAssemblyContextRequiredRoles()
+	 * @generated
+	 */
+	public void testGetAssemblyContextRequiredRoles() {
+		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //AssemblyContextTest

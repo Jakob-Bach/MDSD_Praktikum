@@ -23,32 +23,32 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link edu.kit.ipd.sdq.cbsm.allocation.impl.AllocationContextImpl#getContainer <em>Container</em>}</li>
- *   <li>{@link edu.kit.ipd.sdq.cbsm.allocation.impl.AllocationContextImpl#getAssemblyContext <em>Assembly Context</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.cbsm.allocation.impl.AllocationContextImpl#getAllocatedContainer <em>Allocated Container</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.cbsm.allocation.impl.AllocationContextImpl#getAllocatedAssemblyContext <em>Allocated Assembly Context</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class AllocationContextImpl extends NamedElementImpl implements AllocationContext {
 	/**
-	 * The cached value of the '{@link #getContainer() <em>Container</em>}' reference.
+	 * The cached value of the '{@link #getAllocatedContainer() <em>Allocated Container</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getContainer()
+	 * @see #getAllocatedContainer()
 	 * @generated
 	 * @ordered
 	 */
-	protected edu.kit.ipd.sdq.cbsm.environment.Container container;
+	protected edu.kit.ipd.sdq.cbsm.environment.Container allocatedContainer;
 
 	/**
-	 * The cached value of the '{@link #getAssemblyContext() <em>Assembly Context</em>}' reference.
+	 * The cached value of the '{@link #getAllocatedAssemblyContext() <em>Allocated Assembly Context</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAssemblyContext()
+	 * @see #getAllocatedAssemblyContext()
 	 * @generated
 	 * @ordered
 	 */
-	protected AssemblyContext assemblyContext;
+	protected AssemblyContext allocatedAssemblyContext;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,16 +74,16 @@ public class AllocationContextImpl extends NamedElementImpl implements Allocatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public edu.kit.ipd.sdq.cbsm.environment.Container getContainer() {
-		if (container != null && container.eIsProxy()) {
-			InternalEObject oldContainer = (InternalEObject)container;
-			container = (edu.kit.ipd.sdq.cbsm.environment.Container)eResolveProxy(oldContainer);
-			if (container != oldContainer) {
+	public edu.kit.ipd.sdq.cbsm.environment.Container getAllocatedContainer() {
+		if (allocatedContainer != null && allocatedContainer.eIsProxy()) {
+			InternalEObject oldAllocatedContainer = (InternalEObject)allocatedContainer;
+			allocatedContainer = (edu.kit.ipd.sdq.cbsm.environment.Container)eResolveProxy(oldAllocatedContainer);
+			if (allocatedContainer != oldAllocatedContainer) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AllocationPackage.ALLOCATION_CONTEXT__CONTAINER, oldContainer, container));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AllocationPackage.ALLOCATION_CONTEXT__ALLOCATED_CONTAINER, oldAllocatedContainer, allocatedContainer));
 			}
 		}
-		return container;
+		return allocatedContainer;
 	}
 
 	/**
@@ -91,8 +91,8 @@ public class AllocationContextImpl extends NamedElementImpl implements Allocatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public edu.kit.ipd.sdq.cbsm.environment.Container basicGetContainer() {
-		return container;
+	public edu.kit.ipd.sdq.cbsm.environment.Container basicGetAllocatedContainer() {
+		return allocatedContainer;
 	}
 
 	/**
@@ -100,11 +100,11 @@ public class AllocationContextImpl extends NamedElementImpl implements Allocatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setContainer(edu.kit.ipd.sdq.cbsm.environment.Container newContainer) {
-		edu.kit.ipd.sdq.cbsm.environment.Container oldContainer = container;
-		container = newContainer;
+	public void setAllocatedContainer(edu.kit.ipd.sdq.cbsm.environment.Container newAllocatedContainer) {
+		edu.kit.ipd.sdq.cbsm.environment.Container oldAllocatedContainer = allocatedContainer;
+		allocatedContainer = newAllocatedContainer;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AllocationPackage.ALLOCATION_CONTEXT__CONTAINER, oldContainer, container));
+			eNotify(new ENotificationImpl(this, Notification.SET, AllocationPackage.ALLOCATION_CONTEXT__ALLOCATED_CONTAINER, oldAllocatedContainer, allocatedContainer));
 	}
 
 	/**
@@ -112,16 +112,16 @@ public class AllocationContextImpl extends NamedElementImpl implements Allocatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AssemblyContext getAssemblyContext() {
-		if (assemblyContext != null && assemblyContext.eIsProxy()) {
-			InternalEObject oldAssemblyContext = (InternalEObject)assemblyContext;
-			assemblyContext = (AssemblyContext)eResolveProxy(oldAssemblyContext);
-			if (assemblyContext != oldAssemblyContext) {
+	public AssemblyContext getAllocatedAssemblyContext() {
+		if (allocatedAssemblyContext != null && allocatedAssemblyContext.eIsProxy()) {
+			InternalEObject oldAllocatedAssemblyContext = (InternalEObject)allocatedAssemblyContext;
+			allocatedAssemblyContext = (AssemblyContext)eResolveProxy(oldAllocatedAssemblyContext);
+			if (allocatedAssemblyContext != oldAllocatedAssemblyContext) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AllocationPackage.ALLOCATION_CONTEXT__ASSEMBLY_CONTEXT, oldAssemblyContext, assemblyContext));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AllocationPackage.ALLOCATION_CONTEXT__ALLOCATED_ASSEMBLY_CONTEXT, oldAllocatedAssemblyContext, allocatedAssemblyContext));
 			}
 		}
-		return assemblyContext;
+		return allocatedAssemblyContext;
 	}
 
 	/**
@@ -129,8 +129,8 @@ public class AllocationContextImpl extends NamedElementImpl implements Allocatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AssemblyContext basicGetAssemblyContext() {
-		return assemblyContext;
+	public AssemblyContext basicGetAllocatedAssemblyContext() {
+		return allocatedAssemblyContext;
 	}
 
 	/**
@@ -138,11 +138,11 @@ public class AllocationContextImpl extends NamedElementImpl implements Allocatio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAssemblyContext(AssemblyContext newAssemblyContext) {
-		AssemblyContext oldAssemblyContext = assemblyContext;
-		assemblyContext = newAssemblyContext;
+	public void setAllocatedAssemblyContext(AssemblyContext newAllocatedAssemblyContext) {
+		AssemblyContext oldAllocatedAssemblyContext = allocatedAssemblyContext;
+		allocatedAssemblyContext = newAllocatedAssemblyContext;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AllocationPackage.ALLOCATION_CONTEXT__ASSEMBLY_CONTEXT, oldAssemblyContext, assemblyContext));
+			eNotify(new ENotificationImpl(this, Notification.SET, AllocationPackage.ALLOCATION_CONTEXT__ALLOCATED_ASSEMBLY_CONTEXT, oldAllocatedAssemblyContext, allocatedAssemblyContext));
 	}
 
 	/**
@@ -153,12 +153,12 @@ public class AllocationContextImpl extends NamedElementImpl implements Allocatio
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AllocationPackage.ALLOCATION_CONTEXT__CONTAINER:
-				if (resolve) return getContainer();
-				return basicGetContainer();
-			case AllocationPackage.ALLOCATION_CONTEXT__ASSEMBLY_CONTEXT:
-				if (resolve) return getAssemblyContext();
-				return basicGetAssemblyContext();
+			case AllocationPackage.ALLOCATION_CONTEXT__ALLOCATED_CONTAINER:
+				if (resolve) return getAllocatedContainer();
+				return basicGetAllocatedContainer();
+			case AllocationPackage.ALLOCATION_CONTEXT__ALLOCATED_ASSEMBLY_CONTEXT:
+				if (resolve) return getAllocatedAssemblyContext();
+				return basicGetAllocatedAssemblyContext();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -171,11 +171,11 @@ public class AllocationContextImpl extends NamedElementImpl implements Allocatio
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AllocationPackage.ALLOCATION_CONTEXT__CONTAINER:
-				setContainer((edu.kit.ipd.sdq.cbsm.environment.Container)newValue);
+			case AllocationPackage.ALLOCATION_CONTEXT__ALLOCATED_CONTAINER:
+				setAllocatedContainer((edu.kit.ipd.sdq.cbsm.environment.Container)newValue);
 				return;
-			case AllocationPackage.ALLOCATION_CONTEXT__ASSEMBLY_CONTEXT:
-				setAssemblyContext((AssemblyContext)newValue);
+			case AllocationPackage.ALLOCATION_CONTEXT__ALLOCATED_ASSEMBLY_CONTEXT:
+				setAllocatedAssemblyContext((AssemblyContext)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -189,11 +189,11 @@ public class AllocationContextImpl extends NamedElementImpl implements Allocatio
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AllocationPackage.ALLOCATION_CONTEXT__CONTAINER:
-				setContainer((edu.kit.ipd.sdq.cbsm.environment.Container)null);
+			case AllocationPackage.ALLOCATION_CONTEXT__ALLOCATED_CONTAINER:
+				setAllocatedContainer((edu.kit.ipd.sdq.cbsm.environment.Container)null);
 				return;
-			case AllocationPackage.ALLOCATION_CONTEXT__ASSEMBLY_CONTEXT:
-				setAssemblyContext((AssemblyContext)null);
+			case AllocationPackage.ALLOCATION_CONTEXT__ALLOCATED_ASSEMBLY_CONTEXT:
+				setAllocatedAssemblyContext((AssemblyContext)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -207,10 +207,10 @@ public class AllocationContextImpl extends NamedElementImpl implements Allocatio
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AllocationPackage.ALLOCATION_CONTEXT__CONTAINER:
-				return container != null;
-			case AllocationPackage.ALLOCATION_CONTEXT__ASSEMBLY_CONTEXT:
-				return assemblyContext != null;
+			case AllocationPackage.ALLOCATION_CONTEXT__ALLOCATED_CONTAINER:
+				return allocatedContainer != null;
+			case AllocationPackage.ALLOCATION_CONTEXT__ALLOCATED_ASSEMBLY_CONTEXT:
+				return allocatedAssemblyContext != null;
 		}
 		return super.eIsSet(featureID);
 	}

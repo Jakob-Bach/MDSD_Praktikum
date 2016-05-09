@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class DataTypeImpl extends MinimalEObjectImpl.Container implements DataType {
+public abstract class DataTypeImpl extends MinimalEObjectImpl.Container implements DataType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

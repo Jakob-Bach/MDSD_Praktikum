@@ -178,6 +178,15 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getContainer_ParentEnvironment() {
+		return (EReference)containerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLink() {
 		return linkEClass;
 	}
@@ -187,8 +196,17 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLink_Containers() {
+	public EReference getLink_ParentEnvironment() {
 		return (EReference)linkEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLink_LinkedContainers() {
+		return (EReference)linkEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -224,9 +242,11 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		createEReference(environmentEClass, ENVIRONMENT__LINKS);
 
 		containerEClass = createEClass(CONTAINER);
+		createEReference(containerEClass, CONTAINER__PARENT_ENVIRONMENT);
 
 		linkEClass = createEClass(LINK);
-		createEReference(linkEClass, LINK__CONTAINERS);
+		createEReference(linkEClass, LINK__PARENT_ENVIRONMENT);
+		createEReference(linkEClass, LINK__LINKED_CONTAINERS);
 	}
 
 	/**
@@ -265,13 +285,15 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(environmentEClass, Environment.class, "Environment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEnvironment_Containers(), this.getContainer(), null, "containers", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEnvironment_Links(), this.getLink(), null, "links", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEnvironment_Containers(), this.getContainer(), this.getContainer_ParentEnvironment(), "containers", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEnvironment_Links(), this.getLink(), this.getLink_ParentEnvironment(), "links", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(containerEClass, edu.kit.ipd.sdq.cbsm.environment.Container.class, "Container", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getContainer_ParentEnvironment(), this.getEnvironment(), this.getEnvironment_Containers(), "parentEnvironment", null, 1, 1, edu.kit.ipd.sdq.cbsm.environment.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(linkEClass, Link.class, "Link", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLink_Containers(), this.getContainer(), null, "containers", null, 2, -1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLink_ParentEnvironment(), this.getEnvironment(), this.getEnvironment_Links(), "parentEnvironment", null, 1, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLink_LinkedContainers(), this.getContainer(), null, "linkedContainers", null, 2, -1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

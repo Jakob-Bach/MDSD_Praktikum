@@ -31,6 +31,7 @@ public class AssemblyTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new AssemblyTests("assembly Tests");
+		suite.addTestSuite(AssemblyContextTest.class);
 		return suite;
 	}
 

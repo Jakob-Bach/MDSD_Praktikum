@@ -1,11 +1,12 @@
 /**
  */
-package edu.kit.ipd.sdq.cbsm.repository.impl;
+package edu.kit.ipd.sdq.cbsm.assembly.impl;
 
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyContext;
+import edu.kit.ipd.sdq.cbsm.assembly.AssemblyPackage;
+import edu.kit.ipd.sdq.cbsm.assembly.CompositeProvidingAndRequiringElement;
 
-import edu.kit.ipd.sdq.cbsm.repository.CompositeComponent;
-import edu.kit.ipd.sdq.cbsm.repository.RepositoryPackage;
+import edu.kit.ipd.sdq.cbsm.repository.impl.ProvidingAndRequiringElementImpl;
 
 import java.util.Collection;
 
@@ -16,23 +17,23 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Composite Component</b></em>'.
+ * An implementation of the model object '<em><b>Composite Providing And Requiring Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link edu.kit.ipd.sdq.cbsm.repository.impl.CompositeComponentImpl#getContainedAssemblyContexts <em>Contained Assembly Contexts</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.cbsm.assembly.impl.CompositeProvidingAndRequiringElementImpl#getContainedAssemblyContexts <em>Contained Assembly Contexts</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class CompositeComponentImpl extends ComponentImpl implements CompositeComponent {
+public abstract class CompositeProvidingAndRequiringElementImpl extends ProvidingAndRequiringElementImpl implements CompositeProvidingAndRequiringElement {
 	/**
 	 * The cached value of the '{@link #getContainedAssemblyContexts() <em>Contained Assembly Contexts</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -48,7 +49,7 @@ public class CompositeComponentImpl extends ComponentImpl implements CompositeCo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CompositeComponentImpl() {
+	protected CompositeProvidingAndRequiringElementImpl() {
 		super();
 	}
 
@@ -59,7 +60,7 @@ public class CompositeComponentImpl extends ComponentImpl implements CompositeCo
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RepositoryPackage.Literals.COMPOSITE_COMPONENT;
+		return AssemblyPackage.Literals.COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT;
 	}
 
 	/**
@@ -69,9 +70,24 @@ public class CompositeComponentImpl extends ComponentImpl implements CompositeCo
 	 */
 	public EList<AssemblyContext> getContainedAssemblyContexts() {
 		if (containedAssemblyContexts == null) {
-			containedAssemblyContexts = new EObjectContainmentEList<AssemblyContext>(AssemblyContext.class, this, RepositoryPackage.COMPOSITE_COMPONENT__CONTAINED_ASSEMBLY_CONTEXTS);
+			containedAssemblyContexts = new EObjectContainmentWithInverseEList<AssemblyContext>(AssemblyContext.class, this, AssemblyPackage.COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONTAINED_ASSEMBLY_CONTEXTS, AssemblyPackage.ASSEMBLY_CONTEXT__PARENT_COMPOSITE_ELEMENT);
 		}
 		return containedAssemblyContexts;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case AssemblyPackage.COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONTAINED_ASSEMBLY_CONTEXTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getContainedAssemblyContexts()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -82,7 +98,7 @@ public class CompositeComponentImpl extends ComponentImpl implements CompositeCo
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RepositoryPackage.COMPOSITE_COMPONENT__CONTAINED_ASSEMBLY_CONTEXTS:
+			case AssemblyPackage.COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONTAINED_ASSEMBLY_CONTEXTS:
 				return ((InternalEList<?>)getContainedAssemblyContexts()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -96,7 +112,7 @@ public class CompositeComponentImpl extends ComponentImpl implements CompositeCo
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RepositoryPackage.COMPOSITE_COMPONENT__CONTAINED_ASSEMBLY_CONTEXTS:
+			case AssemblyPackage.COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONTAINED_ASSEMBLY_CONTEXTS:
 				return getContainedAssemblyContexts();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -111,7 +127,7 @@ public class CompositeComponentImpl extends ComponentImpl implements CompositeCo
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RepositoryPackage.COMPOSITE_COMPONENT__CONTAINED_ASSEMBLY_CONTEXTS:
+			case AssemblyPackage.COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONTAINED_ASSEMBLY_CONTEXTS:
 				getContainedAssemblyContexts().clear();
 				getContainedAssemblyContexts().addAll((Collection<? extends AssemblyContext>)newValue);
 				return;
@@ -127,7 +143,7 @@ public class CompositeComponentImpl extends ComponentImpl implements CompositeCo
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RepositoryPackage.COMPOSITE_COMPONENT__CONTAINED_ASSEMBLY_CONTEXTS:
+			case AssemblyPackage.COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONTAINED_ASSEMBLY_CONTEXTS:
 				getContainedAssemblyContexts().clear();
 				return;
 		}
@@ -142,10 +158,10 @@ public class CompositeComponentImpl extends ComponentImpl implements CompositeCo
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RepositoryPackage.COMPOSITE_COMPONENT__CONTAINED_ASSEMBLY_CONTEXTS:
+			case AssemblyPackage.COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONTAINED_ASSEMBLY_CONTEXTS:
 				return containedAssemblyContexts != null && !containedAssemblyContexts.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //CompositeComponentImpl
+} //CompositeProvidingAndRequiringElementImpl

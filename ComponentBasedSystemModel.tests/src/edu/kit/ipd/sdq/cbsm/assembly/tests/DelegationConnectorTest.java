@@ -2,9 +2,7 @@
  */
 package edu.kit.ipd.sdq.cbsm.assembly.tests;
 
-import edu.kit.ipd.sdq.cbsm.assembly.AssemblyFactory;
 import edu.kit.ipd.sdq.cbsm.assembly.DelegationConnector;
-import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
@@ -12,16 +10,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DelegationConnectorTest extends ConnectorTest {
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static void main(String[] args) {
-		TestRunner.run(DelegationConnectorTest.class);
-	}
+public abstract class DelegationConnectorTest extends ConnectorTest {
 
 	/**
 	 * Constructs a new Delegation Connector test case with the given name.
@@ -42,28 +31,6 @@ public class DelegationConnectorTest extends ConnectorTest {
 	@Override
 	protected DelegationConnector getFixture() {
 		return (DelegationConnector)fixture;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#setUp()
-	 * @generated
-	 */
-	@Override
-	protected void setUp() throws Exception {
-		setFixture(AssemblyFactory.eINSTANCE.createDelegationConnector());
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#tearDown()
-	 * @generated
-	 */
-	@Override
-	protected void tearDown() throws Exception {
-		setFixture(null);
 	}
 
 } //DelegationConnectorTest

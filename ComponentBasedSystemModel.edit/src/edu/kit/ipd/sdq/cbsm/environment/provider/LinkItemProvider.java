@@ -48,25 +48,25 @@ public class LinkItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addContainersPropertyDescriptor(object);
+			addLinkedContainersPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Containers feature.
+	 * This adds a property descriptor for the Linked Containers feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addContainersPropertyDescriptor(Object object) {
+	protected void addLinkedContainersPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Link_containers_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Link_containers_feature", "_UI_Link_type"),
-				 EnvironmentPackage.Literals.LINK__CONTAINERS,
+				 getString("_UI_Link_linkedContainers_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Link_linkedContainers_feature", "_UI_Link_type"),
+				 EnvironmentPackage.Literals.LINK__LINKED_CONTAINERS,
 				 true,
 				 false,
 				 true,

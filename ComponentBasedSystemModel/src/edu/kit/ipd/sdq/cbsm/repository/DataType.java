@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  *
  * @see edu.kit.ipd.sdq.cbsm.repository.RepositoryPackage#getDataType()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface DataType extends EObject {

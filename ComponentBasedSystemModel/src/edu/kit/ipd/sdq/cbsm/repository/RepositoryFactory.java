@@ -67,15 +67,6 @@ public interface RepositoryFactory extends EFactory {
 	RequiredRole createRequiredRole();
 
 	/**
-	 * Returns a new object of class '<em>Composite Component</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Composite Component</em>'.
-	 * @generated
-	 */
-	CompositeComponent createCompositeComponent();
-
-	/**
 	 * Returns a new object of class '<em>Signature</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -83,15 +74,6 @@ public interface RepositoryFactory extends EFactory {
 	 * @generated
 	 */
 	Signature createSignature();
-
-	/**
-	 * Returns a new object of class '<em>Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Data Type</em>'.
-	 * @generated
-	 */
-	DataType createDataType();
 
 	/**
 	 * Returns a new object of class '<em>Parameter</em>'.

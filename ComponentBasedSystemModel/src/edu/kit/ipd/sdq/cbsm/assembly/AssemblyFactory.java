@@ -31,6 +31,15 @@ public interface AssemblyFactory extends EFactory {
 	AssemblyContext createAssemblyContext();
 
 	/**
+	 * Returns a new object of class '<em>Composite Component</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Composite Component</em>'.
+	 * @generated
+	 */
+	CompositeComponent createCompositeComponent();
+
+	/**
 	 * Returns a new object of class '<em>System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -38,24 +47,6 @@ public interface AssemblyFactory extends EFactory {
 	 * @generated
 	 */
 	System createSystem();
-
-	/**
-	 * Returns a new object of class '<em>Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Connector</em>'.
-	 * @generated
-	 */
-	Connector createConnector();
-
-	/**
-	 * Returns a new object of class '<em>Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Delegation Connector</em>'.
-	 * @generated
-	 */
-	DelegationConnector createDelegationConnector();
 
 	/**
 	 * Returns a new object of class '<em>Provided Delegation Connector</em>'.

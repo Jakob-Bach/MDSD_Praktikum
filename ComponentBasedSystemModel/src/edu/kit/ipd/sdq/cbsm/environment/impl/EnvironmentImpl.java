@@ -16,8 +16,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -81,7 +80,7 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 	 */
 	public EList<edu.kit.ipd.sdq.cbsm.environment.Container> getContainers() {
 		if (containers == null) {
-			containers = new EObjectContainmentEList<edu.kit.ipd.sdq.cbsm.environment.Container>(edu.kit.ipd.sdq.cbsm.environment.Container.class, this, EnvironmentPackage.ENVIRONMENT__CONTAINERS);
+			containers = new EObjectContainmentWithInverseEList<edu.kit.ipd.sdq.cbsm.environment.Container>(edu.kit.ipd.sdq.cbsm.environment.Container.class, this, EnvironmentPackage.ENVIRONMENT__CONTAINERS, EnvironmentPackage.CONTAINER__PARENT_ENVIRONMENT);
 		}
 		return containers;
 	}
@@ -93,9 +92,26 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 	 */
 	public EList<Link> getLinks() {
 		if (links == null) {
-			links = new EObjectContainmentEList<Link>(Link.class, this, EnvironmentPackage.ENVIRONMENT__LINKS);
+			links = new EObjectContainmentWithInverseEList<Link>(Link.class, this, EnvironmentPackage.ENVIRONMENT__LINKS, EnvironmentPackage.LINK__PARENT_ENVIRONMENT);
 		}
 		return links;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case EnvironmentPackage.ENVIRONMENT__CONTAINERS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getContainers()).basicAdd(otherEnd, msgs);
+			case EnvironmentPackage.ENVIRONMENT__LINKS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLinks()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**

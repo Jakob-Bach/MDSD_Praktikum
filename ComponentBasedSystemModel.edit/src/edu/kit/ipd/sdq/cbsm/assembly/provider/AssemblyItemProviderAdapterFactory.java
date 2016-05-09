@@ -95,6 +95,29 @@ public class AssemblyItemProviderAdapterFactory extends AssemblyAdapterFactory i
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.cbsm.assembly.CompositeComponent} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CompositeComponentItemProvider compositeComponentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link edu.kit.ipd.sdq.cbsm.assembly.CompositeComponent}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCompositeComponentAdapter() {
+		if (compositeComponentItemProvider == null) {
+			compositeComponentItemProvider = new CompositeComponentItemProvider(this);
+		}
+
+		return compositeComponentItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.cbsm.assembly.System} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -115,52 +138,6 @@ public class AssemblyItemProviderAdapterFactory extends AssemblyAdapterFactory i
 		}
 
 		return systemItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.cbsm.assembly.Connector} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ConnectorItemProvider connectorItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link edu.kit.ipd.sdq.cbsm.assembly.Connector}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createConnectorAdapter() {
-		if (connectorItemProvider == null) {
-			connectorItemProvider = new ConnectorItemProvider(this);
-		}
-
-		return connectorItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.cbsm.assembly.DelegationConnector} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DelegationConnectorItemProvider delegationConnectorItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link edu.kit.ipd.sdq.cbsm.assembly.DelegationConnector}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDelegationConnectorAdapter() {
-		if (delegationConnectorItemProvider == null) {
-			delegationConnectorItemProvider = new DelegationConnectorItemProvider(this);
-		}
-
-		return delegationConnectorItemProvider;
 	}
 
 	/**
@@ -332,9 +309,8 @@ public class AssemblyItemProviderAdapterFactory extends AssemblyAdapterFactory i
 	 */
 	public void dispose() {
 		if (assemblyContextItemProvider != null) assemblyContextItemProvider.dispose();
+		if (compositeComponentItemProvider != null) compositeComponentItemProvider.dispose();
 		if (systemItemProvider != null) systemItemProvider.dispose();
-		if (connectorItemProvider != null) connectorItemProvider.dispose();
-		if (delegationConnectorItemProvider != null) delegationConnectorItemProvider.dispose();
 		if (providedDelegationConnectorItemProvider != null) providedDelegationConnectorItemProvider.dispose();
 		if (requiredDelegationConnectorItemProvider != null) requiredDelegationConnectorItemProvider.dispose();
 		if (assemblyConnectorItemProvider != null) assemblyConnectorItemProvider.dispose();

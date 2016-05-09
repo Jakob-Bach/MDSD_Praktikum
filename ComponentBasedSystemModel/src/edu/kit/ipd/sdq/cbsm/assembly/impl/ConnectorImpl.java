@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ConnectorImpl extends NamedElementImpl implements Connector {
+public abstract class ConnectorImpl extends NamedElementImpl implements Connector {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
