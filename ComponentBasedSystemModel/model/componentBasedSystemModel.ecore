@@ -34,14 +34,6 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="signatures" upperBound="-1"
           eType="#//repository/Signature" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//core/NamedElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="providedRoles" upperBound="-1"
-          eType="#//repository/ProvidedRole" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="requiredRoles" upperBound="-1"
-          eType="#//repository/RequiredRole" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="behaviorDescription"
-          eType="#//repository/behavior/BehaviorDescription" containment="true"/>
-    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Role" abstract="true" eSuperTypes="#//core/NamedElement"/>
     <eClassifiers xsi:type="ecore:EClass" name="ProvidedRole" eSuperTypes="#//repository/Role">
       <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterface" lowerBound="1"
@@ -51,7 +43,16 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInterface" lowerBound="1"
           eType="#//repository/Interface"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="CompositeComponent" eSuperTypes="#//repository/Component #//assembly/CompositeElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ProvidingAndRequiringElement" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="providedRoles" upperBound="-1"
+          eType="#//repository/ProvidedRole" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="requiredRoles" upperBound="-1"
+          eType="#//repository/RequiredRole" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//core/NamedElement #//repository/ProvidingAndRequiringElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="behaviorDescription"
+          eType="#//repository/behavior/BehaviorDescription" containment="true"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Signature" eSuperTypes="#//core/NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="NoParameterWithSameName"/>
@@ -153,9 +154,11 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="parentCompositeElement"
-          lowerBound="1" eType="#//assembly/CompositeElement" eOpposite="#//assembly/CompositeElement/containedAssemblyContexts"/>
+          lowerBound="1" eType="#//assembly/CompositeProvidingAndRequiringElement"
+          eOpposite="#//assembly/CompositeProvidingAndRequiringElement/containedAssemblyContexts"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="CompositeElement" abstract="true">
+    <eClassifiers xsi:type="ecore:EClass" name="CompositeProvidingAndRequiringElement"
+        abstract="true" eSuperTypes="#//repository/ProvidingAndRequiringElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="CompositeElementDoesNotContainItself"/>
       </eAnnotations>
@@ -165,40 +168,51 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="containedAssemblyContexts"
           upperBound="-1" eType="#//assembly/AssemblyContext" containment="true" eOpposite="#//assembly/AssemblyContext/parentCompositeElement"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="System" eSuperTypes="#//assembly/CompositeElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="systemProvidedRoles"
-          lowerBound="1" upperBound="-1" eType="#//repository/ProvidedRole"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="systemRequiredRoles"
-          upperBound="-1" eType="#//repository/RequiredRole"/>
+    <eClassifiers xsi:type="ecore:EClass" name="CompositeComponent" eSuperTypes="#//repository/Component #//assembly/CompositeProvidingAndRequiringElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="System" eSuperTypes="#//assembly/CompositeProvidingAndRequiringElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="systemConnectors" upperBound="-1"
           eType="#//assembly/Connector" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Connector" abstract="true" eSuperTypes="#//core/NamedElement"/>
     <eClassifiers xsi:type="ecore:EClass" name="DelegationConnector" abstract="true"
         eSuperTypes="#//assembly/Connector">
-      <eTypeParameters name="T">
-        <eBounds eClassifier="#//repository/Role"/>
-      </eTypeParameters>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="innerRole" lowerBound="1">
-        <eGenericType eTypeParameter="#//assembly/DelegationConnector/T"/>
-      </eStructuralFeatures>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="ConnectsOuterAndInnerAssemblyContextOfSameCompositeElement"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="ConnectsOuterAndInnerAssemblyContextOfSameCompositeElement"
+            value="&#xA;&#x9;&#x9;&#x9;&#x9;self.innerAssemblyContext.parentCompositeElement = self.outerAssemblyContext.instantiatedComponent"/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="innerAssemblyContext"
           lowerBound="1" eType="#//assembly/AssemblyContext"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="outerRole" lowerBound="1">
-        <eGenericType eTypeParameter="#//assembly/DelegationConnector/T"/>
-      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="outerAssemblyContext"
           lowerBound="1" eType="#//assembly/AssemblyContext"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ProvidedDelegationConnector">
-      <eGenericSuperTypes eClassifier="#//assembly/DelegationConnector">
-        <eTypeArguments eClassifier="#//repository/ProvidedRole"/>
-      </eGenericSuperTypes>
+    <eClassifiers xsi:type="ecore:EClass" name="ProvidedDelegationConnector" eSuperTypes="#//assembly/DelegationConnector">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="InnerRoleBelongsToInnerAssemblyContext OuterRoleBelongsToOuterAssemblyContext"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="InnerRoleBelongsToInnerAssemblyContext" value="self.innerAssemblyContext.assemblyContextProvidedRoles->exists(role| &#xA;&#x9;&#x9;&#x9;&#x9;role = self.innerProvidedRole&#xA;&#x9;&#x9;&#x9;)"/>
+        <details key="OuterRoleBelongsToOuterAssemblyContext" value="self.outerAssemblyContext.assemblyContextProvidedRoles->exists(role| &#xA;&#x9;&#x9;&#x9;&#x9;role = self.outerProvidedRole&#xA;&#x9;&#x9;&#x9;)"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="innerProvidedRole" lowerBound="1"
+          eType="#//repository/ProvidedRole"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="outerProvidedRole" lowerBound="1"
+          eType="#//repository/ProvidedRole"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="RequiredDelegationConnector">
-      <eGenericSuperTypes eClassifier="#//assembly/DelegationConnector">
-        <eTypeArguments eClassifier="#//repository/RequiredRole"/>
-      </eGenericSuperTypes>
+    <eClassifiers xsi:type="ecore:EClass" name="RequiredDelegationConnector" eSuperTypes="#//assembly/DelegationConnector">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="InnerRoleBelongsToInnerAssemblyContext OuterRoleBelongsToOuterAssemblyContext"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="InnerRoleBelongsToInnerAssemblyContext" value="self.innerAssemblyContext.assemblyContextRequiredRoles->exists(role| &#xA;&#x9;&#x9;&#x9;&#x9;role = self.innerRequiredRole&#xA;&#x9;&#x9;&#x9;)"/>
+        <details key="OuterRoleBelongsToOuterAssemblyContext" value="self.outerAssemblyContext.assemblyContextRequiredRoles->exists(role| &#xA;&#x9;&#x9;&#x9;&#x9;role = self.outerRequiredRole&#xA;&#x9;&#x9;&#x9;)"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="innerRequiredRole" lowerBound="1"
+          eType="#//repository/RequiredRole"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="outerRequiredRole" lowerBound="1"
+          eType="#//repository/RequiredRole"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AssemblyConnector" eSuperTypes="#//assembly/Connector">
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectedProvidedRole"
