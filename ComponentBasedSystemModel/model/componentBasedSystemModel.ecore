@@ -190,11 +190,12 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ProvidedDelegationConnector" eSuperTypes="#//assembly/DelegationConnector">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="InnerRoleBelongsToInnerAssemblyContext OuterRoleBelongsToOuterAssemblyContext"/>
+        <details key="constraints" value="InnerRoleBelongsToInnerAssemblyContext OuterRoleBelongsToOuterAssemblyContext SameInterfaceIsDelegatedAsProvided"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
         <details key="InnerRoleBelongsToInnerAssemblyContext" value="self.innerAssemblyContext.assemblyContextProvidedRoles->exists(role| &#xA;&#x9;&#x9;&#x9;&#x9;role = self.innerProvidedRole&#xA;&#x9;&#x9;&#x9;)"/>
         <details key="OuterRoleBelongsToOuterAssemblyContext" value="self.outerAssemblyContext.assemblyContextProvidedRoles->exists(role| &#xA;&#x9;&#x9;&#x9;&#x9;role = self.outerProvidedRole&#xA;&#x9;&#x9;&#x9;)"/>
+        <details key="SameInterfaceIsDelegatedAsProvided" value="self.outerProvidedRole.providedInterface = &#xA;&#x9;&#x9;&#x9;&#x9;self.innerProvidedRole.providedInterface"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="innerProvidedRole" lowerBound="1"
           eType="#//repository/ProvidedRole"/>
@@ -203,11 +204,12 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RequiredDelegationConnector" eSuperTypes="#//assembly/DelegationConnector">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="InnerRoleBelongsToInnerAssemblyContext OuterRoleBelongsToOuterAssemblyContext"/>
+        <details key="constraints" value="InnerRoleBelongsToInnerAssemblyContext OuterRoleBelongsToOuterAssemblyContext SameInterfaceIsDelegatedAsRequired"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
         <details key="InnerRoleBelongsToInnerAssemblyContext" value="self.innerAssemblyContext.assemblyContextRequiredRoles->exists(role| &#xA;&#x9;&#x9;&#x9;&#x9;role = self.innerRequiredRole&#xA;&#x9;&#x9;&#x9;)"/>
         <details key="OuterRoleBelongsToOuterAssemblyContext" value="self.outerAssemblyContext.assemblyContextRequiredRoles->exists(role| &#xA;&#x9;&#x9;&#x9;&#x9;role = self.outerRequiredRole&#xA;&#x9;&#x9;&#x9;)"/>
+        <details key="SameInterfaceIsDelegatedAsRequired" value="self.outerRequiredRole.requiredInterface = &#xA;&#x9;&#x9;&#x9;&#x9;self.innerRequiredRole.requiredInterface"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="innerRequiredRole" lowerBound="1"
           eType="#//repository/RequiredRole"/>
@@ -215,6 +217,12 @@
           eType="#//repository/RequiredRole"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AssemblyConnector" eSuperTypes="#//assembly/Connector">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="SameInterfaceInConnectedRoles"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="SameInterfaceInConnectedRoles" value="self.connectedProvidedRole.providedInterface =&#xA;&#x9;&#x9;&#x9;&#x9;self.connectedRequiredRole.requiredInterface"/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectedProvidedRole"
           lowerBound="1" eType="#//repository/ProvidedRole"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectedRequiredRole"
