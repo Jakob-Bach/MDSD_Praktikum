@@ -142,12 +142,14 @@ public class RepositorySwitch<T> extends Switch<T> {
 				ComplexType complexType = (ComplexType)theEObject;
 				T result = caseComplexType(complexType);
 				if (result == null) result = caseNamedElement(complexType);
+				if (result == null) result = caseDataType(complexType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case RepositoryPackage.SIMPLE_TYPE: {
 				SimpleType simpleType = (SimpleType)theEObject;
 				T result = caseSimpleType(simpleType);
+				if (result == null) result = caseDataType(simpleType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

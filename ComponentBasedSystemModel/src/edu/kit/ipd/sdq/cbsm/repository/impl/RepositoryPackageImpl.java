@@ -577,6 +577,8 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 		signatureEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		parameterEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		complexTypeEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		complexTypeEClass.getESuperTypes().add(this.getDataType());
+		simpleTypeEClass.getESuperTypes().add(this.getDataType());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(repositoryEClass, Repository.class, "Repository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -603,7 +605,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 		initEReference(getComponent_BehaviorDescription(), theBehaviorPackage.getBehaviorDescription(), null, "behaviorDescription", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(signatureEClass, Signature.class, "Signature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSignature_ReturnType(), this.getDataType(), null, "returnType", null, 1, 1, Signature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSignature_ReturnType(), this.getDataType(), null, "returnType", null, 0, 1, Signature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSignature_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, Signature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataTypeEClass, DataType.class, "DataType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

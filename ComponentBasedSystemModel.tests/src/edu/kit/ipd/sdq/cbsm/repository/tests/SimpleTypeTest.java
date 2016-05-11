@@ -4,9 +4,6 @@ package edu.kit.ipd.sdq.cbsm.repository.tests;
 
 import edu.kit.ipd.sdq.cbsm.repository.RepositoryFactory;
 import edu.kit.ipd.sdq.cbsm.repository.SimpleType;
-
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 /**
@@ -15,15 +12,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SimpleTypeTest extends TestCase {
-
-	/**
-	 * The fixture for this Simple Type test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SimpleType fixture = null;
+public class SimpleTypeTest extends DataTypeTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +34,14 @@ public class SimpleTypeTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Simple Type test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(SimpleType fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Simple Type test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected SimpleType getFixture() {
-		return fixture;
+		return (SimpleType)fixture;
 	}
 
 	/**

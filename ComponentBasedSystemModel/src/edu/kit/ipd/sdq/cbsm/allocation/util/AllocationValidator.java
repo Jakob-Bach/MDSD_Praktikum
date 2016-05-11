@@ -137,13 +137,13 @@ public class AllocationValidator extends EObjectValidator {
 		"\t\t\t\t\t\t-- get all Links, check if there is one whose Containers contain both of the two\n" +
 		"\t\t\t\t\t\t-- connected AssemblyContexts\n" +
 		"\t\t\t\t\t\tor self.allocationContexts->first().allocatedContainer.parentEnvironment.links->exists(link|\n" +
-		"\t\t\t\t\t\t\t\tlink.linkedContainers->includes(assemblyConnector.\n" +
-		"\t\t\t\t\t\t\t\t\toclAsType(assembly::AssemblyConnector).connectedProvidedAssemblyContext\n" +
-		"\t\t\t\t\t\t\t\t)\n" +
-		"\t\t\t\t\t\t\t\tand link.linkedContainers->includes(assemblyConnector.\n" +
-		"\t\t\t\t\t\t\t\t\toclAsType(assembly::AssemblyConnector).connectedRequiredAssemblyContext\n" +
-		"\t\t\t\t\t\t\t\t)\n" +
-		"\t\t\t\t\t\t\t)\n" +
+		"\t\t\t\t\t\t\tlink.linkedContainers->includesAll(self.allocationContexts->select(allocationContext|\n" +
+		"\t\t\t\t\t\t\t\tallocationContext.allocatedAssemblyContext = assemblyConnector.oclAsType(\n" +
+		"\t\t\t\t\t\t\t\t\tassembly::AssemblyConnector).connectedProvidedAssemblyContext \n" +
+		"\t\t\t\t\t\t\t\tor allocationContext.allocatedAssemblyContext = assemblyConnector.oclAsType(\n" +
+		"\t\t\t\t\t\t\t\t\tassembly::AssemblyConnector).connectedRequiredAssemblyContext\n" +
+		"\t\t\t\t\t\t\t).allocatedContainer)\n" +
+		"\t\t\t\t\t\t)\n" +
 		"\t\t\t\t\t)";
 
 	/**

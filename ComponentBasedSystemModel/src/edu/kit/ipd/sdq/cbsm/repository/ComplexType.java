@@ -14,5 +14,5 @@ import edu.kit.ipd.sdq.cbsm.core.NamedElement;
  * @model
  * @generated
  */
-public interface ComplexType extends NamedElement {
+public interface ComplexType extends NamedElement, DataType {
 } // ComplexType

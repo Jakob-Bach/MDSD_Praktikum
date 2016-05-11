@@ -583,7 +583,7 @@ public interface RepositoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLE_TYPE__TYPE_INSTANCE = 0;
+	int SIMPLE_TYPE__TYPE_INSTANCE = DATA_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Simple Type</em>' class.
@@ -592,7 +592,7 @@ public interface RepositoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLE_TYPE_FEATURE_COUNT = 1;
+	int SIMPLE_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Simple Type</em>' class.
@@ -601,7 +601,7 @@ public interface RepositoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIMPLE_TYPE_OPERATION_COUNT = 0;
+	int SIMPLE_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link edu.kit.ipd.sdq.cbsm.repository.SimpleTypeInstance <em>Simple Type Instance</em>}' enum.

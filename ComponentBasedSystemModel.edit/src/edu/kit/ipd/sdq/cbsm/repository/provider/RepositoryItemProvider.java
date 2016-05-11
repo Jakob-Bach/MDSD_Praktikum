@@ -169,6 +169,16 @@ public class RepositoryItemProvider
 			(createChildParameter
 				(RepositoryPackage.Literals.REPOSITORY__COMPONENTS,
 				 AssemblyFactory.eINSTANCE.createCompositeComponent()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RepositoryPackage.Literals.REPOSITORY__DATA_TYPES,
+				 RepositoryFactory.eINSTANCE.createComplexType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RepositoryPackage.Literals.REPOSITORY__DATA_TYPES,
+				 RepositoryFactory.eINSTANCE.createSimpleType()));
 	}
 
 	/**

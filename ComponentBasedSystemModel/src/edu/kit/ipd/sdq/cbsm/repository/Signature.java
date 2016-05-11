@@ -36,7 +36,7 @@ public interface Signature extends NamedElement {
 	 * @return the value of the '<em>Return Type</em>' reference.
 	 * @see #setReturnType(DataType)
 	 * @see edu.kit.ipd.sdq.cbsm.repository.RepositoryPackage#getSignature_ReturnType()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	DataType getReturnType();

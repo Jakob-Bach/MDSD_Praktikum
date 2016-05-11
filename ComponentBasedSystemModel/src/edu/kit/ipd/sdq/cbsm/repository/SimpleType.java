@@ -2,8 +2,6 @@
  */
 package edu.kit.ipd.sdq.cbsm.repository;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Simple Type</b></em>'.
@@ -20,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface SimpleType extends EObject {
+public interface SimpleType extends DataType {
 	/**
 	 * Returns the value of the '<em><b>Type Instance</b></em>' attribute.
 	 * The literals are from the enumeration {@link edu.kit.ipd.sdq.cbsm.repository.SimpleTypeInstance}.
