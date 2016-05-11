@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assembly="http://sdq.ipd.kit.edu/componentBasedSystemModel/assembly">
+  <providedRoles name="System_HTTPProvidedRole">
+    <providedInterface href="mediaStore.repository#//@interfaces.0"/>
+  </providedRoles>
+  <containedAssemblyContexts name="WebGUI_AssemblyContext">
+    <instantiatedComponent href="mediaStore.repository#//@components.0"/>
+  </containedAssemblyContexts>
+  <containedAssemblyContexts name="MediaStore_AssemblyContext">
+    <instantiatedComponent href="mediaStore.repository#//@components.5"/>
+  </containedAssemblyContexts>
+  <containedAssemblyContexts name="PoolingAudioDB_AssemblyContext">
+    <instantiatedComponent href="mediaStore.repository#//@components.4"/>
+  </containedAssemblyContexts>
+  <systemConnectors xsi:type="assembly:ProvidedDelegationConnector" name="MediaManager_MediaStore_DelegationConnector" outerAssemblyContext="//@containedAssemblyContexts.1">
+    <innerAssemblyContext href="mediaStore.repository#//@components.5/@containedAssemblyContexts.0"/>
+    <innerProvidedRole href="mediaStore.repository#//@components.1/@providedRoles.0"/>
+    <outerProvidedRole href="mediaStore.repository#//@components.5/@providedRoles.0"/>
+  </systemConnectors>
+  <systemConnectors xsi:type="assembly:RequiredDelegationConnector" name="DBCache_MediaStore_DelegationConnector" outerAssemblyContext="//@containedAssemblyContexts.1">
+    <innerAssemblyContext href="mediaStore.repository#//@components.5/@containedAssemblyContexts.2"/>
+    <innerRequiredRole href="mediaStore.repository#//@components.2/@requiredRoles.0"/>
+    <outerRequiredRole href="mediaStore.repository#//@components.5/@requiredRoles.0"/>
+  </systemConnectors>
+  <systemConnectors xsi:type="assembly:AssemblyConnector" name="MediaStore_WebGUI_AssemblyConnector" connectedProvidedAssemblyContext="//@containedAssemblyContexts.1" connectedRequiredAssemblyContext="//@containedAssemblyContexts.0">
+    <connectedProvidedRole href="mediaStore.repository#//@components.5/@providedRoles.0"/>
+    <connectedRequiredRole href="mediaStore.repository#//@components.0/@requiredRoles.0"/>
+  </systemConnectors>
+  <systemConnectors xsi:type="assembly:AssemblyConnector" name="DigitalWatermarking_MediaManager_AssemblyConnector">
+    <connectedProvidedRole href="mediaStore.repository#//@components.3/@providedRoles.0"/>
+    <connectedRequiredRole href="mediaStore.repository#//@components.1/@requiredRoles.1"/>
+    <connectedProvidedAssemblyContext href="mediaStore.repository#//@components.5/@containedAssemblyContexts.1"/>
+    <connectedRequiredAssemblyContext href="mediaStore.repository#//@components.5/@containedAssemblyContexts.0"/>
+  </systemConnectors>
+  <systemConnectors xsi:type="assembly:AssemblyConnector" name="DBCache_MediaManager_AssemblyConnector">
+    <connectedProvidedRole href="mediaStore.repository#//@components.2/@providedRoles.0"/>
+    <connectedRequiredRole href="mediaStore.repository#//@components.1/@requiredRoles.0"/>
+    <connectedProvidedAssemblyContext href="mediaStore.repository#//@components.5/@containedAssemblyContexts.2"/>
+    <connectedRequiredAssemblyContext href="mediaStore.repository#//@components.5/@containedAssemblyContexts.0"/>
+  </systemConnectors>
+  <systemConnectors xsi:type="assembly:AssemblyConnector" name="PoolingAudioDB_MediaStore_AssemblyConnector" connectedProvidedAssemblyContext="//@containedAssemblyContexts.2" connectedRequiredAssemblyContext="//@containedAssemblyContexts.1">
+    <connectedProvidedRole href="mediaStore.repository#//@components.4/@providedRoles.0"/>
+    <connectedRequiredRole href="mediaStore.repository#//@components.5/@requiredRoles.0"/>
+  </systemConnectors>
+</assembly:System>

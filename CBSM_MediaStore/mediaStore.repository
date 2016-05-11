@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<repository:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assembly="http://sdq.ipd.kit.edu/componentBasedSystemModel/assembly" xmlns:repository="http://sdq.ipd.kit.edu/componentBasedSystemModel/repository">
+  <interfaces name="HTTP">
+    <signatures name="HTTPDownload"/>
+    <signatures name="HTTPUpload"/>
+  </interfaces>
+  <interfaces name="MediaStore">
+    <signatures name="download"/>
+    <signatures name="upload"/>
+  </interfaces>
+  <interfaces name="Sound">
+    <signatures name="watermark"/>
+  </interfaces>
+  <interfaces name="AudioDB">
+    <signatures name="queryDB"/>
+    <signatures name="addFile"/>
+  </interfaces>
+  <components name="WebGUI">
+    <providedRoles name="WebGUI_HTTPProvidedRole" providedInterface="//@interfaces.0"/>
+    <requiredRoles name="WebGUI_MediaStoreRequiredRole" requiredInterface="//@interfaces.1"/>
+  </components>
+  <components name="MediaManager">
+    <providedRoles name="MediaManager_MediaStoreProvidedRole" providedInterface="//@interfaces.1"/>
+    <requiredRoles name="MediaManager_DBCacheRequiredRole" requiredInterface="//@interfaces.3"/>
+    <requiredRoles name="MediaManager_SoundRequiredRole" requiredInterface="//@interfaces.2"/>
+  </components>
+  <components name="DBCache">
+    <providedRoles name="DBCache_AudioDBProvidedRole" providedInterface="//@interfaces.3"/>
+    <requiredRoles name="DBCache_AudioDBRequiredRole" requiredInterface="//@interfaces.3"/>
+  </components>
+  <components name="DigitalWatermaking">
+    <providedRoles name="DigitalWatermarking_SoundProvidedRole" providedInterface="//@interfaces.2"/>
+  </components>
+  <components name="PoolingAudioDB">
+    <providedRoles name="PoolingAudioDB_AudioDBProvidedRole" providedInterface="//@interfaces.3"/>
+  </components>
+  <components xsi:type="assembly:CompositeComponent" name="MediaStore">
+    <providedRoles name="MediaStore_MediaStoreProvidedRole" providedInterface="//@interfaces.1"/>
+    <requiredRoles name="MediaStore_AudioDBRequiredRole" requiredInterface="//@interfaces.3"/>
+    <containedAssemblyContexts name="MediaManagerAssemblyContext" instantiatedComponent="//@components.1"/>
+    <containedAssemblyContexts name="DigitalWatermarkingAssemblyContext" instantiatedComponent="//@components.3"/>
+    <containedAssemblyContexts name="DBCacheAssemblyContext" instantiatedComponent="//@components.2"/>
+  </components>
+</repository:Repository>

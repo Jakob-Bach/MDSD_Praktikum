@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<allocation:Allocation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:allocation="http://sdq.ipd.kit.edu/componentBasedSystemModel/allocation">
+  <allocationContexts name="WebGUI_AllocationContext">
+    <allocatedContainer href="mediaStore.environment#//@containers.0"/>
+    <allocatedAssemblyContext href="mediaStore.assembly#//@containedAssemblyContexts.0"/>
+  </allocationContexts>
+  <allocationContexts name="MediaStore_AllocationContext">
+    <allocatedContainer href="mediaStore.environment#//@containers.0"/>
+    <allocatedAssemblyContext href="mediaStore.assembly#//@containedAssemblyContexts.1"/>
+  </allocationContexts>
+  <allocationContexts name="PoolingAudioDB_AllocationContext">
+    <allocatedContainer href="mediaStore.environment#//@containers.1"/>
+    <allocatedAssemblyContext href="mediaStore.assembly#//@containedAssemblyContexts.2"/>
+  </allocationContexts>
+</allocation:Allocation>
