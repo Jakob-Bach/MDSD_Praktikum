@@ -1,11 +1,9 @@
 # MDSD_Praktikum
 
 ## TODO
-- task a): OCL constraints
-- task b)
-- task c)
 
 ## Open questions
+- DataTypes for Signatures in example
 
 ## Useful links
 
