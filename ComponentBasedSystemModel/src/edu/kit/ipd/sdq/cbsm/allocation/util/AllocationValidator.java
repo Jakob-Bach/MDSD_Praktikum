@@ -121,9 +121,10 @@ public class AllocationValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String ALLOCATION__ASSEMBLY_CONTEXTS_CONNECTED_BY_ASSEMBLY_CONNECTOR_ALLOCATED_ON_SAME_OR_LINKED_CONTAINERS__EEXPRESSION = "\n" +
+		"\t\t\t\tself.allocationContexts->isEmpty()\n" +
 		"\t\t\t\t-- get all AssemblyConnectors from System (assuming that only top-level\n" +
 		"\t\t\t\t-- AssemblyContexts are allocated\n" +
-		"\t\t\t\tself.allocationContexts->first().allocatedAssemblyContext.parentCompositeElement.\n" +
+		"\t\t\t\tor self.allocationContexts->first().allocatedAssemblyContext.parentCompositeElement.\n" +
 		"\t\t\t\toclAsType(assembly::System).systemConnectors->select(connector|\n" +
 		"\t\t\t\t\tconnector.oclIsKindOf(assembly::AssemblyConnector))->forAll(assemblyConnector|\n" +
 		"\t\t\t\t\t\t-- get AllocationContexts for the two connected AssemblyContexts, check if\n" +
