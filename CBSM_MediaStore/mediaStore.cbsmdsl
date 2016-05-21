@@ -1,0 +1,14 @@
+CompleteArchitecture {
+	repository Repository {
+		
+	}
+	system System {
+		
+	}
+	environment Environment {
+		
+	}
+	allocation Allocation {
+		
+	}
+}
