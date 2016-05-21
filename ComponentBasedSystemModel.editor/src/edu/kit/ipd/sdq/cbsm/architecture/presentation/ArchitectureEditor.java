@@ -1,6 +1,6 @@
 /**
  */
-package edu.kit.ipd.sdq.cbsm.allocation.presentation;
+package edu.kit.ipd.sdq.cbsm.architecture.presentation;
 
 
 import java.io.IOException;
@@ -154,9 +154,10 @@ import org.eclipse.emf.edit.ui.util.EditUIUtil;
 
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
+import edu.kit.ipd.sdq.cbsm.architecture.provider.ArchitectureItemProviderAdapterFactory;
+
 import edu.kit.ipd.sdq.cbsm.allocation.provider.AllocationItemProviderAdapterFactory;
 
-import edu.kit.ipd.sdq.cbsm.architecture.provider.ArchitectureItemProviderAdapterFactory;
 import edu.kit.ipd.sdq.cbsm.assembly.provider.AssemblyItemProviderAdapterFactory;
 
 import edu.kit.ipd.sdq.cbsm.core.presentation.ComponentBasedSystemModelEditorPlugin;
@@ -166,18 +167,19 @@ import edu.kit.ipd.sdq.cbsm.core.provider.CoreItemProviderAdapterFactory;
 import edu.kit.ipd.sdq.cbsm.environment.provider.EnvironmentItemProviderAdapterFactory;
 
 import edu.kit.ipd.sdq.cbsm.repository.behavior.provider.BehaviorItemProviderAdapterFactory;
+
 import edu.kit.ipd.sdq.cbsm.repository.provider.RepositoryItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 
 /**
- * This is an example of a Allocation model editor.
+ * This is an example of a Architecture model editor.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class AllocationEditor
+public class ArchitectureEditor
 	extends MultiPageEditorPart
 	implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker {
 	/**
@@ -339,18 +341,18 @@ public class AllocationEditor
 			public void partActivated(IWorkbenchPart p) {
 				if (p instanceof ContentOutline) {
 					if (((ContentOutline)p).getCurrentPage() == contentOutlinePage) {
-						getActionBarContributor().setActiveEditor(AllocationEditor.this);
+						getActionBarContributor().setActiveEditor(ArchitectureEditor.this);
 
 						setCurrentViewer(contentOutlineViewer);
 					}
 				}
 				else if (p instanceof PropertySheet) {
 					if (propertySheetPages.contains(((PropertySheet)p).getCurrentPage())) {
-						getActionBarContributor().setActiveEditor(AllocationEditor.this);
+						getActionBarContributor().setActiveEditor(ArchitectureEditor.this);
 						handleActivate();
 					}
 				}
-				else if (p == AllocationEditor.this) {
+				else if (p == ArchitectureEditor.this) {
 					handleActivate();
 				}
 			}
@@ -523,7 +525,7 @@ public class AllocationEditor
 								 public void run() {
 									 removedResources.addAll(visitor.getRemovedResources());
 									 if (!isDirty()) {
-										 getSite().getPage().closeEditor(AllocationEditor.this, false);
+										 getSite().getPage().closeEditor(ArchitectureEditor.this, false);
 									 }
 								 }
 							 });
@@ -534,7 +536,7 @@ public class AllocationEditor
 							(new Runnable() {
 								 public void run() {
 									 changedResources.addAll(visitor.getChangedResources());
-									 if (getSite().getPage().getActiveEditor() == AllocationEditor.this) {
+									 if (getSite().getPage().getActiveEditor() == ArchitectureEditor.this) {
 										 handleActivate();
 									 }
 								 }
@@ -566,7 +568,7 @@ public class AllocationEditor
 
 		if (!removedResources.isEmpty()) {
 			if (handleDirtyConflict()) {
-				getSite().getPage().closeEditor(AllocationEditor.this, false);
+				getSite().getPage().closeEditor(ArchitectureEditor.this, false);
 			}
 			else {
 				removedResources.clear();
@@ -696,7 +698,7 @@ public class AllocationEditor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AllocationEditor() {
+	public ArchitectureEditor() {
 		super();
 		initializeEditingDomain();
 	}
@@ -1040,7 +1042,7 @@ public class AllocationEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), AllocationEditor.this) {
+					new ViewerPane(getSite().getPage(), ArchitectureEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							Tree tree = new Tree(composite, SWT.MULTI);
@@ -1074,7 +1076,7 @@ public class AllocationEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), AllocationEditor.this) {
+					new ViewerPane(getSite().getPage(), ArchitectureEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							Tree tree = new Tree(composite, SWT.MULTI);
@@ -1103,7 +1105,7 @@ public class AllocationEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), AllocationEditor.this) {
+					new ViewerPane(getSite().getPage(), ArchitectureEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new ListViewer(composite);
@@ -1128,7 +1130,7 @@ public class AllocationEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), AllocationEditor.this) {
+					new ViewerPane(getSite().getPage(), ArchitectureEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new TreeViewer(composite);
@@ -1155,7 +1157,7 @@ public class AllocationEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), AllocationEditor.this) {
+					new ViewerPane(getSite().getPage(), ArchitectureEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new TableViewer(composite);
@@ -1198,7 +1200,7 @@ public class AllocationEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), AllocationEditor.this) {
+					new ViewerPane(getSite().getPage(), ArchitectureEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new TreeViewer(composite);
@@ -1418,8 +1420,8 @@ public class AllocationEditor
 			new ExtendedPropertySheetPage(editingDomain) {
 				@Override
 				public void setSelectionToViewer(List<?> selection) {
-					AllocationEditor.this.setSelectionToViewer(selection);
-					AllocationEditor.this.setFocus();
+					ArchitectureEditor.this.setSelectionToViewer(selection);
+					ArchitectureEditor.this.setFocus();
 				}
 
 				@Override

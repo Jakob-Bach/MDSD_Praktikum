@@ -8,6 +8,8 @@ import edu.kit.ipd.sdq.cbsm.allocation.AllocationFactory;
 import edu.kit.ipd.sdq.cbsm.allocation.AllocationPackage;
 
 import edu.kit.ipd.sdq.cbsm.allocation.util.AllocationValidator;
+import edu.kit.ipd.sdq.cbsm.architecture.ArchitecturePackage;
+import edu.kit.ipd.sdq.cbsm.architecture.impl.ArchitecturePackageImpl;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyPackage;
 
 import edu.kit.ipd.sdq.cbsm.assembly.impl.AssemblyPackageImpl;
@@ -106,6 +108,7 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 		AssemblyPackageImpl theAssemblyPackage = (AssemblyPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AssemblyPackage.eNS_URI) instanceof AssemblyPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AssemblyPackage.eNS_URI) : AssemblyPackage.eINSTANCE);
 		EnvironmentPackageImpl theEnvironmentPackage = (EnvironmentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) instanceof EnvironmentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) : EnvironmentPackage.eINSTANCE);
+		ArchitecturePackageImpl theArchitecturePackage = (ArchitecturePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ArchitecturePackage.eNS_URI) instanceof ArchitecturePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ArchitecturePackage.eNS_URI) : ArchitecturePackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theAllocationPackage.createPackageContents();
@@ -114,6 +117,7 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		theBehaviorPackage.createPackageContents();
 		theAssemblyPackage.createPackageContents();
 		theEnvironmentPackage.createPackageContents();
+		theArchitecturePackage.createPackageContents();
 
 		// Initialize created meta-data
 		theAllocationPackage.initializePackageContents();
@@ -122,6 +126,7 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		theBehaviorPackage.initializePackageContents();
 		theAssemblyPackage.initializePackageContents();
 		theEnvironmentPackage.initializePackageContents();
+		theArchitecturePackage.initializePackageContents();
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put

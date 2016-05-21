@@ -158,6 +158,7 @@ import edu.kit.ipd.sdq.cbsm.repository.behavior.provider.BehaviorItemProviderAda
 
 import edu.kit.ipd.sdq.cbsm.allocation.provider.AllocationItemProviderAdapterFactory;
 
+import edu.kit.ipd.sdq.cbsm.architecture.provider.ArchitectureItemProviderAdapterFactory;
 import edu.kit.ipd.sdq.cbsm.assembly.provider.AssemblyItemProviderAdapterFactory;
 
 import edu.kit.ipd.sdq.cbsm.core.presentation.ComponentBasedSystemModelEditorPlugin;
@@ -719,6 +720,7 @@ public class BehaviorEditor
 		adapterFactory.addAdapterFactory(new AssemblyItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new EnvironmentItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new AllocationItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ArchitectureItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

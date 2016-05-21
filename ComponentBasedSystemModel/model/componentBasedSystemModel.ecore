@@ -291,4 +291,17 @@
           lowerBound="1" eType="#//assembly/AssemblyContext"/>
     </eClassifiers>
   </eSubpackages>
+  <eSubpackages name="architecture" nsURI="http://sdq.ipd.kit.edu/componentBasedSystemModel/architecture"
+      nsPrefix="architecture">
+    <eClassifiers xsi:type="ecore:EClass" name="CompleteArchitecture">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="repository" lowerBound="1"
+          eType="#//repository/Repository" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="system" lowerBound="1"
+          eType="#//assembly/System" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="environment" lowerBound="1"
+          eType="#//environment/Environment" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="allocation" lowerBound="1"
+          eType="#//allocation/Allocation" containment="true"/>
+    </eClassifiers>
+  </eSubpackages>
 </ecore:EPackage>

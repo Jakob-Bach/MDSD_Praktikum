@@ -6,6 +6,8 @@ import edu.kit.ipd.sdq.cbsm.allocation.AllocationPackage;
 
 import edu.kit.ipd.sdq.cbsm.allocation.impl.AllocationPackageImpl;
 
+import edu.kit.ipd.sdq.cbsm.architecture.ArchitecturePackage;
+import edu.kit.ipd.sdq.cbsm.architecture.impl.ArchitecturePackageImpl;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyPackage;
 
 import edu.kit.ipd.sdq.cbsm.assembly.impl.AssemblyPackageImpl;
@@ -195,6 +197,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 		AssemblyPackageImpl theAssemblyPackage = (AssemblyPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AssemblyPackage.eNS_URI) instanceof AssemblyPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AssemblyPackage.eNS_URI) : AssemblyPackage.eINSTANCE);
 		EnvironmentPackageImpl theEnvironmentPackage = (EnvironmentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) instanceof EnvironmentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) : EnvironmentPackage.eINSTANCE);
 		AllocationPackageImpl theAllocationPackage = (AllocationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AllocationPackage.eNS_URI) instanceof AllocationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AllocationPackage.eNS_URI) : AllocationPackage.eINSTANCE);
+		ArchitecturePackageImpl theArchitecturePackage = (ArchitecturePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ArchitecturePackage.eNS_URI) instanceof ArchitecturePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ArchitecturePackage.eNS_URI) : ArchitecturePackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theRepositoryPackage.createPackageContents();
@@ -203,6 +206,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 		theAssemblyPackage.createPackageContents();
 		theEnvironmentPackage.createPackageContents();
 		theAllocationPackage.createPackageContents();
+		theArchitecturePackage.createPackageContents();
 
 		// Initialize created meta-data
 		theRepositoryPackage.initializePackageContents();
@@ -211,6 +215,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 		theAssemblyPackage.initializePackageContents();
 		theEnvironmentPackage.initializePackageContents();
 		theAllocationPackage.initializePackageContents();
+		theArchitecturePackage.initializePackageContents();
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put

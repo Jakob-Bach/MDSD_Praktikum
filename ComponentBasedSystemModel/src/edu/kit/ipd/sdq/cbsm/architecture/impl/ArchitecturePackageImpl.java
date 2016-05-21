@@ -1,13 +1,15 @@
 /**
  */
-package edu.kit.ipd.sdq.cbsm.environment.impl;
+package edu.kit.ipd.sdq.cbsm.architecture.impl;
 
 import edu.kit.ipd.sdq.cbsm.allocation.AllocationPackage;
 
 import edu.kit.ipd.sdq.cbsm.allocation.impl.AllocationPackageImpl;
 
+import edu.kit.ipd.sdq.cbsm.architecture.ArchitectureFactory;
 import edu.kit.ipd.sdq.cbsm.architecture.ArchitecturePackage;
-import edu.kit.ipd.sdq.cbsm.architecture.impl.ArchitecturePackageImpl;
+import edu.kit.ipd.sdq.cbsm.architecture.CompleteArchitecture;
+
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyPackage;
 
 import edu.kit.ipd.sdq.cbsm.assembly.impl.AssemblyPackageImpl;
@@ -16,15 +18,16 @@ import edu.kit.ipd.sdq.cbsm.core.CorePackage;
 
 import edu.kit.ipd.sdq.cbsm.core.impl.CorePackageImpl;
 
-import edu.kit.ipd.sdq.cbsm.environment.Environment;
-import edu.kit.ipd.sdq.cbsm.environment.EnvironmentFactory;
 import edu.kit.ipd.sdq.cbsm.environment.EnvironmentPackage;
-import edu.kit.ipd.sdq.cbsm.environment.Link;
+
+import edu.kit.ipd.sdq.cbsm.environment.impl.EnvironmentPackageImpl;
 
 import edu.kit.ipd.sdq.cbsm.repository.RepositoryPackage;
 
 import edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorPackage;
+
 import edu.kit.ipd.sdq.cbsm.repository.behavior.impl.BehaviorPackageImpl;
+
 import edu.kit.ipd.sdq.cbsm.repository.impl.RepositoryPackageImpl;
 
 import org.eclipse.emf.ecore.EClass;
@@ -39,27 +42,13 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentPackage {
+public class ArchitecturePackageImpl extends EPackageImpl implements ArchitecturePackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass environmentEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass containerEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass linkEClass = null;
+	private EClass completeArchitectureEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -72,12 +61,12 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see edu.kit.ipd.sdq.cbsm.environment.EnvironmentPackage#eNS_URI
+	 * @see edu.kit.ipd.sdq.cbsm.architecture.ArchitecturePackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private EnvironmentPackageImpl() {
-		super(eNS_URI, EnvironmentFactory.eINSTANCE);
+	private ArchitecturePackageImpl() {
+		super(eNS_URI, ArchitectureFactory.eINSTANCE);
 	}
 
 	/**
@@ -90,7 +79,7 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 * 
-	 * <p>This method is used to initialize {@link EnvironmentPackage#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link ArchitecturePackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -99,11 +88,11 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static EnvironmentPackage init() {
-		if (isInited) return (EnvironmentPackage)EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI);
+	public static ArchitecturePackage init() {
+		if (isInited) return (ArchitecturePackage)EPackage.Registry.INSTANCE.getEPackage(ArchitecturePackage.eNS_URI);
 
 		// Obtain or create and register package
-		EnvironmentPackageImpl theEnvironmentPackage = (EnvironmentPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof EnvironmentPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new EnvironmentPackageImpl());
+		ArchitecturePackageImpl theArchitecturePackage = (ArchitecturePackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ArchitecturePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ArchitecturePackageImpl());
 
 		isInited = true;
 
@@ -112,34 +101,34 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		RepositoryPackageImpl theRepositoryPackage = (RepositoryPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RepositoryPackage.eNS_URI) instanceof RepositoryPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RepositoryPackage.eNS_URI) : RepositoryPackage.eINSTANCE);
 		BehaviorPackageImpl theBehaviorPackage = (BehaviorPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) instanceof BehaviorPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BehaviorPackage.eNS_URI) : BehaviorPackage.eINSTANCE);
 		AssemblyPackageImpl theAssemblyPackage = (AssemblyPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AssemblyPackage.eNS_URI) instanceof AssemblyPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AssemblyPackage.eNS_URI) : AssemblyPackage.eINSTANCE);
+		EnvironmentPackageImpl theEnvironmentPackage = (EnvironmentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) instanceof EnvironmentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI) : EnvironmentPackage.eINSTANCE);
 		AllocationPackageImpl theAllocationPackage = (AllocationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(AllocationPackage.eNS_URI) instanceof AllocationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(AllocationPackage.eNS_URI) : AllocationPackage.eINSTANCE);
-		ArchitecturePackageImpl theArchitecturePackage = (ArchitecturePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ArchitecturePackage.eNS_URI) instanceof ArchitecturePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ArchitecturePackage.eNS_URI) : ArchitecturePackage.eINSTANCE);
 
 		// Create package meta-data objects
-		theEnvironmentPackage.createPackageContents();
+		theArchitecturePackage.createPackageContents();
 		theCorePackage.createPackageContents();
 		theRepositoryPackage.createPackageContents();
 		theBehaviorPackage.createPackageContents();
 		theAssemblyPackage.createPackageContents();
+		theEnvironmentPackage.createPackageContents();
 		theAllocationPackage.createPackageContents();
-		theArchitecturePackage.createPackageContents();
 
 		// Initialize created meta-data
-		theEnvironmentPackage.initializePackageContents();
+		theArchitecturePackage.initializePackageContents();
 		theCorePackage.initializePackageContents();
 		theRepositoryPackage.initializePackageContents();
 		theBehaviorPackage.initializePackageContents();
 		theAssemblyPackage.initializePackageContents();
+		theEnvironmentPackage.initializePackageContents();
 		theAllocationPackage.initializePackageContents();
-		theArchitecturePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
-		theEnvironmentPackage.freeze();
+		theArchitecturePackage.freeze();
 
   
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(EnvironmentPackage.eNS_URI, theEnvironmentPackage);
-		return theEnvironmentPackage;
+		EPackage.Registry.INSTANCE.put(ArchitecturePackage.eNS_URI, theArchitecturePackage);
+		return theArchitecturePackage;
 	}
 
 	/**
@@ -147,8 +136,8 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getEnvironment() {
-		return environmentEClass;
+	public EClass getCompleteArchitecture() {
+		return completeArchitectureEClass;
 	}
 
 	/**
@@ -156,8 +145,8 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEnvironment_Containers() {
-		return (EReference)environmentEClass.getEStructuralFeatures().get(0);
+	public EReference getCompleteArchitecture_Repository() {
+		return (EReference)completeArchitectureEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -165,8 +154,8 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEnvironment_Links() {
-		return (EReference)environmentEClass.getEStructuralFeatures().get(1);
+	public EReference getCompleteArchitecture_System() {
+		return (EReference)completeArchitectureEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -174,8 +163,8 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getContainer() {
-		return containerEClass;
+	public EReference getCompleteArchitecture_Environment() {
+		return (EReference)completeArchitectureEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -183,8 +172,8 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getContainer_ParentEnvironment() {
-		return (EReference)containerEClass.getEStructuralFeatures().get(0);
+	public EReference getCompleteArchitecture_Allocation() {
+		return (EReference)completeArchitectureEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -192,35 +181,8 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getLink() {
-		return linkEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getLink_ParentEnvironment() {
-		return (EReference)linkEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getLink_LinkedContainers() {
-		return (EReference)linkEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EnvironmentFactory getEnvironmentFactory() {
-		return (EnvironmentFactory)getEFactoryInstance();
+	public ArchitectureFactory getArchitectureFactory() {
+		return (ArchitectureFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -242,16 +204,11 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		isCreated = true;
 
 		// Create classes and their features
-		environmentEClass = createEClass(ENVIRONMENT);
-		createEReference(environmentEClass, ENVIRONMENT__CONTAINERS);
-		createEReference(environmentEClass, ENVIRONMENT__LINKS);
-
-		containerEClass = createEClass(CONTAINER);
-		createEReference(containerEClass, CONTAINER__PARENT_ENVIRONMENT);
-
-		linkEClass = createEClass(LINK);
-		createEReference(linkEClass, LINK__PARENT_ENVIRONMENT);
-		createEReference(linkEClass, LINK__LINKED_CONTAINERS);
+		completeArchitectureEClass = createEClass(COMPLETE_ARCHITECTURE);
+		createEReference(completeArchitectureEClass, COMPLETE_ARCHITECTURE__REPOSITORY);
+		createEReference(completeArchitectureEClass, COMPLETE_ARCHITECTURE__SYSTEM);
+		createEReference(completeArchitectureEClass, COMPLETE_ARCHITECTURE__ENVIRONMENT);
+		createEReference(completeArchitectureEClass, COMPLETE_ARCHITECTURE__ALLOCATION);
 	}
 
 	/**
@@ -278,30 +235,26 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
+		RepositoryPackage theRepositoryPackage = (RepositoryPackage)EPackage.Registry.INSTANCE.getEPackage(RepositoryPackage.eNS_URI);
+		AssemblyPackage theAssemblyPackage = (AssemblyPackage)EPackage.Registry.INSTANCE.getEPackage(AssemblyPackage.eNS_URI);
+		EnvironmentPackage theEnvironmentPackage = (EnvironmentPackage)EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI);
+		AllocationPackage theAllocationPackage = (AllocationPackage)EPackage.Registry.INSTANCE.getEPackage(AllocationPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		containerEClass.getESuperTypes().add(theCorePackage.getNamedElement());
-		linkEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(environmentEClass, Environment.class, "Environment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEnvironment_Containers(), this.getContainer(), this.getContainer_ParentEnvironment(), "containers", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEnvironment_Links(), this.getLink(), this.getLink_ParentEnvironment(), "links", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(containerEClass, edu.kit.ipd.sdq.cbsm.environment.Container.class, "Container", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getContainer_ParentEnvironment(), this.getEnvironment(), this.getEnvironment_Containers(), "parentEnvironment", null, 1, 1, edu.kit.ipd.sdq.cbsm.environment.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(linkEClass, Link.class, "Link", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLink_ParentEnvironment(), this.getEnvironment(), this.getEnvironment_Links(), "parentEnvironment", null, 1, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLink_LinkedContainers(), this.getContainer(), null, "linkedContainers", null, 2, -1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(completeArchitectureEClass, CompleteArchitecture.class, "CompleteArchitecture", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCompleteArchitecture_Repository(), theRepositoryPackage.getRepository(), null, "repository", null, 1, 1, CompleteArchitecture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCompleteArchitecture_System(), theAssemblyPackage.getSystem(), null, "system", null, 1, 1, CompleteArchitecture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCompleteArchitecture_Environment(), theEnvironmentPackage.getEnvironment(), null, "environment", null, 1, 1, CompleteArchitecture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCompleteArchitecture_Allocation(), theAllocationPackage.getAllocation(), null, "allocation", null, 1, 1, CompleteArchitecture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
 	}
 
-} //EnvironmentPackageImpl
+} //ArchitecturePackageImpl

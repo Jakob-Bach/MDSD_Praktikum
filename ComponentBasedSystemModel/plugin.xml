@@ -54,4 +54,12 @@
             genModel="model/componentBasedSystemModel.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated componentBasedSystemModel -->
+      <package
+            uri="http://sdq.ipd.kit.edu/componentBasedSystemModel/architecture"
+            class="edu.kit.ipd.sdq.cbsm.architecture.ArchitecturePackage"
+            genModel="model/componentBasedSystemModel.genmodel"/>
+   </extension>
+
 </plugin>

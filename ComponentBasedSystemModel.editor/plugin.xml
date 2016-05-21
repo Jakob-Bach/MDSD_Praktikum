@@ -146,4 +146,32 @@
       </editor>
    </extension>
 
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated componentBasedSystemModel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="edu.kit.ipd.sdq.cbsm.architecture.presentation.ArchitectureModelWizardID"
+            name="%_UI_ArchitectureModelWizard_label"
+            class="edu.kit.ipd.sdq.cbsm.architecture.presentation.ArchitectureModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ArchitectureModelFile.gif">
+         <description>%_UI_ArchitectureModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated componentBasedSystemModel -->
+      <editor
+            id="edu.kit.ipd.sdq.cbsm.architecture.presentation.ArchitectureEditorID"
+            name="%_UI_ArchitectureEditor_label"
+            icon="icons/full/obj16/ArchitectureModelFile.gif"
+            extensions="architecture"
+            class="edu.kit.ipd.sdq.cbsm.architecture.presentation.ArchitectureEditor"
+            contributorClass="edu.kit.ipd.sdq.cbsm.architecture.presentation.ArchitectureActionBarContributor">
+      </editor>
+   </extension>
+
 </plugin>

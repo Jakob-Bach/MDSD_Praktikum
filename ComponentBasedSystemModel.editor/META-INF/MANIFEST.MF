@@ -9,6 +9,7 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: edu.kit.ipd.sdq.cbsm.allocation.presentation,
+ edu.kit.ipd.sdq.cbsm.architecture.presentation,
  edu.kit.ipd.sdq.cbsm.assembly.presentation,
  edu.kit.ipd.sdq.cbsm.core.presentation,
  edu.kit.ipd.sdq.cbsm.environment.presentation,
