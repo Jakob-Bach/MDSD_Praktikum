@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <assembly:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assembly="http://sdq.ipd.kit.edu/componentBasedSystemModel/assembly">
-  <providedRoles name="System_HTTPProvidedRole">
+  <providedRoles name="System_HTTP_ProvidedRole">
     <providedInterface href="mediaStore.repository#//@interfaces.0"/>
   </providedRoles>
   <containedAssemblyContexts name="WebGUI_AssemblyContext">

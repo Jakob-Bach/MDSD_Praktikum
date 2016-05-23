@@ -16,29 +16,29 @@
     <signatures name="addFile"/>
   </interfaces>
   <components name="WebGUI">
-    <providedRoles name="WebGUI_HTTPProvidedRole" providedInterface="//@interfaces.0"/>
-    <requiredRoles name="WebGUI_MediaStoreRequiredRole" requiredInterface="//@interfaces.1"/>
+    <providedRoles name="WebGUI_HTTP_ProvidedRole" providedInterface="//@interfaces.0"/>
+    <requiredRoles name="WebGUI_MediaStore_RequiredRole" requiredInterface="//@interfaces.1"/>
   </components>
   <components name="MediaManager">
-    <providedRoles name="MediaManager_MediaStoreProvidedRole" providedInterface="//@interfaces.1"/>
-    <requiredRoles name="MediaManager_DBCacheRequiredRole" requiredInterface="//@interfaces.3"/>
-    <requiredRoles name="MediaManager_SoundRequiredRole" requiredInterface="//@interfaces.2"/>
+    <providedRoles name="MediaManager_MediaStore_ProvidedRole" providedInterface="//@interfaces.1"/>
+    <requiredRoles name="MediaManager_AudioDB_RequiredRole" requiredInterface="//@interfaces.3"/>
+    <requiredRoles name="MediaManager_Sound_RequiredRole" requiredInterface="//@interfaces.2"/>
   </components>
   <components name="DBCache">
-    <providedRoles name="DBCache_AudioDBProvidedRole" providedInterface="//@interfaces.3"/>
-    <requiredRoles name="DBCache_AudioDBRequiredRole" requiredInterface="//@interfaces.3"/>
+    <providedRoles name="DBCache_AudioDB_ProvidedRole" providedInterface="//@interfaces.3"/>
+    <requiredRoles name="DBCache_AudioDB_RequiredRole" requiredInterface="//@interfaces.3"/>
   </components>
-  <components name="DigitalWatermaking">
-    <providedRoles name="DigitalWatermarking_SoundProvidedRole" providedInterface="//@interfaces.2"/>
+  <components name="DigitalWatermarking">
+    <providedRoles name="DigitalWatermarking_Sound_ProvidedRole" providedInterface="//@interfaces.2"/>
   </components>
   <components name="PoolingAudioDB">
-    <providedRoles name="PoolingAudioDB_AudioDBProvidedRole" providedInterface="//@interfaces.3"/>
+    <providedRoles name="PoolingAudioDB_AudioDB_ProvidedRole" providedInterface="//@interfaces.3"/>
   </components>
   <components xsi:type="assembly:CompositeComponent" name="MediaStore">
-    <providedRoles name="MediaStore_MediaStoreProvidedRole" providedInterface="//@interfaces.1"/>
-    <requiredRoles name="MediaStore_AudioDBRequiredRole" requiredInterface="//@interfaces.3"/>
-    <containedAssemblyContexts name="MediaManagerAssemblyContext" instantiatedComponent="//@components.1"/>
-    <containedAssemblyContexts name="DigitalWatermarkingAssemblyContext" instantiatedComponent="//@components.3"/>
-    <containedAssemblyContexts name="DBCacheAssemblyContext" instantiatedComponent="//@components.2"/>
+    <providedRoles name="MediaStore_MediaStore_ProvidedRole" providedInterface="//@interfaces.1"/>
+    <requiredRoles name="MediaStore_AudioDB_RequiredRole" requiredInterface="//@interfaces.3"/>
+    <containedAssemblyContexts name="MediaManager_AssemblyContext" instantiatedComponent="//@components.1"/>
+    <containedAssemblyContexts name="DigitalWatermarking_AssemblyContext" instantiatedComponent="//@components.3"/>
+    <containedAssemblyContexts name="DBCache_AssemblyContext" instantiatedComponent="//@components.2"/>
   </components>
 </repository:Repository>
