@@ -1,0 +1,112 @@
+Repository {
+	interfaces {
+		Interface HTTP {
+			signatures {
+				Signature HTTPDownload {
+				},
+				Signature HTTPUpload {
+				}
+			}
+		},
+		Interface MediaStore {
+			signatures {
+				Signature download {
+				},
+				Signature upload {
+				}
+			}
+		},
+		Interface Sound {
+			signatures {
+				Signature watermark {
+				}
+			}
+		},
+		Interface AudioDB {
+			signatures {
+				Signature queryDB {
+				},
+				Signature addFile {
+				}
+			}
+		}
+	}
+	components {
+		Component WebGUI {
+			providedRoles {
+				ProvidedRole WebGUI_HTTP_ProvidedRole {
+					providedInterface HTTP
+				}
+			}
+			requiredRoles {
+				RequiredRole WebGUI_MediaStore_RequiredRole {
+					requiredInterface MediaStore
+				}
+			}
+		},
+		Component MediaManager {
+			providedRoles {
+				ProvidedRole MediaManager_MediaStore_ProvidedRole {
+					providedInterface MediaStore
+				}
+			}
+			requiredRoles {
+				RequiredRole MediaManger_Sound_RequiredRole {
+					requiredInterface Sound
+				},
+				RequiredRole MediaManger_AudioDB_RequiredRole {
+					requiredInterface AudioDB
+				}
+			}
+		},
+		Component DBCache {
+			providedRoles {
+				ProvidedRole DBCache_AudioDB_ProvidedRole {
+					providedInterface AudioDB
+				}
+			}
+			requiredRoles {
+				RequiredRole DBCache_AudioDB_RequiredRole {
+					requiredInterface AudioDB
+				}
+			}
+		},
+		Component DigitalWaterMarking {
+			providedRoles {
+				ProvidedRole DigitalWaterMarking_Sound_ProvidedRole {
+					providedInterface Sound
+				}
+			}
+		},
+		Component PoolingAudioDB {
+			providedRoles {
+				ProvidedRole PoolingAudioDB_AudioDB_ProvidedRole {
+					providedInterface AudioDB
+				}
+			}
+		},
+		CompositeComponent MediaStore {
+			providedRoles {
+				ProvidedRole MediaStore_MediaStore_ProvidedRole {
+					providedInterface MediaStore
+				}
+			}
+			requiredRoles {
+				RequiredRole MediaStore_AudioDB_RequiredRole {
+					requiredInterface AudioDB
+				}
+			}
+			containedAssemblyContexts {
+				AssemblyContext MediaManager_AssemblyContext {
+					instantiatedComponent MediaManager
+				},
+				AssemblyContext DigitalWatermarking_AssemblyContext {
+					instantiatedComponent DigitalWaterMarking
+				},
+				AssemblyContext DBCache_AssemblyContext {
+					instantiatedComponent DBCache
+				}
+			}
+		}
+	}
+}

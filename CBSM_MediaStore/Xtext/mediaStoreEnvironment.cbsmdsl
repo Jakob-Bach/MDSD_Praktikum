@@ -1,0 +1,13 @@
+Environment {
+	containers {
+		Container ApplicationServer,
+		Container DatabaseServer
+	}
+	links {
+		Link ApplicationServer_DatabaseServer_Link {
+			linkedContainers (
+				ApplicationServer, DatabaseServer
+			)
+		}
+	}
+}

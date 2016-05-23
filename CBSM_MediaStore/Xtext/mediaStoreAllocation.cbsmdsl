@@ -1,0 +1,16 @@
+Allocation {
+	allocationContexts {
+		AllocationContext WebGUI_AllocationContext {
+			allocatedContainer ApplicationServer
+			allocatedAssemblyContext WebGUI_AssemblyContext
+		},
+		AllocationContext MediaStore_AllocationContext {
+			allocatedContainer ApplicationServer
+			allocatedAssemblyContext MediaStore_AssemblyContext
+		},
+		AllocationContext PoolingAudioDB_AllocationContext {
+			allocatedContainer DatabaseServer
+			allocatedAssemblyContext PoolingAudioDB_AssemblyContext
+		}
+	}
+}
