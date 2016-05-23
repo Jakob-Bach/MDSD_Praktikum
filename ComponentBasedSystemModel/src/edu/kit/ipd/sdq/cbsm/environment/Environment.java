@@ -2,9 +2,8 @@
  */
 package edu.kit.ipd.sdq.cbsm.environment;
 
+import edu.kit.ipd.sdq.cbsm.core.ViewType;
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Environment extends EObject {
+public interface Environment extends ViewType {
 	/**
 	 * Returns the value of the '<em><b>Containers</b></em>' containment reference list.
 	 * The list contents are of type {@link edu.kit.ipd.sdq.cbsm.environment.Container}.

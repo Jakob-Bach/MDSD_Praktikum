@@ -280,6 +280,7 @@ public class EnvironmentPackageImpl extends EPackageImpl implements EnvironmentP
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		environmentEClass.getESuperTypes().add(theCorePackage.getViewType());
 		containerEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		linkEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 

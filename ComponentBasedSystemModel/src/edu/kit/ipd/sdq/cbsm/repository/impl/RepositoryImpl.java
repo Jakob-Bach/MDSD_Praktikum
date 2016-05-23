@@ -2,6 +2,7 @@
  */
 package edu.kit.ipd.sdq.cbsm.repository.impl;
 
+import edu.kit.ipd.sdq.cbsm.core.impl.ViewTypeImpl;
 import edu.kit.ipd.sdq.cbsm.repository.Component;
 import edu.kit.ipd.sdq.cbsm.repository.DataType;
 import edu.kit.ipd.sdq.cbsm.repository.Interface;
@@ -16,9 +17,6 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -37,7 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class RepositoryImpl extends MinimalEObjectImpl.Container implements Repository {
+public class RepositoryImpl extends ViewTypeImpl implements Repository {
 	/**
 	 * The cached value of the '{@link #getInterfaces() <em>Interfaces</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

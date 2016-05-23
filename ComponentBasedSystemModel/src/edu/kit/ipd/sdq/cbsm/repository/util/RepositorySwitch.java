@@ -4,6 +4,7 @@ package edu.kit.ipd.sdq.cbsm.repository.util;
 
 import edu.kit.ipd.sdq.cbsm.core.NamedElement;
 
+import edu.kit.ipd.sdq.cbsm.core.ViewType;
 import edu.kit.ipd.sdq.cbsm.repository.*;
 
 import org.eclipse.emf.ecore.EObject;
@@ -71,6 +72,7 @@ public class RepositorySwitch<T> extends Switch<T> {
 			case RepositoryPackage.REPOSITORY: {
 				Repository repository = (Repository)theEObject;
 				T result = caseRepository(repository);
+				if (result == null) result = caseViewType(repository);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -334,6 +336,21 @@ public class RepositorySwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSimpleType(SimpleType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>View Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>View Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseViewType(ViewType object) {
 		return null;
 	}
 

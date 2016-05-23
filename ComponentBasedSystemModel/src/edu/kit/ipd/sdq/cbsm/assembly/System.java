@@ -2,6 +2,7 @@
  */
 package edu.kit.ipd.sdq.cbsm.assembly;
 
+import edu.kit.ipd.sdq.cbsm.core.ViewType;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -21,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot ProvidesAtLeastOneInterface='not self.providedRoles->isEmpty()'"
  * @generated
  */
-public interface System extends CompositeProvidingAndRequiringElement {
+public interface System extends CompositeProvidingAndRequiringElement, ViewType {
 	/**
 	 * Returns the value of the '<em><b>System Connectors</b></em>' containment reference list.
 	 * The list contents are of type {@link edu.kit.ipd.sdq.cbsm.assembly.Connector}.

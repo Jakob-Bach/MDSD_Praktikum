@@ -4,6 +4,7 @@ package edu.kit.ipd.sdq.cbsm.repository.util;
 
 import edu.kit.ipd.sdq.cbsm.core.NamedElement;
 
+import edu.kit.ipd.sdq.cbsm.core.ViewType;
 import edu.kit.ipd.sdq.cbsm.repository.*;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -116,6 +117,10 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseSimpleType(SimpleType object) {
 				return createSimpleTypeAdapter();
+			}
+			@Override
+			public Adapter caseViewType(ViewType object) {
+				return createViewTypeAdapter();
 			}
 			@Override
 			public Adapter caseNamedElement(NamedElement object) {
@@ -306,6 +311,20 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSimpleTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.cbsm.core.ViewType <em>View Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see edu.kit.ipd.sdq.cbsm.core.ViewType
+	 * @generated
+	 */
+	public Adapter createViewTypeAdapter() {
 		return null;
 	}
 

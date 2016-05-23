@@ -74,7 +74,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENVIRONMENT__CONTAINERS = 0;
+	int ENVIRONMENT__CONTAINERS = CorePackage.VIEW_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
@@ -83,7 +83,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENVIRONMENT__LINKS = 1;
+	int ENVIRONMENT__LINKS = CorePackage.VIEW_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Environment</em>' class.
@@ -92,7 +92,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENVIRONMENT_FEATURE_COUNT = 2;
+	int ENVIRONMENT_FEATURE_COUNT = CorePackage.VIEW_TYPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Environment</em>' class.
@@ -101,7 +101,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENVIRONMENT_OPERATION_COUNT = 0;
+	int ENVIRONMENT_OPERATION_COUNT = CorePackage.VIEW_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link edu.kit.ipd.sdq.cbsm.environment.impl.ContainerImpl <em>Container</em>}' class.

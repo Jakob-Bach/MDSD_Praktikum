@@ -2,11 +2,9 @@
  */
 package edu.kit.ipd.sdq.cbsm.environment.tests;
 
+import edu.kit.ipd.sdq.cbsm.core.tests.ViewTypeTest;
 import edu.kit.ipd.sdq.cbsm.environment.Environment;
 import edu.kit.ipd.sdq.cbsm.environment.EnvironmentFactory;
-
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 /**
@@ -15,15 +13,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class EnvironmentTest extends TestCase {
-
-	/**
-	 * The fixture for this Environment test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Environment fixture = null;
+public class EnvironmentTest extends ViewTypeTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +35,14 @@ public class EnvironmentTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Environment test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(Environment fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Environment test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected Environment getFixture() {
-		return fixture;
+		return (Environment)fixture;
 	}
 
 	/**

@@ -94,6 +94,35 @@ public interface CorePackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link edu.kit.ipd.sdq.cbsm.core.impl.ViewTypeImpl <em>View Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see edu.kit.ipd.sdq.cbsm.core.impl.ViewTypeImpl
+	 * @see edu.kit.ipd.sdq.cbsm.core.impl.CorePackageImpl#getViewType()
+	 * @generated
+	 */
+	int VIEW_TYPE = 1;
+
+	/**
+	 * The number of structural features of the '<em>View Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_TYPE_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>View Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_TYPE_OPERATION_COUNT = 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.cbsm.core.NamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -113,6 +142,16 @@ public interface CorePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getNamedElement_Name();
+
+	/**
+	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.cbsm.core.ViewType <em>View Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>View Type</em>'.
+	 * @see edu.kit.ipd.sdq.cbsm.core.ViewType
+	 * @generated
+	 */
+	EClass getViewType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -154,6 +193,16 @@ public interface CorePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
+
+		/**
+		 * The meta object literal for the '{@link edu.kit.ipd.sdq.cbsm.core.impl.ViewTypeImpl <em>View Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see edu.kit.ipd.sdq.cbsm.core.impl.ViewTypeImpl
+		 * @see edu.kit.ipd.sdq.cbsm.core.impl.CorePackageImpl#getViewType()
+		 * @generated
+		 */
+		EClass VIEW_TYPE = eINSTANCE.getViewType();
 
 	}
 

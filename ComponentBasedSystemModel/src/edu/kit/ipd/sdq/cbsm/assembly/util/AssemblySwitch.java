@@ -12,6 +12,7 @@ import edu.kit.ipd.sdq.cbsm.assembly.DelegationConnector;
 import edu.kit.ipd.sdq.cbsm.assembly.ProvidedDelegationConnector;
 import edu.kit.ipd.sdq.cbsm.assembly.RequiredDelegationConnector;
 import edu.kit.ipd.sdq.cbsm.core.NamedElement;
+import edu.kit.ipd.sdq.cbsm.core.ViewType;
 import edu.kit.ipd.sdq.cbsm.repository.Component;
 import edu.kit.ipd.sdq.cbsm.repository.ProvidingAndRequiringElement;
 import org.eclipse.emf.ecore.EObject;
@@ -104,6 +105,7 @@ public class AssemblySwitch<T> extends Switch<T> {
 				edu.kit.ipd.sdq.cbsm.assembly.System system = (edu.kit.ipd.sdq.cbsm.assembly.System)theEObject;
 				T result = caseSystem(system);
 				if (result == null) result = caseCompositeProvidingAndRequiringElement(system);
+				if (result == null) result = caseViewType(system);
 				if (result == null) result = caseProvidingAndRequiringElement(system);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -330,6 +332,21 @@ public class AssemblySwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseComponent(Component object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>View Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>View Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseViewType(ViewType object) {
 		return null;
 	}
 

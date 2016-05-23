@@ -2,11 +2,9 @@
  */
 package edu.kit.ipd.sdq.cbsm.repository.tests;
 
+import edu.kit.ipd.sdq.cbsm.core.tests.ViewTypeTest;
 import edu.kit.ipd.sdq.cbsm.repository.Repository;
 import edu.kit.ipd.sdq.cbsm.repository.RepositoryFactory;
-
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 /**
@@ -15,15 +13,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class RepositoryTest extends TestCase {
-
-	/**
-	 * The fixture for this Repository test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Repository fixture = null;
+public class RepositoryTest extends ViewTypeTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +35,14 @@ public class RepositoryTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Repository test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(Repository fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Repository test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected Repository getFixture() {
-		return fixture;
+		return (Repository)fixture;
 	}
 
 	/**

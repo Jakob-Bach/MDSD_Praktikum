@@ -6,6 +6,7 @@ import edu.kit.ipd.sdq.cbsm.allocation.Allocation;
 import edu.kit.ipd.sdq.cbsm.allocation.AllocationContext;
 import edu.kit.ipd.sdq.cbsm.allocation.AllocationPackage;
 
+import edu.kit.ipd.sdq.cbsm.core.impl.ViewTypeImpl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -14,9 +15,6 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -33,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class AllocationImpl extends MinimalEObjectImpl.Container implements Allocation {
+public class AllocationImpl extends ViewTypeImpl implements Allocation {
 	/**
 	 * The cached value of the '{@link #getAllocationContexts() <em>Allocation Contexts</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

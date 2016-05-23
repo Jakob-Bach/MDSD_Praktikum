@@ -77,7 +77,7 @@ public interface RepositoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY__INTERFACES = 0;
+	int REPOSITORY__INTERFACES = CorePackage.VIEW_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Components</b></em>' containment reference list.
@@ -86,7 +86,7 @@ public interface RepositoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY__COMPONENTS = 1;
+	int REPOSITORY__COMPONENTS = CorePackage.VIEW_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Data Types</b></em>' containment reference list.
@@ -95,7 +95,7 @@ public interface RepositoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY__DATA_TYPES = 2;
+	int REPOSITORY__DATA_TYPES = CorePackage.VIEW_TYPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Repository</em>' class.
@@ -104,7 +104,7 @@ public interface RepositoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY_FEATURE_COUNT = 3;
+	int REPOSITORY_FEATURE_COUNT = CorePackage.VIEW_TYPE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Repository</em>' class.
@@ -113,7 +113,7 @@ public interface RepositoryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY_OPERATION_COUNT = 0;
+	int REPOSITORY_OPERATION_COUNT = CorePackage.VIEW_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link edu.kit.ipd.sdq.cbsm.repository.impl.InterfaceImpl <em>Interface</em>}' class.

@@ -2,9 +2,8 @@
  */
 package edu.kit.ipd.sdq.cbsm.repository;
 
+import edu.kit.ipd.sdq.cbsm.core.ViewType;
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Repository extends EObject {
+public interface Repository extends ViewType {
 	/**
 	 * Returns the value of the '<em><b>Interfaces</b></em>' containment reference list.
 	 * The list contents are of type {@link edu.kit.ipd.sdq.cbsm.repository.Interface}.

@@ -8,6 +8,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ViewType" abstract="true"/>
   </eSubpackages>
   <eSubpackages name="repository" nsURI="http://sdq.ipd.kit.edu/componentBasedSystemModel/repository"
       nsPrefix="repository">
@@ -16,7 +17,7 @@
       <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
       <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
     </eAnnotations>
-    <eClassifiers xsi:type="ecore:EClass" name="Repository">
+    <eClassifiers xsi:type="ecore:EClass" name="Repository" eSuperTypes="#//core/ViewType">
       <eStructuralFeatures xsi:type="ecore:EReference" name="interfaces" upperBound="-1"
           eType="#//repository/Interface" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
@@ -168,7 +169,7 @@
           upperBound="-1" eType="#//assembly/AssemblyContext" containment="true" eOpposite="#//assembly/AssemblyContext/parentCompositeElement"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="CompositeComponent" eSuperTypes="#//repository/Component #//assembly/CompositeProvidingAndRequiringElement"/>
-    <eClassifiers xsi:type="ecore:EClass" name="System" eSuperTypes="#//assembly/CompositeProvidingAndRequiringElement">
+    <eClassifiers xsi:type="ecore:EClass" name="System" eSuperTypes="#//assembly/CompositeProvidingAndRequiringElement #//core/ViewType">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="ProvidesAtLeastOneInterface"/>
       </eAnnotations>
@@ -243,7 +244,7 @@
   </eSubpackages>
   <eSubpackages name="environment" nsURI="http://sdq.ipd.kit.edu/componentBasedSystemModel/environment"
       nsPrefix="environment">
-    <eClassifiers xsi:type="ecore:EClass" name="Environment">
+    <eClassifiers xsi:type="ecore:EClass" name="Environment" eSuperTypes="#//core/ViewType">
       <eStructuralFeatures xsi:type="ecore:EReference" name="containers" upperBound="-1"
           eType="#//environment/Container" containment="true" eOpposite="#//environment/Container/parentEnvironment"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
@@ -267,7 +268,7 @@
       <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
       <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
     </eAnnotations>
-    <eClassifiers xsi:type="ecore:EClass" name="Allocation">
+    <eClassifiers xsi:type="ecore:EClass" name="Allocation" eSuperTypes="#//core/ViewType">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="AssemblyContextsConnectedByAssemblyConnectorAllocatedOnSameOrLinkedContainers"/>
       </eAnnotations>

@@ -5,6 +5,7 @@ package edu.kit.ipd.sdq.cbsm.allocation.util;
 import edu.kit.ipd.sdq.cbsm.allocation.*;
 
 import edu.kit.ipd.sdq.cbsm.core.NamedElement;
+import edu.kit.ipd.sdq.cbsm.core.ViewType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -70,6 +71,7 @@ public class AllocationSwitch<T> extends Switch<T> {
 			case AllocationPackage.ALLOCATION: {
 				Allocation allocation = (Allocation)theEObject;
 				T result = caseAllocation(allocation);
+				if (result == null) result = caseViewType(allocation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -111,6 +113,21 @@ public class AllocationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAllocationContext(AllocationContext object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>View Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>View Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseViewType(ViewType object) {
 		return null;
 	}
 

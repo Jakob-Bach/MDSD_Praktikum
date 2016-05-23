@@ -74,7 +74,7 @@ public interface AllocationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ALLOCATION__ALLOCATION_CONTEXTS = 0;
+	int ALLOCATION__ALLOCATION_CONTEXTS = CorePackage.VIEW_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Allocation</em>' class.
@@ -83,7 +83,7 @@ public interface AllocationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ALLOCATION_FEATURE_COUNT = 1;
+	int ALLOCATION_FEATURE_COUNT = CorePackage.VIEW_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Allocation</em>' class.
@@ -92,7 +92,7 @@ public interface AllocationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ALLOCATION_OPERATION_COUNT = 0;
+	int ALLOCATION_OPERATION_COUNT = CorePackage.VIEW_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link edu.kit.ipd.sdq.cbsm.allocation.impl.AllocationContextImpl <em>Context</em>}' class.

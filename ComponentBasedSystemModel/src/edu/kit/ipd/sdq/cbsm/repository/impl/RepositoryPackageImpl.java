@@ -568,6 +568,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		repositoryEClass.getESuperTypes().add(theCorePackage.getViewType());
 		interfaceEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		roleEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		providedRoleEClass.getESuperTypes().add(this.getRole());

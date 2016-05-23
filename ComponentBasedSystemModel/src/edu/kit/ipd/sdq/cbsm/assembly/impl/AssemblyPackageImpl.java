@@ -520,6 +520,7 @@ public class AssemblyPackageImpl extends EPackageImpl implements AssemblyPackage
 		compositeComponentEClass.getESuperTypes().add(theRepositoryPackage.getComponent());
 		compositeComponentEClass.getESuperTypes().add(this.getCompositeProvidingAndRequiringElement());
 		systemEClass.getESuperTypes().add(this.getCompositeProvidingAndRequiringElement());
+		systemEClass.getESuperTypes().add(theCorePackage.getViewType());
 		connectorEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		delegationConnectorEClass.getESuperTypes().add(this.getConnector());
 		providedDelegationConnectorEClass.getESuperTypes().add(this.getDelegationConnector());

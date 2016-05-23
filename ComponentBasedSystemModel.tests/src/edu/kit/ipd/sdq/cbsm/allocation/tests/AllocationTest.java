@@ -5,8 +5,7 @@ package edu.kit.ipd.sdq.cbsm.allocation.tests;
 import edu.kit.ipd.sdq.cbsm.allocation.Allocation;
 import edu.kit.ipd.sdq.cbsm.allocation.AllocationFactory;
 
-import junit.framework.TestCase;
-
+import edu.kit.ipd.sdq.cbsm.core.tests.ViewTypeTest;
 import junit.textui.TestRunner;
 
 /**
@@ -15,15 +14,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AllocationTest extends TestCase {
-
-	/**
-	 * The fixture for this Allocation test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Allocation fixture = null;
+public class AllocationTest extends ViewTypeTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +36,14 @@ public class AllocationTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Allocation test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(Allocation fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Allocation test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected Allocation getFixture() {
-		return fixture;
+		return (Allocation)fixture;
 	}
 
 	/**

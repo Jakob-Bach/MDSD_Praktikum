@@ -12,6 +12,7 @@
       <genClasses ecoreClass="componentBasedSystemModel.ecore#//core/NamedElement">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentBasedSystemModel.ecore#//core/NamedElement/name"/>
       </genClasses>
+      <genClasses image="false" ecoreClass="componentBasedSystemModel.ecore#//core/ViewType"/>
     </nestedGenPackages>
     <nestedGenPackages prefix="Repository" basePackage="edu.kit.ipd.sdq.cbsm" disposableProviderFactory="true"
         ecorePackage="componentBasedSystemModel.ecore#//repository">

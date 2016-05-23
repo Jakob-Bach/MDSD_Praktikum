@@ -2,6 +2,7 @@
  */
 package edu.kit.ipd.sdq.cbsm.environment.impl;
 
+import edu.kit.ipd.sdq.cbsm.core.impl.ViewTypeImpl;
 import edu.kit.ipd.sdq.cbsm.environment.Environment;
 import edu.kit.ipd.sdq.cbsm.environment.EnvironmentPackage;
 import edu.kit.ipd.sdq.cbsm.environment.Link;
@@ -14,8 +15,6 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -33,7 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Environment {
+public class EnvironmentImpl extends ViewTypeImpl implements Environment {
 	/**
 	 * The cached value of the '{@link #getContainers() <em>Containers</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

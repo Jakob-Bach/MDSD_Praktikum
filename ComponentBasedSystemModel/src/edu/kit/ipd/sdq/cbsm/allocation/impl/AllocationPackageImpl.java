@@ -255,6 +255,7 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		allocationEClass.getESuperTypes().add(theCorePackage.getViewType());
 		allocationContextEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
