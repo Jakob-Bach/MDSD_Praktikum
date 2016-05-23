@@ -64,6 +64,9 @@ Interface returns repository::Interface:
 	'}';
 
 Component returns repository::Component:
+	BasicComponent | CompositeComponent;
+
+BasicComponent returns repository::Component:
 	{repository::Component}
 	'Component'
 	name=EString
@@ -72,6 +75,18 @@ Component returns repository::Component:
 		('requiredRoles' '{' requiredRoles+=RequiredRole ( "," requiredRoles+=RequiredRole)* '}' )?
 		('behaviorDescription' behaviorDescription=BehaviorDescription)?
 	'}';
+
+CompositeComponent returns assembly::CompositeComponent:
+	{assembly::CompositeComponent}
+	'CompositeComponent'
+	name=EString
+	'{'
+		('providedRoles' '{' providedRoles+=ProvidedRole ( "," providedRoles+=ProvidedRole)* '}' )?
+		('requiredRoles' '{' requiredRoles+=RequiredRole ( "," requiredRoles+=RequiredRole)* '}' )?
+		('behaviorDescription' behaviorDescription=BehaviorDescription)?
+		('containedAssemblyContexts' '{' containedAssemblyContexts+=AssemblyContext ( "," containedAssemblyContexts+=AssemblyContext)* '}' )?
+	'}';
+
 
 EString returns ecore::EString:
 	STRING | ID;

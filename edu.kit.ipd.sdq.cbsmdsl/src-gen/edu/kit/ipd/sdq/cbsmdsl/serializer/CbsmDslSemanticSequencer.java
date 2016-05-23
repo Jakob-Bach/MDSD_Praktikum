@@ -10,6 +10,7 @@ import edu.kit.ipd.sdq.cbsm.allocation.AllocationPackage;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyConnector;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyContext;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyPackage;
+import edu.kit.ipd.sdq.cbsm.assembly.CompositeComponent;
 import edu.kit.ipd.sdq.cbsm.assembly.ProvidedDelegationConnector;
 import edu.kit.ipd.sdq.cbsm.assembly.RequiredDelegationConnector;
 import edu.kit.ipd.sdq.cbsm.core.CorePackage;
@@ -74,6 +75,9 @@ public class CbsmDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case AssemblyPackage.ASSEMBLY_CONTEXT:
 				sequence_AssemblyContext(context, (AssemblyContext) semanticObject); 
 				return; 
+			case AssemblyPackage.COMPOSITE_COMPONENT:
+				sequence_CompositeComponent(context, (CompositeComponent) semanticObject); 
+				return; 
 			case AssemblyPackage.PROVIDED_DELEGATION_CONNECTOR:
 				sequence_ProvidedDelegationConnector(context, (ProvidedDelegationConnector) semanticObject); 
 				return; 
@@ -126,7 +130,7 @@ public class CbsmDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 				sequence_ComplexType(context, (ComplexType) semanticObject); 
 				return; 
 			case RepositoryPackage.COMPONENT:
-				sequence_Component(context, (Component) semanticObject); 
+				sequence_BasicComponent(context, (Component) semanticObject); 
 				return; 
 			case RepositoryPackage.INTERFACE:
 				sequence_Interface(context, (Interface) semanticObject); 
@@ -264,6 +268,24 @@ public class CbsmDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     Component returns Component
+	 *     BasicComponent returns Component
+	 *
+	 * Constraint:
+	 *     (
+	 *         name=EString 
+	 *         (providedRoles+=ProvidedRole providedRoles+=ProvidedRole*)? 
+	 *         (requiredRoles+=RequiredRole requiredRoles+=RequiredRole*)? 
+	 *         behaviorDescription=BehaviorDescription?
+	 *     )
+	 */
+	protected void sequence_BasicComponent(ISerializationContext context, Component semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     BehaviorDescription returns BehaviorDescription
 	 *
 	 * Constraint:
@@ -320,17 +342,19 @@ public class CbsmDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     Component returns Component
+	 *     Component returns CompositeComponent
+	 *     CompositeComponent returns CompositeComponent
 	 *
 	 * Constraint:
 	 *     (
 	 *         name=EString 
 	 *         (providedRoles+=ProvidedRole providedRoles+=ProvidedRole*)? 
 	 *         (requiredRoles+=RequiredRole requiredRoles+=RequiredRole*)? 
-	 *         behaviorDescription=BehaviorDescription?
+	 *         behaviorDescription=BehaviorDescription? 
+	 *         (containedAssemblyContexts+=AssemblyContext containedAssemblyContexts+=AssemblyContext*)?
 	 *     )
 	 */
-	protected void sequence_Component(ISerializationContext context, Component semanticObject) {
+	protected void sequence_CompositeComponent(ISerializationContext context, CompositeComponent semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
