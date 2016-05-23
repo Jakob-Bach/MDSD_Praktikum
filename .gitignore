@@ -67,3 +67,8 @@ local.properties
 
 # Code Recommenders
 .recommenders/
+
+### Xtext ###
+*.xtendbin
+*.java._trace
+*.java_trace
