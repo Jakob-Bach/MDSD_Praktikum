@@ -7,6 +7,11 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import org.eclipse.emf.ecore.util.EcoreUtil
+import java.io.IOException
+import edu.kit.ipd.sdq.cbsm.repository.Repository
+import edu.kit.ipd.sdq.cbsm.environment.Environment
+import edu.kit.ipd.sdq.cbsm.allocation.Allocation
 
 /**
  * Generates code from your model files on save.
@@ -16,10 +21,30 @@ import org.eclipse.xtext.generator.IGeneratorContext
 class CbsmDslGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(typeof(Greeting))
-//				.map[name]
-//				.join(', '))
+		EcoreUtil.resolveAll(resource);
+		val representedObject = resource.contents.get(0);
+		var resourceURI = resource.URI.trimFileExtension;
+		val fileName = resourceURI.segment(resourceURI.segments.length-1);
+		resourceURI = resourceURI.trimSegments(1).appendSegment("serialized").appendSegment(fileName);
+		if (representedObject instanceof Repository) {
+			resourceURI = resourceURI.appendFileExtension("repository");
+		} else if (representedObject instanceof edu.kit.ipd.sdq.cbsm.assembly.System) {
+			resourceURI = resourceURI.appendFileExtension("assembly");
+		} else if (representedObject instanceof Environment) {
+			resourceURI = resourceURI.appendFileExtension("environment");
+		} else if (representedObject instanceof Allocation) {
+			resourceURI = resourceURI.appendFileExtension("allocation");
+		} else {
+			throw new IllegalArgumentException("Type " + representedObject.eClass.name
+				+ " is not supported for serialization."
+			);
+		}
+		val xmiResource = resource.resourceSet.createResource(resourceURI);
+		xmiResource.contents.add(representedObject);
+		try {
+			xmiResource.save(null);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }

@@ -3,10 +3,21 @@
  */
 package edu.kit.ipd.sdq.cbsmdsl.generator;
 
+import edu.kit.ipd.sdq.cbsm.allocation.Allocation;
+import edu.kit.ipd.sdq.cbsm.environment.Environment;
+import edu.kit.ipd.sdq.cbsm.repository.Repository;
+import java.io.IOException;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 
 /**
  * Generates code from your model files on save.
@@ -17,5 +28,57 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 public class CbsmDslGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    EcoreUtil.resolveAll(resource);
+    EList<EObject> _contents = resource.getContents();
+    final EObject representedObject = _contents.get(0);
+    URI _uRI = resource.getURI();
+    URI resourceURI = _uRI.trimFileExtension();
+    String[] _segments = resourceURI.segments();
+    int _length = _segments.length;
+    int _minus = (_length - 1);
+    final String fileName = resourceURI.segment(_minus);
+    URI _trimSegments = resourceURI.trimSegments(1);
+    URI _appendSegment = _trimSegments.appendSegment("serialized");
+    URI _appendSegment_1 = _appendSegment.appendSegment(fileName);
+    resourceURI = _appendSegment_1;
+    if ((representedObject instanceof Repository)) {
+      URI _appendFileExtension = resourceURI.appendFileExtension("repository");
+      resourceURI = _appendFileExtension;
+    } else {
+      if ((representedObject instanceof edu.kit.ipd.sdq.cbsm.assembly.System)) {
+        URI _appendFileExtension_1 = resourceURI.appendFileExtension("assembly");
+        resourceURI = _appendFileExtension_1;
+      } else {
+        if ((representedObject instanceof Environment)) {
+          URI _appendFileExtension_2 = resourceURI.appendFileExtension("environment");
+          resourceURI = _appendFileExtension_2;
+        } else {
+          if ((representedObject instanceof Allocation)) {
+            URI _appendFileExtension_3 = resourceURI.appendFileExtension("allocation");
+            resourceURI = _appendFileExtension_3;
+          } else {
+            EClass _eClass = representedObject.eClass();
+            String _name = _eClass.getName();
+            String _plus = ("Type " + _name);
+            String _plus_1 = (_plus + " is not supported for serialization.");
+            throw new IllegalArgumentException(_plus_1);
+          }
+        }
+      }
+    }
+    ResourceSet _resourceSet = resource.getResourceSet();
+    final Resource xmiResource = _resourceSet.createResource(resourceURI);
+    EList<EObject> _contents_1 = xmiResource.getContents();
+    _contents_1.add(representedObject);
+    try {
+      xmiResource.save(null);
+    } catch (final Throwable _t) {
+      if (_t instanceof IOException) {
+        final IOException e = (IOException)_t;
+        e.printStackTrace();
+      } else {
+        throw Exceptions.sneakyThrow(_t);
+      }
+    }
   }
 }

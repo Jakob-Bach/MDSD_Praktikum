@@ -73,3 +73,6 @@ local.properties
 *.xtendbin
 *.java._trace
 *.java_trace
+
+# XMI serialization
+serialized/
