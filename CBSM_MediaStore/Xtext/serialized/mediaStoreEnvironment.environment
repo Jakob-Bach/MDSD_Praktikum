@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<environment:Environment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:environment="http://sdq.ipd.kit.edu/componentBasedSystemModel/environment">
+  <containers name="ApplicationServer"/>
+  <containers name="DatabaseServer"/>
+  <links name="ApplicationServer_DatabaseServer_Link" linkedContainers="//@containers.0 //@containers.1"/>
+</environment:Environment>
