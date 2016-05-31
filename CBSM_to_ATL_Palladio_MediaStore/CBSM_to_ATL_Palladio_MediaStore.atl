@@ -2,16 +2,129 @@
 -- @path CBSM=/ComponentBasedSystemModel/model/componentBasedSystemModel.ecore
 -- @path Palladio=/CBSM_to_ATL_Palladio_MediaStore/pcm.ecore
 
-
-
+module CBSM_to_ATL_Palladio_MediaStore;
 create OUT: Palladio from IN: CBSM;
 
+-- core2core
 
-rule Member2Male {
+abstract rule NamedElement {
 	from
-		s: Families!Member (not s.isFemale())
+		s : componentBasedSystemModel!core!NamedElement
 	to
-		t: Persons!Male (
-			fullName <- s.firstName + ' ' + s.familyName
+		t : pcm!core!entity!NamedElement (
+			entityName <- s.name
 		)
 }
+
+--repo2repo
+
+rule Repository {
+	from
+		s : componentBasedSystemModel!repository!Repository
+	to
+		t : pcm!repository!Repository (
+			interfaces_Repository <- s.interfaces
+			components_Repository <- s.components
+			dataTypes_Repository <- s.dataTypes
+		)
+}	
+
+rule Interface extends NamedElement {
+	from
+		s : componentBasedSystemModel!repository!Interface
+	to
+		t : pcm!repository!OperationsInterface (
+			signatures_OperationInterFace <- s.signature
+		)
+}
+
+abstract rule Role extends NamedElement {
+	from
+		s : componentBasedSystemModel!repository!Role
+	to
+		t : pcm!repository!Role (
+		)
+}
+
+rule ProvidedRole extends Role{
+	from
+		s : componentBasedSystemModel!repository!ProvidedRole
+	to
+		t : pcm!repository!ProvidedRole (
+			providedInterface_OperationProvidedRole <- s.providedInterface
+		)
+}
+
+rule RequiredRole extends Role{
+	from
+	
+	to
+}
+
+rule ProvidedAndRequiringElement {
+	from
+	
+	to
+}
+
+rule Component {
+	from
+	
+	to
+}
+
+rule Signature {
+	from
+	
+	to
+}
+
+rule DataType {
+	from
+	
+	to
+}
+
+rule Parameter {
+	from
+	
+	to
+}
+
+rule ComplexType {
+	from
+	
+	to
+}
+
+rule SimpleType {
+	from
+	
+	to
+}
+
+rule SimpleTypeInstance {
+	from
+	
+	to
+}
+
+--repoBehaviour2repoBehaviour
+
+rule assembly2assembly {
+	
+}
+
+rule env2env {
+	
+}
+
+rule alloc2alloc {
+	
+}
+
+--assembly2assembly
+
+--env2env
+
+--alloc2alloc
