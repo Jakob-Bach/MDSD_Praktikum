@@ -1,0 +1,57 @@
+modeltype componentBasedSystemModel "strict" uses "http://sdq.ipd.kit.edu/componentBasedSystemModel";
+modeltype pcm "strict" uses "http://palladiosimulator.org/PalladioComponentModel/5.1";
+
+
+transformation RepositoryTransformation(in Source : componentBasedSystemModel , out Target: pcm);
+
+abstract mapping componentBasedSystemModel::core::NamedElement::NamedElement():
+         pcm::core::entity::NamedElement
+         {
+         	entityName := self.name;
+         }
+
+
+main() {
+    Source.rootObjects()[componentBasedSystemModel::assembly::System] -> map SystemToComposition();
+}
+
+mapping componentBasedSystemModel::assembly::System::SystemToComposition(): pcm::core::composition::ComposedStructure
+//     inherits  componentBasedSystemModel::core::NamedElement::NamedElement
+
+{
+    init {}
+	connectors__ComposedStructure := self.systemConnectors -> map toConnector();
+}
+
+mapping componentBasedSystemModel::assembly::Connector::toConnector(): pcm::core::composition::Connector
+   disjuncts componentBasedSystemModel::assembly::DelegationConnector::toDelegationConnector, 
+             componentBasedSystemModel::assembly::AssemblyConnector::toAssemblyConnector               
+
+{
+	
+}
+
+mapping componentBasedSystemModel::assembly::DelegationConnector::toDelegationConnector(): pcm::core::composition::DelegationConnector
+  disjuncts componentBasedSystemModel::assembly::ProvidedDelegationConnector::toProvidedDelegationConnector, 
+            componentBasedSystemModel::assembly::RequiredDelegationConnector::toRequiredDelegationConnector
+{
+
+}
+
+mapping componentBasedSystemModel::assembly::AssemblyConnector::toAssemblyConnector(): pcm::core::composition::AssemblyConnector
+{
+	requiringAssemblyContext_AssemblyConnector := self.connectedRequiredAssemblyContext -> map toRequiredAssemblyContext();
+	providingAssemblyContext_AssemblyConnector := self.connectedProvidedAssemblyContext -> map toProvidedAssemblyContext();
+}
+
+mapping componentBasedSystemModel::assembly::ProvidedDelegationConnector::toProvidedDelegationConnector():pcm::core::composition::ProvidedDelegationConnector
+{
+	
+}
+
+mapping componentBasedSystemModel::assembly::RequiredDelegationConnector::toRequiredDelegationConnector():pcm::core::composition::RequiredDelegationConnector
+{
+	
+}
+
+mapping 

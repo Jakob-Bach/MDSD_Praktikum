@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<allocation:Allocation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:allocation="http://palladiosimulator.org/PalladioComponentModel/Allocation/5.1" xsi:schemaLocation="http://palladiosimulator.org/PalladioComponentModel/Allocation/5.1 http://palladiosimulator.org/PalladioComponentModel/5.1#//allocation" id="_QazXUCZZEeaO75CmutIl0g">
+  <allocationContexts_Allocation id="_QbEdECZZEeaO75CmutIl0g"/>
+  <allocationContexts_Allocation id="_QbEdEiZZEeaO75CmutIl0g"/>
+  <allocationContexts_Allocation id="_QbEdESZZEeaO75CmutIl0g"/>
+</allocation:Allocation>

@@ -1,0 +1,22 @@
+modeltype componentBasedSystemModel "strict" uses "http://sdq.ipd.kit.edu/componentBasedSystemModel/environment";
+modeltype pcm "strict" uses "http://palladiosimulator.org/PalladioComponentModel/ResourceEnvironment/5.1";
+
+
+transformation AssemblyTransformation(in Source : componentBasedSystemModel , out Target: pcm);
+
+main() {
+    Source.rootObjects()[Environment] -> map toEnvironment();
+}
+
+mapping Environment::toEnvironment():ResourceEnvironment{
+	linkingResources__ResourceEnvironment := self.links -> map toLink();
+	resourceContainer_ResourceEnvironment := self.containers -> map toContainer();
+}
+
+mapping Link:: toLink() : LinkingResource{
+	
+}
+
+mapping Container::toContainer():ResourceContainer{
+	
+}

@@ -1,0 +1,19 @@
+modeltype componentBasedSystemModel "strict" uses "http://sdq.ipd.kit.edu/componentBasedSystemModel/repository";
+modeltype pcm "strict" uses "http://palladiosimulator.org/PalladioComponentModel/Repository/5.1";
+
+
+transformation RepositoryTransformation(in Source : componentBasedSystemModel , out Target: pcm);
+
+main() {
+    Source.rootObjects()[Repository] -> map RepositorytoRepository();
+}
+
+mapping componentBasedSystemModel::Repository::RepositorytoRepository(): pcm::Repository{
+	components__Repository := self.components -> map toComponent();
+	interfaces__Repository := self.interfaces -> map toInterface();
+	dataTypes__Repository := self.dataTypes -> map toDataTypes();
+}
+
+mapping Component::toComponent():RepositoryComponent{
+	
+}

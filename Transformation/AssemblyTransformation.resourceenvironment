@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resourceenvironment:ResourceEnvironment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:resourceenvironment="http://palladiosimulator.org/PalladioComponentModel/ResourceEnvironment/5.1" xsi:schemaLocation="http://palladiosimulator.org/PalladioComponentModel/ResourceEnvironment/5.1 http://palladiosimulator.org/PalladioComponentModel/5.1#//resourceenvironment">
+  <linkingResources__ResourceEnvironment id="_FDNa0CdHEeaxKPo_PbLhjw"/>
+  <resourceContainer_ResourceEnvironment id="_FDOo8CdHEeaxKPo_PbLhjw"/>
+  <resourceContainer_ResourceEnvironment id="_FDOB4CdHEeaxKPo_PbLhjw"/>
+</resourceenvironment:ResourceEnvironment>

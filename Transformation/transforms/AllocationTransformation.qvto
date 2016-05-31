@@ -1,0 +1,16 @@
+modeltype componentBasedSystemModel "strict" uses "http://sdq.ipd.kit.edu/componentBasedSystemModel/allocation";
+modeltype pcm "strict" uses "http://palladiosimulator.org/PalladioComponentModel/Allocation/5.1";
+
+transformation AllocationTransformation(in Source : componentBasedSystemModel , out Target: pcm);
+
+main() {
+    Source.rootObjects()[Allocation] -> map AllocationCBSMtoAllocationPCM();
+}
+
+mapping componentBasedSystemModel::Allocation::AllocationCBSMtoAllocationPCM(): pcm::Allocation {
+ allocationContexts_Allocation := self.allocationContexts -> map toAllocationContext();
+}
+
+mapping componentBasedSystemModel::AllocationContext::toAllocationContext(): pcm::AllocationContext{
+//	resourceContainer_AllocationContext := self.allocatedContainer.;
+}
