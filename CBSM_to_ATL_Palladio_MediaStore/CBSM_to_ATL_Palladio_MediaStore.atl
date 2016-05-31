@@ -1,0 +1,17 @@
+
+-- @path CBSM=/ComponentBasedSystemModel/model/componentBasedSystemModel.ecore
+-- @path Palladio=/CBSM_to_ATL_Palladio_MediaStore/pcm.ecore
+
+
+
+create OUT: Palladio from IN: CBSM;
+
+
+rule Member2Male {
+	from
+		s: Families!Member (not s.isFemale())
+	to
+		t: Persons!Male (
+			fullName <- s.firstName + ' ' + s.familyName
+		)
+}
