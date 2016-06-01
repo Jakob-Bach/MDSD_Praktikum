@@ -285,6 +285,8 @@ inherits CBSM::assembly::DelegationConnector::DelegationConnector2DelegationConn
 		resolveone(PCM::repository::OperationProvidedRole);
 	outerProvidedRole_ProvidedDelegationConnector := self.outerProvidedRole.
 		resolveone(PCM::repository::OperationProvidedRole);
+	assemblyContext_ProvidedDelegationConnector := self.innerAssemblyContext.
+		resolveone(PCM::core::composition::AssemblyContext);
 }
 
 mapping CBSM::assembly::RequiredDelegationConnector::
@@ -296,6 +298,8 @@ inherits CBSM::assembly::DelegationConnector::DelegationConnector2DelegationConn
 		resolveone(PCM::repository::OperationRequiredRole);
 	outerRequiredRole_RequiredDelegationConnector := self.outerRequiredRole.
 		resolveone(PCM::repository::OperationRequiredRole);
+	assemblyContext_RequiredDelegationConnector := self.innerAssemblyContext.
+		resolveone(PCM::core::composition::AssemblyContext);
 }
 
 mapping CBSM::assembly::AssemblyConnector::AssemblyConnector2AssemblyConnector() :
