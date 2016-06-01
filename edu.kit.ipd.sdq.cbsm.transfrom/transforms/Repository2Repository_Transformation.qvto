@@ -1,0 +1,16 @@
+import CBSM2PCM_Library;
+
+modeltype CBSM "strict" uses "http://sdq.ipd.kit.edu/componentBasedSystemModel";
+modeltype PCM "strict" uses "http://palladiosimulator.org/PalladioComponentModel/5.1";
+
+modeltype CBSM_REPO "strict" uses "http://sdq.ipd.kit.edu/componentBasedSystemModel/repository";
+modeltype PCM_REPO "strict" uses "http://palladiosimulator.org/PalladioComponentModel/Repository/5.1";
+
+transformation Repository2Repository_Transformation(in cbsmRepository: CBSM_REPO, out pcmRepository: PCM_REPO)
+access CBSM2PCM_Library
+{
+	main()
+	{
+		cbsmRepository.objectsOfType(CBSM_REPO::Repository) -> map Repository2Repository();
+	}
+}
