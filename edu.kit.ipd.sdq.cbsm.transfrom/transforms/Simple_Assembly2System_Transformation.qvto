@@ -1,0 +1,16 @@
+import CBSM2PCM_Library;
+
+modeltype CBSM "strict" uses "http://sdq.ipd.kit.edu/componentBasedSystemModel";
+modeltype PCM "strict" uses "http://palladiosimulator.org/PalladioComponentModel/5.1";
+
+modeltype CBSM_ASS "strict" uses "http://sdq.ipd.kit.edu/componentBasedSystemModel/assembly";
+modeltype PCM_SYS "strict" uses "http://palladiosimulator.org/PalladioComponentModel/System/5.1";
+
+transformation Simple_Assembly2System_Transformation(in cbsmAssembly: CBSM_ASS, out pcmSystem: PCM_SYS)
+access CBSM2PCM_Library
+{
+	main()
+	{
+		cbsmAssembly.objectsOfType(CBSM_ASS::System) -> map System2System();
+	}
+}
