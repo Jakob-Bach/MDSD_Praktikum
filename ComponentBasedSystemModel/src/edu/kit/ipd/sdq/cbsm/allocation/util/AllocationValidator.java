@@ -111,6 +111,8 @@ public class AllocationValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(allocation, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(allocation, diagnostics, context);
 		if (result || diagnostics != null) result &= validateAllocation_AssemblyContextsConnectedByAssemblyConnectorAllocatedOnSameOrLinkedContainers(allocation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAllocation_AssemblyContextsOfAllocationContextsBelongToAllocatedSystem(allocation, diagnostics, context);
+		if (result || diagnostics != null) result &= validateAllocation_ContainersOfAllocationContextsBelongToAllocationEnvironment(allocation, diagnostics, context);
 		return result;
 	}
 
@@ -123,9 +125,8 @@ public class AllocationValidator extends EObjectValidator {
 	protected static final String ALLOCATION__ASSEMBLY_CONTEXTS_CONNECTED_BY_ASSEMBLY_CONNECTOR_ALLOCATED_ON_SAME_OR_LINKED_CONTAINERS__EEXPRESSION = "\n" +
 		"\t\t\t\tself.allocationContexts->isEmpty()\n" +
 		"\t\t\t\t-- get all AssemblyConnectors from System (assuming that only top-level\n" +
-		"\t\t\t\t-- AssemblyContexts are allocated\n" +
-		"\t\t\t\tor self.allocationContexts->first().allocatedAssemblyContext.parentCompositeElement.\n" +
-		"\t\t\t\toclAsType(assembly::System).systemConnectors->select(connector|\n" +
+		"\t\t\t\t-- AssemblyContexts are allocated)\n" +
+		"\t\t\t\tor self.allocatedSystem.connectors->select(connector|\n" +
 		"\t\t\t\t\tconnector.oclIsKindOf(assembly::AssemblyConnector))->forAll(assemblyConnector|\n" +
 		"\t\t\t\t\t\t-- get AllocationContexts for the two connected AssemblyContexts, check if\n" +
 		"\t\t\t\t\t\t-- same Container\n" +
@@ -137,7 +138,7 @@ public class AllocationValidator extends EObjectValidator {
 		"\t\t\t\t\t\t).allocatedContainer->asSet()->size() = 1 \n" +
 		"\t\t\t\t\t\t-- get all Links, check if there is one whose Containers contain both of the two\n" +
 		"\t\t\t\t\t\t-- connected AssemblyContexts\n" +
-		"\t\t\t\t\t\tor self.allocationContexts->first().allocatedContainer.parentEnvironment.links->exists(link|\n" +
+		"\t\t\t\t\t\tor self.allocationEnvironment.links->exists(link|\n" +
 		"\t\t\t\t\t\t\tlink.linkedContainers->includesAll(self.allocationContexts->select(allocationContext|\n" +
 		"\t\t\t\t\t\t\t\tallocationContext.allocatedAssemblyContext = assemblyConnector.oclAsType(\n" +
 		"\t\t\t\t\t\t\t\t\tassembly::AssemblyConnector).connectedProvidedAssemblyContext \n" +
@@ -163,6 +164,66 @@ public class AllocationValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
 				 "AssemblyContextsConnectedByAssemblyConnectorAllocatedOnSameOrLinkedContainers",
 				 ALLOCATION__ASSEMBLY_CONTEXTS_CONNECTED_BY_ASSEMBLY_CONNECTOR_ALLOCATED_ON_SAME_OR_LINKED_CONTAINERS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the AssemblyContextsOfAllocationContextsBelongToAllocatedSystem constraint of '<em>Allocation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ALLOCATION__ASSEMBLY_CONTEXTS_OF_ALLOCATION_CONTEXTS_BELONG_TO_ALLOCATED_SYSTEM__EEXPRESSION = "self.allocatedSystem.\n" +
+		"\t\t\t\tcontainedAssemblyContexts->includesAll(self.allocationContexts.allocatedAssemblyContext)";
+
+	/**
+	 * Validates the AssemblyContextsOfAllocationContextsBelongToAllocatedSystem constraint of '<em>Allocation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAllocation_AssemblyContextsOfAllocationContextsBelongToAllocatedSystem(Allocation allocation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(AllocationPackage.Literals.ALLOCATION,
+				 allocation,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "AssemblyContextsOfAllocationContextsBelongToAllocatedSystem",
+				 ALLOCATION__ASSEMBLY_CONTEXTS_OF_ALLOCATION_CONTEXTS_BELONG_TO_ALLOCATED_SYSTEM__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the ContainersOfAllocationContextsBelongToAllocationEnvironment constraint of '<em>Allocation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ALLOCATION__CONTAINERS_OF_ALLOCATION_CONTEXTS_BELONG_TO_ALLOCATION_ENVIRONMENT__EEXPRESSION = "\n" +
+		"\t\t\t\tself.allocationEnvironment.containers->includesAll(self.allocationContexts.allocatedContainer)";
+
+	/**
+	 * Validates the ContainersOfAllocationContextsBelongToAllocationEnvironment constraint of '<em>Allocation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAllocation_ContainersOfAllocationContextsBelongToAllocationEnvironment(Allocation allocation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(AllocationPackage.Literals.ALLOCATION,
+				 allocation,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "ContainersOfAllocationContextsBelongToAllocationEnvironment",
+				 ALLOCATION__CONTAINERS_OF_ALLOCATION_CONTEXTS_BELONG_TO_ALLOCATION_ENVIRONMENT__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

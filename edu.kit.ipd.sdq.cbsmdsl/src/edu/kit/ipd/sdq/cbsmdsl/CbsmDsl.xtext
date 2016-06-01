@@ -39,7 +39,7 @@ System returns assembly::System:
 		('providedRoles' '{' providedRoles+=ProvidedRole ( "," providedRoles+=ProvidedRole)* '}' )?
 		('requiredRoles' '{' requiredRoles+=RequiredRole ( "," requiredRoles+=RequiredRole)* '}' )?
 		('containedAssemblyContexts' '{' containedAssemblyContexts+=AssemblyContext ( "," containedAssemblyContexts+=AssemblyContext)* '}' )?
-		('systemConnectors' '{' systemConnectors+=Connector ( "," systemConnectors+=Connector)* '}' )?
+		('connectors' '{' connectors+=Connector ( "," connectors+=Connector)* '}' )?
 	'}';
 
 Environment returns environment::Environment:
@@ -56,6 +56,8 @@ Allocation returns allocation::Allocation:
 	'Allocation'
 	name=EString
 	'{'
+		'allocatedSystem' allocatedSystem=[assembly::System|EString]
+		'allocationEnvironment' allocationEnvironment=[environment::Environment|EString]
 		('allocationContexts' '{' allocationContexts+=AllocationContext ( "," allocationContexts+=AllocationContext)* '}' )?
 	'}';
 
@@ -89,6 +91,7 @@ CompositeComponent returns assembly::CompositeComponent:
 		('requiredRoles' '{' requiredRoles+=RequiredRole ( "," requiredRoles+=RequiredRole)* '}' )?
 		('behaviorDescriptions' '{' behaviorDescriptions+=BehaviorDescription ( "," behaviorDescriptions+=BehaviorDescription)* '}')?
 		('containedAssemblyContexts' '{' containedAssemblyContexts+=AssemblyContext ( "," containedAssemblyContexts+=AssemblyContext)* '}' )?
+		('connectors' '{' connectors+=Connector ( "," connectors+=Connector)* '}' )?
 	'}';
 
 
@@ -206,7 +209,6 @@ ProvidedDelegationConnector returns assembly::ProvidedDelegationConnector:
 	name=EString
 	'{'
 		'innerAssemblyContext' innerAssemblyContext=[assembly::AssemblyContext|EString]
-		'outerAssemblyContext' outerAssemblyContext=[assembly::AssemblyContext|EString]
 		'innerProvidedRole' innerProvidedRole=[repository::ProvidedRole|EString]
 		'outerProvidedRole' outerProvidedRole=[repository::ProvidedRole|EString]
 	'}';
@@ -216,7 +218,6 @@ RequiredDelegationConnector returns assembly::RequiredDelegationConnector:
 	name=EString
 	'{'
 		'innerAssemblyContext' innerAssemblyContext=[assembly::AssemblyContext|EString]
-		'outerAssemblyContext' outerAssemblyContext=[assembly::AssemblyContext|EString]
 		'innerRequiredRole' innerRequiredRole=[repository::RequiredRole|EString]
 		'outerRequiredRole' outerRequiredRole=[repository::RequiredRole|EString]
 	'}';

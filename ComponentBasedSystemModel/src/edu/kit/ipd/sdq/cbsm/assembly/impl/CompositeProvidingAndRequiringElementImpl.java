@@ -6,6 +6,7 @@ import edu.kit.ipd.sdq.cbsm.assembly.AssemblyContext;
 import edu.kit.ipd.sdq.cbsm.assembly.AssemblyPackage;
 import edu.kit.ipd.sdq.cbsm.assembly.CompositeProvidingAndRequiringElement;
 
+import edu.kit.ipd.sdq.cbsm.assembly.Connector;
 import edu.kit.ipd.sdq.cbsm.repository.impl.ProvidingAndRequiringElementImpl;
 
 import java.util.Collection;
@@ -17,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -29,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link edu.kit.ipd.sdq.cbsm.assembly.impl.CompositeProvidingAndRequiringElementImpl#getContainedAssemblyContexts <em>Contained Assembly Contexts</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.cbsm.assembly.impl.CompositeProvidingAndRequiringElementImpl#getConnectors <em>Connectors</em>}</li>
  * </ul>
  *
  * @generated
@@ -43,6 +46,16 @@ public abstract class CompositeProvidingAndRequiringElementImpl extends Providin
 	 * @ordered
 	 */
 	protected EList<AssemblyContext> containedAssemblyContexts;
+
+	/**
+	 * The cached value of the '{@link #getConnectors() <em>Connectors</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConnectors()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Connector> connectors;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,6 +93,18 @@ public abstract class CompositeProvidingAndRequiringElementImpl extends Providin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Connector> getConnectors() {
+		if (connectors == null) {
+			connectors = new EObjectContainmentEList<Connector>(Connector.class, this, AssemblyPackage.COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONNECTORS);
+		}
+		return connectors;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -100,6 +125,8 @@ public abstract class CompositeProvidingAndRequiringElementImpl extends Providin
 		switch (featureID) {
 			case AssemblyPackage.COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONTAINED_ASSEMBLY_CONTEXTS:
 				return ((InternalEList<?>)getContainedAssemblyContexts()).basicRemove(otherEnd, msgs);
+			case AssemblyPackage.COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONNECTORS:
+				return ((InternalEList<?>)getConnectors()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -114,6 +141,8 @@ public abstract class CompositeProvidingAndRequiringElementImpl extends Providin
 		switch (featureID) {
 			case AssemblyPackage.COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONTAINED_ASSEMBLY_CONTEXTS:
 				return getContainedAssemblyContexts();
+			case AssemblyPackage.COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONNECTORS:
+				return getConnectors();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -131,6 +160,10 @@ public abstract class CompositeProvidingAndRequiringElementImpl extends Providin
 				getContainedAssemblyContexts().clear();
 				getContainedAssemblyContexts().addAll((Collection<? extends AssemblyContext>)newValue);
 				return;
+			case AssemblyPackage.COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONNECTORS:
+				getConnectors().clear();
+				getConnectors().addAll((Collection<? extends Connector>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -146,6 +179,9 @@ public abstract class CompositeProvidingAndRequiringElementImpl extends Providin
 			case AssemblyPackage.COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONTAINED_ASSEMBLY_CONTEXTS:
 				getContainedAssemblyContexts().clear();
 				return;
+			case AssemblyPackage.COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONNECTORS:
+				getConnectors().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -160,6 +196,8 @@ public abstract class CompositeProvidingAndRequiringElementImpl extends Providin
 		switch (featureID) {
 			case AssemblyPackage.COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONTAINED_ASSEMBLY_CONTEXTS:
 				return containedAssemblyContexts != null && !containedAssemblyContexts.isEmpty();
+			case AssemblyPackage.COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONNECTORS:
+				return connectors != null && !connectors.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

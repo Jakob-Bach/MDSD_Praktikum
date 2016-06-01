@@ -185,7 +185,12 @@ public class CbsmDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Allocation returns Allocation
 	 *
 	 * Constraint:
-	 *     (name=EString (allocationContexts+=AllocationContext allocationContexts+=AllocationContext*)?)
+	 *     (
+	 *         name=EString 
+	 *         allocatedSystem=[System|EString] 
+	 *         allocationEnvironment=[Environment|EString] 
+	 *         (allocationContexts+=AllocationContext allocationContexts+=AllocationContext*)?
+	 *     )
 	 */
 	protected void sequence_Allocation(ISerializationContext context, Allocation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -344,7 +349,8 @@ public class CbsmDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         (providedRoles+=ProvidedRole providedRoles+=ProvidedRole*)? 
 	 *         (requiredRoles+=RequiredRole requiredRoles+=RequiredRole*)? 
 	 *         (behaviorDescriptions+=BehaviorDescription behaviorDescriptions+=BehaviorDescription*)? 
-	 *         (containedAssemblyContexts+=AssemblyContext containedAssemblyContexts+=AssemblyContext*)?
+	 *         (containedAssemblyContexts+=AssemblyContext containedAssemblyContexts+=AssemblyContext*)? 
+	 *         (connectors+=Connector connectors+=Connector*)?
 	 *     )
 	 */
 	protected void sequence_CompositeComponent(ISerializationContext context, CompositeComponent semanticObject) {
@@ -479,13 +485,7 @@ public class CbsmDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     ProvidedDelegationConnector returns ProvidedDelegationConnector
 	 *
 	 * Constraint:
-	 *     (
-	 *         name=EString 
-	 *         innerAssemblyContext=[AssemblyContext|EString] 
-	 *         outerAssemblyContext=[AssemblyContext|EString] 
-	 *         innerProvidedRole=[ProvidedRole|EString] 
-	 *         outerProvidedRole=[ProvidedRole|EString]
-	 *     )
+	 *     (name=EString innerAssemblyContext=[AssemblyContext|EString] innerProvidedRole=[ProvidedRole|EString] outerProvidedRole=[ProvidedRole|EString])
 	 */
 	protected void sequence_ProvidedDelegationConnector(ISerializationContext context, ProvidedDelegationConnector semanticObject) {
 		if (errorAcceptor != null) {
@@ -493,8 +493,6 @@ public class CbsmDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CorePackage.Literals.NAMED_ELEMENT__NAME));
 			if (transientValues.isValueTransient(semanticObject, AssemblyPackage.Literals.DELEGATION_CONNECTOR__INNER_ASSEMBLY_CONTEXT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AssemblyPackage.Literals.DELEGATION_CONNECTOR__INNER_ASSEMBLY_CONTEXT));
-			if (transientValues.isValueTransient(semanticObject, AssemblyPackage.Literals.DELEGATION_CONNECTOR__OUTER_ASSEMBLY_CONTEXT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AssemblyPackage.Literals.DELEGATION_CONNECTOR__OUTER_ASSEMBLY_CONTEXT));
 			if (transientValues.isValueTransient(semanticObject, AssemblyPackage.Literals.PROVIDED_DELEGATION_CONNECTOR__INNER_PROVIDED_ROLE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AssemblyPackage.Literals.PROVIDED_DELEGATION_CONNECTOR__INNER_PROVIDED_ROLE));
 			if (transientValues.isValueTransient(semanticObject, AssemblyPackage.Literals.PROVIDED_DELEGATION_CONNECTOR__OUTER_PROVIDED_ROLE) == ValueTransient.YES)
@@ -503,9 +501,8 @@ public class CbsmDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getProvidedDelegationConnectorAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getProvidedDelegationConnectorAccess().getInnerAssemblyContextAssemblyContextEStringParserRuleCall_4_0_1(), semanticObject.getInnerAssemblyContext());
-		feeder.accept(grammarAccess.getProvidedDelegationConnectorAccess().getOuterAssemblyContextAssemblyContextEStringParserRuleCall_6_0_1(), semanticObject.getOuterAssemblyContext());
-		feeder.accept(grammarAccess.getProvidedDelegationConnectorAccess().getInnerProvidedRoleProvidedRoleEStringParserRuleCall_8_0_1(), semanticObject.getInnerProvidedRole());
-		feeder.accept(grammarAccess.getProvidedDelegationConnectorAccess().getOuterProvidedRoleProvidedRoleEStringParserRuleCall_10_0_1(), semanticObject.getOuterProvidedRole());
+		feeder.accept(grammarAccess.getProvidedDelegationConnectorAccess().getInnerProvidedRoleProvidedRoleEStringParserRuleCall_6_0_1(), semanticObject.getInnerProvidedRole());
+		feeder.accept(grammarAccess.getProvidedDelegationConnectorAccess().getOuterProvidedRoleProvidedRoleEStringParserRuleCall_8_0_1(), semanticObject.getOuterProvidedRole());
 		feeder.finish();
 	}
 	
@@ -555,13 +552,7 @@ public class CbsmDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     RequiredDelegationConnector returns RequiredDelegationConnector
 	 *
 	 * Constraint:
-	 *     (
-	 *         name=EString 
-	 *         innerAssemblyContext=[AssemblyContext|EString] 
-	 *         outerAssemblyContext=[AssemblyContext|EString] 
-	 *         innerRequiredRole=[RequiredRole|EString] 
-	 *         outerRequiredRole=[RequiredRole|EString]
-	 *     )
+	 *     (name=EString innerAssemblyContext=[AssemblyContext|EString] innerRequiredRole=[RequiredRole|EString] outerRequiredRole=[RequiredRole|EString])
 	 */
 	protected void sequence_RequiredDelegationConnector(ISerializationContext context, RequiredDelegationConnector semanticObject) {
 		if (errorAcceptor != null) {
@@ -569,8 +560,6 @@ public class CbsmDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CorePackage.Literals.NAMED_ELEMENT__NAME));
 			if (transientValues.isValueTransient(semanticObject, AssemblyPackage.Literals.DELEGATION_CONNECTOR__INNER_ASSEMBLY_CONTEXT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AssemblyPackage.Literals.DELEGATION_CONNECTOR__INNER_ASSEMBLY_CONTEXT));
-			if (transientValues.isValueTransient(semanticObject, AssemblyPackage.Literals.DELEGATION_CONNECTOR__OUTER_ASSEMBLY_CONTEXT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AssemblyPackage.Literals.DELEGATION_CONNECTOR__OUTER_ASSEMBLY_CONTEXT));
 			if (transientValues.isValueTransient(semanticObject, AssemblyPackage.Literals.REQUIRED_DELEGATION_CONNECTOR__INNER_REQUIRED_ROLE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AssemblyPackage.Literals.REQUIRED_DELEGATION_CONNECTOR__INNER_REQUIRED_ROLE));
 			if (transientValues.isValueTransient(semanticObject, AssemblyPackage.Literals.REQUIRED_DELEGATION_CONNECTOR__OUTER_REQUIRED_ROLE) == ValueTransient.YES)
@@ -579,9 +568,8 @@ public class CbsmDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getRequiredDelegationConnectorAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getRequiredDelegationConnectorAccess().getInnerAssemblyContextAssemblyContextEStringParserRuleCall_4_0_1(), semanticObject.getInnerAssemblyContext());
-		feeder.accept(grammarAccess.getRequiredDelegationConnectorAccess().getOuterAssemblyContextAssemblyContextEStringParserRuleCall_6_0_1(), semanticObject.getOuterAssemblyContext());
-		feeder.accept(grammarAccess.getRequiredDelegationConnectorAccess().getInnerRequiredRoleRequiredRoleEStringParserRuleCall_8_0_1(), semanticObject.getInnerRequiredRole());
-		feeder.accept(grammarAccess.getRequiredDelegationConnectorAccess().getOuterRequiredRoleRequiredRoleEStringParserRuleCall_10_0_1(), semanticObject.getOuterRequiredRole());
+		feeder.accept(grammarAccess.getRequiredDelegationConnectorAccess().getInnerRequiredRoleRequiredRoleEStringParserRuleCall_6_0_1(), semanticObject.getInnerRequiredRole());
+		feeder.accept(grammarAccess.getRequiredDelegationConnectorAccess().getOuterRequiredRoleRequiredRoleEStringParserRuleCall_8_0_1(), semanticObject.getOuterRequiredRole());
 		feeder.finish();
 	}
 	
@@ -649,7 +637,7 @@ public class CbsmDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         (providedRoles+=ProvidedRole providedRoles+=ProvidedRole*)? 
 	 *         (requiredRoles+=RequiredRole requiredRoles+=RequiredRole*)? 
 	 *         (containedAssemblyContexts+=AssemblyContext containedAssemblyContexts+=AssemblyContext*)? 
-	 *         (systemConnectors+=Connector systemConnectors+=Connector*)?
+	 *         (connectors+=Connector connectors+=Connector*)?
 	 *     )
 	 */
 	protected void sequence_System(ISerializationContext context, edu.kit.ipd.sdq.cbsm.assembly.System semanticObject) {

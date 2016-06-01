@@ -325,14 +325,14 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cContainedAssemblyContextsAssemblyContextParserRuleCall_6_3_1_0 = (RuleCall)cContainedAssemblyContextsAssignment_6_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_6_4 = (Keyword)cGroup_6.eContents().get(4);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cSystemConnectorsKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Keyword cConnectorsKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Assignment cSystemConnectorsAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
-		private final RuleCall cSystemConnectorsConnectorParserRuleCall_7_2_0 = (RuleCall)cSystemConnectorsAssignment_7_2.eContents().get(0);
+		private final Assignment cConnectorsAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
+		private final RuleCall cConnectorsConnectorParserRuleCall_7_2_0 = (RuleCall)cConnectorsAssignment_7_2.eContents().get(0);
 		private final Group cGroup_7_3 = (Group)cGroup_7.eContents().get(3);
 		private final Keyword cCommaKeyword_7_3_0 = (Keyword)cGroup_7_3.eContents().get(0);
-		private final Assignment cSystemConnectorsAssignment_7_3_1 = (Assignment)cGroup_7_3.eContents().get(1);
-		private final RuleCall cSystemConnectorsConnectorParserRuleCall_7_3_1_0 = (RuleCall)cSystemConnectorsAssignment_7_3_1.eContents().get(0);
+		private final Assignment cConnectorsAssignment_7_3_1 = (Assignment)cGroup_7_3.eContents().get(1);
+		private final RuleCall cConnectorsConnectorParserRuleCall_7_3_1_0 = (RuleCall)cConnectorsAssignment_7_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7_4 = (Keyword)cGroup_7.eContents().get(4);
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
@@ -342,16 +342,16 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 		//	name=EString
 		//	'{' ('providedRoles' '{' providedRoles+=ProvidedRole ("," providedRoles+=ProvidedRole)* '}')? ('requiredRoles' '{'
 		//	requiredRoles+=RequiredRole ("," requiredRoles+=RequiredRole)* '}')? ('containedAssemblyContexts' '{'
-		//	containedAssemblyContexts+=AssemblyContext ("," containedAssemblyContexts+=AssemblyContext)* '}')?
-		//	('systemConnectors' '{' systemConnectors+=Connector ("," systemConnectors+=Connector)* '}')?
+		//	containedAssemblyContexts+=AssemblyContext ("," containedAssemblyContexts+=AssemblyContext)* '}')? ('connectors' '{'
+		//	connectors+=Connector ("," connectors+=Connector)* '}')?
 		//	'}'
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{assembly::System} 'System' name=EString '{' ('providedRoles' '{' providedRoles+=ProvidedRole (","
 		//providedRoles+=ProvidedRole)* '}')? ('requiredRoles' '{' requiredRoles+=RequiredRole (","
 		//requiredRoles+=RequiredRole)* '}')? ('containedAssemblyContexts' '{' containedAssemblyContexts+=AssemblyContext (","
-		//containedAssemblyContexts+=AssemblyContext)* '}')? ('systemConnectors' '{' systemConnectors+=Connector (","
-		//systemConnectors+=Connector)* '}')? '}'
+		//containedAssemblyContexts+=AssemblyContext)* '}')? ('connectors' '{' connectors+=Connector (","
+		//connectors+=Connector)* '}')? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{assembly::System}
@@ -460,32 +460,32 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_6_4() { return cRightCurlyBracketKeyword_6_4; }
 		
-		//('systemConnectors' '{' systemConnectors+=Connector ("," systemConnectors+=Connector)* '}')?
+		//('connectors' '{' connectors+=Connector ("," connectors+=Connector)* '}')?
 		public Group getGroup_7() { return cGroup_7; }
 		
-		//'systemConnectors'
-		public Keyword getSystemConnectorsKeyword_7_0() { return cSystemConnectorsKeyword_7_0; }
+		//'connectors'
+		public Keyword getConnectorsKeyword_7_0() { return cConnectorsKeyword_7_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_7_1() { return cLeftCurlyBracketKeyword_7_1; }
 		
-		//systemConnectors+=Connector
-		public Assignment getSystemConnectorsAssignment_7_2() { return cSystemConnectorsAssignment_7_2; }
+		//connectors+=Connector
+		public Assignment getConnectorsAssignment_7_2() { return cConnectorsAssignment_7_2; }
 		
 		//Connector
-		public RuleCall getSystemConnectorsConnectorParserRuleCall_7_2_0() { return cSystemConnectorsConnectorParserRuleCall_7_2_0; }
+		public RuleCall getConnectorsConnectorParserRuleCall_7_2_0() { return cConnectorsConnectorParserRuleCall_7_2_0; }
 		
-		//("," systemConnectors+=Connector)*
+		//("," connectors+=Connector)*
 		public Group getGroup_7_3() { return cGroup_7_3; }
 		
 		//","
 		public Keyword getCommaKeyword_7_3_0() { return cCommaKeyword_7_3_0; }
 		
-		//systemConnectors+=Connector
-		public Assignment getSystemConnectorsAssignment_7_3_1() { return cSystemConnectorsAssignment_7_3_1; }
+		//connectors+=Connector
+		public Assignment getConnectorsAssignment_7_3_1() { return cConnectorsAssignment_7_3_1; }
 		
 		//Connector
-		public RuleCall getSystemConnectorsConnectorParserRuleCall_7_3_1_0() { return cSystemConnectorsConnectorParserRuleCall_7_3_1_0; }
+		public RuleCall getConnectorsConnectorParserRuleCall_7_3_1_0() { return cConnectorsConnectorParserRuleCall_7_3_1_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_7_4() { return cRightCurlyBracketKeyword_7_4; }
@@ -622,29 +622,40 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cAllocationContextsKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cAllocationContextsAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cAllocationContextsAllocationContextParserRuleCall_4_2_0 = (RuleCall)cAllocationContextsAssignment_4_2.eContents().get(0);
-		private final Group cGroup_4_3 = (Group)cGroup_4.eContents().get(3);
-		private final Keyword cCommaKeyword_4_3_0 = (Keyword)cGroup_4_3.eContents().get(0);
-		private final Assignment cAllocationContextsAssignment_4_3_1 = (Assignment)cGroup_4_3.eContents().get(1);
-		private final RuleCall cAllocationContextsAllocationContextParserRuleCall_4_3_1_0 = (RuleCall)cAllocationContextsAssignment_4_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4_4 = (Keyword)cGroup_4.eContents().get(4);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cAllocatedSystemKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cAllocatedSystemAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final CrossReference cAllocatedSystemSystemCrossReference_5_0 = (CrossReference)cAllocatedSystemAssignment_5.eContents().get(0);
+		private final RuleCall cAllocatedSystemSystemEStringParserRuleCall_5_0_1 = (RuleCall)cAllocatedSystemSystemCrossReference_5_0.eContents().get(1);
+		private final Keyword cAllocationEnvironmentKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cAllocationEnvironmentAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final CrossReference cAllocationEnvironmentEnvironmentCrossReference_7_0 = (CrossReference)cAllocationEnvironmentAssignment_7.eContents().get(0);
+		private final RuleCall cAllocationEnvironmentEnvironmentEStringParserRuleCall_7_0_1 = (RuleCall)cAllocationEnvironmentEnvironmentCrossReference_7_0.eContents().get(1);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Keyword cAllocationContextsKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
+		private final Assignment cAllocationContextsAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
+		private final RuleCall cAllocationContextsAllocationContextParserRuleCall_8_2_0 = (RuleCall)cAllocationContextsAssignment_8_2.eContents().get(0);
+		private final Group cGroup_8_3 = (Group)cGroup_8.eContents().get(3);
+		private final Keyword cCommaKeyword_8_3_0 = (Keyword)cGroup_8_3.eContents().get(0);
+		private final Assignment cAllocationContextsAssignment_8_3_1 = (Assignment)cGroup_8_3.eContents().get(1);
+		private final RuleCall cAllocationContextsAllocationContextParserRuleCall_8_3_1_0 = (RuleCall)cAllocationContextsAssignment_8_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_8_4 = (Keyword)cGroup_8.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//Allocation allocation::Allocation:
 		//	{allocation::Allocation}
 		//	'Allocation'
 		//	name=EString
-		//	'{' ('allocationContexts' '{' allocationContexts+=AllocationContext ("," allocationContexts+=AllocationContext)*
-		//	'}')?
+		//	'{'
+		//	'allocatedSystem' allocatedSystem=[assembly::System|EString]
+		//	'allocationEnvironment' allocationEnvironment=[environment::Environment|EString] ('allocationContexts' '{'
+		//	allocationContexts+=AllocationContext ("," allocationContexts+=AllocationContext)* '}')?
 		//	'}'
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{allocation::Allocation} 'Allocation' name=EString '{' ('allocationContexts' '{' allocationContexts+=AllocationContext
-		//("," allocationContexts+=AllocationContext)* '}')? '}'
+		//{allocation::Allocation} 'Allocation' name=EString '{' 'allocatedSystem' allocatedSystem=[assembly::System|EString]
+		//'allocationEnvironment' allocationEnvironment=[environment::Environment|EString] ('allocationContexts' '{'
+		//allocationContexts+=AllocationContext ("," allocationContexts+=AllocationContext)* '}')? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{allocation::Allocation}
@@ -662,38 +673,62 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
+		//'allocatedSystem'
+		public Keyword getAllocatedSystemKeyword_4() { return cAllocatedSystemKeyword_4; }
+		
+		//allocatedSystem=[assembly::System|EString]
+		public Assignment getAllocatedSystemAssignment_5() { return cAllocatedSystemAssignment_5; }
+		
+		//[assembly::System|EString]
+		public CrossReference getAllocatedSystemSystemCrossReference_5_0() { return cAllocatedSystemSystemCrossReference_5_0; }
+		
+		//EString
+		public RuleCall getAllocatedSystemSystemEStringParserRuleCall_5_0_1() { return cAllocatedSystemSystemEStringParserRuleCall_5_0_1; }
+		
+		//'allocationEnvironment'
+		public Keyword getAllocationEnvironmentKeyword_6() { return cAllocationEnvironmentKeyword_6; }
+		
+		//allocationEnvironment=[environment::Environment|EString]
+		public Assignment getAllocationEnvironmentAssignment_7() { return cAllocationEnvironmentAssignment_7; }
+		
+		//[environment::Environment|EString]
+		public CrossReference getAllocationEnvironmentEnvironmentCrossReference_7_0() { return cAllocationEnvironmentEnvironmentCrossReference_7_0; }
+		
+		//EString
+		public RuleCall getAllocationEnvironmentEnvironmentEStringParserRuleCall_7_0_1() { return cAllocationEnvironmentEnvironmentEStringParserRuleCall_7_0_1; }
+		
 		//('allocationContexts' '{' allocationContexts+=AllocationContext ("," allocationContexts+=AllocationContext)* '}')?
-		public Group getGroup_4() { return cGroup_4; }
+		public Group getGroup_8() { return cGroup_8; }
 		
 		//'allocationContexts'
-		public Keyword getAllocationContextsKeyword_4_0() { return cAllocationContextsKeyword_4_0; }
+		public Keyword getAllocationContextsKeyword_8_0() { return cAllocationContextsKeyword_8_0; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_4_1() { return cLeftCurlyBracketKeyword_4_1; }
+		public Keyword getLeftCurlyBracketKeyword_8_1() { return cLeftCurlyBracketKeyword_8_1; }
 		
 		//allocationContexts+=AllocationContext
-		public Assignment getAllocationContextsAssignment_4_2() { return cAllocationContextsAssignment_4_2; }
+		public Assignment getAllocationContextsAssignment_8_2() { return cAllocationContextsAssignment_8_2; }
 		
 		//AllocationContext
-		public RuleCall getAllocationContextsAllocationContextParserRuleCall_4_2_0() { return cAllocationContextsAllocationContextParserRuleCall_4_2_0; }
+		public RuleCall getAllocationContextsAllocationContextParserRuleCall_8_2_0() { return cAllocationContextsAllocationContextParserRuleCall_8_2_0; }
 		
 		//("," allocationContexts+=AllocationContext)*
-		public Group getGroup_4_3() { return cGroup_4_3; }
+		public Group getGroup_8_3() { return cGroup_8_3; }
 		
 		//","
-		public Keyword getCommaKeyword_4_3_0() { return cCommaKeyword_4_3_0; }
+		public Keyword getCommaKeyword_8_3_0() { return cCommaKeyword_8_3_0; }
 		
 		//allocationContexts+=AllocationContext
-		public Assignment getAllocationContextsAssignment_4_3_1() { return cAllocationContextsAssignment_4_3_1; }
+		public Assignment getAllocationContextsAssignment_8_3_1() { return cAllocationContextsAssignment_8_3_1; }
 		
 		//AllocationContext
-		public RuleCall getAllocationContextsAllocationContextParserRuleCall_4_3_1_0() { return cAllocationContextsAllocationContextParserRuleCall_4_3_1_0; }
+		public RuleCall getAllocationContextsAllocationContextParserRuleCall_8_3_1_0() { return cAllocationContextsAllocationContextParserRuleCall_8_3_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_4_4() { return cRightCurlyBracketKeyword_4_4; }
+		public Keyword getRightCurlyBracketKeyword_8_4() { return cRightCurlyBracketKeyword_8_4; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
 	public class InterfaceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "edu.kit.ipd.sdq.cbsmdsl.CbsmDsl.Interface");
@@ -1007,7 +1042,17 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cContainedAssemblyContextsAssignment_7_3_1 = (Assignment)cGroup_7_3.eContents().get(1);
 		private final RuleCall cContainedAssemblyContextsAssemblyContextParserRuleCall_7_3_1_0 = (RuleCall)cContainedAssemblyContextsAssignment_7_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7_4 = (Keyword)cGroup_7.eContents().get(4);
-		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Keyword cConnectorsKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
+		private final Assignment cConnectorsAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
+		private final RuleCall cConnectorsConnectorParserRuleCall_8_2_0 = (RuleCall)cConnectorsAssignment_8_2.eContents().get(0);
+		private final Group cGroup_8_3 = (Group)cGroup_8.eContents().get(3);
+		private final Keyword cCommaKeyword_8_3_0 = (Keyword)cGroup_8_3.eContents().get(0);
+		private final Assignment cConnectorsAssignment_8_3_1 = (Assignment)cGroup_8_3.eContents().get(1);
+		private final RuleCall cConnectorsConnectorParserRuleCall_8_3_1_0 = (RuleCall)cConnectorsAssignment_8_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_8_4 = (Keyword)cGroup_8.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//CompositeComponent assembly::CompositeComponent:
 		//	{assembly::CompositeComponent}
@@ -1017,7 +1062,8 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 		//	requiredRoles+=RequiredRole ("," requiredRoles+=RequiredRole)* '}')? ('behaviorDescriptions' '{'
 		//	behaviorDescriptions+=BehaviorDescription ("," behaviorDescriptions+=BehaviorDescription)* '}')?
 		//	('containedAssemblyContexts' '{' containedAssemblyContexts+=AssemblyContext (","
-		//	containedAssemblyContexts+=AssemblyContext)* '}')?
+		//	containedAssemblyContexts+=AssemblyContext)* '}')? ('connectors' '{' connectors+=Connector (","
+		//	connectors+=Connector)* '}')?
 		//	'}'
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -1025,7 +1071,8 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 		//("," providedRoles+=ProvidedRole)* '}')? ('requiredRoles' '{' requiredRoles+=RequiredRole (","
 		//requiredRoles+=RequiredRole)* '}')? ('behaviorDescriptions' '{' behaviorDescriptions+=BehaviorDescription (","
 		//behaviorDescriptions+=BehaviorDescription)* '}')? ('containedAssemblyContexts' '{'
-		//containedAssemblyContexts+=AssemblyContext ("," containedAssemblyContexts+=AssemblyContext)* '}')? '}'
+		//containedAssemblyContexts+=AssemblyContext ("," containedAssemblyContexts+=AssemblyContext)* '}')? ('connectors' '{'
+		//connectors+=Connector ("," connectors+=Connector)* '}')? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{assembly::CompositeComponent}
@@ -1165,8 +1212,38 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_7_4() { return cRightCurlyBracketKeyword_7_4; }
 		
+		//('connectors' '{' connectors+=Connector ("," connectors+=Connector)* '}')?
+		public Group getGroup_8() { return cGroup_8; }
+		
+		//'connectors'
+		public Keyword getConnectorsKeyword_8_0() { return cConnectorsKeyword_8_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_8_1() { return cLeftCurlyBracketKeyword_8_1; }
+		
+		//connectors+=Connector
+		public Assignment getConnectorsAssignment_8_2() { return cConnectorsAssignment_8_2; }
+		
+		//Connector
+		public RuleCall getConnectorsConnectorParserRuleCall_8_2_0() { return cConnectorsConnectorParserRuleCall_8_2_0; }
+		
+		//("," connectors+=Connector)*
+		public Group getGroup_8_3() { return cGroup_8_3; }
+		
+		//","
+		public Keyword getCommaKeyword_8_3_0() { return cCommaKeyword_8_3_0; }
+		
+		//connectors+=Connector
+		public Assignment getConnectorsAssignment_8_3_1() { return cConnectorsAssignment_8_3_1; }
+		
+		//Connector
+		public RuleCall getConnectorsConnectorParserRuleCall_8_3_1_0() { return cConnectorsConnectorParserRuleCall_8_3_1_0; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+		public Keyword getRightCurlyBracketKeyword_8_4() { return cRightCurlyBracketKeyword_8_4; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
 	public class EStringElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "edu.kit.ipd.sdq.cbsmdsl.CbsmDsl.EString");
@@ -2107,34 +2184,28 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cInnerAssemblyContextAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final CrossReference cInnerAssemblyContextAssemblyContextCrossReference_4_0 = (CrossReference)cInnerAssemblyContextAssignment_4.eContents().get(0);
 		private final RuleCall cInnerAssemblyContextAssemblyContextEStringParserRuleCall_4_0_1 = (RuleCall)cInnerAssemblyContextAssemblyContextCrossReference_4_0.eContents().get(1);
-		private final Keyword cOuterAssemblyContextKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cOuterAssemblyContextAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final CrossReference cOuterAssemblyContextAssemblyContextCrossReference_6_0 = (CrossReference)cOuterAssemblyContextAssignment_6.eContents().get(0);
-		private final RuleCall cOuterAssemblyContextAssemblyContextEStringParserRuleCall_6_0_1 = (RuleCall)cOuterAssemblyContextAssemblyContextCrossReference_6_0.eContents().get(1);
-		private final Keyword cInnerProvidedRoleKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cInnerProvidedRoleAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final CrossReference cInnerProvidedRoleProvidedRoleCrossReference_8_0 = (CrossReference)cInnerProvidedRoleAssignment_8.eContents().get(0);
-		private final RuleCall cInnerProvidedRoleProvidedRoleEStringParserRuleCall_8_0_1 = (RuleCall)cInnerProvidedRoleProvidedRoleCrossReference_8_0.eContents().get(1);
-		private final Keyword cOuterProvidedRoleKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Assignment cOuterProvidedRoleAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final CrossReference cOuterProvidedRoleProvidedRoleCrossReference_10_0 = (CrossReference)cOuterProvidedRoleAssignment_10.eContents().get(0);
-		private final RuleCall cOuterProvidedRoleProvidedRoleEStringParserRuleCall_10_0_1 = (RuleCall)cOuterProvidedRoleProvidedRoleCrossReference_10_0.eContents().get(1);
-		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cInnerProvidedRoleKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cInnerProvidedRoleAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final CrossReference cInnerProvidedRoleProvidedRoleCrossReference_6_0 = (CrossReference)cInnerProvidedRoleAssignment_6.eContents().get(0);
+		private final RuleCall cInnerProvidedRoleProvidedRoleEStringParserRuleCall_6_0_1 = (RuleCall)cInnerProvidedRoleProvidedRoleCrossReference_6_0.eContents().get(1);
+		private final Keyword cOuterProvidedRoleKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cOuterProvidedRoleAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final CrossReference cOuterProvidedRoleProvidedRoleCrossReference_8_0 = (CrossReference)cOuterProvidedRoleAssignment_8.eContents().get(0);
+		private final RuleCall cOuterProvidedRoleProvidedRoleEStringParserRuleCall_8_0_1 = (RuleCall)cOuterProvidedRoleProvidedRoleCrossReference_8_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//ProvidedDelegationConnector assembly::ProvidedDelegationConnector:
 		//	'ProvidedDelegationConnector'
 		//	name=EString
 		//	'{'
 		//	'innerAssemblyContext' innerAssemblyContext=[assembly::AssemblyContext|EString]
-		//	'outerAssemblyContext' outerAssemblyContext=[assembly::AssemblyContext|EString]
 		//	'innerProvidedRole' innerProvidedRole=[repository::ProvidedRole|EString]
 		//	'outerProvidedRole' outerProvidedRole=[repository::ProvidedRole|EString]
 		//	'}'
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'ProvidedDelegationConnector' name=EString '{' 'innerAssemblyContext'
-		//innerAssemblyContext=[assembly::AssemblyContext|EString] 'outerAssemblyContext'
-		//outerAssemblyContext=[assembly::AssemblyContext|EString] 'innerProvidedRole'
+		//innerAssemblyContext=[assembly::AssemblyContext|EString] 'innerProvidedRole'
 		//innerProvidedRole=[repository::ProvidedRole|EString] 'outerProvidedRole'
 		//outerProvidedRole=[repository::ProvidedRole|EString] '}'
 		public Group getGroup() { return cGroup; }
@@ -2163,44 +2234,32 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getInnerAssemblyContextAssemblyContextEStringParserRuleCall_4_0_1() { return cInnerAssemblyContextAssemblyContextEStringParserRuleCall_4_0_1; }
 		
-		//'outerAssemblyContext'
-		public Keyword getOuterAssemblyContextKeyword_5() { return cOuterAssemblyContextKeyword_5; }
-		
-		//outerAssemblyContext=[assembly::AssemblyContext|EString]
-		public Assignment getOuterAssemblyContextAssignment_6() { return cOuterAssemblyContextAssignment_6; }
-		
-		//[assembly::AssemblyContext|EString]
-		public CrossReference getOuterAssemblyContextAssemblyContextCrossReference_6_0() { return cOuterAssemblyContextAssemblyContextCrossReference_6_0; }
-		
-		//EString
-		public RuleCall getOuterAssemblyContextAssemblyContextEStringParserRuleCall_6_0_1() { return cOuterAssemblyContextAssemblyContextEStringParserRuleCall_6_0_1; }
-		
 		//'innerProvidedRole'
-		public Keyword getInnerProvidedRoleKeyword_7() { return cInnerProvidedRoleKeyword_7; }
+		public Keyword getInnerProvidedRoleKeyword_5() { return cInnerProvidedRoleKeyword_5; }
 		
 		//innerProvidedRole=[repository::ProvidedRole|EString]
-		public Assignment getInnerProvidedRoleAssignment_8() { return cInnerProvidedRoleAssignment_8; }
+		public Assignment getInnerProvidedRoleAssignment_6() { return cInnerProvidedRoleAssignment_6; }
 		
 		//[repository::ProvidedRole|EString]
-		public CrossReference getInnerProvidedRoleProvidedRoleCrossReference_8_0() { return cInnerProvidedRoleProvidedRoleCrossReference_8_0; }
+		public CrossReference getInnerProvidedRoleProvidedRoleCrossReference_6_0() { return cInnerProvidedRoleProvidedRoleCrossReference_6_0; }
 		
 		//EString
-		public RuleCall getInnerProvidedRoleProvidedRoleEStringParserRuleCall_8_0_1() { return cInnerProvidedRoleProvidedRoleEStringParserRuleCall_8_0_1; }
+		public RuleCall getInnerProvidedRoleProvidedRoleEStringParserRuleCall_6_0_1() { return cInnerProvidedRoleProvidedRoleEStringParserRuleCall_6_0_1; }
 		
 		//'outerProvidedRole'
-		public Keyword getOuterProvidedRoleKeyword_9() { return cOuterProvidedRoleKeyword_9; }
+		public Keyword getOuterProvidedRoleKeyword_7() { return cOuterProvidedRoleKeyword_7; }
 		
 		//outerProvidedRole=[repository::ProvidedRole|EString]
-		public Assignment getOuterProvidedRoleAssignment_10() { return cOuterProvidedRoleAssignment_10; }
+		public Assignment getOuterProvidedRoleAssignment_8() { return cOuterProvidedRoleAssignment_8; }
 		
 		//[repository::ProvidedRole|EString]
-		public CrossReference getOuterProvidedRoleProvidedRoleCrossReference_10_0() { return cOuterProvidedRoleProvidedRoleCrossReference_10_0; }
+		public CrossReference getOuterProvidedRoleProvidedRoleCrossReference_8_0() { return cOuterProvidedRoleProvidedRoleCrossReference_8_0; }
 		
 		//EString
-		public RuleCall getOuterProvidedRoleProvidedRoleEStringParserRuleCall_10_0_1() { return cOuterProvidedRoleProvidedRoleEStringParserRuleCall_10_0_1; }
+		public RuleCall getOuterProvidedRoleProvidedRoleEStringParserRuleCall_8_0_1() { return cOuterProvidedRoleProvidedRoleEStringParserRuleCall_8_0_1; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
 	public class RequiredDelegationConnectorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "edu.kit.ipd.sdq.cbsmdsl.CbsmDsl.RequiredDelegationConnector");
@@ -2213,34 +2272,28 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cInnerAssemblyContextAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final CrossReference cInnerAssemblyContextAssemblyContextCrossReference_4_0 = (CrossReference)cInnerAssemblyContextAssignment_4.eContents().get(0);
 		private final RuleCall cInnerAssemblyContextAssemblyContextEStringParserRuleCall_4_0_1 = (RuleCall)cInnerAssemblyContextAssemblyContextCrossReference_4_0.eContents().get(1);
-		private final Keyword cOuterAssemblyContextKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cOuterAssemblyContextAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final CrossReference cOuterAssemblyContextAssemblyContextCrossReference_6_0 = (CrossReference)cOuterAssemblyContextAssignment_6.eContents().get(0);
-		private final RuleCall cOuterAssemblyContextAssemblyContextEStringParserRuleCall_6_0_1 = (RuleCall)cOuterAssemblyContextAssemblyContextCrossReference_6_0.eContents().get(1);
-		private final Keyword cInnerRequiredRoleKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cInnerRequiredRoleAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final CrossReference cInnerRequiredRoleRequiredRoleCrossReference_8_0 = (CrossReference)cInnerRequiredRoleAssignment_8.eContents().get(0);
-		private final RuleCall cInnerRequiredRoleRequiredRoleEStringParserRuleCall_8_0_1 = (RuleCall)cInnerRequiredRoleRequiredRoleCrossReference_8_0.eContents().get(1);
-		private final Keyword cOuterRequiredRoleKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Assignment cOuterRequiredRoleAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final CrossReference cOuterRequiredRoleRequiredRoleCrossReference_10_0 = (CrossReference)cOuterRequiredRoleAssignment_10.eContents().get(0);
-		private final RuleCall cOuterRequiredRoleRequiredRoleEStringParserRuleCall_10_0_1 = (RuleCall)cOuterRequiredRoleRequiredRoleCrossReference_10_0.eContents().get(1);
-		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cInnerRequiredRoleKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cInnerRequiredRoleAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final CrossReference cInnerRequiredRoleRequiredRoleCrossReference_6_0 = (CrossReference)cInnerRequiredRoleAssignment_6.eContents().get(0);
+		private final RuleCall cInnerRequiredRoleRequiredRoleEStringParserRuleCall_6_0_1 = (RuleCall)cInnerRequiredRoleRequiredRoleCrossReference_6_0.eContents().get(1);
+		private final Keyword cOuterRequiredRoleKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cOuterRequiredRoleAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final CrossReference cOuterRequiredRoleRequiredRoleCrossReference_8_0 = (CrossReference)cOuterRequiredRoleAssignment_8.eContents().get(0);
+		private final RuleCall cOuterRequiredRoleRequiredRoleEStringParserRuleCall_8_0_1 = (RuleCall)cOuterRequiredRoleRequiredRoleCrossReference_8_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//RequiredDelegationConnector assembly::RequiredDelegationConnector:
 		//	'RequiredDelegationConnector'
 		//	name=EString
 		//	'{'
 		//	'innerAssemblyContext' innerAssemblyContext=[assembly::AssemblyContext|EString]
-		//	'outerAssemblyContext' outerAssemblyContext=[assembly::AssemblyContext|EString]
 		//	'innerRequiredRole' innerRequiredRole=[repository::RequiredRole|EString]
 		//	'outerRequiredRole' outerRequiredRole=[repository::RequiredRole|EString]
 		//	'}'
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'RequiredDelegationConnector' name=EString '{' 'innerAssemblyContext'
-		//innerAssemblyContext=[assembly::AssemblyContext|EString] 'outerAssemblyContext'
-		//outerAssemblyContext=[assembly::AssemblyContext|EString] 'innerRequiredRole'
+		//innerAssemblyContext=[assembly::AssemblyContext|EString] 'innerRequiredRole'
 		//innerRequiredRole=[repository::RequiredRole|EString] 'outerRequiredRole'
 		//outerRequiredRole=[repository::RequiredRole|EString] '}'
 		public Group getGroup() { return cGroup; }
@@ -2269,44 +2322,32 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getInnerAssemblyContextAssemblyContextEStringParserRuleCall_4_0_1() { return cInnerAssemblyContextAssemblyContextEStringParserRuleCall_4_0_1; }
 		
-		//'outerAssemblyContext'
-		public Keyword getOuterAssemblyContextKeyword_5() { return cOuterAssemblyContextKeyword_5; }
-		
-		//outerAssemblyContext=[assembly::AssemblyContext|EString]
-		public Assignment getOuterAssemblyContextAssignment_6() { return cOuterAssemblyContextAssignment_6; }
-		
-		//[assembly::AssemblyContext|EString]
-		public CrossReference getOuterAssemblyContextAssemblyContextCrossReference_6_0() { return cOuterAssemblyContextAssemblyContextCrossReference_6_0; }
-		
-		//EString
-		public RuleCall getOuterAssemblyContextAssemblyContextEStringParserRuleCall_6_0_1() { return cOuterAssemblyContextAssemblyContextEStringParserRuleCall_6_0_1; }
-		
 		//'innerRequiredRole'
-		public Keyword getInnerRequiredRoleKeyword_7() { return cInnerRequiredRoleKeyword_7; }
+		public Keyword getInnerRequiredRoleKeyword_5() { return cInnerRequiredRoleKeyword_5; }
 		
 		//innerRequiredRole=[repository::RequiredRole|EString]
-		public Assignment getInnerRequiredRoleAssignment_8() { return cInnerRequiredRoleAssignment_8; }
+		public Assignment getInnerRequiredRoleAssignment_6() { return cInnerRequiredRoleAssignment_6; }
 		
 		//[repository::RequiredRole|EString]
-		public CrossReference getInnerRequiredRoleRequiredRoleCrossReference_8_0() { return cInnerRequiredRoleRequiredRoleCrossReference_8_0; }
+		public CrossReference getInnerRequiredRoleRequiredRoleCrossReference_6_0() { return cInnerRequiredRoleRequiredRoleCrossReference_6_0; }
 		
 		//EString
-		public RuleCall getInnerRequiredRoleRequiredRoleEStringParserRuleCall_8_0_1() { return cInnerRequiredRoleRequiredRoleEStringParserRuleCall_8_0_1; }
+		public RuleCall getInnerRequiredRoleRequiredRoleEStringParserRuleCall_6_0_1() { return cInnerRequiredRoleRequiredRoleEStringParserRuleCall_6_0_1; }
 		
 		//'outerRequiredRole'
-		public Keyword getOuterRequiredRoleKeyword_9() { return cOuterRequiredRoleKeyword_9; }
+		public Keyword getOuterRequiredRoleKeyword_7() { return cOuterRequiredRoleKeyword_7; }
 		
 		//outerRequiredRole=[repository::RequiredRole|EString]
-		public Assignment getOuterRequiredRoleAssignment_10() { return cOuterRequiredRoleAssignment_10; }
+		public Assignment getOuterRequiredRoleAssignment_8() { return cOuterRequiredRoleAssignment_8; }
 		
 		//[repository::RequiredRole|EString]
-		public CrossReference getOuterRequiredRoleRequiredRoleCrossReference_10_0() { return cOuterRequiredRoleRequiredRoleCrossReference_10_0; }
+		public CrossReference getOuterRequiredRoleRequiredRoleCrossReference_8_0() { return cOuterRequiredRoleRequiredRoleCrossReference_8_0; }
 		
 		//EString
-		public RuleCall getOuterRequiredRoleRequiredRoleEStringParserRuleCall_10_0_1() { return cOuterRequiredRoleRequiredRoleEStringParserRuleCall_10_0_1; }
+		public RuleCall getOuterRequiredRoleRequiredRoleEStringParserRuleCall_8_0_1() { return cOuterRequiredRoleRequiredRoleEStringParserRuleCall_8_0_1; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
 	public class AssemblyConnectorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "edu.kit.ipd.sdq.cbsmdsl.CbsmDsl.AssemblyConnector");
@@ -2852,8 +2893,8 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	name=EString
 	//	'{' ('providedRoles' '{' providedRoles+=ProvidedRole ("," providedRoles+=ProvidedRole)* '}')? ('requiredRoles' '{'
 	//	requiredRoles+=RequiredRole ("," requiredRoles+=RequiredRole)* '}')? ('containedAssemblyContexts' '{'
-	//	containedAssemblyContexts+=AssemblyContext ("," containedAssemblyContexts+=AssemblyContext)* '}')?
-	//	('systemConnectors' '{' systemConnectors+=Connector ("," systemConnectors+=Connector)* '}')?
+	//	containedAssemblyContexts+=AssemblyContext ("," containedAssemblyContexts+=AssemblyContext)* '}')? ('connectors' '{'
+	//	connectors+=Connector ("," connectors+=Connector)* '}')?
 	//	'}'
 	public SystemElements getSystemAccess() {
 		return pSystem;
@@ -2882,8 +2923,10 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	{allocation::Allocation}
 	//	'Allocation'
 	//	name=EString
-	//	'{' ('allocationContexts' '{' allocationContexts+=AllocationContext ("," allocationContexts+=AllocationContext)*
-	//	'}')?
+	//	'{'
+	//	'allocatedSystem' allocatedSystem=[assembly::System|EString]
+	//	'allocationEnvironment' allocationEnvironment=[environment::Environment|EString] ('allocationContexts' '{'
+	//	allocationContexts+=AllocationContext ("," allocationContexts+=AllocationContext)* '}')?
 	//	'}'
 	public AllocationElements getAllocationAccess() {
 		return pAllocation;
@@ -2941,7 +2984,8 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	requiredRoles+=RequiredRole ("," requiredRoles+=RequiredRole)* '}')? ('behaviorDescriptions' '{'
 	//	behaviorDescriptions+=BehaviorDescription ("," behaviorDescriptions+=BehaviorDescription)* '}')?
 	//	('containedAssemblyContexts' '{' containedAssemblyContexts+=AssemblyContext (","
-	//	containedAssemblyContexts+=AssemblyContext)* '}')?
+	//	containedAssemblyContexts+=AssemblyContext)* '}')? ('connectors' '{' connectors+=Connector (","
+	//	connectors+=Connector)* '}')?
 	//	'}'
 	public CompositeComponentElements getCompositeComponentAccess() {
 		return pCompositeComponent;
@@ -3160,7 +3204,6 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	name=EString
 	//	'{'
 	//	'innerAssemblyContext' innerAssemblyContext=[assembly::AssemblyContext|EString]
-	//	'outerAssemblyContext' outerAssemblyContext=[assembly::AssemblyContext|EString]
 	//	'innerProvidedRole' innerProvidedRole=[repository::ProvidedRole|EString]
 	//	'outerProvidedRole' outerProvidedRole=[repository::ProvidedRole|EString]
 	//	'}'
@@ -3177,7 +3220,6 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	name=EString
 	//	'{'
 	//	'innerAssemblyContext' innerAssemblyContext=[assembly::AssemblyContext|EString]
-	//	'outerAssemblyContext' outerAssemblyContext=[assembly::AssemblyContext|EString]
 	//	'innerRequiredRole' innerRequiredRole=[repository::RequiredRole|EString]
 	//	'outerRequiredRole' outerRequiredRole=[repository::RequiredRole|EString]
 	//	'}'

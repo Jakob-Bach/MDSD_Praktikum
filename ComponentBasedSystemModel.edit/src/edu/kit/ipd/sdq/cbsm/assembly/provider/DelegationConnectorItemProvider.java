@@ -43,7 +43,6 @@ public class DelegationConnectorItemProvider
 			super.getPropertyDescriptors(object);
 
 			addInnerAssemblyContextPropertyDescriptor(object);
-			addOuterAssemblyContextPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -62,28 +61,6 @@ public class DelegationConnectorItemProvider
 				 getString("_UI_DelegationConnector_innerAssemblyContext_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DelegationConnector_innerAssemblyContext_feature", "_UI_DelegationConnector_type"),
 				 AssemblyPackage.Literals.DELEGATION_CONNECTOR__INNER_ASSEMBLY_CONTEXT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Outer Assembly Context feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOuterAssemblyContextPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DelegationConnector_outerAssemblyContext_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DelegationConnector_outerAssemblyContext_feature", "_UI_DelegationConnector_type"),
-				 AssemblyPackage.Literals.DELEGATION_CONNECTOR__OUTER_ASSEMBLY_CONTEXT,
 				 true,
 				 false,
 				 true,

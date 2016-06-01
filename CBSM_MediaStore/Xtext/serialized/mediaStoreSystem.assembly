@@ -12,34 +12,15 @@
   <containedAssemblyContexts name="PoolingAudioDB_AssemblyContext">
     <instantiatedComponent href="../mediaStoreRepository.cbsmdsl#//@components.4"/>
   </containedAssemblyContexts>
-  <systemConnectors xsi:type="assembly:ProvidedDelegationConnector" name="MediaManager_MediaStore_DelegationConnector" outerAssemblyContext="//@containedAssemblyContexts.1">
-    <innerAssemblyContext href="../mediaStoreRepository.cbsmdsl#//@components.5/@containedAssemblyContexts.0"/>
-    <innerProvidedRole href="../mediaStoreRepository.cbsmdsl#//@components.1/@providedRoles.0"/>
-    <outerProvidedRole href="../mediaStoreRepository.cbsmdsl#//@components.5/@providedRoles.0"/>
-  </systemConnectors>
-  <systemConnectors xsi:type="assembly:RequiredDelegationConnector" name="DBCache_MediaStore_DelegationConnector" outerAssemblyContext="//@containedAssemblyContexts.1">
-    <innerAssemblyContext href="../mediaStoreRepository.cbsmdsl#//@components.5/@containedAssemblyContexts.2"/>
-    <innerRequiredRole href="../mediaStoreRepository.cbsmdsl#//@components.2/@requiredRoles.0"/>
-    <outerRequiredRole href="../mediaStoreRepository.cbsmdsl#//@components.5/@requiredRoles.0"/>
-  </systemConnectors>
-  <systemConnectors xsi:type="assembly:AssemblyConnector" name="MediaStore_WebGUI_AssemblyConnector" connectedProvidedAssemblyContext="//@containedAssemblyContexts.1" connectedRequiredAssemblyContext="//@containedAssemblyContexts.0">
+  <connectors xsi:type="assembly:AssemblyConnector" name="MediaStore_WebGUI_AssemblyConnector" connectedProvidedAssemblyContext="//@containedAssemblyContexts.1" connectedRequiredAssemblyContext="//@containedAssemblyContexts.0">
     <connectedProvidedRole href="../mediaStoreRepository.cbsmdsl#//@components.5/@providedRoles.0"/>
     <connectedRequiredRole href="../mediaStoreRepository.cbsmdsl#//@components.0/@requiredRoles.0"/>
-  </systemConnectors>
-  <systemConnectors xsi:type="assembly:AssemblyConnector" name="DigitalWatermarking_MediaManager_AssemblyConnector">
-    <connectedProvidedRole href="../mediaStoreRepository.cbsmdsl#//@components.3/@providedRoles.0"/>
-    <connectedRequiredRole href="../mediaStoreRepository.cbsmdsl#//@components.1/@requiredRoles.0"/>
-    <connectedProvidedAssemblyContext href="../mediaStoreRepository.cbsmdsl#//@components.5/@containedAssemblyContexts.1"/>
-    <connectedRequiredAssemblyContext href="../mediaStoreRepository.cbsmdsl#//@components.5/@containedAssemblyContexts.0"/>
-  </systemConnectors>
-  <systemConnectors xsi:type="assembly:AssemblyConnector" name="DBCache_MediaManager_AssemblyConnector">
-    <connectedProvidedRole href="../mediaStoreRepository.cbsmdsl#//@components.2/@providedRoles.0"/>
-    <connectedRequiredRole href="../mediaStoreRepository.cbsmdsl#//@components.1/@requiredRoles.1"/>
-    <connectedProvidedAssemblyContext href="../mediaStoreRepository.cbsmdsl#//@components.5/@containedAssemblyContexts.2"/>
-    <connectedRequiredAssemblyContext href="../mediaStoreRepository.cbsmdsl#//@components.5/@containedAssemblyContexts.0"/>
-  </systemConnectors>
-  <systemConnectors xsi:type="assembly:AssemblyConnector" name="PoolingAudioDB_MediaStore_AssemblyConnector" connectedProvidedAssemblyContext="//@containedAssemblyContexts.2" connectedRequiredAssemblyContext="//@containedAssemblyContexts.1">
+  </connectors>
+  <connectors xsi:type="assembly:AssemblyConnector" name="PoolingAudioDB_MediaStore_AssemblyConnector" connectedProvidedAssemblyContext="//@containedAssemblyContexts.2" connectedRequiredAssemblyContext="//@containedAssemblyContexts.1">
     <connectedProvidedRole href="../mediaStoreRepository.cbsmdsl#//@components.4/@providedRoles.0"/>
     <connectedRequiredRole href="../mediaStoreRepository.cbsmdsl#//@components.5/@requiredRoles.0"/>
-  </systemConnectors>
+  </connectors>
+  <connectors xsi:type="assembly:ProvidedDelegationConnector" name="WebGUI_System_DelegationConnector" innerAssemblyContext="//@containedAssemblyContexts.0" outerProvidedRole="//@providedRoles.0">
+    <innerProvidedRole href="../mediaStoreRepository.cbsmdsl#//@components.0/@providedRoles.0"/>
+  </connectors>
 </assembly:System>

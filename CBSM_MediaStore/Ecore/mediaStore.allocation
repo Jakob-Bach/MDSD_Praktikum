@@ -12,4 +12,6 @@
     <allocatedContainer href="mediaStore.environment#//@containers.1"/>
     <allocatedAssemblyContext href="mediaStore.assembly#//@containedAssemblyContexts.2"/>
   </allocationContexts>
+  <allocatedSystem href="mediaStore.assembly#/"/>
+  <allocationEnvironment href="mediaStore.environment#/"/>
 </allocation:Allocation>

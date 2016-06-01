@@ -12,4 +12,6 @@
     <allocatedContainer href="../mediaStoreEnvironment.cbsmdsl#//@containers.1"/>
     <allocatedAssemblyContext href="../mediaStoreSystem.cbsmdsl#//@containedAssemblyContexts.2"/>
   </allocationContexts>
+  <allocatedSystem href="../mediaStoreSystem.cbsmdsl#/"/>
+  <allocationEnvironment href="../mediaStoreEnvironment.cbsmdsl#/"/>
 </allocation:Allocation>

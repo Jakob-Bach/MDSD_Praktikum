@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link edu.kit.ipd.sdq.cbsm.assembly.CompositeProvidingAndRequiringElement#getContainedAssemblyContexts <em>Contained Assembly Contexts</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.cbsm.assembly.CompositeProvidingAndRequiringElement#getConnectors <em>Connectors</em>}</li>
  * </ul>
  *
  * @see edu.kit.ipd.sdq.cbsm.assembly.AssemblyPackage#getCompositeProvidingAndRequiringElement()
@@ -42,5 +43,21 @@ public interface CompositeProvidingAndRequiringElement extends ProvidingAndRequi
 	 * @generated
 	 */
 	EList<AssemblyContext> getContainedAssemblyContexts();
+
+	/**
+	 * Returns the value of the '<em><b>Connectors</b></em>' containment reference list.
+	 * The list contents are of type {@link edu.kit.ipd.sdq.cbsm.assembly.Connector}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Connectors</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Connectors</em>' containment reference list.
+	 * @see edu.kit.ipd.sdq.cbsm.assembly.AssemblyPackage#getCompositeProvidingAndRequiringElement_Connectors()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Connector> getConnectors();
 
 } // CompositeProvidingAndRequiringElement

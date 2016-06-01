@@ -164,6 +164,24 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getAllocation_AllocatedSystem() {
+		return (EReference)allocationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAllocation_AllocationEnvironment() {
+		return (EReference)allocationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAllocationContext() {
 		return allocationContextEClass;
 	}
@@ -216,6 +234,8 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		// Create classes and their features
 		allocationEClass = createEClass(ALLOCATION);
 		createEReference(allocationEClass, ALLOCATION__ALLOCATION_CONTEXTS);
+		createEReference(allocationEClass, ALLOCATION__ALLOCATED_SYSTEM);
+		createEReference(allocationEClass, ALLOCATION__ALLOCATION_ENVIRONMENT);
 
 		allocationContextEClass = createEClass(ALLOCATION_CONTEXT);
 		createEReference(allocationContextEClass, ALLOCATION_CONTEXT__ALLOCATED_CONTAINER);
@@ -247,8 +267,8 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 
 		// Obtain other dependent packages
 		CorePackage theCorePackage = (CorePackage)EPackage.Registry.INSTANCE.getEPackage(CorePackage.eNS_URI);
-		EnvironmentPackage theEnvironmentPackage = (EnvironmentPackage)EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI);
 		AssemblyPackage theAssemblyPackage = (AssemblyPackage)EPackage.Registry.INSTANCE.getEPackage(AssemblyPackage.eNS_URI);
+		EnvironmentPackage theEnvironmentPackage = (EnvironmentPackage)EPackage.Registry.INSTANCE.getEPackage(EnvironmentPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -261,6 +281,8 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		// Initialize classes, features, and operations; add parameters
 		initEClass(allocationEClass, Allocation.class, "Allocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAllocation_AllocationContexts(), this.getAllocationContext(), null, "allocationContexts", null, 0, -1, Allocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAllocation_AllocatedSystem(), theAssemblyPackage.getSystem(), null, "allocatedSystem", null, 1, 1, Allocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAllocation_AllocationEnvironment(), theEnvironmentPackage.getEnvironment(), null, "allocationEnvironment", null, 1, 1, Allocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(allocationContextEClass, AllocationContext.class, "AllocationContext", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAllocationContext_AllocatedContainer(), theEnvironmentPackage.getContainer(), null, "allocatedContainer", null, 1, 1, AllocationContext.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -296,7 +318,7 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		  (allocationEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "AssemblyContextsConnectedByAssemblyConnectorAllocatedOnSameOrLinkedContainers"
+			 "constraints", "AssemblyContextsConnectedByAssemblyConnectorAllocatedOnSameOrLinkedContainers AssemblyContextsOfAllocationContextsBelongToAllocatedSystem ContainersOfAllocationContextsBelongToAllocationEnvironment"
 		   });	
 		addAnnotation
 		  (allocationContextEClass, 
@@ -318,7 +340,9 @@ public class AllocationPackageImpl extends EPackageImpl implements AllocationPac
 		  (allocationEClass, 
 		   source, 
 		   new String[] {
-			 "AssemblyContextsConnectedByAssemblyConnectorAllocatedOnSameOrLinkedContainers", "\n\t\t\t\tself.allocationContexts->isEmpty()\n\t\t\t\t-- get all AssemblyConnectors from System (assuming that only top-level\n\t\t\t\t-- AssemblyContexts are allocated\n\t\t\t\tor self.allocationContexts->first().allocatedAssemblyContext.parentCompositeElement.\n\t\t\t\toclAsType(assembly::System).systemConnectors->select(connector|\n\t\t\t\t\tconnector.oclIsKindOf(assembly::AssemblyConnector))->forAll(assemblyConnector|\n\t\t\t\t\t\t-- get AllocationContexts for the two connected AssemblyContexts, check if\n\t\t\t\t\t\t-- same Container\n\t\t\t\t\t\tself.allocationContexts->select(allocationContext|\n\t\t\t\t\t\t\tallocationContext.allocatedAssemblyContext = assemblyConnector.oclAsType(\n\t\t\t\t\t\t\t\tassembly::AssemblyConnector).connectedProvidedAssemblyContext \n\t\t\t\t\t\t\tor allocationContext.allocatedAssemblyContext = assemblyConnector.oclAsType(\n\t\t\t\t\t\t\t\tassembly::AssemblyConnector).connectedRequiredAssemblyContext\n\t\t\t\t\t\t).allocatedContainer->asSet()->size() = 1 \n\t\t\t\t\t\t-- get all Links, check if there is one whose Containers contain both of the two\n\t\t\t\t\t\t-- connected AssemblyContexts\n\t\t\t\t\t\tor self.allocationContexts->first().allocatedContainer.parentEnvironment.links->exists(link|\n\t\t\t\t\t\t\tlink.linkedContainers->includesAll(self.allocationContexts->select(allocationContext|\n\t\t\t\t\t\t\t\tallocationContext.allocatedAssemblyContext = assemblyConnector.oclAsType(\n\t\t\t\t\t\t\t\t\tassembly::AssemblyConnector).connectedProvidedAssemblyContext \n\t\t\t\t\t\t\t\tor allocationContext.allocatedAssemblyContext = assemblyConnector.oclAsType(\n\t\t\t\t\t\t\t\t\tassembly::AssemblyConnector).connectedRequiredAssemblyContext\n\t\t\t\t\t\t\t).allocatedContainer)\n\t\t\t\t\t\t)\n\t\t\t\t\t)"
+			 "AssemblyContextsConnectedByAssemblyConnectorAllocatedOnSameOrLinkedContainers", "\n\t\t\t\tself.allocationContexts->isEmpty()\n\t\t\t\t-- get all AssemblyConnectors from System (assuming that only top-level\n\t\t\t\t-- AssemblyContexts are allocated)\n\t\t\t\tor self.allocatedSystem.connectors->select(connector|\n\t\t\t\t\tconnector.oclIsKindOf(assembly::AssemblyConnector))->forAll(assemblyConnector|\n\t\t\t\t\t\t-- get AllocationContexts for the two connected AssemblyContexts, check if\n\t\t\t\t\t\t-- same Container\n\t\t\t\t\t\tself.allocationContexts->select(allocationContext|\n\t\t\t\t\t\t\tallocationContext.allocatedAssemblyContext = assemblyConnector.oclAsType(\n\t\t\t\t\t\t\t\tassembly::AssemblyConnector).connectedProvidedAssemblyContext \n\t\t\t\t\t\t\tor allocationContext.allocatedAssemblyContext = assemblyConnector.oclAsType(\n\t\t\t\t\t\t\t\tassembly::AssemblyConnector).connectedRequiredAssemblyContext\n\t\t\t\t\t\t).allocatedContainer->asSet()->size() = 1 \n\t\t\t\t\t\t-- get all Links, check if there is one whose Containers contain both of the two\n\t\t\t\t\t\t-- connected AssemblyContexts\n\t\t\t\t\t\tor self.allocationEnvironment.links->exists(link|\n\t\t\t\t\t\t\tlink.linkedContainers->includesAll(self.allocationContexts->select(allocationContext|\n\t\t\t\t\t\t\t\tallocationContext.allocatedAssemblyContext = assemblyConnector.oclAsType(\n\t\t\t\t\t\t\t\t\tassembly::AssemblyConnector).connectedProvidedAssemblyContext \n\t\t\t\t\t\t\t\tor allocationContext.allocatedAssemblyContext = assemblyConnector.oclAsType(\n\t\t\t\t\t\t\t\t\tassembly::AssemblyConnector).connectedRequiredAssemblyContext\n\t\t\t\t\t\t\t).allocatedContainer)\n\t\t\t\t\t\t)\n\t\t\t\t\t)",
+			 "AssemblyContextsOfAllocationContextsBelongToAllocatedSystem", "self.allocatedSystem.\n\t\t\t\tcontainedAssemblyContexts->includesAll(self.allocationContexts.allocatedAssemblyContext)",
+			 "ContainersOfAllocationContextsBelongToAllocationEnvironment", "\n\t\t\t\tself.allocationEnvironment.containers->includesAll(self.allocationContexts.allocatedContainer)"
 		   });	
 		addAnnotation
 		  (allocationContextEClass, 

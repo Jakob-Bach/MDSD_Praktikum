@@ -256,6 +256,7 @@ inherits CBSM::repository::ProvidingAndRequiringElement::
 {
 	assemblyContexts__ComposedStructure := self.containedAssemblyContexts ->
 		map AssemblyContext2AssemblyContext();
+	connectors__ComposedStructure := self.connectors -> map Connector2Connector();
 }
 
 mapping CBSM::assembly::CompositeComponent::CompositeComponent2CompositeComponent() :
@@ -273,7 +274,7 @@ inherits CBSM::core::NamedElement::NamedElement2NamedElement,
 		CBSM::assembly::CompositeProvidingAndRequiringElement::
 		CompositeProvidingAndRequiringElement2ComposedProvidingRequiringEntity
 {
-	connectors__ComposedStructure := self.systemConnectors -> map Connector2Connector();
+
 }
 
 mapping CBSM::assembly::Connector::Connector2Connector() :
@@ -379,6 +380,9 @@ mapping CBSM::allocation::Allocation::Allocation2Allocation() :
 		PCM::allocation::Allocation
 inherits CBSM::core::NamedElement::NamedElement2NamedElement
 {
+	system_Allocation := self.allocatedSystem.resolveone(pcm::system::System);
+	targetResourceEnvironment_Allocation := self.allocationEnvironment.
+		resolveone(pcm::resourceenvironment::ResourceEnvironment);
 	allocationContexts_Allocation := self.allocationContexts ->
 		map AllocationContext2AllocationContext();
 }

@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link edu.kit.ipd.sdq.cbsm.assembly.impl.DelegationConnectorImpl#getInnerAssemblyContext <em>Inner Assembly Context</em>}</li>
- *   <li>{@link edu.kit.ipd.sdq.cbsm.assembly.impl.DelegationConnectorImpl#getOuterAssemblyContext <em>Outer Assembly Context</em>}</li>
  * </ul>
  *
  * @generated
@@ -34,16 +33,6 @@ public abstract class DelegationConnectorImpl extends ConnectorImpl implements D
 	 * @ordered
 	 */
 	protected AssemblyContext innerAssemblyContext;
-	/**
-	 * The cached value of the '{@link #getOuterAssemblyContext() <em>Outer Assembly Context</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOuterAssemblyContext()
-	 * @generated
-	 * @ordered
-	 */
-	protected AssemblyContext outerAssemblyContext;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -106,53 +95,12 @@ public abstract class DelegationConnectorImpl extends ConnectorImpl implements D
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AssemblyContext getOuterAssemblyContext() {
-		if (outerAssemblyContext != null && outerAssemblyContext.eIsProxy()) {
-			InternalEObject oldOuterAssemblyContext = (InternalEObject)outerAssemblyContext;
-			outerAssemblyContext = (AssemblyContext)eResolveProxy(oldOuterAssemblyContext);
-			if (outerAssemblyContext != oldOuterAssemblyContext) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AssemblyPackage.DELEGATION_CONNECTOR__OUTER_ASSEMBLY_CONTEXT, oldOuterAssemblyContext, outerAssemblyContext));
-			}
-		}
-		return outerAssemblyContext;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AssemblyContext basicGetOuterAssemblyContext() {
-		return outerAssemblyContext;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOuterAssemblyContext(AssemblyContext newOuterAssemblyContext) {
-		AssemblyContext oldOuterAssemblyContext = outerAssemblyContext;
-		outerAssemblyContext = newOuterAssemblyContext;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AssemblyPackage.DELEGATION_CONNECTOR__OUTER_ASSEMBLY_CONTEXT, oldOuterAssemblyContext, outerAssemblyContext));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case AssemblyPackage.DELEGATION_CONNECTOR__INNER_ASSEMBLY_CONTEXT:
 				if (resolve) return getInnerAssemblyContext();
 				return basicGetInnerAssemblyContext();
-			case AssemblyPackage.DELEGATION_CONNECTOR__OUTER_ASSEMBLY_CONTEXT:
-				if (resolve) return getOuterAssemblyContext();
-				return basicGetOuterAssemblyContext();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -167,9 +115,6 @@ public abstract class DelegationConnectorImpl extends ConnectorImpl implements D
 		switch (featureID) {
 			case AssemblyPackage.DELEGATION_CONNECTOR__INNER_ASSEMBLY_CONTEXT:
 				setInnerAssemblyContext((AssemblyContext)newValue);
-				return;
-			case AssemblyPackage.DELEGATION_CONNECTOR__OUTER_ASSEMBLY_CONTEXT:
-				setOuterAssemblyContext((AssemblyContext)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -186,9 +131,6 @@ public abstract class DelegationConnectorImpl extends ConnectorImpl implements D
 			case AssemblyPackage.DELEGATION_CONNECTOR__INNER_ASSEMBLY_CONTEXT:
 				setInnerAssemblyContext((AssemblyContext)null);
 				return;
-			case AssemblyPackage.DELEGATION_CONNECTOR__OUTER_ASSEMBLY_CONTEXT:
-				setOuterAssemblyContext((AssemblyContext)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -203,8 +145,6 @@ public abstract class DelegationConnectorImpl extends ConnectorImpl implements D
 		switch (featureID) {
 			case AssemblyPackage.DELEGATION_CONNECTOR__INNER_ASSEMBLY_CONTEXT:
 				return innerAssemblyContext != null;
-			case AssemblyPackage.DELEGATION_CONNECTOR__OUTER_ASSEMBLY_CONTEXT:
-				return outerAssemblyContext != null;
 		}
 		return super.eIsSet(featureID);
 	}

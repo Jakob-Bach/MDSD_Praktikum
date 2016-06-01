@@ -259,47 +259,7 @@ public class AssemblyValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateDelegationConnector(DelegationConnector delegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(delegationConnector, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(delegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(delegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(delegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(delegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(delegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(delegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(delegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(delegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDelegationConnector_ConnectsOuterAndInnerAssemblyContextOfSameCompositeElement(delegationConnector, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * The cached validation expression for the ConnectsOuterAndInnerAssemblyContextOfSameCompositeElement constraint of '<em>Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String DELEGATION_CONNECTOR__CONNECTS_OUTER_AND_INNER_ASSEMBLY_CONTEXT_OF_SAME_COMPOSITE_ELEMENT__EEXPRESSION = "\n" +
-		"\t\t\t\tself.innerAssemblyContext.parentCompositeElement = self.outerAssemblyContext.instantiatedComponent";
-
-	/**
-	 * Validates the ConnectsOuterAndInnerAssemblyContextOfSameCompositeElement constraint of '<em>Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDelegationConnector_ConnectsOuterAndInnerAssemblyContextOfSameCompositeElement(DelegationConnector delegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(AssemblyPackage.Literals.DELEGATION_CONNECTOR,
-				 delegationConnector,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "ConnectsOuterAndInnerAssemblyContextOfSameCompositeElement",
-				 DELEGATION_CONNECTOR__CONNECTS_OUTER_AND_INNER_ASSEMBLY_CONTEXT_OF_SAME_COMPOSITE_ELEMENT__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return validate_EveryDefaultConstraint(delegationConnector, diagnostics, context);
 	}
 
 	/**
@@ -317,9 +277,7 @@ public class AssemblyValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(providedDelegationConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(providedDelegationConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(providedDelegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDelegationConnector_ConnectsOuterAndInnerAssemblyContextOfSameCompositeElement(providedDelegationConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validateProvidedDelegationConnector_InnerRoleBelongsToInnerAssemblyContext(providedDelegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProvidedDelegationConnector_OuterRoleBelongsToOuterAssemblyContext(providedDelegationConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validateProvidedDelegationConnector_SameInterfaceIsDelegatedAsProvided(providedDelegationConnector, diagnostics, context);
 		return result;
 	}
@@ -350,37 +308,6 @@ public class AssemblyValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
 				 "InnerRoleBelongsToInnerAssemblyContext",
 				 PROVIDED_DELEGATION_CONNECTOR__INNER_ROLE_BELONGS_TO_INNER_ASSEMBLY_CONTEXT__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the OuterRoleBelongsToOuterAssemblyContext constraint of '<em>Provided Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String PROVIDED_DELEGATION_CONNECTOR__OUTER_ROLE_BELONGS_TO_OUTER_ASSEMBLY_CONTEXT__EEXPRESSION = "self.outerAssemblyContext.assemblyContextProvidedRoles->exists(role| \n" +
-		"\t\t\t\trole = self.outerProvidedRole\n" +
-		"\t\t\t)";
-
-	/**
-	 * Validates the OuterRoleBelongsToOuterAssemblyContext constraint of '<em>Provided Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateProvidedDelegationConnector_OuterRoleBelongsToOuterAssemblyContext(ProvidedDelegationConnector providedDelegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(AssemblyPackage.Literals.PROVIDED_DELEGATION_CONNECTOR,
-				 providedDelegationConnector,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "OuterRoleBelongsToOuterAssemblyContext",
-				 PROVIDED_DELEGATION_CONNECTOR__OUTER_ROLE_BELONGS_TO_OUTER_ASSEMBLY_CONTEXT__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -431,9 +358,7 @@ public class AssemblyValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(requiredDelegationConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(requiredDelegationConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(requiredDelegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateDelegationConnector_ConnectsOuterAndInnerAssemblyContextOfSameCompositeElement(requiredDelegationConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRequiredDelegationConnector_InnerRoleBelongsToInnerAssemblyContext(requiredDelegationConnector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateRequiredDelegationConnector_OuterRoleBelongsToOuterAssemblyContext(requiredDelegationConnector, diagnostics, context);
 		if (result || diagnostics != null) result &= validateRequiredDelegationConnector_SameInterfaceIsDelegatedAsRequired(requiredDelegationConnector, diagnostics, context);
 		return result;
 	}
@@ -464,37 +389,6 @@ public class AssemblyValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
 				 "InnerRoleBelongsToInnerAssemblyContext",
 				 REQUIRED_DELEGATION_CONNECTOR__INNER_ROLE_BELONGS_TO_INNER_ASSEMBLY_CONTEXT__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the OuterRoleBelongsToOuterAssemblyContext constraint of '<em>Required Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String REQUIRED_DELEGATION_CONNECTOR__OUTER_ROLE_BELONGS_TO_OUTER_ASSEMBLY_CONTEXT__EEXPRESSION = "self.outerAssemblyContext.assemblyContextRequiredRoles->exists(role| \n" +
-		"\t\t\t\trole = self.outerRequiredRole\n" +
-		"\t\t\t)";
-
-	/**
-	 * Validates the OuterRoleBelongsToOuterAssemblyContext constraint of '<em>Required Delegation Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateRequiredDelegationConnector_OuterRoleBelongsToOuterAssemblyContext(RequiredDelegationConnector requiredDelegationConnector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(AssemblyPackage.Literals.REQUIRED_DELEGATION_CONNECTOR,
-				 requiredDelegationConnector,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "OuterRoleBelongsToOuterAssemblyContext",
-				 REQUIRED_DELEGATION_CONNECTOR__OUTER_ROLE_BELONGS_TO_OUTER_ASSEMBLY_CONTEXT__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

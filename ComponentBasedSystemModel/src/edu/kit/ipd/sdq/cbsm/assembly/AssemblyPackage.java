@@ -169,13 +169,22 @@ public interface AssemblyPackage extends EPackage {
 	int COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONTAINED_ASSEMBLY_CONTEXTS = RepositoryPackage.PROVIDING_AND_REQUIRING_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Connectors</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONNECTORS = RepositoryPackage.PROVIDING_AND_REQUIRING_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Composite Providing And Requiring Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT_FEATURE_COUNT = RepositoryPackage.PROVIDING_AND_REQUIRING_ELEMENT_FEATURE_COUNT + 1;
+	int COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT_FEATURE_COUNT = RepositoryPackage.PROVIDING_AND_REQUIRING_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Composite Providing And Requiring Element</em>' class.
@@ -242,13 +251,22 @@ public interface AssemblyPackage extends EPackage {
 	int COMPOSITE_COMPONENT__CONTAINED_ASSEMBLY_CONTEXTS = RepositoryPackage.COMPONENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Connectors</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_COMPONENT__CONNECTORS = RepositoryPackage.COMPONENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Composite Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_COMPONENT_FEATURE_COUNT = RepositoryPackage.COMPONENT_FEATURE_COUNT + 1;
+	int COMPOSITE_COMPONENT_FEATURE_COUNT = RepositoryPackage.COMPONENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Composite Component</em>' class.
@@ -297,6 +315,15 @@ public interface AssemblyPackage extends EPackage {
 	int SYSTEM__CONTAINED_ASSEMBLY_CONTEXTS = COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONTAINED_ASSEMBLY_CONTEXTS;
 
 	/**
+	 * The feature id for the '<em><b>Connectors</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__CONNECTORS = COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONNECTORS;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -306,22 +333,13 @@ public interface AssemblyPackage extends EPackage {
 	int SYSTEM__NAME = COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>System Connectors</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYSTEM__SYSTEM_CONNECTORS = COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>System</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM_FEATURE_COUNT = COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT_FEATURE_COUNT + 2;
+	int SYSTEM_FEATURE_COUNT = COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>System</em>' class.
@@ -398,22 +416,13 @@ public interface AssemblyPackage extends EPackage {
 	int DELEGATION_CONNECTOR__INNER_ASSEMBLY_CONTEXT = CONNECTOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Outer Assembly Context</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DELEGATION_CONNECTOR__OUTER_ASSEMBLY_CONTEXT = CONNECTOR_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Delegation Connector</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DELEGATION_CONNECTOR_FEATURE_COUNT = CONNECTOR_FEATURE_COUNT + 2;
+	int DELEGATION_CONNECTOR_FEATURE_COUNT = CONNECTOR_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Delegation Connector</em>' class.
@@ -451,15 +460,6 @@ public interface AssemblyPackage extends EPackage {
 	 * @ordered
 	 */
 	int PROVIDED_DELEGATION_CONNECTOR__INNER_ASSEMBLY_CONTEXT = DELEGATION_CONNECTOR__INNER_ASSEMBLY_CONTEXT;
-
-	/**
-	 * The feature id for the '<em><b>Outer Assembly Context</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROVIDED_DELEGATION_CONNECTOR__OUTER_ASSEMBLY_CONTEXT = DELEGATION_CONNECTOR__OUTER_ASSEMBLY_CONTEXT;
 
 	/**
 	 * The feature id for the '<em><b>Inner Provided Role</b></em>' reference.
@@ -524,15 +524,6 @@ public interface AssemblyPackage extends EPackage {
 	 * @ordered
 	 */
 	int REQUIRED_DELEGATION_CONNECTOR__INNER_ASSEMBLY_CONTEXT = DELEGATION_CONNECTOR__INNER_ASSEMBLY_CONTEXT;
-
-	/**
-	 * The feature id for the '<em><b>Outer Assembly Context</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REQUIRED_DELEGATION_CONNECTOR__OUTER_ASSEMBLY_CONTEXT = DELEGATION_CONNECTOR__OUTER_ASSEMBLY_CONTEXT;
 
 	/**
 	 * The feature id for the '<em><b>Inner Required Role</b></em>' reference.
@@ -720,6 +711,17 @@ public interface AssemblyPackage extends EPackage {
 	EReference getCompositeProvidingAndRequiringElement_ContainedAssemblyContexts();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.cbsm.assembly.CompositeProvidingAndRequiringElement#getConnectors <em>Connectors</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Connectors</em>'.
+	 * @see edu.kit.ipd.sdq.cbsm.assembly.CompositeProvidingAndRequiringElement#getConnectors()
+	 * @see #getCompositeProvidingAndRequiringElement()
+	 * @generated
+	 */
+	EReference getCompositeProvidingAndRequiringElement_Connectors();
+
+	/**
 	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.cbsm.assembly.CompositeComponent <em>Composite Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -738,17 +740,6 @@ public interface AssemblyPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSystem();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.cbsm.assembly.System#getSystemConnectors <em>System Connectors</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>System Connectors</em>'.
-	 * @see edu.kit.ipd.sdq.cbsm.assembly.System#getSystemConnectors()
-	 * @see #getSystem()
-	 * @generated
-	 */
-	EReference getSystem_SystemConnectors();
 
 	/**
 	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.cbsm.assembly.Connector <em>Connector</em>}'.
@@ -780,17 +771,6 @@ public interface AssemblyPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDelegationConnector_InnerAssemblyContext();
-
-	/**
-	 * Returns the meta object for the reference '{@link edu.kit.ipd.sdq.cbsm.assembly.DelegationConnector#getOuterAssemblyContext <em>Outer Assembly Context</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Outer Assembly Context</em>'.
-	 * @see edu.kit.ipd.sdq.cbsm.assembly.DelegationConnector#getOuterAssemblyContext()
-	 * @see #getDelegationConnector()
-	 * @generated
-	 */
-	EReference getDelegationConnector_OuterAssemblyContext();
 
 	/**
 	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.cbsm.assembly.ProvidedDelegationConnector <em>Provided Delegation Connector</em>}'.
@@ -994,6 +974,14 @@ public interface AssemblyPackage extends EPackage {
 		EReference COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONTAINED_ASSEMBLY_CONTEXTS = eINSTANCE.getCompositeProvidingAndRequiringElement_ContainedAssemblyContexts();
 
 		/**
+		 * The meta object literal for the '<em><b>Connectors</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONNECTORS = eINSTANCE.getCompositeProvidingAndRequiringElement_Connectors();
+
+		/**
 		 * The meta object literal for the '{@link edu.kit.ipd.sdq.cbsm.assembly.impl.CompositeComponentImpl <em>Composite Component</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1012,14 +1000,6 @@ public interface AssemblyPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SYSTEM = eINSTANCE.getSystem();
-
-		/**
-		 * The meta object literal for the '<em><b>System Connectors</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SYSTEM__SYSTEM_CONNECTORS = eINSTANCE.getSystem_SystemConnectors();
 
 		/**
 		 * The meta object literal for the '{@link edu.kit.ipd.sdq.cbsm.assembly.impl.ConnectorImpl <em>Connector</em>}' class.
@@ -1048,14 +1028,6 @@ public interface AssemblyPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DELEGATION_CONNECTOR__INNER_ASSEMBLY_CONTEXT = eINSTANCE.getDelegationConnector_InnerAssemblyContext();
-
-		/**
-		 * The meta object literal for the '<em><b>Outer Assembly Context</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DELEGATION_CONNECTOR__OUTER_ASSEMBLY_CONTEXT = eINSTANCE.getDelegationConnector_OuterAssemblyContext();
 
 		/**
 		 * The meta object literal for the '{@link edu.kit.ipd.sdq.cbsm.assembly.impl.ProvidedDelegationConnectorImpl <em>Provided Delegation Connector</em>}' class.

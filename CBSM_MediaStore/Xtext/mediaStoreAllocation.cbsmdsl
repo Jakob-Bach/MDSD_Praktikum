@@ -1,4 +1,6 @@
 Allocation MediaStore_Allocation {
+	allocatedSystem MediaStore_System
+	allocationEnvironment MediaStore_Environment
 	allocationContexts {
 		AllocationContext WebGUI_AllocationContext {
 			allocatedContainer "MediaStore_Environment.ApplicationServer"

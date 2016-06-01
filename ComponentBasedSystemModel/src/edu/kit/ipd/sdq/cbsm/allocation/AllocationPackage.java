@@ -86,13 +86,31 @@ public interface AllocationPackage extends EPackage {
 	int ALLOCATION__ALLOCATION_CONTEXTS = CorePackage.VIEW_TYPE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Allocated System</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALLOCATION__ALLOCATED_SYSTEM = CorePackage.VIEW_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Allocation Environment</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALLOCATION__ALLOCATION_ENVIRONMENT = CorePackage.VIEW_TYPE_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Allocation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ALLOCATION_FEATURE_COUNT = CorePackage.VIEW_TYPE_FEATURE_COUNT + 1;
+	int ALLOCATION_FEATURE_COUNT = CorePackage.VIEW_TYPE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Allocation</em>' class.
@@ -181,6 +199,28 @@ public interface AllocationPackage extends EPackage {
 	EReference getAllocation_AllocationContexts();
 
 	/**
+	 * Returns the meta object for the reference '{@link edu.kit.ipd.sdq.cbsm.allocation.Allocation#getAllocatedSystem <em>Allocated System</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Allocated System</em>'.
+	 * @see edu.kit.ipd.sdq.cbsm.allocation.Allocation#getAllocatedSystem()
+	 * @see #getAllocation()
+	 * @generated
+	 */
+	EReference getAllocation_AllocatedSystem();
+
+	/**
+	 * Returns the meta object for the reference '{@link edu.kit.ipd.sdq.cbsm.allocation.Allocation#getAllocationEnvironment <em>Allocation Environment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Allocation Environment</em>'.
+	 * @see edu.kit.ipd.sdq.cbsm.allocation.Allocation#getAllocationEnvironment()
+	 * @see #getAllocation()
+	 * @generated
+	 */
+	EReference getAllocation_AllocationEnvironment();
+
+	/**
 	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.cbsm.allocation.AllocationContext <em>Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -252,6 +292,22 @@ public interface AllocationPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ALLOCATION__ALLOCATION_CONTEXTS = eINSTANCE.getAllocation_AllocationContexts();
+
+		/**
+		 * The meta object literal for the '<em><b>Allocated System</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ALLOCATION__ALLOCATED_SYSTEM = eINSTANCE.getAllocation_AllocatedSystem();
+
+		/**
+		 * The meta object literal for the '<em><b>Allocation Environment</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ALLOCATION__ALLOCATION_ENVIRONMENT = eINSTANCE.getAllocation_AllocationEnvironment();
 
 		/**
 		 * The meta object literal for the '{@link edu.kit.ipd.sdq.cbsm.allocation.impl.AllocationContextImpl <em>Context</em>}' class.

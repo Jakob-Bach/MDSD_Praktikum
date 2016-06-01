@@ -107,6 +107,30 @@ Repository MediaStore_Repository {
 					instantiatedComponent DBCache
 				}
 			}
+			connectors {
+				ProvidedDelegationConnector MediaManager_MediaStore_DelegationConnector {
+					innerAssemblyContext MediaManager_AssemblyContext
+					innerProvidedRole "MediaManager.MediaManager_MediaStore_ProvidedRole"
+					outerProvidedRole MediaStore_MediaStore_ProvidedRole
+				},
+				RequiredDelegationConnector DBCache_MediaStore_DelegationConnector {
+					innerAssemblyContext DBCache_AssemblyContext
+					innerRequiredRole "DBCache.DBCache_AudioDB_RequiredRole"
+					outerRequiredRole MediaStore_AudioDB_RequiredRole
+				},
+				AssemblyConnector DigitalWatermarking_MediaManager_AssemblyConnector {
+					connectedProvidedRole "DigitalWaterMarking.DigitalWaterMarking_Sound_ProvidedRole"
+					connectedRequiredRole "MediaManager.MediaManger_Sound_RequiredRole"
+					connectedProvidedAssemblyContext DigitalWatermarking_AssemblyContext
+					connectedRequiredAssemblyContext MediaManager_AssemblyContext
+				},
+				AssemblyConnector DBCache_MediaManager_AssemblyConnector {
+					connectedProvidedRole "DBCache.DBCache_AudioDB_ProvidedRole"
+					connectedRequiredRole "MediaManager.MediaManger_AudioDB_RequiredRole"
+					connectedProvidedAssemblyContext DBCache_AssemblyContext
+					connectedRequiredAssemblyContext MediaManager_AssemblyContext
+				}
+			}
 		}
 	}
 }

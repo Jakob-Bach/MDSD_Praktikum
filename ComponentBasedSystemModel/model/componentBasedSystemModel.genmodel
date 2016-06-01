@@ -108,17 +108,14 @@
       </genClasses>
       <genClasses image="false" ecoreClass="componentBasedSystemModel.ecore#//assembly/CompositeProvidingAndRequiringElement">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentBasedSystemModel.ecore#//assembly/CompositeProvidingAndRequiringElement/containedAssemblyContexts"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentBasedSystemModel.ecore#//assembly/CompositeProvidingAndRequiringElement/connectors"/>
       </genClasses>
       <genClasses ecoreClass="componentBasedSystemModel.ecore#//assembly/CompositeComponent"/>
-      <genClasses ecoreClass="componentBasedSystemModel.ecore#//assembly/System">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentBasedSystemModel.ecore#//assembly/System/systemConnectors"/>
-      </genClasses>
+      <genClasses ecoreClass="componentBasedSystemModel.ecore#//assembly/System"/>
       <genClasses ecoreClass="componentBasedSystemModel.ecore#//assembly/Connector"/>
       <genClasses ecoreClass="componentBasedSystemModel.ecore#//assembly/DelegationConnector">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference componentBasedSystemModel.ecore#//assembly/DelegationConnector/innerAssemblyContext"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference componentBasedSystemModel.ecore#//assembly/DelegationConnector/outerAssemblyContext"/>
       </genClasses>
       <genClasses ecoreClass="componentBasedSystemModel.ecore#//assembly/ProvidedDelegationConnector">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -162,6 +159,10 @@
         ecorePackage="componentBasedSystemModel.ecore#//allocation">
       <genClasses ecoreClass="componentBasedSystemModel.ecore#//allocation/Allocation">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentBasedSystemModel.ecore#//allocation/Allocation/allocationContexts"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference componentBasedSystemModel.ecore#//allocation/Allocation/allocatedSystem"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference componentBasedSystemModel.ecore#//allocation/Allocation/allocationEnvironment"/>
       </genClasses>
       <genClasses ecoreClass="componentBasedSystemModel.ecore#//allocation/AllocationContext">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"

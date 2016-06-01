@@ -18,8 +18,8 @@ import edu.kit.ipd.sdq.cbsm.repository.RequiredRole;
  * </ul>
  *
  * @see edu.kit.ipd.sdq.cbsm.assembly.AssemblyPackage#getRequiredDelegationConnector()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='InnerRoleBelongsToInnerAssemblyContext OuterRoleBelongsToOuterAssemblyContext SameInterfaceIsDelegatedAsRequired'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot InnerRoleBelongsToInnerAssemblyContext='self.innerAssemblyContext.assemblyContextRequiredRoles->exists(role| \n\t\t\t\trole = self.innerRequiredRole\n\t\t\t)' OuterRoleBelongsToOuterAssemblyContext='self.outerAssemblyContext.assemblyContextRequiredRoles->exists(role| \n\t\t\t\trole = self.outerRequiredRole\n\t\t\t)' SameInterfaceIsDelegatedAsRequired='self.outerRequiredRole.requiredInterface = \n\t\t\t\tself.innerRequiredRole.requiredInterface'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='InnerRoleBelongsToInnerAssemblyContext SameInterfaceIsDelegatedAsRequired'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot InnerRoleBelongsToInnerAssemblyContext='self.innerAssemblyContext.assemblyContextRequiredRoles->exists(role| \n\t\t\t\trole = self.innerRequiredRole\n\t\t\t)' SameInterfaceIsDelegatedAsRequired='self.outerRequiredRole.requiredInterface = \n\t\t\t\tself.innerRequiredRole.requiredInterface'"
  * @generated
  */
 public interface RequiredDelegationConnector extends DelegationConnector {

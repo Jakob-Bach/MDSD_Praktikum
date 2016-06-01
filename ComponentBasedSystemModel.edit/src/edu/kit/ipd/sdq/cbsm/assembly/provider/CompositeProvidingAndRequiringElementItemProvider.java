@@ -69,6 +69,7 @@ public class CompositeProvidingAndRequiringElementItemProvider extends Providing
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(AssemblyPackage.Literals.COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONTAINED_ASSEMBLY_CONTEXTS);
+			childrenFeatures.add(AssemblyPackage.Literals.COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONNECTORS);
 		}
 		return childrenFeatures;
 	}
@@ -111,6 +112,7 @@ public class CompositeProvidingAndRequiringElementItemProvider extends Providing
 
 		switch (notification.getFeatureID(CompositeProvidingAndRequiringElement.class)) {
 			case AssemblyPackage.COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONTAINED_ASSEMBLY_CONTEXTS:
+			case AssemblyPackage.COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONNECTORS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -132,6 +134,21 @@ public class CompositeProvidingAndRequiringElementItemProvider extends Providing
 			(createChildParameter
 				(AssemblyPackage.Literals.COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONTAINED_ASSEMBLY_CONTEXTS,
 				 AssemblyFactory.eINSTANCE.createAssemblyContext()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(AssemblyPackage.Literals.COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONNECTORS,
+				 AssemblyFactory.eINSTANCE.createProvidedDelegationConnector()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(AssemblyPackage.Literals.COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONNECTORS,
+				 AssemblyFactory.eINSTANCE.createRequiredDelegationConnector()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(AssemblyPackage.Literals.COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONNECTORS,
+				 AssemblyFactory.eINSTANCE.createAssemblyConnector()));
 	}
 
 	/**

@@ -167,6 +167,8 @@
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="containedAssemblyContexts"
           upperBound="-1" eType="#//assembly/AssemblyContext" containment="true" eOpposite="#//assembly/AssemblyContext/parentCompositeElement"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1"
+          eType="#//assembly/Connector" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="CompositeComponent" eSuperTypes="#//repository/Component #//assembly/CompositeProvidingAndRequiringElement"/>
     <eClassifiers xsi:type="ecore:EClass" name="System" eSuperTypes="#//assembly/CompositeProvidingAndRequiringElement #//core/ViewType">
@@ -176,31 +178,19 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
         <details key="ProvidesAtLeastOneInterface" value="not self.providedRoles->isEmpty()"/>
       </eAnnotations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="systemConnectors" upperBound="-1"
-          eType="#//assembly/Connector" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Connector" abstract="true" eSuperTypes="#//core/NamedElement"/>
     <eClassifiers xsi:type="ecore:EClass" name="DelegationConnector" abstract="true"
         eSuperTypes="#//assembly/Connector">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="ConnectsOuterAndInnerAssemblyContextOfSameCompositeElement"/>
-      </eAnnotations>
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-        <details key="ConnectsOuterAndInnerAssemblyContextOfSameCompositeElement"
-            value="&#xA;&#x9;&#x9;&#x9;&#x9;self.innerAssemblyContext.parentCompositeElement = self.outerAssemblyContext.instantiatedComponent"/>
-      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="innerAssemblyContext"
-          lowerBound="1" eType="#//assembly/AssemblyContext"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="outerAssemblyContext"
           lowerBound="1" eType="#//assembly/AssemblyContext"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ProvidedDelegationConnector" eSuperTypes="#//assembly/DelegationConnector">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="InnerRoleBelongsToInnerAssemblyContext OuterRoleBelongsToOuterAssemblyContext SameInterfaceIsDelegatedAsProvided"/>
+        <details key="constraints" value="InnerRoleBelongsToInnerAssemblyContext SameInterfaceIsDelegatedAsProvided"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
         <details key="InnerRoleBelongsToInnerAssemblyContext" value="self.innerAssemblyContext.assemblyContextProvidedRoles->exists(role| &#xA;&#x9;&#x9;&#x9;&#x9;role = self.innerProvidedRole&#xA;&#x9;&#x9;&#x9;)"/>
-        <details key="OuterRoleBelongsToOuterAssemblyContext" value="self.outerAssemblyContext.assemblyContextProvidedRoles->exists(role| &#xA;&#x9;&#x9;&#x9;&#x9;role = self.outerProvidedRole&#xA;&#x9;&#x9;&#x9;)"/>
         <details key="SameInterfaceIsDelegatedAsProvided" value="self.outerProvidedRole.providedInterface = &#xA;&#x9;&#x9;&#x9;&#x9;self.innerProvidedRole.providedInterface"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="innerProvidedRole" lowerBound="1"
@@ -210,11 +200,10 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RequiredDelegationConnector" eSuperTypes="#//assembly/DelegationConnector">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="InnerRoleBelongsToInnerAssemblyContext OuterRoleBelongsToOuterAssemblyContext SameInterfaceIsDelegatedAsRequired"/>
+        <details key="constraints" value="InnerRoleBelongsToInnerAssemblyContext SameInterfaceIsDelegatedAsRequired"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
         <details key="InnerRoleBelongsToInnerAssemblyContext" value="self.innerAssemblyContext.assemblyContextRequiredRoles->exists(role| &#xA;&#x9;&#x9;&#x9;&#x9;role = self.innerRequiredRole&#xA;&#x9;&#x9;&#x9;)"/>
-        <details key="OuterRoleBelongsToOuterAssemblyContext" value="self.outerAssemblyContext.assemblyContextRequiredRoles->exists(role| &#xA;&#x9;&#x9;&#x9;&#x9;role = self.outerRequiredRole&#xA;&#x9;&#x9;&#x9;)"/>
         <details key="SameInterfaceIsDelegatedAsRequired" value="self.outerRequiredRole.requiredInterface = &#xA;&#x9;&#x9;&#x9;&#x9;self.innerRequiredRole.requiredInterface"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="innerRequiredRole" lowerBound="1"
@@ -270,14 +259,22 @@
     </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="Allocation" eSuperTypes="#//core/ViewType">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="AssemblyContextsConnectedByAssemblyConnectorAllocatedOnSameOrLinkedContainers"/>
+        <details key="constraints" value="AssemblyContextsConnectedByAssemblyConnectorAllocatedOnSameOrLinkedContainers AssemblyContextsOfAllocationContextsBelongToAllocatedSystem ContainersOfAllocationContextsBelongToAllocationEnvironment"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
         <details key="AssemblyContextsConnectedByAssemblyConnectorAllocatedOnSameOrLinkedContainers"
-            value="&#xA;&#x9;&#x9;&#x9;&#x9;self.allocationContexts->isEmpty()&#xA;&#x9;&#x9;&#x9;&#x9;-- get all AssemblyConnectors from System (assuming that only top-level&#xA;&#x9;&#x9;&#x9;&#x9;-- AssemblyContexts are allocated&#xA;&#x9;&#x9;&#x9;&#x9;or self.allocationContexts->first().allocatedAssemblyContext.parentCompositeElement.&#xA;&#x9;&#x9;&#x9;&#x9;oclAsType(assembly::System).systemConnectors->select(connector|&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;connector.oclIsKindOf(assembly::AssemblyConnector))->forAll(assemblyConnector|&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;-- get AllocationContexts for the two connected AssemblyContexts, check if&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;-- same Container&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;self.allocationContexts->select(allocationContext|&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;allocationContext.allocatedAssemblyContext = assemblyConnector.oclAsType(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;assembly::AssemblyConnector).connectedProvidedAssemblyContext &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;or allocationContext.allocatedAssemblyContext = assemblyConnector.oclAsType(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;assembly::AssemblyConnector).connectedRequiredAssemblyContext&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;).allocatedContainer->asSet()->size() = 1 &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;-- get all Links, check if there is one whose Containers contain both of the two&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;-- connected AssemblyContexts&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;or self.allocationContexts->first().allocatedContainer.parentEnvironment.links->exists(link|&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;link.linkedContainers->includesAll(self.allocationContexts->select(allocationContext|&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;allocationContext.allocatedAssemblyContext = assemblyConnector.oclAsType(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;assembly::AssemblyConnector).connectedProvidedAssemblyContext &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;or allocationContext.allocatedAssemblyContext = assemblyConnector.oclAsType(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;assembly::AssemblyConnector).connectedRequiredAssemblyContext&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;).allocatedContainer)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)"/>
+            value="&#xA;&#x9;&#x9;&#x9;&#x9;self.allocationContexts->isEmpty()&#xA;&#x9;&#x9;&#x9;&#x9;-- get all AssemblyConnectors from System (assuming that only top-level&#xA;&#x9;&#x9;&#x9;&#x9;-- AssemblyContexts are allocated)&#xA;&#x9;&#x9;&#x9;&#x9;or self.allocatedSystem.connectors->select(connector|&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;connector.oclIsKindOf(assembly::AssemblyConnector))->forAll(assemblyConnector|&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;-- get AllocationContexts for the two connected AssemblyContexts, check if&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;-- same Container&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;self.allocationContexts->select(allocationContext|&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;allocationContext.allocatedAssemblyContext = assemblyConnector.oclAsType(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;assembly::AssemblyConnector).connectedProvidedAssemblyContext &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;or allocationContext.allocatedAssemblyContext = assemblyConnector.oclAsType(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;assembly::AssemblyConnector).connectedRequiredAssemblyContext&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;).allocatedContainer->asSet()->size() = 1 &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;-- get all Links, check if there is one whose Containers contain both of the two&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;-- connected AssemblyContexts&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;or self.allocationEnvironment.links->exists(link|&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;link.linkedContainers->includesAll(self.allocationContexts->select(allocationContext|&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;allocationContext.allocatedAssemblyContext = assemblyConnector.oclAsType(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;assembly::AssemblyConnector).connectedProvidedAssemblyContext &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;or allocationContext.allocatedAssemblyContext = assemblyConnector.oclAsType(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;assembly::AssemblyConnector).connectedRequiredAssemblyContext&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;).allocatedContainer)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)"/>
+        <details key="AssemblyContextsOfAllocationContextsBelongToAllocatedSystem"
+            value="self.allocatedSystem.&#xA;&#x9;&#x9;&#x9;&#x9;containedAssemblyContexts->includesAll(self.allocationContexts.allocatedAssemblyContext)"/>
+        <details key="ContainersOfAllocationContextsBelongToAllocationEnvironment"
+            value="&#xA;&#x9;&#x9;&#x9;&#x9;self.allocationEnvironment.containers->includesAll(self.allocationContexts.allocatedContainer)"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="allocationContexts" upperBound="-1"
           eType="#//allocation/AllocationContext" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="allocatedSystem" lowerBound="1"
+          eType="#//assembly/System"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="allocationEnvironment"
+          lowerBound="1" eType="#//environment/Environment"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AllocationContext" eSuperTypes="#//core/NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">

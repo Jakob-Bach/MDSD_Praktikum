@@ -15,42 +15,23 @@ System MediaStore_System {
 			instantiatedComponent "MediaStore_Repository.PoolingAudioDB"
 		}
 	}
-	systemConnectors {
-		ProvidedDelegationConnector MediaManager_MediaStore_DelegationConnector {
-			innerAssemblyContext "MediaStore_Repository.MediaStore.MediaManager_AssemblyContext"
-			outerAssemblyContext MediaStore_AssemblyContext
-			innerProvidedRole "MediaStore_Repository.MediaManager.MediaManager_MediaStore_ProvidedRole"
-			outerProvidedRole "MediaStore_Repository.MediaStore.MediaStore_MediaStore_ProvidedRole"
-		},
-		RequiredDelegationConnector DBCache_MediaStore_DelegationConnector {
-			innerAssemblyContext "MediaStore_Repository.MediaStore.DBCache_AssemblyContext"
-			outerAssemblyContext MediaStore_AssemblyContext
-			innerRequiredRole "MediaStore_Repository.DBCache.DBCache_AudioDB_RequiredRole"
-			outerRequiredRole "MediaStore_Repository.MediaStore.MediaStore_AudioDB_RequiredRole"
-		},
+	connectors {
 		AssemblyConnector MediaStore_WebGUI_AssemblyConnector {
 			connectedProvidedRole "MediaStore_Repository.MediaStore.MediaStore_MediaStore_ProvidedRole"
 			connectedRequiredRole "MediaStore_Repository.WebGUI.WebGUI_MediaStore_RequiredRole"
 			connectedProvidedAssemblyContext MediaStore_AssemblyContext
 			connectedRequiredAssemblyContext WebGUI_AssemblyContext
 		},
-		AssemblyConnector DigitalWatermarking_MediaManager_AssemblyConnector {
-			connectedProvidedRole "MediaStore_Repository.DigitalWaterMarking.DigitalWaterMarking_Sound_ProvidedRole"
-			connectedRequiredRole "MediaStore_Repository.MediaManager.MediaManger_Sound_RequiredRole"
-			connectedProvidedAssemblyContext "MediaStore_Repository.MediaStore.DigitalWatermarking_AssemblyContext"
-			connectedRequiredAssemblyContext "MediaStore_Repository.MediaStore.MediaManager_AssemblyContext"
-		},
-		AssemblyConnector DBCache_MediaManager_AssemblyConnector {
-			connectedProvidedRole "MediaStore_Repository.DBCache.DBCache_AudioDB_ProvidedRole"
-			connectedRequiredRole "MediaStore_Repository.MediaManager.MediaManger_AudioDB_RequiredRole"
-			connectedProvidedAssemblyContext "MediaStore_Repository.MediaStore.DBCache_AssemblyContext"
-			connectedRequiredAssemblyContext "MediaStore_Repository.MediaStore.MediaManager_AssemblyContext"
-		},
 		AssemblyConnector PoolingAudioDB_MediaStore_AssemblyConnector {
 			connectedProvidedRole "MediaStore_Repository.PoolingAudioDB.PoolingAudioDB_AudioDB_ProvidedRole"
 			connectedRequiredRole "MediaStore_Repository.MediaStore.MediaStore_AudioDB_RequiredRole"
 			connectedProvidedAssemblyContext PoolingAudioDB_AssemblyContext
 			connectedRequiredAssemblyContext MediaStore_AssemblyContext
+		},
+		ProvidedDelegationConnector WebGUI_System_DelegationConnector {
+			innerAssemblyContext WebGUI_AssemblyContext
+			innerProvidedRole "MediaStore_Repository.WebGUI.WebGUI_HTTP_ProvidedRole"
+			outerProvidedRole System_HTTP_ProvidedRole
 		}
 	}
 }

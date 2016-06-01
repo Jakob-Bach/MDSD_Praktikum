@@ -40,5 +40,9 @@
     <containedAssemblyContexts name="MediaManager_AssemblyContext" instantiatedComponent="//@components.1"/>
     <containedAssemblyContexts name="DigitalWatermarking_AssemblyContext" instantiatedComponent="//@components.3"/>
     <containedAssemblyContexts name="DBCache_AssemblyContext" instantiatedComponent="//@components.2"/>
+    <connectors xsi:type="assembly:ProvidedDelegationConnector" name="MediaManager_MediaStore_DelegationConnector" innerAssemblyContext="//@components.5/@containedAssemblyContexts.0" innerProvidedRole="//@components.1/@providedRoles.0" outerProvidedRole="//@components.5/@providedRoles.0"/>
+    <connectors xsi:type="assembly:RequiredDelegationConnector" name="DBCache_MediaStore_DelegationConnector" innerAssemblyContext="//@components.5/@containedAssemblyContexts.2" innerRequiredRole="//@components.2/@requiredRoles.0" outerRequiredRole="//@components.5/@requiredRoles.0"/>
+    <connectors xsi:type="assembly:AssemblyConnector" name="DigitalWatermarking_MediaManager_AssemblyConnector" connectedProvidedRole="//@components.3/@providedRoles.0" connectedRequiredRole="//@components.1/@requiredRoles.1" connectedProvidedAssemblyContext="//@components.5/@containedAssemblyContexts.1" connectedRequiredAssemblyContext="//@components.5/@containedAssemblyContexts.0"/>
+    <connectors xsi:type="assembly:AssemblyConnector" name="DBCache_MediaManager_AssemblyConnector" connectedProvidedRole="//@components.2/@providedRoles.0" connectedRequiredRole="//@components.1/@requiredRoles.0" connectedProvidedAssemblyContext="//@components.5/@containedAssemblyContexts.2" connectedRequiredAssemblyContext="//@components.5/@containedAssemblyContexts.0"/>
   </components>
 </repository:Repository>
