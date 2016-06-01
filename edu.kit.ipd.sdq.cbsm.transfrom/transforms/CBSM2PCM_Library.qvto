@@ -20,9 +20,9 @@ abstract mapping CBSM::core::NamedElement::NamedElement2NamedElement() :
 mapping CBSM::repository::Repository::Repository2Repository() :
 		PCM::repository::Repository
 {
-	components__Repository := self.components -> map Component2RepositoryComponent();
-	interfaces__Repository := self.interfaces -> map Interface2OperationInterface();
 	dataTypes__Repository := self.dataTypes -> map DataType2DataType();
+	interfaces__Repository := self.interfaces -> map Interface2OperationInterface();
+	components__Repository := self.components -> map Component2RepositoryComponent();
 }
 
 mapping CBSM::repository::Interface::Interface2OperationInterface() :
@@ -236,7 +236,9 @@ inherits CBSM::repository::ProvidingAndRequiringElement::
 
 mapping CBSM::assembly::CompositeComponent::CompositeComponent2CompositeComponent() :
 		PCM::repository::CompositeComponent
-inherits CBSM::repository::Component::Component2RepositoryComponent_abstract
+inherits CBSM::repository::Component::Component2RepositoryComponent_abstract,
+		CBSM::assembly::CompositeProvidingAndRequiringElement::
+			CompositeProvidingAndRequiringElement2ComposedProvidingRequiringEntity
 {
 
 }
