@@ -25,7 +25,7 @@ tmp/
 *.swp
 *~.nib
 local.properties
-.settings/
+**/.settings/**
 .loadpath
 .recommenders
 
@@ -36,7 +36,7 @@ local.properties
 .externalToolBuilders/
 
 # Locally stored "Eclipse launch configurations"
-*.launch
+# *.launch # needed for transformation project
 
 # PyDev specific (Python IDE for Eclipse)
 *.pydevproject
@@ -74,5 +74,7 @@ local.properties
 *.java._trace
 *.java_trace
 
-# XMI serialization
-serialized/
+### QVT ###
+
+# don't ignore URI mapping
+!**/.settings/*.urimap

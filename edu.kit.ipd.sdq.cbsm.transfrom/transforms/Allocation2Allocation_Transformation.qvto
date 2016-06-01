@@ -1,0 +1,33 @@
+import Assembly2System_Transformation;
+import Environment2ResourceEnvironment_Transformation;
+import Simple_Allocation2Allocation_Transformation;
+
+modeltype CBSM "strict" uses "http://sdq.ipd.kit.edu/componentBasedSystemModel";
+modeltype PCM "strict" uses "http://palladiosimulator.org/PalladioComponentModel/5.1";
+
+modeltype CBSM_REPO "strict" uses "http://sdq.ipd.kit.edu/componentBasedSystemModel/repository";
+modeltype PCM_REPO "strict" uses "http://palladiosimulator.org/PalladioComponentModel/Repository/5.1";
+modeltype CBSM_ASS "strict" uses "http://sdq.ipd.kit.edu/componentBasedSystemModel/assembly";
+modeltype PCM_SYS "strict" uses "http://palladiosimulator.org/PalladioComponentModel/System/5.1";
+modeltype CBSM_ENV "strict" uses "http://sdq.ipd.kit.edu/componentBasedSystemModel/environment";
+modeltype PCM_ENV "strict" uses "http://palladiosimulator.org/PalladioComponentModel/ResourceEnvironment/5.1";
+modeltype CBSM_ALLO "strict" uses "http://sdq.ipd.kit.edu/componentBasedSystemModel/allocation";
+modeltype PCM_ALLO "strict" uses "http://palladiosimulator.org/PalladioComponentModel/Allocation/5.1";
+
+transformation Allocation2Allocation_Transformation(in cbsmRepository: CBSM_REPO, out pcmRepository: PCM_REPO,
+		in cbsmAssembly: CBSM_ASS, out pcmSystem: PCM_SYS, in cbsmEnvironment: CBSM_ENV,
+		out pcmResourceEnvironment: PCM_ENV, in cbsmAllocation: CBSM_ALLO, out pcmAllocation: PCM_ALLO)
+access Assembly2System_Transformation(in cbsmRepository: CBSM_REPO, out pcmRepository: PCM_REPO,
+		in cbsmAssembly: CBSM_ASS, out pcmSystem: PCM_SYS)
+access Environment2ResourceEnvironment_Transformation(in cbsmEnvironment: CBSM_ENV,
+		out pcmResourceEnvironment: PCM_ENV)
+access Simple_Allocation2Allocation_Transformation(in cbsmAllocation: CBSM_ALLO,
+		out pcmAllocation: PCM_ALLO)
+{
+	main()
+	{
+		new Assembly2System_Transformation(cbsmRepository, pcmRepository, cbsmAssembly, pcmSystem).transform();
+		new Environment2ResourceEnvironment_Transformation(cbsmEnvironment, pcmResourceEnvironment).transform();
+		new Simple_Allocation2Allocation_Transformation(cbsmAllocation, pcmAllocation).transform();
+	}
+}
