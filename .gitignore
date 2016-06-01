@@ -25,7 +25,7 @@ tmp/
 *.swp
 *~.nib
 local.properties
-.settings/
+**/.settings/**
 .loadpath
 .recommenders
 
@@ -74,3 +74,7 @@ local.properties
 *.java._trace
 *.java_trace
 
+### QVT ###
+
+# don't ignore URI mapping
+!**/.settings/*.urimap
