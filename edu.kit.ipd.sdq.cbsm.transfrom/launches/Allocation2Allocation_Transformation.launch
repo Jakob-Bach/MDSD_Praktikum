@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.m2m.qvt.oml.QvtTransformation">
+<booleanAttribute key="org.eclipse.m2m.qvt.oml.interpreter.clearContents1" value="true"/>
+<booleanAttribute key="org.eclipse.m2m.qvt.oml.interpreter.clearContents2" value="true"/>
+<booleanAttribute key="org.eclipse.m2m.qvt.oml.interpreter.clearContents3" value="true"/>
+<booleanAttribute key="org.eclipse.m2m.qvt.oml.interpreter.clearContents4" value="true"/>
+<booleanAttribute key="org.eclipse.m2m.qvt.oml.interpreter.clearContents5" value="true"/>
+<booleanAttribute key="org.eclipse.m2m.qvt.oml.interpreter.clearContents6" value="true"/>
+<booleanAttribute key="org.eclipse.m2m.qvt.oml.interpreter.clearContents7" value="true"/>
+<booleanAttribute key="org.eclipse.m2m.qvt.oml.interpreter.clearContents8" value="true"/>
+<mapAttribute key="org.eclipse.m2m.qvt.oml.interpreter.configurationProperties"/>
+<intAttribute key="org.eclipse.m2m.qvt.oml.interpreter.elemCount" value="8"/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.featureName1" value=""/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.featureName2" value=""/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.featureName3" value=""/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.featureName4" value=""/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.featureName5" value=""/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.featureName6" value=""/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.featureName7" value=""/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.featureName8" value=""/>
+<booleanAttribute key="org.eclipse.m2m.qvt.oml.interpreter.isInrementalUpdate" value="false"/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.module" value="platform:/resource/edu.kit.ipd.sdq.cbsm.transfrom/transforms/Allocation2Allocation_Transformation.qvto"/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.targetModel1" value="platform:/resource/CBSM_MediaStore/Ecore/mediaStore.repository"/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.targetModel2" value="platform:/resource/CBSM_MediaStore/PCM_Ecore/mediaStore.repository"/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.targetModel3" value="platform:/resource/CBSM_MediaStore/Ecore/mediaStore.assembly"/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.targetModel4" value="platform:/resource/CBSM_MediaStore/PCM_Ecore/mediaStore.system"/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.targetModel5" value="platform:/resource/CBSM_MediaStore/Ecore/mediaStore.environment"/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.targetModel6" value="platform:/resource/CBSM_MediaStore/PCM_Ecore/mediaStore.resourceenvironment"/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.targetModel7" value="platform:/resource/CBSM_MediaStore/Ecore/mediaStore.allocation"/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.targetModel8" value="platform:/resource/CBSM_MediaStore/PCM_Ecore/mediaStore.allocation"/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.targetType1" value="NEW_MODEL"/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.targetType2" value="NEW_MODEL"/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.targetType3" value="NEW_MODEL"/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.targetType4" value="NEW_MODEL"/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.targetType5" value="NEW_MODEL"/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.targetType6" value="NEW_MODEL"/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.targetType7" value="NEW_MODEL"/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.targetType8" value="NEW_MODEL"/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.traceFile" value="platform:/resource/CBSM_MediaStore/PCM_Ecore/mediaStore.Allocation2Allocation_Transformation.qvtotrace"/>
+<booleanAttribute key="org.eclipse.m2m.qvt.oml.interpreter.useTraceFile" value="false"/>
+</launchConfiguration>
