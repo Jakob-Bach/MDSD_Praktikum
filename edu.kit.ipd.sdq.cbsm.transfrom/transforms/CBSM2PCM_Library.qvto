@@ -319,8 +319,8 @@ inherits CBSM::assembly::Connector::Connector2Connector_abstract
 mapping CBSM::environment::Environment::Environment2ResourceEnvironment() :
 		PCM::resourceenvironment::ResourceEnvironment
 {
-	linkingResources__ResourceEnvironment := self.links -> map Link2LinkingResource();
 	resourceContainer_ResourceEnvironment := self.containers -> map Container2ResourceContainer();
+	linkingResources__ResourceEnvironment := self.links -> map Link2LinkingResource();
 }
 
 mapping CBSM::environment::Container::Container2ResourceContainer() :
@@ -338,7 +338,7 @@ inherits CBSM::core::NamedElement::NamedElement2NamedElement
 	resourceEnvironment_LinkingResource := self.parentEnvironment.
 		resolveone(PCM::resourceenvironment::ResourceEnvironment);
 	connectedResourceContainers_LinkingResource := self.linkedContainers.
-		resolveone(PCM::resourceenvironment::ResourceContainer);
+		resolve(PCM::resourceenvironment::ResourceContainer);
 }
 
 ------------------------------
