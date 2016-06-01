@@ -2,9 +2,8 @@
  */
 package edu.kit.ipd.sdq.cbsm.repository.behavior;
 
+import edu.kit.ipd.sdq.cbsm.core.NamedElement;
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface BehaviorDescription extends EObject {
+public interface BehaviorDescription extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Actions</b></em>' containment reference list.
 	 * The list contents are of type {@link edu.kit.ipd.sdq.cbsm.repository.behavior.Action}.

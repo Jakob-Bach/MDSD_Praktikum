@@ -69,7 +69,7 @@ public class ComponentItemProvider extends NamedElementItemProvider {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RepositoryPackage.Literals.PROVIDING_AND_REQUIRING_ELEMENT__PROVIDED_ROLES);
 			childrenFeatures.add(RepositoryPackage.Literals.PROVIDING_AND_REQUIRING_ELEMENT__REQUIRED_ROLES);
-			childrenFeatures.add(RepositoryPackage.Literals.COMPONENT__BEHAVIOR_DESCRIPTION);
+			childrenFeatures.add(RepositoryPackage.Literals.COMPONENT__BEHAVIOR_DESCRIPTIONS);
 		}
 		return childrenFeatures;
 	}
@@ -127,7 +127,7 @@ public class ComponentItemProvider extends NamedElementItemProvider {
 		switch (notification.getFeatureID(Component.class)) {
 			case RepositoryPackage.COMPONENT__PROVIDED_ROLES:
 			case RepositoryPackage.COMPONENT__REQUIRED_ROLES:
-			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTION:
+			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -157,7 +157,7 @@ public class ComponentItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RepositoryPackage.Literals.COMPONENT__BEHAVIOR_DESCRIPTION,
+				(RepositoryPackage.Literals.COMPONENT__BEHAVIOR_DESCRIPTIONS,
 				 BehaviorFactory.eINSTANCE.createBehaviorDescription()));
 	}
 

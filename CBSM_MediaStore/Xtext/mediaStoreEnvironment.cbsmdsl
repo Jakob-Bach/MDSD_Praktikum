@@ -1,4 +1,4 @@
-Environment {
+Environment MediaStore_Environment {
 	containers {
 		Container ApplicationServer,
 		Container DatabaseServer

@@ -50,7 +50,7 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentBasedSystemModel.ecore#//repository/ProvidingAndRequiringElement/requiredRoles"/>
       </genClasses>
       <genClasses ecoreClass="componentBasedSystemModel.ecore#//repository/Component">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentBasedSystemModel.ecore#//repository/Component/behaviorDescription"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentBasedSystemModel.ecore#//repository/Component/behaviorDescriptions"/>
       </genClasses>
       <genClasses ecoreClass="componentBasedSystemModel.ecore#//repository/Signature">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
@@ -85,13 +85,13 @@
               ecoreFeature="ecore:EReference componentBasedSystemModel.ecore#//repository/behavior/ExternalCall/requiredRoleOfService"/>
         </genClasses>
         <genClasses ecoreClass="componentBasedSystemModel.ecore#//repository/behavior/Loop">
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentBasedSystemModel.ecore#//repository/behavior/Loop/loopActions"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentBasedSystemModel.ecore#//repository/behavior/Loop/loopBehavior"/>
         </genClasses>
         <genClasses ecoreClass="componentBasedSystemModel.ecore#//repository/behavior/Branch">
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentBasedSystemModel.ecore#//repository/behavior/Branch/branchPaths"/>
         </genClasses>
         <genClasses ecoreClass="componentBasedSystemModel.ecore#//repository/behavior/BranchPath">
-          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentBasedSystemModel.ecore#//repository/behavior/BranchPath/pathActions"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentBasedSystemModel.ecore#//repository/behavior/BranchPath/branchBehavior"/>
         </genClasses>
       </nestedGenPackages>
     </nestedGenPackages>

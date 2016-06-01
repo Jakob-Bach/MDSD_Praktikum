@@ -4,6 +4,7 @@ package edu.kit.ipd.sdq.cbsm.repository;
 
 import edu.kit.ipd.sdq.cbsm.core.NamedElement;
 import edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorDescription;
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,7 +15,7 @@ import edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorDescription;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link edu.kit.ipd.sdq.cbsm.repository.Component#getBehaviorDescription <em>Behavior Description</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.cbsm.repository.Component#getBehaviorDescriptions <em>Behavior Descriptions</em>}</li>
  * </ul>
  *
  * @see edu.kit.ipd.sdq.cbsm.repository.RepositoryPackage#getComponent()
@@ -23,29 +24,19 @@ import edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorDescription;
  */
 public interface Component extends NamedElement, ProvidingAndRequiringElement {
 	/**
-	 * Returns the value of the '<em><b>Behavior Description</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Behavior Descriptions</b></em>' containment reference list.
+	 * The list contents are of type {@link edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorDescription}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Behavior Description</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Behavior Descriptions</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Behavior Description</em>' containment reference.
-	 * @see #setBehaviorDescription(BehaviorDescription)
-	 * @see edu.kit.ipd.sdq.cbsm.repository.RepositoryPackage#getComponent_BehaviorDescription()
+	 * @return the value of the '<em>Behavior Descriptions</em>' containment reference list.
+	 * @see edu.kit.ipd.sdq.cbsm.repository.RepositoryPackage#getComponent_BehaviorDescriptions()
 	 * @model containment="true"
 	 * @generated
 	 */
-	BehaviorDescription getBehaviorDescription();
-
-	/**
-	 * Sets the value of the '{@link edu.kit.ipd.sdq.cbsm.repository.Component#getBehaviorDescription <em>Behavior Description</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Behavior Description</em>' containment reference.
-	 * @see #getBehaviorDescription()
-	 * @generated
-	 */
-	void setBehaviorDescription(BehaviorDescription value);
+	EList<BehaviorDescription> getBehaviorDescriptions();
 
 } // Component

@@ -69,13 +69,22 @@ public interface BehaviorPackage extends EPackage {
 	int BEHAVIOR_DESCRIPTION = 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOR_DESCRIPTION__NAME = CorePackage.NAMED_ELEMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIOR_DESCRIPTION__ACTIONS = 0;
+	int BEHAVIOR_DESCRIPTION__ACTIONS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Description</em>' class.
@@ -84,7 +93,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIOR_DESCRIPTION_FEATURE_COUNT = 1;
+	int BEHAVIOR_DESCRIPTION_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Description</em>' class.
@@ -93,7 +102,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIOR_DESCRIPTION_OPERATION_COUNT = 0;
+	int BEHAVIOR_DESCRIPTION_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link edu.kit.ipd.sdq.cbsm.repository.behavior.impl.ActionImpl <em>Action</em>}' class.
@@ -316,13 +325,13 @@ public interface BehaviorPackage extends EPackage {
 	int LOOP__SUCCESSOR = ACTION__SUCCESSOR;
 
 	/**
-	 * The feature id for the '<em><b>Loop Actions</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Loop Behavior</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOOP__LOOP_ACTIONS = ACTION_FEATURE_COUNT + 0;
+	int LOOP__LOOP_BEHAVIOR = ACTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Loop</em>' class.
@@ -426,13 +435,13 @@ public interface BehaviorPackage extends EPackage {
 	int BRANCH_PATH__NAME = CorePackage.NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Path Actions</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Branch Behavior</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BRANCH_PATH__PATH_ACTIONS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int BRANCH_PATH__BRANCH_BEHAVIOR = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Branch Path</em>' class.
@@ -559,15 +568,15 @@ public interface BehaviorPackage extends EPackage {
 	EClass getLoop();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.cbsm.repository.behavior.Loop#getLoopActions <em>Loop Actions</em>}'.
+	 * Returns the meta object for the containment reference '{@link edu.kit.ipd.sdq.cbsm.repository.behavior.Loop#getLoopBehavior <em>Loop Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Loop Actions</em>'.
-	 * @see edu.kit.ipd.sdq.cbsm.repository.behavior.Loop#getLoopActions()
+	 * @return the meta object for the containment reference '<em>Loop Behavior</em>'.
+	 * @see edu.kit.ipd.sdq.cbsm.repository.behavior.Loop#getLoopBehavior()
 	 * @see #getLoop()
 	 * @generated
 	 */
-	EReference getLoop_LoopActions();
+	EReference getLoop_LoopBehavior();
 
 	/**
 	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.cbsm.repository.behavior.Branch <em>Branch</em>}'.
@@ -601,15 +610,15 @@ public interface BehaviorPackage extends EPackage {
 	EClass getBranchPath();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.cbsm.repository.behavior.BranchPath#getPathActions <em>Path Actions</em>}'.
+	 * Returns the meta object for the containment reference '{@link edu.kit.ipd.sdq.cbsm.repository.behavior.BranchPath#getBranchBehavior <em>Branch Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Path Actions</em>'.
-	 * @see edu.kit.ipd.sdq.cbsm.repository.behavior.BranchPath#getPathActions()
+	 * @return the meta object for the containment reference '<em>Branch Behavior</em>'.
+	 * @see edu.kit.ipd.sdq.cbsm.repository.behavior.BranchPath#getBranchBehavior()
 	 * @see #getBranchPath()
 	 * @generated
 	 */
-	EReference getBranchPath_PathActions();
+	EReference getBranchPath_BranchBehavior();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -725,12 +734,12 @@ public interface BehaviorPackage extends EPackage {
 		EClass LOOP = eINSTANCE.getLoop();
 
 		/**
-		 * The meta object literal for the '<em><b>Loop Actions</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Loop Behavior</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LOOP__LOOP_ACTIONS = eINSTANCE.getLoop_LoopActions();
+		EReference LOOP__LOOP_BEHAVIOR = eINSTANCE.getLoop_LoopBehavior();
 
 		/**
 		 * The meta object literal for the '{@link edu.kit.ipd.sdq.cbsm.repository.behavior.impl.BranchImpl <em>Branch</em>}' class.
@@ -761,12 +770,12 @@ public interface BehaviorPackage extends EPackage {
 		EClass BRANCH_PATH = eINSTANCE.getBranchPath();
 
 		/**
-		 * The meta object literal for the '<em><b>Path Actions</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Branch Behavior</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BRANCH_PATH__PATH_ACTIONS = eINSTANCE.getBranchPath_PathActions();
+		EReference BRANCH_PATH__BRANCH_BEHAVIOR = eINSTANCE.getBranchPath_BranchBehavior();
 
 	}
 

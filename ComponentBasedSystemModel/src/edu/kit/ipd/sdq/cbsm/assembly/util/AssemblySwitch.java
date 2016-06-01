@@ -107,6 +107,7 @@ public class AssemblySwitch<T> extends Switch<T> {
 				if (result == null) result = caseCompositeProvidingAndRequiringElement(system);
 				if (result == null) result = caseViewType(system);
 				if (result == null) result = caseProvidingAndRequiringElement(system);
+				if (result == null) result = caseNamedElement(system);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

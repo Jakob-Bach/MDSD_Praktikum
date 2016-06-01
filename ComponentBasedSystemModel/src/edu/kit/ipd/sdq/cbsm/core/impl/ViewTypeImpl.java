@@ -7,8 +7,6 @@ import edu.kit.ipd.sdq.cbsm.core.ViewType;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>View Type</b></em>'.
@@ -16,7 +14,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public abstract class ViewTypeImpl extends MinimalEObjectImpl.Container implements ViewType {
+public abstract class ViewTypeImpl extends NamedElementImpl implements ViewType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

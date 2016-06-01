@@ -10,16 +10,12 @@ import edu.kit.ipd.sdq.cbsm.repository.RepositoryPackage;
 import edu.kit.ipd.sdq.cbsm.repository.RequiredRole;
 import edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorDescription;
 import java.util.Collection;
-
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -33,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link edu.kit.ipd.sdq.cbsm.repository.impl.ComponentImpl#getProvidedRoles <em>Provided Roles</em>}</li>
  *   <li>{@link edu.kit.ipd.sdq.cbsm.repository.impl.ComponentImpl#getRequiredRoles <em>Required Roles</em>}</li>
- *   <li>{@link edu.kit.ipd.sdq.cbsm.repository.impl.ComponentImpl#getBehaviorDescription <em>Behavior Description</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.cbsm.repository.impl.ComponentImpl#getBehaviorDescriptions <em>Behavior Descriptions</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,14 +56,14 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 	protected EList<RequiredRole> requiredRoles;
 
 	/**
-	 * The cached value of the '{@link #getBehaviorDescription() <em>Behavior Description</em>}' containment reference.
+	 * The cached value of the '{@link #getBehaviorDescriptions() <em>Behavior Descriptions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBehaviorDescription()
+	 * @see #getBehaviorDescriptions()
 	 * @generated
 	 * @ordered
 	 */
-	protected BehaviorDescription behaviorDescription;
+	protected EList<BehaviorDescription> behaviorDescriptions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -117,42 +113,11 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BehaviorDescription getBehaviorDescription() {
-		return behaviorDescription;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetBehaviorDescription(BehaviorDescription newBehaviorDescription, NotificationChain msgs) {
-		BehaviorDescription oldBehaviorDescription = behaviorDescription;
-		behaviorDescription = newBehaviorDescription;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTION, oldBehaviorDescription, newBehaviorDescription);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public EList<BehaviorDescription> getBehaviorDescriptions() {
+		if (behaviorDescriptions == null) {
+			behaviorDescriptions = new EObjectContainmentEList<BehaviorDescription>(BehaviorDescription.class, this, RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTIONS);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setBehaviorDescription(BehaviorDescription newBehaviorDescription) {
-		if (newBehaviorDescription != behaviorDescription) {
-			NotificationChain msgs = null;
-			if (behaviorDescription != null)
-				msgs = ((InternalEObject)behaviorDescription).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTION, null, msgs);
-			if (newBehaviorDescription != null)
-				msgs = ((InternalEObject)newBehaviorDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTION, null, msgs);
-			msgs = basicSetBehaviorDescription(newBehaviorDescription, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTION, newBehaviorDescription, newBehaviorDescription));
+		return behaviorDescriptions;
 	}
 
 	/**
@@ -167,8 +132,8 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 				return ((InternalEList<?>)getProvidedRoles()).basicRemove(otherEnd, msgs);
 			case RepositoryPackage.COMPONENT__REQUIRED_ROLES:
 				return ((InternalEList<?>)getRequiredRoles()).basicRemove(otherEnd, msgs);
-			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTION:
-				return basicSetBehaviorDescription(null, msgs);
+			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTIONS:
+				return ((InternalEList<?>)getBehaviorDescriptions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -185,8 +150,8 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 				return getProvidedRoles();
 			case RepositoryPackage.COMPONENT__REQUIRED_ROLES:
 				return getRequiredRoles();
-			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTION:
-				return getBehaviorDescription();
+			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTIONS:
+				return getBehaviorDescriptions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -208,8 +173,9 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 				getRequiredRoles().clear();
 				getRequiredRoles().addAll((Collection<? extends RequiredRole>)newValue);
 				return;
-			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTION:
-				setBehaviorDescription((BehaviorDescription)newValue);
+			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTIONS:
+				getBehaviorDescriptions().clear();
+				getBehaviorDescriptions().addAll((Collection<? extends BehaviorDescription>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -229,8 +195,8 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 			case RepositoryPackage.COMPONENT__REQUIRED_ROLES:
 				getRequiredRoles().clear();
 				return;
-			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTION:
-				setBehaviorDescription((BehaviorDescription)null);
+			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTIONS:
+				getBehaviorDescriptions().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -248,8 +214,8 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 				return providedRoles != null && !providedRoles.isEmpty();
 			case RepositoryPackage.COMPONENT__REQUIRED_ROLES:
 				return requiredRoles != null && !requiredRoles.isEmpty();
-			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTION:
-				return behaviorDescription != null;
+			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTIONS:
+				return behaviorDescriptions != null && !behaviorDescriptions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

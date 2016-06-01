@@ -95,29 +95,6 @@ public class BehaviorItemProviderAdapterFactory extends BehaviorAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.cbsm.repository.behavior.Action} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ActionItemProvider actionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link edu.kit.ipd.sdq.cbsm.repository.behavior.Action}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createActionAdapter() {
-		if (actionItemProvider == null) {
-			actionItemProvider = new ActionItemProvider(this);
-		}
-
-		return actionItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.cbsm.repository.behavior.InternalAction} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -332,7 +309,6 @@ public class BehaviorItemProviderAdapterFactory extends BehaviorAdapterFactory i
 	 */
 	public void dispose() {
 		if (behaviorDescriptionItemProvider != null) behaviorDescriptionItemProvider.dispose();
-		if (actionItemProvider != null) actionItemProvider.dispose();
 		if (internalActionItemProvider != null) internalActionItemProvider.dispose();
 		if (externalCallItemProvider != null) externalCallItemProvider.dispose();
 		if (loopItemProvider != null) loopItemProvider.dispose();

@@ -107,7 +107,10 @@ public class RepositoryItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Repository_type");
+		String label = ((Repository)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Repository_type") :
+			getString("_UI_Repository_type") + " " + label;
 	}
 	
 

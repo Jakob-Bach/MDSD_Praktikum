@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<allocation:Allocation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:allocation="http://sdq.ipd.kit.edu/componentBasedSystemModel/allocation">
+<allocation:Allocation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:allocation="http://sdq.ipd.kit.edu/componentBasedSystemModel/allocation" name="MediaStore_Allocation">
   <allocationContexts name="WebGUI_AllocationContext">
     <allocatedContainer href="mediaStore.environment#//@containers.0"/>
     <allocatedAssemblyContext href="mediaStore.assembly#//@containedAssemblyContexts.0"/>

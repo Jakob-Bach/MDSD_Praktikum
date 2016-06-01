@@ -4,8 +4,6 @@ package edu.kit.ipd.sdq.cbsm.repository.behavior;
 
 import edu.kit.ipd.sdq.cbsm.core.NamedElement;
 
-import org.eclipse.emf.common.util.EList;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Branch Path</b></em>'.
@@ -15,7 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link edu.kit.ipd.sdq.cbsm.repository.behavior.BranchPath#getPathActions <em>Path Actions</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.cbsm.repository.behavior.BranchPath#getBranchBehavior <em>Branch Behavior</em>}</li>
  * </ul>
  *
  * @see edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorPackage#getBranchPath()
@@ -24,19 +22,29 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface BranchPath extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Path Actions</b></em>' containment reference list.
-	 * The list contents are of type {@link edu.kit.ipd.sdq.cbsm.repository.behavior.Action}.
+	 * Returns the value of the '<em><b>Branch Behavior</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Path Actions</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Branch Behavior</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Path Actions</em>' containment reference list.
-	 * @see edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorPackage#getBranchPath_PathActions()
-	 * @model containment="true"
+	 * @return the value of the '<em>Branch Behavior</em>' containment reference.
+	 * @see #setBranchBehavior(BehaviorDescription)
+	 * @see edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorPackage#getBranchPath_BranchBehavior()
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<Action> getPathActions();
+	BehaviorDescription getBranchBehavior();
+
+	/**
+	 * Sets the value of the '{@link edu.kit.ipd.sdq.cbsm.repository.behavior.BranchPath#getBranchBehavior <em>Branch Behavior</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Branch Behavior</em>' containment reference.
+	 * @see #getBranchBehavior()
+	 * @generated
+	 */
+	void setBranchBehavior(BehaviorDescription value);
 
 } // BranchPath

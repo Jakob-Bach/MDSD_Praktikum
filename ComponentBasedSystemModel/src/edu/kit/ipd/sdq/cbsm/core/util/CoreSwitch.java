@@ -75,6 +75,7 @@ public class CoreSwitch<T> extends Switch<T> {
 			case CorePackage.VIEW_TYPE: {
 				ViewType viewType = (ViewType)theEObject;
 				T result = caseViewType(viewType);
+				if (result == null) result = caseNamedElement(viewType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

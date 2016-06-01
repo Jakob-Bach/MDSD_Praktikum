@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<assembly:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assembly="http://sdq.ipd.kit.edu/componentBasedSystemModel/assembly">
+<assembly:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assembly="http://sdq.ipd.kit.edu/componentBasedSystemModel/assembly" name="MediaStore_System">
   <providedRoles name="System_HTTP_ProvidedRole">
     <providedInterface href="mediaStore.repository#//@interfaces.0"/>
   </providedRoles>

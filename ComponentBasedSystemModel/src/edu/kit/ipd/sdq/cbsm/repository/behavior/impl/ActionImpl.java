@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class ActionImpl extends NamedElementImpl implements Action {
+public abstract class ActionImpl extends NamedElementImpl implements Action {
 	/**
 	 * The cached value of the '{@link #getPredecessor() <em>Predecessor</em>}' reference.
 	 * <!-- begin-user-doc -->

@@ -19,11 +19,12 @@ Connector returns assembly::Connector:
 	ProvidedDelegationConnector | RequiredDelegationConnector | AssemblyConnector;
 
 Action returns behavior::Action:
-	Action_Impl | InternalAction | ExternalCall | Loop | Branch;
+	InternalAction | ExternalCall | Loop | Branch;
 
 Repository returns repository::Repository:
 	{repository::Repository}
 	'Repository'
+	name=EString
 	'{'
 		('interfaces' '{' interfaces+=Interface ( "," interfaces+=Interface)* '}' )?
 		('components' '{' components+=Component ( "," components+=Component)* '}' )?
@@ -33,6 +34,7 @@ Repository returns repository::Repository:
 System returns assembly::System:
 	{assembly::System}
 	'System'
+	name=EString
 	'{'
 		('providedRoles' '{' providedRoles+=ProvidedRole ( "," providedRoles+=ProvidedRole)* '}' )?
 		('requiredRoles' '{' requiredRoles+=RequiredRole ( "," requiredRoles+=RequiredRole)* '}' )?
@@ -43,6 +45,7 @@ System returns assembly::System:
 Environment returns environment::Environment:
 	{environment::Environment}
 	'Environment'
+	name=EString
 	'{'
 		('containers' '{' containers+=Container ( "," containers+=Container)* '}' )?
 		('links' '{' links+=Link ( "," links+=Link)* '}' )?
@@ -51,6 +54,7 @@ Environment returns environment::Environment:
 Allocation returns allocation::Allocation:
 	{allocation::Allocation}
 	'Allocation'
+	name=EString
 	'{'
 		('allocationContexts' '{' allocationContexts+=AllocationContext ( "," allocationContexts+=AllocationContext)* '}' )?
 	'}';
@@ -73,7 +77,7 @@ BasicComponent returns repository::Component:
 	'{'
 		('providedRoles' '{' providedRoles+=ProvidedRole ( "," providedRoles+=ProvidedRole)* '}' )?
 		('requiredRoles' '{' requiredRoles+=RequiredRole ( "," requiredRoles+=RequiredRole)* '}' )?
-		('behaviorDescription' behaviorDescription=BehaviorDescription)?
+		('behaviorDescriptions' '{' behaviorDescriptions+=BehaviorDescription ( "," behaviorDescriptions+=BehaviorDescription)* '}')?
 	'}';
 
 CompositeComponent returns assembly::CompositeComponent:
@@ -83,7 +87,7 @@ CompositeComponent returns assembly::CompositeComponent:
 	'{'
 		('providedRoles' '{' providedRoles+=ProvidedRole ( "," providedRoles+=ProvidedRole)* '}' )?
 		('requiredRoles' '{' requiredRoles+=RequiredRole ( "," requiredRoles+=RequiredRole)* '}' )?
-		('behaviorDescription' behaviorDescription=BehaviorDescription)?
+		('behaviorDescriptions' '{' behaviorDescriptions+=BehaviorDescription ( "," behaviorDescriptions+=BehaviorDescription)* '}')?
 		('containedAssemblyContexts' '{' containedAssemblyContexts+=AssemblyContext ( "," containedAssemblyContexts+=AssemblyContext)* '}' )?
 	'}';
 
@@ -124,17 +128,9 @@ RequiredRole returns repository::RequiredRole:
 BehaviorDescription returns behavior::BehaviorDescription:
 	{behavior::BehaviorDescription}
 	'BehaviorDescription'
-	'{'
-		('actions' '{' actions+=Action ( "," actions+=Action)* '}' )?
-	'}';
-
-Action_Impl returns behavior::Action:
-	{behavior::Action}
-	'Action'
 	name=EString
 	'{'
-		('predecessor' predecessor=[behavior::Action|EString])?
-		('successor' successor=[behavior::Action|EString])?
+		('actions' '{' actions+=Action ( "," actions+=Action)* '}' )?
 	'}';
 
 InternalAction returns behavior::InternalAction:
@@ -163,7 +159,7 @@ Loop returns behavior::Loop:
 	'{'
 		('predecessor' predecessor=[behavior::Action|EString])?
 		('successor' successor=[behavior::Action|EString])?
-		('loopActions' '{' loopActions+=Action ( "," loopActions+=Action)* '}' )?
+		'loopBehavior' loopBehavior=BehaviorDescription
 	'}';
 
 Branch returns behavior::Branch:
@@ -181,7 +177,7 @@ BranchPath returns behavior::BranchPath:
 	'BranchPath'
 	name=EString
 	'{'
-		('pathActions' '{' pathActions+=Action ( "," pathActions+=Action)* '}' )?
+		'branchBehavior' branchBehavior=BehaviorDescription
 	'}';
 
 ComplexType returns repository::ComplexType:

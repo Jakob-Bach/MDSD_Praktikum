@@ -18,7 +18,7 @@ import edu.kit.ipd.sdq.cbsm.core.NamedElement;
  * </ul>
  *
  * @see edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorPackage#getAction()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Action extends NamedElement {

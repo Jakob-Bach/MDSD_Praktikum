@@ -278,7 +278,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLoop_LoopActions() {
+	public EReference getLoop_LoopBehavior() {
 		return (EReference)loopEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -314,7 +314,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBranchPath_PathActions() {
+	public EReference getBranchPath_BranchBehavior() {
 		return (EReference)branchPathEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -360,13 +360,13 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		createEReference(externalCallEClass, EXTERNAL_CALL__REQUIRED_ROLE_OF_SERVICE);
 
 		loopEClass = createEClass(LOOP);
-		createEReference(loopEClass, LOOP__LOOP_ACTIONS);
+		createEReference(loopEClass, LOOP__LOOP_BEHAVIOR);
 
 		branchEClass = createEClass(BRANCH);
 		createEReference(branchEClass, BRANCH__BRANCH_PATHS);
 
 		branchPathEClass = createEClass(BRANCH_PATH);
-		createEReference(branchPathEClass, BRANCH_PATH__PATH_ACTIONS);
+		createEReference(branchPathEClass, BRANCH_PATH__BRANCH_BEHAVIOR);
 	}
 
 	/**
@@ -401,6 +401,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		behaviorDescriptionEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		actionEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		internalActionEClass.getESuperTypes().add(this.getAction());
 		externalCallEClass.getESuperTypes().add(this.getAction());
@@ -412,7 +413,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		initEClass(behaviorDescriptionEClass, BehaviorDescription.class, "BehaviorDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBehaviorDescription_Actions(), this.getAction(), null, "actions", null, 0, -1, BehaviorDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(actionEClass, Action.class, "Action", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAction_Predecessor(), this.getAction(), null, "predecessor", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAction_Successor(), this.getAction(), null, "successor", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -423,13 +424,13 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		initEReference(getExternalCall_RequiredRoleOfService(), theRepositoryPackage.getRequiredRole(), null, "requiredRoleOfService", null, 1, 1, ExternalCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(loopEClass, Loop.class, "Loop", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLoop_LoopActions(), this.getAction(), null, "loopActions", null, 0, -1, Loop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLoop_LoopBehavior(), this.getBehaviorDescription(), null, "loopBehavior", null, 1, 1, Loop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(branchEClass, Branch.class, "Branch", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBranch_BranchPaths(), this.getBranchPath(), null, "branchPaths", null, 0, -1, Branch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(branchPathEClass, BranchPath.class, "BranchPath", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBranchPath_PathActions(), this.getAction(), null, "pathActions", null, 0, -1, BranchPath.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBranchPath_BranchBehavior(), this.getBehaviorDescription(), null, "branchBehavior", null, 1, 1, BranchPath.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore

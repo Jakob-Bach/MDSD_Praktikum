@@ -67,7 +67,7 @@ public class BranchPathItemProvider extends NamedElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(BehaviorPackage.Literals.BRANCH_PATH__PATH_ACTIONS);
+			childrenFeatures.add(BehaviorPackage.Literals.BRANCH_PATH__BRANCH_BEHAVIOR);
 		}
 		return childrenFeatures;
 	}
@@ -123,7 +123,7 @@ public class BranchPathItemProvider extends NamedElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(BranchPath.class)) {
-			case BehaviorPackage.BRANCH_PATH__PATH_ACTIONS:
+			case BehaviorPackage.BRANCH_PATH__BRANCH_BEHAVIOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -143,28 +143,8 @@ public class BranchPathItemProvider extends NamedElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(BehaviorPackage.Literals.BRANCH_PATH__PATH_ACTIONS,
-				 BehaviorFactory.eINSTANCE.createAction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BehaviorPackage.Literals.BRANCH_PATH__PATH_ACTIONS,
-				 BehaviorFactory.eINSTANCE.createInternalAction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BehaviorPackage.Literals.BRANCH_PATH__PATH_ACTIONS,
-				 BehaviorFactory.eINSTANCE.createExternalCall()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BehaviorPackage.Literals.BRANCH_PATH__PATH_ACTIONS,
-				 BehaviorFactory.eINSTANCE.createLoop()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BehaviorPackage.Literals.BRANCH_PATH__PATH_ACTIONS,
-				 BehaviorFactory.eINSTANCE.createBranch()));
+				(BehaviorPackage.Literals.BRANCH_PATH__BRANCH_BEHAVIOR,
+				 BehaviorFactory.eINSTANCE.createBehaviorDescription()));
 	}
 
 	/**

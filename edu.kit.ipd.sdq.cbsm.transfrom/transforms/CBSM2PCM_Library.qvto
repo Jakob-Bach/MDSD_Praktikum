@@ -19,6 +19,7 @@ abstract mapping CBSM::core::NamedElement::NamedElement2NamedElement() :
 
 mapping CBSM::repository::Repository::Repository2Repository() :
 		PCM::repository::Repository
+inherits CBSM::core::NamedElement::NamedElement2NamedElement
 {
 	dataTypes__Repository := self.dataTypes -> map DataType2DataType();
 	interfaces__Repository := self.interfaces -> map Interface2OperationInterface();
@@ -87,9 +88,8 @@ mapping CBSM::repository::Component::Component2BasicComponent() :
 		PCM::repository::BasicComponent
 inherits CBSM::repository::Component::Component2RepositoryComponent_abstract
 {
-	serviceEffectSpecifications__BasicComponent := self.behaviorDescription ->
+	serviceEffectSpecifications__BasicComponent := self.behaviorDescriptions ->
 		map BehaviorDescription2ResourceDemandingSEFF();
-	--TODO Palladio supports multiple SEFFs per Component, we support only one BehaviorDescription
 }
 
 mapping CBSM::repository::Signature::Signature2OperationSignature() :
@@ -193,7 +193,7 @@ mapping CBSM::repository::behavior::Loop::Loop2LoopAction() :
 		PCM::seff::LoopAction
 inherits CBSM::repository::behavior::Action::Action2AbstractAction_abstract
 {
-	--TODO references ResourceDemandingBehavior instead of actions in Palladio
+	bodyBehaviour_Loop := self.loopBehavior.map BehaviorDescription2ResourceDemandingSEFF();
 }
 
 mapping CBSM::repository::behavior::Branch::Branch2BranchAction() :
@@ -207,7 +207,7 @@ mapping CBSM::repository::behavior::BranchPath::BranchPath2ProbabilisticBranchTr
 		PCM::seff::ProbabilisticBranchTransition
 inherits CBSM::core::NamedElement::NamedElement2NamedElement
 {
-	--TODO references  ResourceDemandingBehavior instead of actions in Palladio
+	branchBehaviour_BranchTransition := self.branchBehavior.map BehaviorDescription2ResourceDemandingSEFF();
 }
 
 ----------------------------
@@ -245,7 +245,8 @@ inherits CBSM::repository::Component::Component2RepositoryComponent_abstract,
 
 mapping CBSM::assembly::System::System2System() :
 		PCM::system::System
-inherits CBSM::assembly::CompositeProvidingAndRequiringElement::
+inherits CBSM::core::NamedElement::NamedElement2NamedElement,
+		CBSM::assembly::CompositeProvidingAndRequiringElement::
 		CompositeProvidingAndRequiringElement2ComposedProvidingRequiringEntity
 {
 	connectors__ComposedStructure := self.systemConnectors -> map Connector2Connector();
@@ -322,6 +323,7 @@ inherits CBSM::assembly::Connector::Connector2Connector_abstract
 
 mapping CBSM::environment::Environment::Environment2ResourceEnvironment() :
 		PCM::resourceenvironment::ResourceEnvironment
+inherits CBSM::core::NamedElement::NamedElement2NamedElement
 {
 	resourceContainer_ResourceEnvironment := self.containers -> map Container2ResourceContainer();
 	linkingResources__ResourceEnvironment := self.links -> map Link2LinkingResource();
@@ -351,6 +353,7 @@ inherits CBSM::core::NamedElement::NamedElement2NamedElement
 
 mapping CBSM::allocation::Allocation::Allocation2Allocation() :
 		PCM::allocation::Allocation
+inherits CBSM::core::NamedElement::NamedElement2NamedElement
 {
 	allocationContexts_Allocation := self.allocationContexts ->
 		map AllocationContext2AllocationContext();

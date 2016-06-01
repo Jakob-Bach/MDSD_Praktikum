@@ -73,6 +73,7 @@ public class EnvironmentSwitch<T> extends Switch<T> {
 				Environment environment = (Environment)theEObject;
 				T result = caseEnvironment(environment);
 				if (result == null) result = caseViewType(environment);
+				if (result == null) result = caseNamedElement(environment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

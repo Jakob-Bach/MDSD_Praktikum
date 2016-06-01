@@ -68,6 +68,15 @@ public interface AllocationPackage extends EPackage {
 	int ALLOCATION = 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALLOCATION__NAME = CorePackage.VIEW_TYPE__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Allocation Contexts</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

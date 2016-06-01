@@ -104,7 +104,10 @@ public class AllocationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Allocation_type");
+		String label = ((Allocation)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Allocation_type") :
+			getString("_UI_Allocation_type") + " " + label;
 	}
 	
 

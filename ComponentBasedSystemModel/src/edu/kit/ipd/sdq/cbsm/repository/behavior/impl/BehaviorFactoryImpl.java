@@ -57,7 +57,6 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case BehaviorPackage.BEHAVIOR_DESCRIPTION: return createBehaviorDescription();
-			case BehaviorPackage.ACTION: return createAction();
 			case BehaviorPackage.INTERNAL_ACTION: return createInternalAction();
 			case BehaviorPackage.EXTERNAL_CALL: return createExternalCall();
 			case BehaviorPackage.LOOP: return createLoop();
@@ -76,16 +75,6 @@ public class BehaviorFactoryImpl extends EFactoryImpl implements BehaviorFactory
 	public BehaviorDescription createBehaviorDescription() {
 		BehaviorDescriptionImpl behaviorDescription = new BehaviorDescriptionImpl();
 		return behaviorDescription;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Action createAction() {
-		ActionImpl action = new ActionImpl();
-		return action;
 	}
 
 	/**

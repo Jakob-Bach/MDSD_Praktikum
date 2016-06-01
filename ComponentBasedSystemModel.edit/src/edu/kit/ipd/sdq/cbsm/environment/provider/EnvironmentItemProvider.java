@@ -105,7 +105,10 @@ public class EnvironmentItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Environment_type");
+		String label = ((Environment)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Environment_type") :
+			getString("_UI_Environment_type") + " " + label;
 	}
 	
 

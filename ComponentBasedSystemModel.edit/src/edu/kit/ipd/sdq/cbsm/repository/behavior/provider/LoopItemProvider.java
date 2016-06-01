@@ -62,7 +62,7 @@ public class LoopItemProvider extends ActionItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(BehaviorPackage.Literals.LOOP__LOOP_ACTIONS);
+			childrenFeatures.add(BehaviorPackage.Literals.LOOP__LOOP_BEHAVIOR);
 		}
 		return childrenFeatures;
 	}
@@ -118,7 +118,7 @@ public class LoopItemProvider extends ActionItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Loop.class)) {
-			case BehaviorPackage.LOOP__LOOP_ACTIONS:
+			case BehaviorPackage.LOOP__LOOP_BEHAVIOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -138,28 +138,8 @@ public class LoopItemProvider extends ActionItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(BehaviorPackage.Literals.LOOP__LOOP_ACTIONS,
-				 BehaviorFactory.eINSTANCE.createAction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BehaviorPackage.Literals.LOOP__LOOP_ACTIONS,
-				 BehaviorFactory.eINSTANCE.createInternalAction()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BehaviorPackage.Literals.LOOP__LOOP_ACTIONS,
-				 BehaviorFactory.eINSTANCE.createExternalCall()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BehaviorPackage.Literals.LOOP__LOOP_ACTIONS,
-				 BehaviorFactory.eINSTANCE.createLoop()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(BehaviorPackage.Literals.LOOP__LOOP_ACTIONS,
-				 BehaviorFactory.eINSTANCE.createBranch()));
+				(BehaviorPackage.Literals.LOOP__LOOP_BEHAVIOR,
+				 BehaviorFactory.eINSTANCE.createBehaviorDescription()));
 	}
 
 }

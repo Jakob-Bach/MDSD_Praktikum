@@ -1,54 +1,54 @@
-System {
+System MediaStore_System {
 	providedRoles {
 		ProvidedRole System_HTTP_ProvidedRole {
-			providedInterface HTTP
+			providedInterface "MediaStore_Repository.HTTP"
 		}
 	}
 	containedAssemblyContexts {
 		AssemblyContext WebGUI_AssemblyContext {
-			instantiatedComponent WebGUI
+			instantiatedComponent "MediaStore_Repository.WebGUI"
 		},
 		AssemblyContext MediaStore_AssemblyContext {
-			instantiatedComponent MediaStore
+			instantiatedComponent "MediaStore_Repository.MediaStore"
 		},
 		AssemblyContext PoolingAudioDB_AssemblyContext {
-			instantiatedComponent PoolingAudioDB
+			instantiatedComponent "MediaStore_Repository.PoolingAudioDB"
 		}
 	}
 	systemConnectors {
 		ProvidedDelegationConnector MediaManager_MediaStore_DelegationConnector {
-			innerAssemblyContext "MediaStore.MediaManager_AssemblyContext"
+			innerAssemblyContext "MediaStore_Repository.MediaStore.MediaManager_AssemblyContext"
 			outerAssemblyContext MediaStore_AssemblyContext
-			innerProvidedRole "MediaManager.MediaManager_MediaStore_ProvidedRole"
-			outerProvidedRole "MediaStore.MediaStore_MediaStore_ProvidedRole"
+			innerProvidedRole "MediaStore_Repository.MediaManager.MediaManager_MediaStore_ProvidedRole"
+			outerProvidedRole "MediaStore_Repository.MediaStore.MediaStore_MediaStore_ProvidedRole"
 		},
 		RequiredDelegationConnector DBCache_MediaStore_DelegationConnector {
-			innerAssemblyContext "MediaStore.DBCache_AssemblyContext"
+			innerAssemblyContext "MediaStore_Repository.MediaStore.DBCache_AssemblyContext"
 			outerAssemblyContext MediaStore_AssemblyContext
-			innerRequiredRole "DBCache.DBCache_AudioDB_RequiredRole"
-			outerRequiredRole "MediaStore.MediaStore_AudioDB_RequiredRole"
+			innerRequiredRole "MediaStore_Repository.DBCache.DBCache_AudioDB_RequiredRole"
+			outerRequiredRole "MediaStore_Repository.MediaStore.MediaStore_AudioDB_RequiredRole"
 		},
 		AssemblyConnector MediaStore_WebGUI_AssemblyConnector {
-			connectedProvidedRole "MediaStore.MediaStore_MediaStore_ProvidedRole"
-			connectedRequiredRole "WebGUI.WebGUI_MediaStore_RequiredRole"
+			connectedProvidedRole "MediaStore_Repository.MediaStore.MediaStore_MediaStore_ProvidedRole"
+			connectedRequiredRole "MediaStore_Repository.WebGUI.WebGUI_MediaStore_RequiredRole"
 			connectedProvidedAssemblyContext MediaStore_AssemblyContext
 			connectedRequiredAssemblyContext WebGUI_AssemblyContext
 		},
 		AssemblyConnector DigitalWatermarking_MediaManager_AssemblyConnector {
-			connectedProvidedRole "DigitalWaterMarking.DigitalWaterMarking_Sound_ProvidedRole"
-			connectedRequiredRole "MediaManager.MediaManger_Sound_RequiredRole"
-			connectedProvidedAssemblyContext "MediaStore.DigitalWatermarking_AssemblyContext"
-			connectedRequiredAssemblyContext "MediaStore.MediaManager_AssemblyContext"
+			connectedProvidedRole "MediaStore_Repository.DigitalWaterMarking.DigitalWaterMarking_Sound_ProvidedRole"
+			connectedRequiredRole "MediaStore_Repository.MediaManager.MediaManger_Sound_RequiredRole"
+			connectedProvidedAssemblyContext "MediaStore_Repository.MediaStore.DigitalWatermarking_AssemblyContext"
+			connectedRequiredAssemblyContext "MediaStore_Repository.MediaStore.MediaManager_AssemblyContext"
 		},
 		AssemblyConnector DBCache_MediaManager_AssemblyConnector {
-			connectedProvidedRole "DBCache.DBCache_AudioDB_ProvidedRole"
-			connectedRequiredRole "MediaManager.MediaManger_AudioDB_RequiredRole"
-			connectedProvidedAssemblyContext "MediaStore.DBCache_AssemblyContext"
-			connectedRequiredAssemblyContext "MediaStore.MediaManager_AssemblyContext"
+			connectedProvidedRole "MediaStore_Repository.DBCache.DBCache_AudioDB_ProvidedRole"
+			connectedRequiredRole "MediaStore_Repository.MediaManager.MediaManger_AudioDB_RequiredRole"
+			connectedProvidedAssemblyContext "MediaStore_Repository.MediaStore.DBCache_AssemblyContext"
+			connectedRequiredAssemblyContext "MediaStore_Repository.MediaStore.MediaManager_AssemblyContext"
 		},
 		AssemblyConnector PoolingAudioDB_MediaStore_AssemblyConnector {
-			connectedProvidedRole "PoolingAudioDB.PoolingAudioDB_AudioDB_ProvidedRole"
-			connectedRequiredRole "MediaStore.MediaStore_AudioDB_RequiredRole"
+			connectedProvidedRole "MediaStore_Repository.PoolingAudioDB.PoolingAudioDB_AudioDB_ProvidedRole"
+			connectedRequiredRole "MediaStore_Repository.MediaStore.MediaStore_AudioDB_RequiredRole"
 			connectedProvidedAssemblyContext PoolingAudioDB_AssemblyContext
 			connectedRequiredAssemblyContext MediaStore_AssemblyContext
 		}

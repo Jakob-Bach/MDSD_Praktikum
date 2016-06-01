@@ -72,6 +72,7 @@ public class AllocationSwitch<T> extends Switch<T> {
 				Allocation allocation = (Allocation)theEObject;
 				T result = caseAllocation(allocation);
 				if (result == null) result = caseViewType(allocation);
+				if (result == null) result = caseNamedElement(allocation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

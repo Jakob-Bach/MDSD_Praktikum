@@ -5,9 +5,6 @@ package edu.kit.ipd.sdq.cbsm.repository.behavior.tests;
 import edu.kit.ipd.sdq.cbsm.core.tests.NamedElementTest;
 
 import edu.kit.ipd.sdq.cbsm.repository.behavior.Action;
-import edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorFactory;
-
-import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,16 +12,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActionTest extends NamedElementTest {
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static void main(String[] args) {
-		TestRunner.run(ActionTest.class);
-	}
+public abstract class ActionTest extends NamedElementTest {
 
 	/**
 	 * Constructs a new Action test case with the given name.
@@ -45,28 +33,6 @@ public class ActionTest extends NamedElementTest {
 	@Override
 	protected Action getFixture() {
 		return (Action)fixture;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#setUp()
-	 * @generated
-	 */
-	@Override
-	protected void setUp() throws Exception {
-		setFixture(BehaviorFactory.eINSTANCE.createAction());
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#tearDown()
-	 * @generated
-	 */
-	@Override
-	protected void tearDown() throws Exception {
-		setFixture(null);
 	}
 
 } //ActionTest

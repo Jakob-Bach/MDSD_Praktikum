@@ -71,6 +71,15 @@ public interface RepositoryPackage extends EPackage {
 	int REPOSITORY = 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REPOSITORY__NAME = CorePackage.VIEW_TYPE__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Interfaces</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -374,13 +383,13 @@ public interface RepositoryPackage extends EPackage {
 	int COMPONENT__REQUIRED_ROLES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Behavior Description</b></em>' containment reference.
+	 * The feature id for the '<em><b>Behavior Descriptions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT__BEHAVIOR_DESCRIPTION = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int COMPONENT__BEHAVIOR_DESCRIPTIONS = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Component</em>' class.
@@ -699,15 +708,15 @@ public interface RepositoryPackage extends EPackage {
 	EClass getComponent();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link edu.kit.ipd.sdq.cbsm.repository.Component#getBehaviorDescription <em>Behavior Description</em>}'.
+	 * Returns the meta object for the containment reference list '{@link edu.kit.ipd.sdq.cbsm.repository.Component#getBehaviorDescriptions <em>Behavior Descriptions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Behavior Description</em>'.
-	 * @see edu.kit.ipd.sdq.cbsm.repository.Component#getBehaviorDescription()
+	 * @return the meta object for the containment reference list '<em>Behavior Descriptions</em>'.
+	 * @see edu.kit.ipd.sdq.cbsm.repository.Component#getBehaviorDescriptions()
 	 * @see #getComponent()
 	 * @generated
 	 */
-	EReference getComponent_BehaviorDescription();
+	EReference getComponent_BehaviorDescriptions();
 
 	/**
 	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.cbsm.repository.ProvidedRole <em>Provided Role</em>}'.
@@ -983,12 +992,12 @@ public interface RepositoryPackage extends EPackage {
 		EClass COMPONENT = eINSTANCE.getComponent();
 
 		/**
-		 * The meta object literal for the '<em><b>Behavior Description</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Behavior Descriptions</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPONENT__BEHAVIOR_DESCRIPTION = eINSTANCE.getComponent_BehaviorDescription();
+		EReference COMPONENT__BEHAVIOR_DESCRIPTIONS = eINSTANCE.getComponent_BehaviorDescriptions();
 
 		/**
 		 * The meta object literal for the '{@link edu.kit.ipd.sdq.cbsm.repository.impl.ProvidedRoleImpl <em>Provided Role</em>}' class.

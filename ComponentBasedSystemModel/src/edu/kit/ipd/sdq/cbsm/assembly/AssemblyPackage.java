@@ -224,13 +224,13 @@ public interface AssemblyPackage extends EPackage {
 	int COMPOSITE_COMPONENT__REQUIRED_ROLES = RepositoryPackage.COMPONENT__REQUIRED_ROLES;
 
 	/**
-	 * The feature id for the '<em><b>Behavior Description</b></em>' containment reference.
+	 * The feature id for the '<em><b>Behavior Descriptions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_COMPONENT__BEHAVIOR_DESCRIPTION = RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTION;
+	int COMPOSITE_COMPONENT__BEHAVIOR_DESCRIPTIONS = RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTIONS;
 
 	/**
 	 * The feature id for the '<em><b>Contained Assembly Contexts</b></em>' containment reference list.
@@ -297,13 +297,22 @@ public interface AssemblyPackage extends EPackage {
 	int SYSTEM__CONTAINED_ASSEMBLY_CONTEXTS = COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT__CONTAINED_ASSEMBLY_CONTEXTS;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__NAME = COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>System Connectors</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM__SYSTEM_CONNECTORS = COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT_FEATURE_COUNT + 0;
+	int SYSTEM__SYSTEM_CONNECTORS = COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>System</em>' class.
@@ -312,7 +321,7 @@ public interface AssemblyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM_FEATURE_COUNT = COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT_FEATURE_COUNT + 1;
+	int SYSTEM_FEATURE_COUNT = COMPOSITE_PROVIDING_AND_REQUIRING_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>System</em>' class.

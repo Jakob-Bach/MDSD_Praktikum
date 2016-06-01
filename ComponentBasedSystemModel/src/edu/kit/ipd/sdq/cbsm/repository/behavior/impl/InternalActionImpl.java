@@ -4,7 +4,6 @@ package edu.kit.ipd.sdq.cbsm.repository.behavior.impl;
 
 import edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorPackage;
 import edu.kit.ipd.sdq.cbsm.repository.behavior.InternalAction;
-
 import org.eclipse.emf.ecore.EClass;
 
 /**

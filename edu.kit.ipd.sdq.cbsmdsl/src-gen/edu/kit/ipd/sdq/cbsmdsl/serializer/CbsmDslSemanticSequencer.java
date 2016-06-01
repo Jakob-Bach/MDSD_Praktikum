@@ -90,9 +90,6 @@ public class CbsmDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 			}
 		else if (epackage == BehaviorPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case BehaviorPackage.ACTION:
-				sequence_Action_Impl(context, (edu.kit.ipd.sdq.cbsm.repository.behavior.Action) semanticObject); 
-				return; 
 			case BehaviorPackage.BEHAVIOR_DESCRIPTION:
 				sequence_BehaviorDescription(context, (BehaviorDescription) semanticObject); 
 				return; 
@@ -160,19 +157,6 @@ public class CbsmDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     Action returns Action
-	 *     Action_Impl returns Action
-	 *
-	 * Constraint:
-	 *     (name=EString predecessor=[Action|EString]? successor=[Action|EString]?)
-	 */
-	protected void sequence_Action_Impl(ISerializationContext context, edu.kit.ipd.sdq.cbsm.repository.behavior.Action semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     AllocationContext returns AllocationContext
 	 *
 	 * Constraint:
@@ -201,7 +185,7 @@ public class CbsmDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Allocation returns Allocation
 	 *
 	 * Constraint:
-	 *     (allocationContexts+=AllocationContext allocationContexts+=AllocationContext*)?
+	 *     (name=EString (allocationContexts+=AllocationContext allocationContexts+=AllocationContext*)?)
 	 */
 	protected void sequence_Allocation(ISerializationContext context, Allocation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -276,7 +260,7 @@ public class CbsmDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         name=EString 
 	 *         (providedRoles+=ProvidedRole providedRoles+=ProvidedRole*)? 
 	 *         (requiredRoles+=RequiredRole requiredRoles+=RequiredRole*)? 
-	 *         behaviorDescription=BehaviorDescription?
+	 *         (behaviorDescriptions+=BehaviorDescription behaviorDescriptions+=BehaviorDescription*)?
 	 *     )
 	 */
 	protected void sequence_BasicComponent(ISerializationContext context, Component semanticObject) {
@@ -289,7 +273,7 @@ public class CbsmDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     BehaviorDescription returns BehaviorDescription
 	 *
 	 * Constraint:
-	 *     (actions+=Action actions+=Action*)?
+	 *     (name=EString (actions+=Action actions+=Action*)?)
 	 */
 	protected void sequence_BehaviorDescription(ISerializationContext context, BehaviorDescription semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -301,10 +285,19 @@ public class CbsmDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     BranchPath returns BranchPath
 	 *
 	 * Constraint:
-	 *     (name=EString (pathActions+=Action pathActions+=Action*)?)
+	 *     (name=EString branchBehavior=BehaviorDescription)
 	 */
 	protected void sequence_BranchPath(ISerializationContext context, BranchPath semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CorePackage.Literals.NAMED_ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CorePackage.Literals.NAMED_ELEMENT__NAME));
+			if (transientValues.isValueTransient(semanticObject, BehaviorPackage.Literals.BRANCH_PATH__BRANCH_BEHAVIOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BehaviorPackage.Literals.BRANCH_PATH__BRANCH_BEHAVIOR));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getBranchPathAccess().getNameEStringParserRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getBranchPathAccess().getBranchBehaviorBehaviorDescriptionParserRuleCall_5_0(), semanticObject.getBranchBehavior());
+		feeder.finish();
 	}
 	
 	
@@ -350,7 +343,7 @@ public class CbsmDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         name=EString 
 	 *         (providedRoles+=ProvidedRole providedRoles+=ProvidedRole*)? 
 	 *         (requiredRoles+=RequiredRole requiredRoles+=RequiredRole*)? 
-	 *         behaviorDescription=BehaviorDescription? 
+	 *         (behaviorDescriptions+=BehaviorDescription behaviorDescriptions+=BehaviorDescription*)? 
 	 *         (containedAssemblyContexts+=AssemblyContext containedAssemblyContexts+=AssemblyContext*)?
 	 *     )
 	 */
@@ -383,7 +376,7 @@ public class CbsmDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Environment returns Environment
 	 *
 	 * Constraint:
-	 *     ((containers+=Container containers+=Container*)? (links+=Link links+=Link*)?)
+	 *     (name=EString (containers+=Container containers+=Container*)? (links+=Link links+=Link*)?)
 	 */
 	protected void sequence_Environment(ISerializationContext context, Environment semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -452,7 +445,7 @@ public class CbsmDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Loop returns Loop
 	 *
 	 * Constraint:
-	 *     (name=EString predecessor=[Action|EString]? successor=[Action|EString]? (loopActions+=Action loopActions+=Action*)?)
+	 *     (name=EString predecessor=[Action|EString]? successor=[Action|EString]? loopBehavior=BehaviorDescription)
 	 */
 	protected void sequence_Loop(ISerializationContext context, Loop semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -544,7 +537,12 @@ public class CbsmDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Repository returns Repository
 	 *
 	 * Constraint:
-	 *     ((interfaces+=Interface interfaces+=Interface*)? (components+=Component components+=Component*)? (dataTypes+=DataType dataTypes+=DataType*)?)
+	 *     (
+	 *         name=EString 
+	 *         (interfaces+=Interface interfaces+=Interface*)? 
+	 *         (components+=Component components+=Component*)? 
+	 *         (dataTypes+=DataType dataTypes+=DataType*)?
+	 *     )
 	 */
 	protected void sequence_Repository(ISerializationContext context, Repository semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -647,6 +645,7 @@ public class CbsmDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *
 	 * Constraint:
 	 *     (
+	 *         name=EString 
 	 *         (providedRoles+=ProvidedRole providedRoles+=ProvidedRole*)? 
 	 *         (requiredRoles+=RequiredRole requiredRoles+=RequiredRole*)? 
 	 *         (containedAssemblyContexts+=AssemblyContext containedAssemblyContexts+=AssemblyContext*)? 

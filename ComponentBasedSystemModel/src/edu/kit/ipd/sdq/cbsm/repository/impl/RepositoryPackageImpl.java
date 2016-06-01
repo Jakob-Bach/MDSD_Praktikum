@@ -307,7 +307,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComponent_BehaviorDescription() {
+	public EReference getComponent_BehaviorDescriptions() {
 		return (EReference)componentEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -513,7 +513,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 		createEReference(providingAndRequiringElementEClass, PROVIDING_AND_REQUIRING_ELEMENT__REQUIRED_ROLES);
 
 		componentEClass = createEClass(COMPONENT);
-		createEReference(componentEClass, COMPONENT__BEHAVIOR_DESCRIPTION);
+		createEReference(componentEClass, COMPONENT__BEHAVIOR_DESCRIPTIONS);
 
 		signatureEClass = createEClass(SIGNATURE);
 		createEReference(signatureEClass, SIGNATURE__RETURN_TYPE);
@@ -603,7 +603,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 		initEReference(getProvidingAndRequiringElement_RequiredRoles(), this.getRequiredRole(), null, "requiredRoles", null, 0, -1, ProvidingAndRequiringElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getComponent_BehaviorDescription(), theBehaviorPackage.getBehaviorDescription(), null, "behaviorDescription", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponent_BehaviorDescriptions(), theBehaviorPackage.getBehaviorDescription(), null, "behaviorDescriptions", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(signatureEClass, Signature.class, "Signature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSignature_ReturnType(), this.getDataType(), null, "returnType", null, 0, 1, Signature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

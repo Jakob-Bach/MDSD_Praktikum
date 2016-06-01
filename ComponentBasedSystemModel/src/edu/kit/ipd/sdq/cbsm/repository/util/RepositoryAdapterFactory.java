@@ -119,12 +119,12 @@ public class RepositoryAdapterFactory extends AdapterFactoryImpl {
 				return createSimpleTypeAdapter();
 			}
 			@Override
-			public Adapter caseViewType(ViewType object) {
-				return createViewTypeAdapter();
-			}
-			@Override
 			public Adapter caseNamedElement(NamedElement object) {
 				return createNamedElementAdapter();
+			}
+			@Override
+			public Adapter caseViewType(ViewType object) {
+				return createViewTypeAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {

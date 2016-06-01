@@ -2,21 +2,15 @@
  */
 package edu.kit.ipd.sdq.cbsm.repository.behavior.impl;
 
-import edu.kit.ipd.sdq.cbsm.repository.behavior.Action;
+import edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorDescription;
 import edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorPackage;
 import edu.kit.ipd.sdq.cbsm.repository.behavior.Loop;
-
-import java.util.Collection;
-
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,22 +20,21 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link edu.kit.ipd.sdq.cbsm.repository.behavior.impl.LoopImpl#getLoopActions <em>Loop Actions</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.cbsm.repository.behavior.impl.LoopImpl#getLoopBehavior <em>Loop Behavior</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class LoopImpl extends ActionImpl implements Loop {
 	/**
-	 * The cached value of the '{@link #getLoopActions() <em>Loop Actions</em>}' containment reference list.
+	 * The cached value of the '{@link #getLoopBehavior() <em>Loop Behavior</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLoopActions()
+	 * @see #getLoopBehavior()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Action> loopActions;
-
+	protected BehaviorDescription loopBehavior;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -66,11 +59,42 @@ public class LoopImpl extends ActionImpl implements Loop {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Action> getLoopActions() {
-		if (loopActions == null) {
-			loopActions = new EObjectContainmentEList<Action>(Action.class, this, BehaviorPackage.LOOP__LOOP_ACTIONS);
+	public BehaviorDescription getLoopBehavior() {
+		return loopBehavior;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetLoopBehavior(BehaviorDescription newLoopBehavior, NotificationChain msgs) {
+		BehaviorDescription oldLoopBehavior = loopBehavior;
+		loopBehavior = newLoopBehavior;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BehaviorPackage.LOOP__LOOP_BEHAVIOR, oldLoopBehavior, newLoopBehavior);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return loopActions;
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLoopBehavior(BehaviorDescription newLoopBehavior) {
+		if (newLoopBehavior != loopBehavior) {
+			NotificationChain msgs = null;
+			if (loopBehavior != null)
+				msgs = ((InternalEObject)loopBehavior).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BehaviorPackage.LOOP__LOOP_BEHAVIOR, null, msgs);
+			if (newLoopBehavior != null)
+				msgs = ((InternalEObject)newLoopBehavior).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BehaviorPackage.LOOP__LOOP_BEHAVIOR, null, msgs);
+			msgs = basicSetLoopBehavior(newLoopBehavior, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.LOOP__LOOP_BEHAVIOR, newLoopBehavior, newLoopBehavior));
 	}
 
 	/**
@@ -81,8 +105,8 @@ public class LoopImpl extends ActionImpl implements Loop {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case BehaviorPackage.LOOP__LOOP_ACTIONS:
-				return ((InternalEList<?>)getLoopActions()).basicRemove(otherEnd, msgs);
+			case BehaviorPackage.LOOP__LOOP_BEHAVIOR:
+				return basicSetLoopBehavior(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -95,8 +119,8 @@ public class LoopImpl extends ActionImpl implements Loop {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BehaviorPackage.LOOP__LOOP_ACTIONS:
-				return getLoopActions();
+			case BehaviorPackage.LOOP__LOOP_BEHAVIOR:
+				return getLoopBehavior();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,9 +134,8 @@ public class LoopImpl extends ActionImpl implements Loop {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BehaviorPackage.LOOP__LOOP_ACTIONS:
-				getLoopActions().clear();
-				getLoopActions().addAll((Collection<? extends Action>)newValue);
+			case BehaviorPackage.LOOP__LOOP_BEHAVIOR:
+				setLoopBehavior((BehaviorDescription)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,8 +149,8 @@ public class LoopImpl extends ActionImpl implements Loop {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BehaviorPackage.LOOP__LOOP_ACTIONS:
-				getLoopActions().clear();
+			case BehaviorPackage.LOOP__LOOP_BEHAVIOR:
+				setLoopBehavior((BehaviorDescription)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -141,8 +164,8 @@ public class LoopImpl extends ActionImpl implements Loop {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BehaviorPackage.LOOP__LOOP_ACTIONS:
-				return loopActions != null && !loopActions.isEmpty();
+			case BehaviorPackage.LOOP__LOOP_BEHAVIOR:
+				return loopBehavior != null;
 		}
 		return super.eIsSet(featureID);
 	}

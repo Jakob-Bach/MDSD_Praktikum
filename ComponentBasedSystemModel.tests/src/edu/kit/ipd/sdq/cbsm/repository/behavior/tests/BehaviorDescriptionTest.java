@@ -2,11 +2,9 @@
  */
 package edu.kit.ipd.sdq.cbsm.repository.behavior.tests;
 
+import edu.kit.ipd.sdq.cbsm.core.tests.NamedElementTest;
 import edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorDescription;
 import edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorFactory;
-
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 /**
@@ -15,15 +13,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class BehaviorDescriptionTest extends TestCase {
-
-	/**
-	 * The fixture for this Description test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected BehaviorDescription fixture = null;
+public class BehaviorDescriptionTest extends NamedElementTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +35,14 @@ public class BehaviorDescriptionTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Description test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(BehaviorDescription fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Description test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected BehaviorDescription getFixture() {
-		return fixture;
+		return (BehaviorDescription)fixture;
 	}
 
 	/**

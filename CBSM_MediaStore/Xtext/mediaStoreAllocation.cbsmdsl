@@ -1,16 +1,16 @@
-Allocation {
+Allocation MediaStore_Allocation {
 	allocationContexts {
 		AllocationContext WebGUI_AllocationContext {
-			allocatedContainer ApplicationServer
-			allocatedAssemblyContext WebGUI_AssemblyContext
+			allocatedContainer "MediaStore_Environment.ApplicationServer"
+			allocatedAssemblyContext "MediaStore_System.WebGUI_AssemblyContext"
 		},
 		AllocationContext MediaStore_AllocationContext {
-			allocatedContainer ApplicationServer
-			allocatedAssemblyContext MediaStore_AssemblyContext
+			allocatedContainer "MediaStore_Environment.ApplicationServer"
+			allocatedAssemblyContext "MediaStore_System.MediaStore_AssemblyContext"
 		},
 		AllocationContext PoolingAudioDB_AllocationContext {
-			allocatedContainer DatabaseServer
-			allocatedAssemblyContext PoolingAudioDB_AssemblyContext
+			allocatedContainer "MediaStore_Environment.DatabaseServer"
+			allocatedAssemblyContext "MediaStore_System.PoolingAudioDB_AssemblyContext"
 		}
 	}
 }

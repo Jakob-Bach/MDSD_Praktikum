@@ -71,6 +71,7 @@ public class BehaviorSwitch<T> extends Switch<T> {
 			case BehaviorPackage.BEHAVIOR_DESCRIPTION: {
 				BehaviorDescription behaviorDescription = (BehaviorDescription)theEObject;
 				T result = caseBehaviorDescription(behaviorDescription);
+				if (result == null) result = caseNamedElement(behaviorDescription);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

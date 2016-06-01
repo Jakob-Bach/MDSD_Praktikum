@@ -3,22 +3,15 @@
 package edu.kit.ipd.sdq.cbsm.repository.behavior.impl;
 
 import edu.kit.ipd.sdq.cbsm.core.impl.NamedElementImpl;
-
-import edu.kit.ipd.sdq.cbsm.repository.behavior.Action;
+import edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorDescription;
 import edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorPackage;
 import edu.kit.ipd.sdq.cbsm.repository.behavior.BranchPath;
-
-import java.util.Collection;
-
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,22 +21,21 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link edu.kit.ipd.sdq.cbsm.repository.behavior.impl.BranchPathImpl#getPathActions <em>Path Actions</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.cbsm.repository.behavior.impl.BranchPathImpl#getBranchBehavior <em>Branch Behavior</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class BranchPathImpl extends NamedElementImpl implements BranchPath {
 	/**
-	 * The cached value of the '{@link #getPathActions() <em>Path Actions</em>}' containment reference list.
+	 * The cached value of the '{@link #getBranchBehavior() <em>Branch Behavior</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPathActions()
+	 * @see #getBranchBehavior()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Action> pathActions;
-
+	protected BehaviorDescription branchBehavior;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -68,11 +60,42 @@ public class BranchPathImpl extends NamedElementImpl implements BranchPath {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Action> getPathActions() {
-		if (pathActions == null) {
-			pathActions = new EObjectContainmentEList<Action>(Action.class, this, BehaviorPackage.BRANCH_PATH__PATH_ACTIONS);
+	public BehaviorDescription getBranchBehavior() {
+		return branchBehavior;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetBranchBehavior(BehaviorDescription newBranchBehavior, NotificationChain msgs) {
+		BehaviorDescription oldBranchBehavior = branchBehavior;
+		branchBehavior = newBranchBehavior;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BehaviorPackage.BRANCH_PATH__BRANCH_BEHAVIOR, oldBranchBehavior, newBranchBehavior);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return pathActions;
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBranchBehavior(BehaviorDescription newBranchBehavior) {
+		if (newBranchBehavior != branchBehavior) {
+			NotificationChain msgs = null;
+			if (branchBehavior != null)
+				msgs = ((InternalEObject)branchBehavior).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BehaviorPackage.BRANCH_PATH__BRANCH_BEHAVIOR, null, msgs);
+			if (newBranchBehavior != null)
+				msgs = ((InternalEObject)newBranchBehavior).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BehaviorPackage.BRANCH_PATH__BRANCH_BEHAVIOR, null, msgs);
+			msgs = basicSetBranchBehavior(newBranchBehavior, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.BRANCH_PATH__BRANCH_BEHAVIOR, newBranchBehavior, newBranchBehavior));
 	}
 
 	/**
@@ -83,8 +106,8 @@ public class BranchPathImpl extends NamedElementImpl implements BranchPath {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case BehaviorPackage.BRANCH_PATH__PATH_ACTIONS:
-				return ((InternalEList<?>)getPathActions()).basicRemove(otherEnd, msgs);
+			case BehaviorPackage.BRANCH_PATH__BRANCH_BEHAVIOR:
+				return basicSetBranchBehavior(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -97,8 +120,8 @@ public class BranchPathImpl extends NamedElementImpl implements BranchPath {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case BehaviorPackage.BRANCH_PATH__PATH_ACTIONS:
-				return getPathActions();
+			case BehaviorPackage.BRANCH_PATH__BRANCH_BEHAVIOR:
+				return getBranchBehavior();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -112,9 +135,8 @@ public class BranchPathImpl extends NamedElementImpl implements BranchPath {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case BehaviorPackage.BRANCH_PATH__PATH_ACTIONS:
-				getPathActions().clear();
-				getPathActions().addAll((Collection<? extends Action>)newValue);
+			case BehaviorPackage.BRANCH_PATH__BRANCH_BEHAVIOR:
+				setBranchBehavior((BehaviorDescription)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -128,8 +150,8 @@ public class BranchPathImpl extends NamedElementImpl implements BranchPath {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case BehaviorPackage.BRANCH_PATH__PATH_ACTIONS:
-				getPathActions().clear();
+			case BehaviorPackage.BRANCH_PATH__BRANCH_BEHAVIOR:
+				setBranchBehavior((BehaviorDescription)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -143,8 +165,8 @@ public class BranchPathImpl extends NamedElementImpl implements BranchPath {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case BehaviorPackage.BRANCH_PATH__PATH_ACTIONS:
-				return pathActions != null && !pathActions.isEmpty();
+			case BehaviorPackage.BRANCH_PATH__BRANCH_BEHAVIOR:
+				return branchBehavior != null;
 		}
 		return super.eIsSet(featureID);
 	}
