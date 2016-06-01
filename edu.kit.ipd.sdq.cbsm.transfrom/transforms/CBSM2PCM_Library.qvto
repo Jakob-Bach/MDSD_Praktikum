@@ -123,25 +123,49 @@ inherits CBSM::core::NamedElement::NamedElement2NamedElement
 	-- we chose CompositeDataType here
 }
 
+query CBSM::repository::SimpleType::isCollectionDataType() : Boolean =
+	(self.typeInstance = CBSM::repository::SimpleTypeInstance::Map or
+	self.typeInstance = CBSM::repository::SimpleTypeInstance::_List);
+
+query CBSM::repository::SimpleType::isCompositeDataType() : Boolean =
+	(self.typeInstance = CBSM::repository::SimpleTypeInstance::Date);
+
 mapping CBSM::repository::SimpleType::SimpleType2PrimitiveDataType() :
-		PCM::repository::PrimitiveDataType
+		PCM::repository::DataType
 {
-	type := if(self.typeInstance = CBSM::repository::SimpleTypeInstance::Boolean) then
-				PCM::repository::PrimitiveTypeEnum::BOOL
-			elif (self.typeInstance = CBSM::repository::SimpleTypeInstance::Char) then
-				PCM::repository::PrimitiveTypeEnum::CHAR
-			elif (self.typeInstance = CBSM::repository::SimpleTypeInstance::Double) then
-				PCM::repository::PrimitiveTypeEnum::DOUBLE
-			elif (self.typeInstance = CBSM::repository::SimpleTypeInstance::Float) then
-				-- no direct equivalent in PCM, therefore cast
-				PCM::repository::PrimitiveTypeEnum::DOUBLE
-			elif (self.typeInstance = CBSM::repository::SimpleTypeInstance::Int) then
-				PCM::repository::PrimitiveTypeEnum::INT
-			elif (self.typeInstance = CBSM::repository::SimpleTypeInstance::Long) then
-				PCM::repository::PrimitiveTypeEnum::LONG
-			else -- includes Map, List, Date which have no equivalent and String
-				PCM::repository::PrimitiveTypeEnum::STRING
+	init {
+		if (self.isCollectionDataType() or self.isCompositeDataType()) {
+			/*CollectionDataTypes have a mandatory feature "innerType" which we could
+			not set, therefore CompositeDataType returned in that case, too*/
+			result := new PCM::repository::CompositeDataType();
+		} else {
+			result := new PCM::repository::PrimitiveDataType();
+		}
+	}
+	population {
+		if (self.isCollectionDataType() or self.isCompositeDataType()) {
+			result.oclAsType(PCM::repository::CompositeDataType).entityName :=
+					self.typeInstance.toString();
+		} else {
+			result.oclAsType(PCM::repository::PrimitiveDataType).type :=
+				if(self.typeInstance = CBSM::repository::SimpleTypeInstance::Boolean) then
+					PCM::repository::PrimitiveTypeEnum::BOOL
+				elif (self.typeInstance = CBSM::repository::SimpleTypeInstance::Char) then
+					PCM::repository::PrimitiveTypeEnum::CHAR
+				elif (self.typeInstance = CBSM::repository::SimpleTypeInstance::Double) then
+					PCM::repository::PrimitiveTypeEnum::DOUBLE
+				elif (self.typeInstance = CBSM::repository::SimpleTypeInstance::Float) then
+					-- no direct equivalent in PCM, therefore up-cast
+					PCM::repository::PrimitiveTypeEnum::DOUBLE
+				elif (self.typeInstance = CBSM::repository::SimpleTypeInstance::Int) then
+					PCM::repository::PrimitiveTypeEnum::INT
+				elif (self.typeInstance = CBSM::repository::SimpleTypeInstance::Long) then
+					PCM::repository::PrimitiveTypeEnum::LONG
+				elif (self.typeInstance = CBSM::repository::SimpleTypeInstance::String) then
+					PCM::repository::PrimitiveTypeEnum::STRING
 			endif;
+		}
+	}
 }
 
 ----------------------------
