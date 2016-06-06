@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:composition="http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.1" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.1" xmlns:system="http://palladiosimulator.org/PalladioComponentModel/System/5.1" xsi:schemaLocation="http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.1 http://palladiosimulator.org/PalladioComponentModel/5.1#//core/composition http://palladiosimulator.org/PalladioComponentModel/Repository/5.1 http://palladiosimulator.org/PalladioComponentModel/5.1#//repository http://palladiosimulator.org/PalladioComponentModel/System/5.1 http://palladiosimulator.org/PalladioComponentModel/5.1#//system" id="_wJVI4CvbEea8-9j5uM00tQ" entityName="MediaStore_System">
+  <assemblyContexts__ComposedStructure id="_wJVv8SvbEea8-9j5uM00tQ" entityName="WebGUI_AssemblyContext">
+    <encapsulatedComponent__AssemblyContext xsi:type="repository:BasicComponent" href="mediaStore.repository#_wJI7oCvbEea8-9j5uM00tQ"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_wJW-ECvbEea8-9j5uM00tQ" entityName="PoolingAudioDB_AssemblyContext">
+    <encapsulatedComponent__AssemblyContext xsi:type="repository:BasicComponent" href="mediaStore.repository#_wJObMCvbEea8-9j5uM00tQ"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_wJWXACvbEea8-9j5uM00tQ" entityName="MediaStore_AssemblyContext">
+    <encapsulatedComponent__AssemblyContext xsi:type="repository:CompositeComponent" href="mediaStore.repository#_wJPCQCvbEea8-9j5uM00tQ"/>
+  </assemblyContexts__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_wJXlICvbEea8-9j5uM00tQ" entityName="PoolingAudioDB_MediaStore_AssemblyConnector" requiringAssemblyContext_AssemblyConnector="_wJWXACvbEea8-9j5uM00tQ" providingAssemblyContext_AssemblyConnector="_wJW-ECvbEea8-9j5uM00tQ">
+    <providedRole_AssemblyConnector href="mediaStore.repository#_wJObMSvbEea8-9j5uM00tQ"/>
+    <requiredRole_AssemblyConnector href="mediaStore.repository#_wJPpUSvbEea8-9j5uM00tQ"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_wJW-ESvbEea8-9j5uM00tQ" entityName="MediaStore_WebGUI_AssemblyConnector" requiringAssemblyContext_AssemblyConnector="_wJVv8SvbEea8-9j5uM00tQ" providingAssemblyContext_AssemblyConnector="_wJWXACvbEea8-9j5uM00tQ">
+    <providedRole_AssemblyConnector href="mediaStore.repository#_wJPpUCvbEea8-9j5uM00tQ"/>
+    <requiredRole_AssemblyConnector href="mediaStore.repository#_wJJisCvbEea8-9j5uM00tQ"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_wJYMMCvbEea8-9j5uM00tQ" entityName="WebGUI_System_DelegationConnector" outerProvidedRole_ProvidedDelegationConnector="_wJVv8CvbEea8-9j5uM00tQ" assemblyContext_ProvidedDelegationConnector="_wJVv8SvbEea8-9j5uM00tQ">
+    <innerProvidedRole_ProvidedDelegationConnector href="mediaStore.repository#_wJI7oSvbEea8-9j5uM00tQ"/>
+  </connectors__ComposedStructure>
+  <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_wJVv8CvbEea8-9j5uM00tQ" entityName="System_HTTP_ProvidedRole">
+    <providedInterface__OperationProvidedRole href="mediaStore.repository#_wJEqMCvbEea8-9j5uM00tQ"/>
+  </providedRoles_InterfaceProvidingEntity>
+</system:System>
