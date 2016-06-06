@@ -131,7 +131,6 @@ public class BranchPathImpl extends NamedElementImpl implements BranchPath {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {

@@ -137,9 +137,9 @@ mapping CBSM::repository::SimpleType::SimpleType2PrimitiveDataType() :
 		if (self.isCollectionDataType() or self.isCompositeDataType()) {
 			/*CollectionDataTypes have a mandatory feature "innerType" which we could
 			not set, therefore CompositeDataType returned in that case, too*/
-			result := new PCM::repository::CompositeDataType();
+			result := object PCM::repository::CompositeDataType {};
 		} else {
-			result := new PCM::repository::PrimitiveDataType();
+			result := object PCM::repository::PrimitiveDataType {};
 		}
 	}
 	population {
@@ -175,12 +175,24 @@ mapping CBSM::repository::SimpleType::SimpleType2PrimitiveDataType() :
 mapping CBSM::repository::behavior::BehaviorDescription::BehaviorDescription2ResourceDemandingSEFF() :
 		PCM::seff::ResourceDemandingSEFF
 {
-	steps_Behaviour := self.actions -> map Action2AbstractAction();
+	-- CBSM has no special start and stop elements, so create and link them
+	var startAction := object pcm::seff::StartAction {
+		entityName := self.name + "_Start";
+	};
+	var stopAction := object pcm::seff::StopAction {
+		entityName := self.name + "_Stop";
+	};
+	var intermediateActions := self.actions -> map Action2AbstractAction();
+	startAction.successor_AbstractAction := intermediateActions->first();
+	stopAction.predecessor_AbstractAction := intermediateActions->last();
+	steps_Behaviour += startAction;
+	steps_Behaviour += intermediateActions;
+	steps_Behaviour += stopAction;
 }
 
 abstract mapping CBSM::repository::behavior::Action::Action2AbstractAction() :
 		PCM::seff::AbstractAction
-disjuncts CBSM::repository::behavior::InternalAction::InternalAction2InternalCallAction,
+disjuncts CBSM::repository::behavior::InternalAction::InternalAction2InternalAction,
 		CBSM::repository::behavior::ExternalCall::ExternalCall2ExternalCallAction,
 		CBSM::repository::behavior::Loop::Loop2LoopAction,
 		CBSM::repository::behavior::Branch::Branch2BranchAction
@@ -196,8 +208,8 @@ inherits CBSM::core::NamedElement::NamedElement2NamedElement
 	successor_AbstractAction := self.successor.resolveone(PCM::seff::AbstractAction);
 }
 
-mapping CBSM::repository::behavior::InternalAction::InternalAction2InternalCallAction() :
-		PCM::seff::InternalCallAction
+mapping CBSM::repository::behavior::InternalAction::InternalAction2InternalAction() :
+		PCM::seff::InternalAction
 inherits CBSM::repository::behavior::Action::Action2AbstractAction_abstract
 {
 
@@ -218,13 +230,24 @@ mapping CBSM::repository::behavior::Loop::Loop2LoopAction() :
 inherits CBSM::repository::behavior::Action::Action2AbstractAction_abstract
 {
 	bodyBehaviour_Loop := self.loopBehavior.map BehaviorDescription2ResourceDemandingSEFF();
+	iterationCount_LoopAction := object PCM::core::PCMRandomVariable {
+		specification := "1";
+	};
 }
+
+-- assume equal probability for all branches
+query CBSM::repository::behavior::Branch::getBranchProbability() : Real =
+	1 / self.branchPaths->size();
 
 mapping CBSM::repository::behavior::Branch::Branch2BranchAction() :
 		PCM::seff::BranchAction
 inherits CBSM::repository::behavior::Action::Action2AbstractAction_abstract
 {
+	var probability = self.getBranchProbability();
 	branches_Branch := self.branchPaths -> map BranchPath2ProbabilisticBranchTransition();
+	branches_Branch.oclAsType(PCM::seff::ProbabilisticBranchTransition)->forEach(path) {
+		path.branchProbability := probability;
+	}
 }
 
 mapping CBSM::repository::behavior::BranchPath::BranchPath2ProbabilisticBranchTransition() :

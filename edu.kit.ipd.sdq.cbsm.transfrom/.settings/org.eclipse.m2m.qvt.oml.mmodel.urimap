@@ -5,4 +5,5 @@
   <mapping sourceURI="http://sdq.ipd.kit.edu/componentBasedSystemModel/assembly" targetURI="platform:/resource/ComponentBasedSystemModel/model/componentBasedSystemModel.ecore#//assembly"/>
   <mapping sourceURI="http://sdq.ipd.kit.edu/componentBasedSystemModel/environment" targetURI="platform:/resource/ComponentBasedSystemModel/model/componentBasedSystemModel.ecore#//environment"/>
   <mapping sourceURI="http://sdq.ipd.kit.edu/componentBasedSystemModel/allocation" targetURI="platform:/resource/ComponentBasedSystemModel/model/componentBasedSystemModel.ecore#//allocation"/>
+  <mapping sourceURI="http://sdq.ipd.kit.edu/componentBasedSystemModel/repository/behavior" targetURI="platform:/resource/ComponentBasedSystemModel/model/componentBasedSystemModel.ecore#//repository/behavior"/>
 </uriMap:MappingContainer>

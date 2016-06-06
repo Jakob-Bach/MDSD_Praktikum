@@ -9,6 +9,7 @@ import edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -99,11 +100,33 @@ public abstract class ActionImpl extends NamedElementImpl implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPredecessor(Action newPredecessor) {
+	public NotificationChain basicSetPredecessor(Action newPredecessor, NotificationChain msgs) {
 		Action oldPredecessor = predecessor;
 		predecessor = newPredecessor;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.ACTION__PREDECESSOR, oldPredecessor, predecessor));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BehaviorPackage.ACTION__PREDECESSOR, oldPredecessor, newPredecessor);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPredecessor(Action newPredecessor) {
+		if (newPredecessor != predecessor) {
+			NotificationChain msgs = null;
+			if (predecessor != null)
+				msgs = ((InternalEObject)predecessor).eInverseRemove(this, BehaviorPackage.ACTION__SUCCESSOR, Action.class, msgs);
+			if (newPredecessor != null)
+				msgs = ((InternalEObject)newPredecessor).eInverseAdd(this, BehaviorPackage.ACTION__SUCCESSOR, Action.class, msgs);
+			msgs = basicSetPredecessor(newPredecessor, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.ACTION__PREDECESSOR, newPredecessor, newPredecessor));
 	}
 
 	/**
@@ -137,11 +160,69 @@ public abstract class ActionImpl extends NamedElementImpl implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSuccessor(Action newSuccessor) {
+	public NotificationChain basicSetSuccessor(Action newSuccessor, NotificationChain msgs) {
 		Action oldSuccessor = successor;
 		successor = newSuccessor;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.ACTION__SUCCESSOR, oldSuccessor, successor));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BehaviorPackage.ACTION__SUCCESSOR, oldSuccessor, newSuccessor);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSuccessor(Action newSuccessor) {
+		if (newSuccessor != successor) {
+			NotificationChain msgs = null;
+			if (successor != null)
+				msgs = ((InternalEObject)successor).eInverseRemove(this, BehaviorPackage.ACTION__PREDECESSOR, Action.class, msgs);
+			if (newSuccessor != null)
+				msgs = ((InternalEObject)newSuccessor).eInverseAdd(this, BehaviorPackage.ACTION__PREDECESSOR, Action.class, msgs);
+			msgs = basicSetSuccessor(newSuccessor, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorPackage.ACTION__SUCCESSOR, newSuccessor, newSuccessor));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case BehaviorPackage.ACTION__PREDECESSOR:
+				if (predecessor != null)
+					msgs = ((InternalEObject)predecessor).eInverseRemove(this, BehaviorPackage.ACTION__SUCCESSOR, Action.class, msgs);
+				return basicSetPredecessor((Action)otherEnd, msgs);
+			case BehaviorPackage.ACTION__SUCCESSOR:
+				if (successor != null)
+					msgs = ((InternalEObject)successor).eInverseRemove(this, BehaviorPackage.ACTION__PREDECESSOR, Action.class, msgs);
+				return basicSetSuccessor((Action)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case BehaviorPackage.ACTION__PREDECESSOR:
+				return basicSetPredecessor(null, msgs);
+			case BehaviorPackage.ACTION__SUCCESSOR:
+				return basicSetSuccessor(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

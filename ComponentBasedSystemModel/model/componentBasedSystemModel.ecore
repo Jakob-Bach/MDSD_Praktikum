@@ -99,8 +99,10 @@
             eType="#//repository/behavior/Action" containment="true"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Action" abstract="true" eSuperTypes="#//core/NamedElement">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="predecessor" eType="#//repository/behavior/Action"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="successor" eType="#//repository/behavior/Action"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="predecessor" eType="#//repository/behavior/Action"
+            eOpposite="#//repository/behavior/Action/successor"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="successor" eType="#//repository/behavior/Action"
+            eOpposite="#//repository/behavior/Action/predecessor"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="InternalAction" eSuperTypes="#//repository/behavior/Action"/>
       <eClassifiers xsi:type="ecore:EClass" name="ExternalCall" eSuperTypes="#//repository/behavior/Action">

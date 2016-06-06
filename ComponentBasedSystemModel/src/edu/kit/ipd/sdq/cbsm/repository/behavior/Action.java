@@ -24,6 +24,7 @@ import edu.kit.ipd.sdq.cbsm.core.NamedElement;
 public interface Action extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Predecessor</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link edu.kit.ipd.sdq.cbsm.repository.behavior.Action#getSuccessor <em>Successor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Predecessor</em>' reference isn't clear,
@@ -33,7 +34,8 @@ public interface Action extends NamedElement {
 	 * @return the value of the '<em>Predecessor</em>' reference.
 	 * @see #setPredecessor(Action)
 	 * @see edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorPackage#getAction_Predecessor()
-	 * @model
+	 * @see edu.kit.ipd.sdq.cbsm.repository.behavior.Action#getSuccessor
+	 * @model opposite="successor"
 	 * @generated
 	 */
 	Action getPredecessor();
@@ -50,6 +52,7 @@ public interface Action extends NamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Successor</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link edu.kit.ipd.sdq.cbsm.repository.behavior.Action#getPredecessor <em>Predecessor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Successor</em>' reference isn't clear,
@@ -59,7 +62,8 @@ public interface Action extends NamedElement {
 	 * @return the value of the '<em>Successor</em>' reference.
 	 * @see #setSuccessor(Action)
 	 * @see edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorPackage#getAction_Successor()
-	 * @model
+	 * @see edu.kit.ipd.sdq.cbsm.repository.behavior.Action#getPredecessor
+	 * @model opposite="predecessor"
 	 * @generated
 	 */
 	Action getSuccessor();
