@@ -75,6 +75,14 @@ public class BehaviorSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case BehaviorPackage.COMPONENT_BEHAVIOR_DESCRIPTION: {
+				ComponentBehaviorDescription componentBehaviorDescription = (ComponentBehaviorDescription)theEObject;
+				T result = caseComponentBehaviorDescription(componentBehaviorDescription);
+				if (result == null) result = caseBehaviorDescription(componentBehaviorDescription);
+				if (result == null) result = caseNamedElement(componentBehaviorDescription);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case BehaviorPackage.ACTION: {
 				Action action = (Action)theEObject;
 				T result = caseAction(action);
@@ -137,6 +145,21 @@ public class BehaviorSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBehaviorDescription(BehaviorDescription object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Component Behavior Description</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Component Behavior Description</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComponentBehaviorDescription(ComponentBehaviorDescription object) {
 		return null;
 	}
 

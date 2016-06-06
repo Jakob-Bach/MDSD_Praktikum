@@ -861,11 +861,11 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cBehaviorDescriptionsKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
 		private final Assignment cBehaviorDescriptionsAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
-		private final RuleCall cBehaviorDescriptionsBehaviorDescriptionParserRuleCall_6_2_0 = (RuleCall)cBehaviorDescriptionsAssignment_6_2.eContents().get(0);
+		private final RuleCall cBehaviorDescriptionsComponentBehaviorDescriptionParserRuleCall_6_2_0 = (RuleCall)cBehaviorDescriptionsAssignment_6_2.eContents().get(0);
 		private final Group cGroup_6_3 = (Group)cGroup_6.eContents().get(3);
 		private final Keyword cCommaKeyword_6_3_0 = (Keyword)cGroup_6_3.eContents().get(0);
 		private final Assignment cBehaviorDescriptionsAssignment_6_3_1 = (Assignment)cGroup_6_3.eContents().get(1);
-		private final RuleCall cBehaviorDescriptionsBehaviorDescriptionParserRuleCall_6_3_1_0 = (RuleCall)cBehaviorDescriptionsAssignment_6_3_1.eContents().get(0);
+		private final RuleCall cBehaviorDescriptionsComponentBehaviorDescriptionParserRuleCall_6_3_1_0 = (RuleCall)cBehaviorDescriptionsAssignment_6_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_6_4 = (Keyword)cGroup_6.eContents().get(4);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
@@ -875,14 +875,14 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 		//	name=EString
 		//	'{' ('providedRoles' '{' providedRoles+=ProvidedRole ("," providedRoles+=ProvidedRole)* '}')? ('requiredRoles' '{'
 		//	requiredRoles+=RequiredRole ("," requiredRoles+=RequiredRole)* '}')? ('behaviorDescriptions' '{'
-		//	behaviorDescriptions+=BehaviorDescription ("," behaviorDescriptions+=BehaviorDescription)* '}')?
+		//	behaviorDescriptions+=ComponentBehaviorDescription ("," behaviorDescriptions+=ComponentBehaviorDescription)* '}')?
 		//	'}'
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{repository::Component} 'Component' name=EString '{' ('providedRoles' '{' providedRoles+=ProvidedRole (","
 		//providedRoles+=ProvidedRole)* '}')? ('requiredRoles' '{' requiredRoles+=RequiredRole (","
-		//requiredRoles+=RequiredRole)* '}')? ('behaviorDescriptions' '{' behaviorDescriptions+=BehaviorDescription (","
-		//behaviorDescriptions+=BehaviorDescription)* '}')? '}'
+		//requiredRoles+=RequiredRole)* '}')? ('behaviorDescriptions' '{' behaviorDescriptions+=ComponentBehaviorDescription
+		//("," behaviorDescriptions+=ComponentBehaviorDescription)* '}')? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{repository::Component}
@@ -960,8 +960,8 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_5_4() { return cRightCurlyBracketKeyword_5_4; }
 		
-		//('behaviorDescriptions' '{' behaviorDescriptions+=BehaviorDescription ("," behaviorDescriptions+=BehaviorDescription)*
-		//'}')?
+		//('behaviorDescriptions' '{' behaviorDescriptions+=ComponentBehaviorDescription (","
+		//behaviorDescriptions+=ComponentBehaviorDescription)* '}')?
 		public Group getGroup_6() { return cGroup_6; }
 		
 		//'behaviorDescriptions'
@@ -970,23 +970,23 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_6_1() { return cLeftCurlyBracketKeyword_6_1; }
 		
-		//behaviorDescriptions+=BehaviorDescription
+		//behaviorDescriptions+=ComponentBehaviorDescription
 		public Assignment getBehaviorDescriptionsAssignment_6_2() { return cBehaviorDescriptionsAssignment_6_2; }
 		
-		//BehaviorDescription
-		public RuleCall getBehaviorDescriptionsBehaviorDescriptionParserRuleCall_6_2_0() { return cBehaviorDescriptionsBehaviorDescriptionParserRuleCall_6_2_0; }
+		//ComponentBehaviorDescription
+		public RuleCall getBehaviorDescriptionsComponentBehaviorDescriptionParserRuleCall_6_2_0() { return cBehaviorDescriptionsComponentBehaviorDescriptionParserRuleCall_6_2_0; }
 		
-		//("," behaviorDescriptions+=BehaviorDescription)*
+		//("," behaviorDescriptions+=ComponentBehaviorDescription)*
 		public Group getGroup_6_3() { return cGroup_6_3; }
 		
 		//","
 		public Keyword getCommaKeyword_6_3_0() { return cCommaKeyword_6_3_0; }
 		
-		//behaviorDescriptions+=BehaviorDescription
+		//behaviorDescriptions+=ComponentBehaviorDescription
 		public Assignment getBehaviorDescriptionsAssignment_6_3_1() { return cBehaviorDescriptionsAssignment_6_3_1; }
 		
-		//BehaviorDescription
-		public RuleCall getBehaviorDescriptionsBehaviorDescriptionParserRuleCall_6_3_1_0() { return cBehaviorDescriptionsBehaviorDescriptionParserRuleCall_6_3_1_0; }
+		//ComponentBehaviorDescription
+		public RuleCall getBehaviorDescriptionsComponentBehaviorDescriptionParserRuleCall_6_3_1_0() { return cBehaviorDescriptionsComponentBehaviorDescriptionParserRuleCall_6_3_1_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_6_4() { return cRightCurlyBracketKeyword_6_4; }
@@ -1026,11 +1026,11 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cBehaviorDescriptionsKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
 		private final Assignment cBehaviorDescriptionsAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
-		private final RuleCall cBehaviorDescriptionsBehaviorDescriptionParserRuleCall_6_2_0 = (RuleCall)cBehaviorDescriptionsAssignment_6_2.eContents().get(0);
+		private final RuleCall cBehaviorDescriptionsComponentBehaviorDescriptionParserRuleCall_6_2_0 = (RuleCall)cBehaviorDescriptionsAssignment_6_2.eContents().get(0);
 		private final Group cGroup_6_3 = (Group)cGroup_6.eContents().get(3);
 		private final Keyword cCommaKeyword_6_3_0 = (Keyword)cGroup_6_3.eContents().get(0);
 		private final Assignment cBehaviorDescriptionsAssignment_6_3_1 = (Assignment)cGroup_6_3.eContents().get(1);
-		private final RuleCall cBehaviorDescriptionsBehaviorDescriptionParserRuleCall_6_3_1_0 = (RuleCall)cBehaviorDescriptionsAssignment_6_3_1.eContents().get(0);
+		private final RuleCall cBehaviorDescriptionsComponentBehaviorDescriptionParserRuleCall_6_3_1_0 = (RuleCall)cBehaviorDescriptionsAssignment_6_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_6_4 = (Keyword)cGroup_6.eContents().get(4);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
 		private final Keyword cContainedAssemblyContextsKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
@@ -1060,7 +1060,7 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 		//	name=EString
 		//	'{' ('providedRoles' '{' providedRoles+=ProvidedRole ("," providedRoles+=ProvidedRole)* '}')? ('requiredRoles' '{'
 		//	requiredRoles+=RequiredRole ("," requiredRoles+=RequiredRole)* '}')? ('behaviorDescriptions' '{'
-		//	behaviorDescriptions+=BehaviorDescription ("," behaviorDescriptions+=BehaviorDescription)* '}')?
+		//	behaviorDescriptions+=ComponentBehaviorDescription ("," behaviorDescriptions+=ComponentBehaviorDescription)* '}')?
 		//	('containedAssemblyContexts' '{' containedAssemblyContexts+=AssemblyContext (","
 		//	containedAssemblyContexts+=AssemblyContext)* '}')? ('connectors' '{' connectors+=Connector (","
 		//	connectors+=Connector)* '}')?
@@ -1069,8 +1069,8 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//{assembly::CompositeComponent} 'CompositeComponent' name=EString '{' ('providedRoles' '{' providedRoles+=ProvidedRole
 		//("," providedRoles+=ProvidedRole)* '}')? ('requiredRoles' '{' requiredRoles+=RequiredRole (","
-		//requiredRoles+=RequiredRole)* '}')? ('behaviorDescriptions' '{' behaviorDescriptions+=BehaviorDescription (","
-		//behaviorDescriptions+=BehaviorDescription)* '}')? ('containedAssemblyContexts' '{'
+		//requiredRoles+=RequiredRole)* '}')? ('behaviorDescriptions' '{' behaviorDescriptions+=ComponentBehaviorDescription
+		//("," behaviorDescriptions+=ComponentBehaviorDescription)* '}')? ('containedAssemblyContexts' '{'
 		//containedAssemblyContexts+=AssemblyContext ("," containedAssemblyContexts+=AssemblyContext)* '}')? ('connectors' '{'
 		//connectors+=Connector ("," connectors+=Connector)* '}')? '}'
 		public Group getGroup() { return cGroup; }
@@ -1150,8 +1150,8 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_5_4() { return cRightCurlyBracketKeyword_5_4; }
 		
-		//('behaviorDescriptions' '{' behaviorDescriptions+=BehaviorDescription ("," behaviorDescriptions+=BehaviorDescription)*
-		//'}')?
+		//('behaviorDescriptions' '{' behaviorDescriptions+=ComponentBehaviorDescription (","
+		//behaviorDescriptions+=ComponentBehaviorDescription)* '}')?
 		public Group getGroup_6() { return cGroup_6; }
 		
 		//'behaviorDescriptions'
@@ -1160,23 +1160,23 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_6_1() { return cLeftCurlyBracketKeyword_6_1; }
 		
-		//behaviorDescriptions+=BehaviorDescription
+		//behaviorDescriptions+=ComponentBehaviorDescription
 		public Assignment getBehaviorDescriptionsAssignment_6_2() { return cBehaviorDescriptionsAssignment_6_2; }
 		
-		//BehaviorDescription
-		public RuleCall getBehaviorDescriptionsBehaviorDescriptionParserRuleCall_6_2_0() { return cBehaviorDescriptionsBehaviorDescriptionParserRuleCall_6_2_0; }
+		//ComponentBehaviorDescription
+		public RuleCall getBehaviorDescriptionsComponentBehaviorDescriptionParserRuleCall_6_2_0() { return cBehaviorDescriptionsComponentBehaviorDescriptionParserRuleCall_6_2_0; }
 		
-		//("," behaviorDescriptions+=BehaviorDescription)*
+		//("," behaviorDescriptions+=ComponentBehaviorDescription)*
 		public Group getGroup_6_3() { return cGroup_6_3; }
 		
 		//","
 		public Keyword getCommaKeyword_6_3_0() { return cCommaKeyword_6_3_0; }
 		
-		//behaviorDescriptions+=BehaviorDescription
+		//behaviorDescriptions+=ComponentBehaviorDescription
 		public Assignment getBehaviorDescriptionsAssignment_6_3_1() { return cBehaviorDescriptionsAssignment_6_3_1; }
 		
-		//BehaviorDescription
-		public RuleCall getBehaviorDescriptionsBehaviorDescriptionParserRuleCall_6_3_1_0() { return cBehaviorDescriptionsBehaviorDescriptionParserRuleCall_6_3_1_0; }
+		//ComponentBehaviorDescription
+		public RuleCall getBehaviorDescriptionsComponentBehaviorDescriptionParserRuleCall_6_3_1_0() { return cBehaviorDescriptionsComponentBehaviorDescriptionParserRuleCall_6_3_1_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_6_4() { return cRightCurlyBracketKeyword_6_4; }
@@ -1520,6 +1520,25 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class BehaviorDescriptionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "edu.kit.ipd.sdq.cbsmdsl.CbsmDsl.BehaviorDescription");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cBehaviorDescription_ImplParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cComponentBehaviorDescriptionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//BehaviorDescription behavior::BehaviorDescription:
+		//	BehaviorDescription_Impl | ComponentBehaviorDescription
+		@Override public ParserRule getRule() { return rule; }
+		
+		//BehaviorDescription_Impl | ComponentBehaviorDescription
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//BehaviorDescription_Impl
+		public RuleCall getBehaviorDescription_ImplParserRuleCall_0() { return cBehaviorDescription_ImplParserRuleCall_0; }
+		
+		//ComponentBehaviorDescription
+		public RuleCall getComponentBehaviorDescriptionParserRuleCall_1() { return cComponentBehaviorDescriptionParserRuleCall_1; }
+	}
+	public class BehaviorDescription_ImplElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "edu.kit.ipd.sdq.cbsmdsl.CbsmDsl.BehaviorDescription_Impl");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cBehaviorDescriptionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cBehaviorDescriptionKeyword_1 = (Keyword)cGroup.eContents().get(1);
@@ -1538,7 +1557,7 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_4_4 = (Keyword)cGroup_4.eContents().get(4);
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//BehaviorDescription behavior::BehaviorDescription:
+		//BehaviorDescription_Impl behavior::BehaviorDescription:
 		//	{behavior::BehaviorDescription}
 		//	'BehaviorDescription'
 		//	name=EString
@@ -1597,6 +1616,103 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+	}
+	public class ComponentBehaviorDescriptionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "edu.kit.ipd.sdq.cbsmdsl.CbsmDsl.ComponentBehaviorDescription");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cComponentBehaviorDescriptionAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cComponentBehaviorDescriptionKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cActionsKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cActionsAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cActionsActionParserRuleCall_4_2_0 = (RuleCall)cActionsAssignment_4_2.eContents().get(0);
+		private final Group cGroup_4_3 = (Group)cGroup_4.eContents().get(3);
+		private final Keyword cCommaKeyword_4_3_0 = (Keyword)cGroup_4_3.eContents().get(0);
+		private final Assignment cActionsAssignment_4_3_1 = (Assignment)cGroup_4_3.eContents().get(1);
+		private final RuleCall cActionsActionParserRuleCall_4_3_1_0 = (RuleCall)cActionsAssignment_4_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4_4 = (Keyword)cGroup_4.eContents().get(4);
+		private final Keyword cProvidedServiceKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cProvidedServiceAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final CrossReference cProvidedServiceSignatureCrossReference_6_0 = (CrossReference)cProvidedServiceAssignment_6.eContents().get(0);
+		private final RuleCall cProvidedServiceSignatureEStringParserRuleCall_6_0_1 = (RuleCall)cProvidedServiceSignatureCrossReference_6_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		
+		//ComponentBehaviorDescription behavior::ComponentBehaviorDescription:
+		//	{behavior::ComponentBehaviorDescription}
+		//	'ComponentBehaviorDescription'
+		//	name=EString
+		//	'{' ('actions' '{' actions+=Action ("," actions+=Action)* '}')?
+		//	'providedService' providedService=[repository::Signature|EString]
+		//	'}'
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{behavior::ComponentBehaviorDescription} 'ComponentBehaviorDescription' name=EString '{' ('actions' '{' actions+=Action
+		//("," actions+=Action)* '}')? 'providedService' providedService=[repository::Signature|EString] '}'
+		public Group getGroup() { return cGroup; }
+		
+		//{behavior::ComponentBehaviorDescription}
+		public Action getComponentBehaviorDescriptionAction_0() { return cComponentBehaviorDescriptionAction_0; }
+		
+		//'ComponentBehaviorDescription'
+		public Keyword getComponentBehaviorDescriptionKeyword_1() { return cComponentBehaviorDescriptionKeyword_1; }
+		
+		//name=EString
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//EString
+		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		
+		//('actions' '{' actions+=Action ("," actions+=Action)* '}')?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'actions'
+		public Keyword getActionsKeyword_4_0() { return cActionsKeyword_4_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_4_1() { return cLeftCurlyBracketKeyword_4_1; }
+		
+		//actions+=Action
+		public Assignment getActionsAssignment_4_2() { return cActionsAssignment_4_2; }
+		
+		//Action
+		public RuleCall getActionsActionParserRuleCall_4_2_0() { return cActionsActionParserRuleCall_4_2_0; }
+		
+		//("," actions+=Action)*
+		public Group getGroup_4_3() { return cGroup_4_3; }
+		
+		//","
+		public Keyword getCommaKeyword_4_3_0() { return cCommaKeyword_4_3_0; }
+		
+		//actions+=Action
+		public Assignment getActionsAssignment_4_3_1() { return cActionsAssignment_4_3_1; }
+		
+		//Action
+		public RuleCall getActionsActionParserRuleCall_4_3_1_0() { return cActionsActionParserRuleCall_4_3_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4_4() { return cRightCurlyBracketKeyword_4_4; }
+		
+		//'providedService'
+		public Keyword getProvidedServiceKeyword_5() { return cProvidedServiceKeyword_5; }
+		
+		//providedService=[repository::Signature|EString]
+		public Assignment getProvidedServiceAssignment_6() { return cProvidedServiceAssignment_6; }
+		
+		//[repository::Signature|EString]
+		public CrossReference getProvidedServiceSignatureCrossReference_6_0() { return cProvidedServiceSignatureCrossReference_6_0; }
+		
+		//EString
+		public RuleCall getProvidedServiceSignatureEStringParserRuleCall_6_0_1() { return cProvidedServiceSignatureEStringParserRuleCall_6_0_1; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 	public class InternalActionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "edu.kit.ipd.sdq.cbsmdsl.CbsmDsl.InternalAction");
@@ -2744,6 +2860,8 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final ProvidedRoleElements pProvidedRole;
 	private final RequiredRoleElements pRequiredRole;
 	private final BehaviorDescriptionElements pBehaviorDescription;
+	private final BehaviorDescription_ImplElements pBehaviorDescription_Impl;
+	private final ComponentBehaviorDescriptionElements pComponentBehaviorDescription;
 	private final InternalActionElements pInternalAction;
 	private final ExternalCallElements pExternalCall;
 	private final LoopElements pLoop;
@@ -2787,6 +2905,8 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pProvidedRole = new ProvidedRoleElements();
 		this.pRequiredRole = new RequiredRoleElements();
 		this.pBehaviorDescription = new BehaviorDescriptionElements();
+		this.pBehaviorDescription_Impl = new BehaviorDescription_ImplElements();
+		this.pComponentBehaviorDescription = new ComponentBehaviorDescriptionElements();
 		this.pInternalAction = new InternalActionElements();
 		this.pExternalCall = new ExternalCallElements();
 		this.pLoop = new LoopElements();
@@ -2966,7 +3086,7 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	name=EString
 	//	'{' ('providedRoles' '{' providedRoles+=ProvidedRole ("," providedRoles+=ProvidedRole)* '}')? ('requiredRoles' '{'
 	//	requiredRoles+=RequiredRole ("," requiredRoles+=RequiredRole)* '}')? ('behaviorDescriptions' '{'
-	//	behaviorDescriptions+=BehaviorDescription ("," behaviorDescriptions+=BehaviorDescription)* '}')?
+	//	behaviorDescriptions+=ComponentBehaviorDescription ("," behaviorDescriptions+=ComponentBehaviorDescription)* '}')?
 	//	'}'
 	public BasicComponentElements getBasicComponentAccess() {
 		return pBasicComponent;
@@ -2982,7 +3102,7 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	name=EString
 	//	'{' ('providedRoles' '{' providedRoles+=ProvidedRole ("," providedRoles+=ProvidedRole)* '}')? ('requiredRoles' '{'
 	//	requiredRoles+=RequiredRole ("," requiredRoles+=RequiredRole)* '}')? ('behaviorDescriptions' '{'
-	//	behaviorDescriptions+=BehaviorDescription ("," behaviorDescriptions+=BehaviorDescription)* '}')?
+	//	behaviorDescriptions+=ComponentBehaviorDescription ("," behaviorDescriptions+=ComponentBehaviorDescription)* '}')?
 	//	('containedAssemblyContexts' '{' containedAssemblyContexts+=AssemblyContext (","
 	//	containedAssemblyContexts+=AssemblyContext)* '}')? ('connectors' '{' connectors+=Connector (","
 	//	connectors+=Connector)* '}')?
@@ -3063,17 +3183,42 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//BehaviorDescription behavior::BehaviorDescription:
-	//	{behavior::BehaviorDescription}
-	//	'BehaviorDescription'
-	//	name=EString
-	//	'{' ('actions' '{' actions+=Action ("," actions+=Action)* '}')?
-	//	'}'
+	//	BehaviorDescription_Impl | ComponentBehaviorDescription
 	public BehaviorDescriptionElements getBehaviorDescriptionAccess() {
 		return pBehaviorDescription;
 	}
 	
 	public ParserRule getBehaviorDescriptionRule() {
 		return getBehaviorDescriptionAccess().getRule();
+	}
+	
+	//BehaviorDescription_Impl behavior::BehaviorDescription:
+	//	{behavior::BehaviorDescription}
+	//	'BehaviorDescription'
+	//	name=EString
+	//	'{' ('actions' '{' actions+=Action ("," actions+=Action)* '}')?
+	//	'}'
+	public BehaviorDescription_ImplElements getBehaviorDescription_ImplAccess() {
+		return pBehaviorDescription_Impl;
+	}
+	
+	public ParserRule getBehaviorDescription_ImplRule() {
+		return getBehaviorDescription_ImplAccess().getRule();
+	}
+	
+	//ComponentBehaviorDescription behavior::ComponentBehaviorDescription:
+	//	{behavior::ComponentBehaviorDescription}
+	//	'ComponentBehaviorDescription'
+	//	name=EString
+	//	'{' ('actions' '{' actions+=Action ("," actions+=Action)* '}')?
+	//	'providedService' providedService=[repository::Signature|EString]
+	//	'}'
+	public ComponentBehaviorDescriptionElements getComponentBehaviorDescriptionAccess() {
+		return pComponentBehaviorDescription;
+	}
+	
+	public ParserRule getComponentBehaviorDescriptionRule() {
+		return getComponentBehaviorDescriptionAccess().getRule();
 	}
 	
 	//InternalAction behavior::InternalAction:

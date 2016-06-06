@@ -145,6 +145,11 @@ public class BranchPathItemProvider extends NamedElementItemProvider {
 			(createChildParameter
 				(BehaviorPackage.Literals.BRANCH_PATH__BRANCH_BEHAVIOR,
 				 BehaviorFactory.eINSTANCE.createBehaviorDescription()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(BehaviorPackage.Literals.BRANCH_PATH__BRANCH_BEHAVIOR,
+				 BehaviorFactory.eINSTANCE.createComponentBehaviorDescription()));
 	}
 
 	/**

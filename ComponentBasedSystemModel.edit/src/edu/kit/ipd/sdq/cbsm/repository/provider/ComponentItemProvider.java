@@ -158,7 +158,7 @@ public class ComponentItemProvider extends NamedElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(RepositoryPackage.Literals.COMPONENT__BEHAVIOR_DESCRIPTIONS,
-				 BehaviorFactory.eINSTANCE.createBehaviorDescription()));
+				 BehaviorFactory.eINSTANCE.createComponentBehaviorDescription()));
 	}
 
 	/**

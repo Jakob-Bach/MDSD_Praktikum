@@ -52,7 +52,8 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//core/NamedElement #//repository/ProvidingAndRequiringElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="behaviorDescriptions"
-          upperBound="-1" eType="#//repository/behavior/BehaviorDescription" containment="true"/>
+          upperBound="-1" eType="#//repository/behavior/ComponentBehaviorDescription"
+          containment="true" eOpposite="#//repository/behavior/ComponentBehaviorDescription/describedComponent"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Signature" eSuperTypes="#//core/NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -97,6 +98,18 @@
       <eClassifiers xsi:type="ecore:EClass" name="BehaviorDescription" eSuperTypes="#//core/NamedElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
             eType="#//repository/behavior/Action" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ComponentBehaviorDescription" eSuperTypes="#//repository/behavior/BehaviorDescription">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+          <details key="constraints" value="ProvidedServiceMustBelongToComponentsProvidedInterfaces"/>
+        </eAnnotations>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="ProvidedServiceMustBelongToComponentsProvidedInterfaces" value="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;self.describedComponent.providedRoles.providedInterface.signatures&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;->includes(self.providedService)"/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="providedService" lowerBound="1"
+            eType="#//repository/Signature"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="describedComponent"
+            lowerBound="1" eType="#//repository/Component" eOpposite="#//repository/Component/behaviorDescriptions"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Action" abstract="true" eSuperTypes="#//core/NamedElement">
         <eStructuralFeatures xsi:type="ecore:EReference" name="predecessor" eType="#//repository/behavior/Action"

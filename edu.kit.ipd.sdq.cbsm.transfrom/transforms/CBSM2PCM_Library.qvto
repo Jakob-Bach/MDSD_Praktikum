@@ -89,7 +89,7 @@ mapping CBSM::repository::Component::Component2BasicComponent() :
 inherits CBSM::repository::Component::Component2RepositoryComponent_abstract
 {
 	serviceEffectSpecifications__BasicComponent := self.behaviorDescriptions ->
-		map BehaviorDescription2ResourceDemandingSEFF();
+		map ComponentBehaviorDescription2ResourceDemandingSEFF();
 }
 
 mapping CBSM::repository::Signature::Signature2OperationSignature() :
@@ -172,8 +172,20 @@ mapping CBSM::repository::SimpleType::SimpleType2PrimitiveDataType() :
 ----------behavior----------
 ----------------------------
 
-mapping CBSM::repository::behavior::BehaviorDescription::BehaviorDescription2ResourceDemandingSEFF() :
-		PCM::seff::ResourceDemandingSEFF
+mapping CBSM::repository::behavior::BehaviorDescription::
+			BehaviorDescription2ResourceDemandingBehavior() :
+		PCM::seff::ResourceDemandingBehaviour
+disjuncts CBSM::repository::behavior::ComponentBehaviorDescription::
+			ComponentBehaviorDescription2ResourceDemandingSEFF,
+		CBSM::repository::behavior::BehaviorDescription::
+			BehaviorDescription2ResourceDemandingBehaviour_concrete
+{
+	-- delegate to sub-types
+}
+
+mapping CBSM::repository::behavior::BehaviorDescription::
+			BehaviorDescription2ResourceDemandingBehaviour_concrete() :
+		PCM::seff::ResourceDemandingBehaviour
 {
 	-- CBSM has no special start and stop elements, so create and link them
 	var startAction := object pcm::seff::StartAction {
@@ -188,6 +200,18 @@ mapping CBSM::repository::behavior::BehaviorDescription::BehaviorDescription2Res
 	steps_Behaviour += startAction;
 	steps_Behaviour += intermediateActions;
 	steps_Behaviour += stopAction;
+}
+
+mapping CBSM::repository::behavior::ComponentBehaviorDescription::
+			ComponentBehaviorDescription2ResourceDemandingSEFF() :
+		PCM::seff::ResourceDemandingSEFF
+inherits CBSM::repository::behavior::BehaviorDescription::
+			BehaviorDescription2ResourceDemandingBehaviour_concrete
+{
+	describedService__SEFF := self.providedService.
+		resolveone(PCM::repository::OperationSignature);
+	basicComponent_ServiceEffectSpecification := self.describedComponent.
+		resolveone(PCM::repository::BasicComponent);
 }
 
 abstract mapping CBSM::repository::behavior::Action::Action2AbstractAction() :
@@ -229,7 +253,8 @@ mapping CBSM::repository::behavior::Loop::Loop2LoopAction() :
 		PCM::seff::LoopAction
 inherits CBSM::repository::behavior::Action::Action2AbstractAction_abstract
 {
-	bodyBehaviour_Loop := self.loopBehavior.map BehaviorDescription2ResourceDemandingSEFF();
+	bodyBehaviour_Loop := self.loopBehavior.
+		map BehaviorDescription2ResourceDemandingBehavior();
 	iterationCount_LoopAction := object PCM::core::PCMRandomVariable {
 		specification := "1";
 	};
@@ -254,7 +279,8 @@ mapping CBSM::repository::behavior::BranchPath::BranchPath2ProbabilisticBranchTr
 		PCM::seff::ProbabilisticBranchTransition
 inherits CBSM::core::NamedElement::NamedElement2NamedElement
 {
-	branchBehaviour_BranchTransition := self.branchBehavior.map BehaviorDescription2ResourceDemandingSEFF();
+	branchBehaviour_BranchTransition := self.branchBehavior.
+		map BehaviorDescription2ResourceDemandingBehavior();
 }
 
 ----------------------------

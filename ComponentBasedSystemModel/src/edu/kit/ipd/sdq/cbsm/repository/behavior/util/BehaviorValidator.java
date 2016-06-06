@@ -88,6 +88,8 @@ public class BehaviorValidator extends EObjectValidator {
 		switch (classifierID) {
 			case BehaviorPackage.BEHAVIOR_DESCRIPTION:
 				return validateBehaviorDescription((BehaviorDescription)value, diagnostics, context);
+			case BehaviorPackage.COMPONENT_BEHAVIOR_DESCRIPTION:
+				return validateComponentBehaviorDescription((ComponentBehaviorDescription)value, diagnostics, context);
 			case BehaviorPackage.ACTION:
 				return validateAction((Action)value, diagnostics, context);
 			case BehaviorPackage.INTERNAL_ACTION:
@@ -112,6 +114,56 @@ public class BehaviorValidator extends EObjectValidator {
 	 */
 	public boolean validateBehaviorDescription(BehaviorDescription behaviorDescription, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(behaviorDescription, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateComponentBehaviorDescription(ComponentBehaviorDescription componentBehaviorDescription, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(componentBehaviorDescription, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(componentBehaviorDescription, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(componentBehaviorDescription, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(componentBehaviorDescription, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(componentBehaviorDescription, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(componentBehaviorDescription, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(componentBehaviorDescription, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(componentBehaviorDescription, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(componentBehaviorDescription, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponentBehaviorDescription_ProvidedServiceMustBelongToComponentsProvidedInterfaces(componentBehaviorDescription, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the ProvidedServiceMustBelongToComponentsProvidedInterfaces constraint of '<em>Component Behavior Description</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String COMPONENT_BEHAVIOR_DESCRIPTION__PROVIDED_SERVICE_MUST_BELONG_TO_COMPONENTS_PROVIDED_INTERFACES__EEXPRESSION = "\n" +
+		"\t\t\t\t\tself.describedComponent.providedRoles.providedInterface.signatures\n" +
+		"\t\t\t\t\t\t->includes(self.providedService)";
+
+	/**
+	 * Validates the ProvidedServiceMustBelongToComponentsProvidedInterfaces constraint of '<em>Component Behavior Description</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateComponentBehaviorDescription_ProvidedServiceMustBelongToComponentsProvidedInterfaces(ComponentBehaviorDescription componentBehaviorDescription, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(BehaviorPackage.Literals.COMPONENT_BEHAVIOR_DESCRIPTION,
+				 componentBehaviorDescription,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "ProvidedServiceMustBelongToComponentsProvidedInterfaces",
+				 COMPONENT_BEHAVIOR_DESCRIPTION__PROVIDED_SERVICE_MUST_BELONG_TO_COMPONENTS_PROVIDED_INTERFACES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

@@ -105,6 +105,70 @@ public interface BehaviorPackage extends EPackage {
 	int BEHAVIOR_DESCRIPTION_OPERATION_COUNT = CorePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link edu.kit.ipd.sdq.cbsm.repository.behavior.impl.ComponentBehaviorDescriptionImpl <em>Component Behavior Description</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see edu.kit.ipd.sdq.cbsm.repository.behavior.impl.ComponentBehaviorDescriptionImpl
+	 * @see edu.kit.ipd.sdq.cbsm.repository.behavior.impl.BehaviorPackageImpl#getComponentBehaviorDescription()
+	 * @generated
+	 */
+	int COMPONENT_BEHAVIOR_DESCRIPTION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_BEHAVIOR_DESCRIPTION__NAME = BEHAVIOR_DESCRIPTION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Actions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_BEHAVIOR_DESCRIPTION__ACTIONS = BEHAVIOR_DESCRIPTION__ACTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Provided Service</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_BEHAVIOR_DESCRIPTION__PROVIDED_SERVICE = BEHAVIOR_DESCRIPTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Described Component</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_BEHAVIOR_DESCRIPTION__DESCRIBED_COMPONENT = BEHAVIOR_DESCRIPTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Component Behavior Description</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_BEHAVIOR_DESCRIPTION_FEATURE_COUNT = BEHAVIOR_DESCRIPTION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Component Behavior Description</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_BEHAVIOR_DESCRIPTION_OPERATION_COUNT = BEHAVIOR_DESCRIPTION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link edu.kit.ipd.sdq.cbsm.repository.behavior.impl.ActionImpl <em>Action</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -112,7 +176,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @see edu.kit.ipd.sdq.cbsm.repository.behavior.impl.BehaviorPackageImpl#getAction()
 	 * @generated
 	 */
-	int ACTION = 1;
+	int ACTION = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -167,7 +231,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @see edu.kit.ipd.sdq.cbsm.repository.behavior.impl.BehaviorPackageImpl#getInternalAction()
 	 * @generated
 	 */
-	int INTERNAL_ACTION = 2;
+	int INTERNAL_ACTION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -222,7 +286,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @see edu.kit.ipd.sdq.cbsm.repository.behavior.impl.BehaviorPackageImpl#getExternalCall()
 	 * @generated
 	 */
-	int EXTERNAL_CALL = 3;
+	int EXTERNAL_CALL = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -295,7 +359,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @see edu.kit.ipd.sdq.cbsm.repository.behavior.impl.BehaviorPackageImpl#getLoop()
 	 * @generated
 	 */
-	int LOOP = 4;
+	int LOOP = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -359,7 +423,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @see edu.kit.ipd.sdq.cbsm.repository.behavior.impl.BehaviorPackageImpl#getBranch()
 	 * @generated
 	 */
-	int BRANCH = 5;
+	int BRANCH = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -423,7 +487,7 @@ public interface BehaviorPackage extends EPackage {
 	 * @see edu.kit.ipd.sdq.cbsm.repository.behavior.impl.BehaviorPackageImpl#getBranchPath()
 	 * @generated
 	 */
-	int BRANCH_PATH = 6;
+	int BRANCH_PATH = 7;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -482,6 +546,38 @@ public interface BehaviorPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getBehaviorDescription_Actions();
+
+	/**
+	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.cbsm.repository.behavior.ComponentBehaviorDescription <em>Component Behavior Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Component Behavior Description</em>'.
+	 * @see edu.kit.ipd.sdq.cbsm.repository.behavior.ComponentBehaviorDescription
+	 * @generated
+	 */
+	EClass getComponentBehaviorDescription();
+
+	/**
+	 * Returns the meta object for the reference '{@link edu.kit.ipd.sdq.cbsm.repository.behavior.ComponentBehaviorDescription#getProvidedService <em>Provided Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Provided Service</em>'.
+	 * @see edu.kit.ipd.sdq.cbsm.repository.behavior.ComponentBehaviorDescription#getProvidedService()
+	 * @see #getComponentBehaviorDescription()
+	 * @generated
+	 */
+	EReference getComponentBehaviorDescription_ProvidedService();
+
+	/**
+	 * Returns the meta object for the container reference '{@link edu.kit.ipd.sdq.cbsm.repository.behavior.ComponentBehaviorDescription#getDescribedComponent <em>Described Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Described Component</em>'.
+	 * @see edu.kit.ipd.sdq.cbsm.repository.behavior.ComponentBehaviorDescription#getDescribedComponent()
+	 * @see #getComponentBehaviorDescription()
+	 * @generated
+	 */
+	EReference getComponentBehaviorDescription_DescribedComponent();
 
 	/**
 	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.cbsm.repository.behavior.Action <em>Action</em>}'.
@@ -660,6 +756,32 @@ public interface BehaviorPackage extends EPackage {
 		 * @generated
 		 */
 		EReference BEHAVIOR_DESCRIPTION__ACTIONS = eINSTANCE.getBehaviorDescription_Actions();
+
+		/**
+		 * The meta object literal for the '{@link edu.kit.ipd.sdq.cbsm.repository.behavior.impl.ComponentBehaviorDescriptionImpl <em>Component Behavior Description</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see edu.kit.ipd.sdq.cbsm.repository.behavior.impl.ComponentBehaviorDescriptionImpl
+		 * @see edu.kit.ipd.sdq.cbsm.repository.behavior.impl.BehaviorPackageImpl#getComponentBehaviorDescription()
+		 * @generated
+		 */
+		EClass COMPONENT_BEHAVIOR_DESCRIPTION = eINSTANCE.getComponentBehaviorDescription();
+
+		/**
+		 * The meta object literal for the '<em><b>Provided Service</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_BEHAVIOR_DESCRIPTION__PROVIDED_SERVICE = eINSTANCE.getComponentBehaviorDescription_ProvidedService();
+
+		/**
+		 * The meta object literal for the '<em><b>Described Component</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_BEHAVIOR_DESCRIPTION__DESCRIBED_COMPONENT = eINSTANCE.getComponentBehaviorDescription_DescribedComponent();
 
 		/**
 		 * The meta object literal for the '{@link edu.kit.ipd.sdq.cbsm.repository.behavior.impl.ActionImpl <em>Action</em>}' class.

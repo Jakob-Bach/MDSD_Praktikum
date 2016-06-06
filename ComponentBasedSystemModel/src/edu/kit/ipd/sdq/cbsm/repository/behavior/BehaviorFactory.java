@@ -31,6 +31,15 @@ public interface BehaviorFactory extends EFactory {
 	BehaviorDescription createBehaviorDescription();
 
 	/**
+	 * Returns a new object of class '<em>Component Behavior Description</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Component Behavior Description</em>'.
+	 * @generated
+	 */
+	ComponentBehaviorDescription createComponentBehaviorDescription();
+
+	/**
 	 * Returns a new object of class '<em>Internal Action</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

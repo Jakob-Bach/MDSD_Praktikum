@@ -26,6 +26,7 @@ import edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorFactory;
 import edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorPackage;
 import edu.kit.ipd.sdq.cbsm.repository.behavior.Branch;
 import edu.kit.ipd.sdq.cbsm.repository.behavior.BranchPath;
+import edu.kit.ipd.sdq.cbsm.repository.behavior.ComponentBehaviorDescription;
 import edu.kit.ipd.sdq.cbsm.repository.behavior.ExternalCall;
 import edu.kit.ipd.sdq.cbsm.repository.behavior.InternalAction;
 import edu.kit.ipd.sdq.cbsm.repository.behavior.Loop;
@@ -53,6 +54,13 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * @generated
 	 */
 	private EClass behaviorDescriptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass componentBehaviorDescriptionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -206,6 +214,33 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getComponentBehaviorDescription() {
+		return componentBehaviorDescriptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getComponentBehaviorDescription_ProvidedService() {
+		return (EReference)componentBehaviorDescriptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getComponentBehaviorDescription_DescribedComponent() {
+		return (EReference)componentBehaviorDescriptionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAction() {
 		return actionEClass;
 	}
@@ -349,6 +384,10 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		behaviorDescriptionEClass = createEClass(BEHAVIOR_DESCRIPTION);
 		createEReference(behaviorDescriptionEClass, BEHAVIOR_DESCRIPTION__ACTIONS);
 
+		componentBehaviorDescriptionEClass = createEClass(COMPONENT_BEHAVIOR_DESCRIPTION);
+		createEReference(componentBehaviorDescriptionEClass, COMPONENT_BEHAVIOR_DESCRIPTION__PROVIDED_SERVICE);
+		createEReference(componentBehaviorDescriptionEClass, COMPONENT_BEHAVIOR_DESCRIPTION__DESCRIBED_COMPONENT);
+
 		actionEClass = createEClass(ACTION);
 		createEReference(actionEClass, ACTION__PREDECESSOR);
 		createEReference(actionEClass, ACTION__SUCCESSOR);
@@ -402,6 +441,7 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 
 		// Add supertypes to classes
 		behaviorDescriptionEClass.getESuperTypes().add(theCorePackage.getNamedElement());
+		componentBehaviorDescriptionEClass.getESuperTypes().add(this.getBehaviorDescription());
 		actionEClass.getESuperTypes().add(theCorePackage.getNamedElement());
 		internalActionEClass.getESuperTypes().add(this.getAction());
 		externalCallEClass.getESuperTypes().add(this.getAction());
@@ -412,6 +452,10 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 		// Initialize classes, features, and operations; add parameters
 		initEClass(behaviorDescriptionEClass, BehaviorDescription.class, "BehaviorDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBehaviorDescription_Actions(), this.getAction(), null, "actions", null, 0, -1, BehaviorDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(componentBehaviorDescriptionEClass, ComponentBehaviorDescription.class, "ComponentBehaviorDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getComponentBehaviorDescription_ProvidedService(), theRepositoryPackage.getSignature(), null, "providedService", null, 1, 1, ComponentBehaviorDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentBehaviorDescription_DescribedComponent(), theRepositoryPackage.getComponent(), theRepositoryPackage.getComponent_BehaviorDescriptions(), "describedComponent", null, 1, 1, ComponentBehaviorDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actionEClass, Action.class, "Action", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAction_Predecessor(), this.getAction(), this.getAction_Successor(), "predecessor", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -456,6 +500,12 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
 		   });	
 		addAnnotation
+		  (componentBehaviorDescriptionEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "ProvidedServiceMustBelongToComponentsProvidedInterfaces"
+		   });	
+		addAnnotation
 		  (externalCallEClass, 
 		   source, 
 		   new String[] {
@@ -471,6 +521,12 @@ public class BehaviorPackageImpl extends EPackageImpl implements BehaviorPackage
 	 */
 	protected void createPivotAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";	
+		addAnnotation
+		  (componentBehaviorDescriptionEClass, 
+		   source, 
+		   new String[] {
+			 "ProvidedServiceMustBelongToComponentsProvidedInterfaces", "\n\t\t\t\t\tself.describedComponent.providedRoles.providedInterface.signatures\n\t\t\t\t\t\t->includes(self.providedService)"
+		   });	
 		addAnnotation
 		  (externalCallEClass, 
 		   source, 

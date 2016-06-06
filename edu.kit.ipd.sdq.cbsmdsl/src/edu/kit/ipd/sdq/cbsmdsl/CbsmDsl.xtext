@@ -79,7 +79,7 @@ BasicComponent returns repository::Component:
 	'{'
 		('providedRoles' '{' providedRoles+=ProvidedRole ( "," providedRoles+=ProvidedRole)* '}' )?
 		('requiredRoles' '{' requiredRoles+=RequiredRole ( "," requiredRoles+=RequiredRole)* '}' )?
-		('behaviorDescriptions' '{' behaviorDescriptions+=BehaviorDescription ( "," behaviorDescriptions+=BehaviorDescription)* '}')?
+		('behaviorDescriptions' '{' behaviorDescriptions+=ComponentBehaviorDescription ( "," behaviorDescriptions+=ComponentBehaviorDescription)* '}')?
 	'}';
 
 CompositeComponent returns assembly::CompositeComponent:
@@ -89,7 +89,7 @@ CompositeComponent returns assembly::CompositeComponent:
 	'{'
 		('providedRoles' '{' providedRoles+=ProvidedRole ( "," providedRoles+=ProvidedRole)* '}' )?
 		('requiredRoles' '{' requiredRoles+=RequiredRole ( "," requiredRoles+=RequiredRole)* '}' )?
-		('behaviorDescriptions' '{' behaviorDescriptions+=BehaviorDescription ( "," behaviorDescriptions+=BehaviorDescription)* '}')?
+		('behaviorDescriptions' '{' behaviorDescriptions+=ComponentBehaviorDescription ( "," behaviorDescriptions+=ComponentBehaviorDescription)* '}')?
 		('containedAssemblyContexts' '{' containedAssemblyContexts+=AssemblyContext ( "," containedAssemblyContexts+=AssemblyContext)* '}' )?
 		('connectors' '{' connectors+=Connector ( "," connectors+=Connector)* '}' )?
 	'}';
@@ -129,11 +129,23 @@ RequiredRole returns repository::RequiredRole:
 	'}';
 
 BehaviorDescription returns behavior::BehaviorDescription:
+	BehaviorDescription_Impl | ComponentBehaviorDescription;
+
+BehaviorDescription_Impl returns behavior::BehaviorDescription:
 	{behavior::BehaviorDescription}
 	'BehaviorDescription'
 	name=EString
 	'{'
 		('actions' '{' actions+=Action ( "," actions+=Action)* '}' )?
+	'}';
+
+ComponentBehaviorDescription returns behavior::ComponentBehaviorDescription:
+	{behavior::ComponentBehaviorDescription}
+	'ComponentBehaviorDescription'
+	name=EString
+	'{'
+		('actions' '{' actions+=Action ( "," actions+=Action)* '}' )?
+		'providedService' providedService=[repository::Signature|EString]
 	'}';
 
 InternalAction returns behavior::InternalAction:

@@ -8,7 +8,8 @@ import edu.kit.ipd.sdq.cbsm.repository.ProvidedRole;
 import edu.kit.ipd.sdq.cbsm.repository.ProvidingAndRequiringElement;
 import edu.kit.ipd.sdq.cbsm.repository.RepositoryPackage;
 import edu.kit.ipd.sdq.cbsm.repository.RequiredRole;
-import edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorDescription;
+import edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorPackage;
+import edu.kit.ipd.sdq.cbsm.repository.behavior.ComponentBehaviorDescription;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -17,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -63,7 +65,7 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<BehaviorDescription> behaviorDescriptions;
+	protected EList<ComponentBehaviorDescription> behaviorDescriptions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,11 +115,26 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<BehaviorDescription> getBehaviorDescriptions() {
+	public EList<ComponentBehaviorDescription> getBehaviorDescriptions() {
 		if (behaviorDescriptions == null) {
-			behaviorDescriptions = new EObjectContainmentEList<BehaviorDescription>(BehaviorDescription.class, this, RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTIONS);
+			behaviorDescriptions = new EObjectContainmentWithInverseEList<ComponentBehaviorDescription>(ComponentBehaviorDescription.class, this, RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTIONS, BehaviorPackage.COMPONENT_BEHAVIOR_DESCRIPTION__DESCRIBED_COMPONENT);
 		}
 		return behaviorDescriptions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBehaviorDescriptions()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -175,7 +192,7 @@ public class ComponentImpl extends NamedElementImpl implements Component {
 				return;
 			case RepositoryPackage.COMPONENT__BEHAVIOR_DESCRIPTIONS:
 				getBehaviorDescriptions().clear();
-				getBehaviorDescriptions().addAll((Collection<? extends BehaviorDescription>)newValue);
+				getBehaviorDescriptions().addAll((Collection<? extends ComponentBehaviorDescription>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

@@ -71,6 +71,11 @@
         <genClasses ecoreClass="componentBasedSystemModel.ecore#//repository/behavior/BehaviorDescription">
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentBasedSystemModel.ecore#//repository/behavior/BehaviorDescription/actions"/>
         </genClasses>
+        <genClasses ecoreClass="componentBasedSystemModel.ecore#//repository/behavior/ComponentBehaviorDescription">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference componentBasedSystemModel.ecore#//repository/behavior/ComponentBehaviorDescription/providedService"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference componentBasedSystemModel.ecore#//repository/behavior/ComponentBehaviorDescription/describedComponent"/>
+        </genClasses>
         <genClasses ecoreClass="componentBasedSystemModel.ecore#//repository/behavior/Action">
           <genFeatures notify="false" createChild="false" propertySortChoices="true"
               ecoreFeature="ecore:EReference componentBasedSystemModel.ecore#//repository/behavior/Action/predecessor"/>

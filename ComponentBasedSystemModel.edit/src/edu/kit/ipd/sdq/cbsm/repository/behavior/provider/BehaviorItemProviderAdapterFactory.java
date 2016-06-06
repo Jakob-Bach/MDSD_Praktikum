@@ -95,6 +95,29 @@ public class BehaviorItemProviderAdapterFactory extends BehaviorAdapterFactory i
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.cbsm.repository.behavior.ComponentBehaviorDescription} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ComponentBehaviorDescriptionItemProvider componentBehaviorDescriptionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link edu.kit.ipd.sdq.cbsm.repository.behavior.ComponentBehaviorDescription}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createComponentBehaviorDescriptionAdapter() {
+		if (componentBehaviorDescriptionItemProvider == null) {
+			componentBehaviorDescriptionItemProvider = new ComponentBehaviorDescriptionItemProvider(this);
+		}
+
+		return componentBehaviorDescriptionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link edu.kit.ipd.sdq.cbsm.repository.behavior.InternalAction} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -309,6 +332,7 @@ public class BehaviorItemProviderAdapterFactory extends BehaviorAdapterFactory i
 	 */
 	public void dispose() {
 		if (behaviorDescriptionItemProvider != null) behaviorDescriptionItemProvider.dispose();
+		if (componentBehaviorDescriptionItemProvider != null) componentBehaviorDescriptionItemProvider.dispose();
 		if (internalActionItemProvider != null) internalActionItemProvider.dispose();
 		if (externalCallItemProvider != null) externalCallItemProvider.dispose();
 		if (loopItemProvider != null) loopItemProvider.dispose();

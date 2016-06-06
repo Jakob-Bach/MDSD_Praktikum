@@ -3,7 +3,7 @@
 package edu.kit.ipd.sdq.cbsm.repository;
 
 import edu.kit.ipd.sdq.cbsm.core.NamedElement;
-import edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorDescription;
+import edu.kit.ipd.sdq.cbsm.repository.behavior.ComponentBehaviorDescription;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -25,7 +25,8 @@ import org.eclipse.emf.common.util.EList;
 public interface Component extends NamedElement, ProvidingAndRequiringElement {
 	/**
 	 * Returns the value of the '<em><b>Behavior Descriptions</b></em>' containment reference list.
-	 * The list contents are of type {@link edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorDescription}.
+	 * The list contents are of type {@link edu.kit.ipd.sdq.cbsm.repository.behavior.ComponentBehaviorDescription}.
+	 * It is bidirectional and its opposite is '{@link edu.kit.ipd.sdq.cbsm.repository.behavior.ComponentBehaviorDescription#getDescribedComponent <em>Described Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Behavior Descriptions</em>' containment reference list isn't clear,
@@ -34,9 +35,10 @@ public interface Component extends NamedElement, ProvidingAndRequiringElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Behavior Descriptions</em>' containment reference list.
 	 * @see edu.kit.ipd.sdq.cbsm.repository.RepositoryPackage#getComponent_BehaviorDescriptions()
-	 * @model containment="true"
+	 * @see edu.kit.ipd.sdq.cbsm.repository.behavior.ComponentBehaviorDescription#getDescribedComponent
+	 * @model opposite="describedComponent" containment="true"
 	 * @generated
 	 */
-	EList<BehaviorDescription> getBehaviorDescriptions();
+	EList<ComponentBehaviorDescription> getBehaviorDescriptions();
 
 } // Component

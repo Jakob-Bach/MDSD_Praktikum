@@ -1427,9 +1427,9 @@ ruleBasicComponent returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getBasicComponentAccess().getBehaviorDescriptionsBehaviorDescriptionParserRuleCall_6_2_0());
+						newCompositeNode(grammarAccess.getBasicComponentAccess().getBehaviorDescriptionsComponentBehaviorDescriptionParserRuleCall_6_2_0());
 					}
-					lv_behaviorDescriptions_18_0=ruleBehaviorDescription
+					lv_behaviorDescriptions_18_0=ruleComponentBehaviorDescription
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getBasicComponentRule());
@@ -1438,7 +1438,7 @@ ruleBasicComponent returns [EObject current=null]
 							$current,
 							"behaviorDescriptions",
 							lv_behaviorDescriptions_18_0,
-							"edu.kit.ipd.sdq.cbsmdsl.CbsmDsl.BehaviorDescription");
+							"edu.kit.ipd.sdq.cbsmdsl.CbsmDsl.ComponentBehaviorDescription");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -1451,9 +1451,9 @@ ruleBasicComponent returns [EObject current=null]
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getBasicComponentAccess().getBehaviorDescriptionsBehaviorDescriptionParserRuleCall_6_3_1_0());
+							newCompositeNode(grammarAccess.getBasicComponentAccess().getBehaviorDescriptionsComponentBehaviorDescriptionParserRuleCall_6_3_1_0());
 						}
-						lv_behaviorDescriptions_20_0=ruleBehaviorDescription
+						lv_behaviorDescriptions_20_0=ruleComponentBehaviorDescription
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getBasicComponentRule());
@@ -1462,7 +1462,7 @@ ruleBasicComponent returns [EObject current=null]
 								$current,
 								"behaviorDescriptions",
 								lv_behaviorDescriptions_20_0,
-								"edu.kit.ipd.sdq.cbsmdsl.CbsmDsl.BehaviorDescription");
+								"edu.kit.ipd.sdq.cbsmdsl.CbsmDsl.ComponentBehaviorDescription");
 							afterParserOrEnumRuleCall();
 						}
 					)
@@ -1658,9 +1658,9 @@ ruleCompositeComponent returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getCompositeComponentAccess().getBehaviorDescriptionsBehaviorDescriptionParserRuleCall_6_2_0());
+						newCompositeNode(grammarAccess.getCompositeComponentAccess().getBehaviorDescriptionsComponentBehaviorDescriptionParserRuleCall_6_2_0());
 					}
-					lv_behaviorDescriptions_18_0=ruleBehaviorDescription
+					lv_behaviorDescriptions_18_0=ruleComponentBehaviorDescription
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getCompositeComponentRule());
@@ -1669,7 +1669,7 @@ ruleCompositeComponent returns [EObject current=null]
 							$current,
 							"behaviorDescriptions",
 							lv_behaviorDescriptions_18_0,
-							"edu.kit.ipd.sdq.cbsmdsl.CbsmDsl.BehaviorDescription");
+							"edu.kit.ipd.sdq.cbsmdsl.CbsmDsl.ComponentBehaviorDescription");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -1682,9 +1682,9 @@ ruleCompositeComponent returns [EObject current=null]
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getCompositeComponentAccess().getBehaviorDescriptionsBehaviorDescriptionParserRuleCall_6_3_1_0());
+							newCompositeNode(grammarAccess.getCompositeComponentAccess().getBehaviorDescriptionsComponentBehaviorDescriptionParserRuleCall_6_3_1_0());
 						}
-						lv_behaviorDescriptions_20_0=ruleBehaviorDescription
+						lv_behaviorDescriptions_20_0=ruleComponentBehaviorDescription
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getCompositeComponentRule());
@@ -1693,7 +1693,7 @@ ruleCompositeComponent returns [EObject current=null]
 								$current,
 								"behaviorDescriptions",
 								lv_behaviorDescriptions_20_0,
-								"edu.kit.ipd.sdq.cbsmdsl.CbsmDsl.BehaviorDescription");
+								"edu.kit.ipd.sdq.cbsmdsl.CbsmDsl.ComponentBehaviorDescription");
 							afterParserOrEnumRuleCall();
 						}
 					)
@@ -2224,26 +2224,62 @@ ruleBehaviorDescription returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		{
+			newCompositeNode(grammarAccess.getBehaviorDescriptionAccess().getBehaviorDescription_ImplParserRuleCall_0());
+		}
+		this_BehaviorDescription_Impl_0=ruleBehaviorDescription_Impl
+		{
+			$current = $this_BehaviorDescription_Impl_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getBehaviorDescriptionAccess().getComponentBehaviorDescriptionParserRuleCall_1());
+		}
+		this_ComponentBehaviorDescription_1=ruleComponentBehaviorDescription
+		{
+			$current = $this_ComponentBehaviorDescription_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleBehaviorDescription_Impl
+entryRuleBehaviorDescription_Impl returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getBehaviorDescription_ImplRule()); }
+	iv_ruleBehaviorDescription_Impl=ruleBehaviorDescription_Impl
+	{ $current=$iv_ruleBehaviorDescription_Impl.current; }
+	EOF;
+
+// Rule BehaviorDescription_Impl
+ruleBehaviorDescription_Impl returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getBehaviorDescriptionAccess().getBehaviorDescriptionAction_0(),
+					grammarAccess.getBehaviorDescription_ImplAccess().getBehaviorDescriptionAction_0(),
 					$current);
 			}
 		)
 		otherlv_1='BehaviorDescription'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getBehaviorDescriptionAccess().getBehaviorDescriptionKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getBehaviorDescription_ImplAccess().getBehaviorDescriptionKeyword_1());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getBehaviorDescriptionAccess().getNameEStringParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getBehaviorDescription_ImplAccess().getNameEStringParserRuleCall_2_0());
 				}
 				lv_name_2_0=ruleEString
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getBehaviorDescriptionRule());
+						$current = createModelElementForParent(grammarAccess.getBehaviorDescription_ImplRule());
 					}
 					set(
 						$current,
@@ -2256,26 +2292,26 @@ ruleBehaviorDescription returns [EObject current=null]
 		)
 		otherlv_3='{'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getBehaviorDescriptionAccess().getLeftCurlyBracketKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getBehaviorDescription_ImplAccess().getLeftCurlyBracketKeyword_3());
 		}
 		(
 			otherlv_4='actions'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getBehaviorDescriptionAccess().getActionsKeyword_4_0());
+				newLeafNode(otherlv_4, grammarAccess.getBehaviorDescription_ImplAccess().getActionsKeyword_4_0());
 			}
 			otherlv_5='{'
 			{
-				newLeafNode(otherlv_5, grammarAccess.getBehaviorDescriptionAccess().getLeftCurlyBracketKeyword_4_1());
+				newLeafNode(otherlv_5, grammarAccess.getBehaviorDescription_ImplAccess().getLeftCurlyBracketKeyword_4_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getBehaviorDescriptionAccess().getActionsActionParserRuleCall_4_2_0());
+						newCompositeNode(grammarAccess.getBehaviorDescription_ImplAccess().getActionsActionParserRuleCall_4_2_0());
 					}
 					lv_actions_6_0=ruleAction
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getBehaviorDescriptionRule());
+							$current = createModelElementForParent(grammarAccess.getBehaviorDescription_ImplRule());
 						}
 						add(
 							$current,
@@ -2289,17 +2325,17 @@ ruleBehaviorDescription returns [EObject current=null]
 			(
 				otherlv_7=','
 				{
-					newLeafNode(otherlv_7, grammarAccess.getBehaviorDescriptionAccess().getCommaKeyword_4_3_0());
+					newLeafNode(otherlv_7, grammarAccess.getBehaviorDescription_ImplAccess().getCommaKeyword_4_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getBehaviorDescriptionAccess().getActionsActionParserRuleCall_4_3_1_0());
+							newCompositeNode(grammarAccess.getBehaviorDescription_ImplAccess().getActionsActionParserRuleCall_4_3_1_0());
 						}
 						lv_actions_8_0=ruleAction
 						{
 							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getBehaviorDescriptionRule());
+								$current = createModelElementForParent(grammarAccess.getBehaviorDescription_ImplRule());
 							}
 							add(
 								$current,
@@ -2313,12 +2349,147 @@ ruleBehaviorDescription returns [EObject current=null]
 			)*
 			otherlv_9='}'
 			{
-				newLeafNode(otherlv_9, grammarAccess.getBehaviorDescriptionAccess().getRightCurlyBracketKeyword_4_4());
+				newLeafNode(otherlv_9, grammarAccess.getBehaviorDescription_ImplAccess().getRightCurlyBracketKeyword_4_4());
 			}
 		)?
 		otherlv_10='}'
 		{
-			newLeafNode(otherlv_10, grammarAccess.getBehaviorDescriptionAccess().getRightCurlyBracketKeyword_5());
+			newLeafNode(otherlv_10, grammarAccess.getBehaviorDescription_ImplAccess().getRightCurlyBracketKeyword_5());
+		}
+	)
+;
+
+// Entry rule entryRuleComponentBehaviorDescription
+entryRuleComponentBehaviorDescription returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getComponentBehaviorDescriptionRule()); }
+	iv_ruleComponentBehaviorDescription=ruleComponentBehaviorDescription
+	{ $current=$iv_ruleComponentBehaviorDescription.current; }
+	EOF;
+
+// Rule ComponentBehaviorDescription
+ruleComponentBehaviorDescription returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getComponentBehaviorDescriptionAccess().getComponentBehaviorDescriptionAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='ComponentBehaviorDescription'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getComponentBehaviorDescriptionAccess().getComponentBehaviorDescriptionKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getComponentBehaviorDescriptionAccess().getNameEStringParserRuleCall_2_0());
+				}
+				lv_name_2_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getComponentBehaviorDescriptionRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_2_0,
+						"edu.kit.ipd.sdq.cbsmdsl.CbsmDsl.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3='{'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getComponentBehaviorDescriptionAccess().getLeftCurlyBracketKeyword_3());
+		}
+		(
+			otherlv_4='actions'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getComponentBehaviorDescriptionAccess().getActionsKeyword_4_0());
+			}
+			otherlv_5='{'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getComponentBehaviorDescriptionAccess().getLeftCurlyBracketKeyword_4_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getComponentBehaviorDescriptionAccess().getActionsActionParserRuleCall_4_2_0());
+					}
+					lv_actions_6_0=ruleAction
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getComponentBehaviorDescriptionRule());
+						}
+						add(
+							$current,
+							"actions",
+							lv_actions_6_0,
+							"edu.kit.ipd.sdq.cbsmdsl.CbsmDsl.Action");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				otherlv_7=','
+				{
+					newLeafNode(otherlv_7, grammarAccess.getComponentBehaviorDescriptionAccess().getCommaKeyword_4_3_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getComponentBehaviorDescriptionAccess().getActionsActionParserRuleCall_4_3_1_0());
+						}
+						lv_actions_8_0=ruleAction
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getComponentBehaviorDescriptionRule());
+							}
+							add(
+								$current,
+								"actions",
+								lv_actions_8_0,
+								"edu.kit.ipd.sdq.cbsmdsl.CbsmDsl.Action");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
+			otherlv_9='}'
+			{
+				newLeafNode(otherlv_9, grammarAccess.getComponentBehaviorDescriptionAccess().getRightCurlyBracketKeyword_4_4());
+			}
+		)?
+		otherlv_10='providedService'
+		{
+			newLeafNode(otherlv_10, grammarAccess.getComponentBehaviorDescriptionAccess().getProvidedServiceKeyword_5());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getComponentBehaviorDescriptionRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getComponentBehaviorDescriptionAccess().getProvidedServiceSignatureCrossReference_6_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_12='}'
+		{
+			newLeafNode(otherlv_12, grammarAccess.getComponentBehaviorDescriptionAccess().getRightCurlyBracketKeyword_7());
 		}
 	)
 ;

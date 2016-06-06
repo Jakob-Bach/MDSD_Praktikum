@@ -31,6 +31,7 @@ import edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorDescription;
 import edu.kit.ipd.sdq.cbsm.repository.behavior.BehaviorPackage;
 import edu.kit.ipd.sdq.cbsm.repository.behavior.Branch;
 import edu.kit.ipd.sdq.cbsm.repository.behavior.BranchPath;
+import edu.kit.ipd.sdq.cbsm.repository.behavior.ComponentBehaviorDescription;
 import edu.kit.ipd.sdq.cbsm.repository.behavior.ExternalCall;
 import edu.kit.ipd.sdq.cbsm.repository.behavior.InternalAction;
 import edu.kit.ipd.sdq.cbsm.repository.behavior.Loop;
@@ -91,13 +92,16 @@ public class CbsmDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 		else if (epackage == BehaviorPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
 			case BehaviorPackage.BEHAVIOR_DESCRIPTION:
-				sequence_BehaviorDescription(context, (BehaviorDescription) semanticObject); 
+				sequence_BehaviorDescription_Impl(context, (BehaviorDescription) semanticObject); 
 				return; 
 			case BehaviorPackage.BRANCH:
 				sequence_Branch(context, (Branch) semanticObject); 
 				return; 
 			case BehaviorPackage.BRANCH_PATH:
 				sequence_BranchPath(context, (BranchPath) semanticObject); 
+				return; 
+			case BehaviorPackage.COMPONENT_BEHAVIOR_DESCRIPTION:
+				sequence_ComponentBehaviorDescription(context, (ComponentBehaviorDescription) semanticObject); 
 				return; 
 			case BehaviorPackage.EXTERNAL_CALL:
 				sequence_ExternalCall(context, (ExternalCall) semanticObject); 
@@ -265,7 +269,7 @@ public class CbsmDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         name=EString 
 	 *         (providedRoles+=ProvidedRole providedRoles+=ProvidedRole*)? 
 	 *         (requiredRoles+=RequiredRole requiredRoles+=RequiredRole*)? 
-	 *         (behaviorDescriptions+=BehaviorDescription behaviorDescriptions+=BehaviorDescription*)?
+	 *         (behaviorDescriptions+=ComponentBehaviorDescription behaviorDescriptions+=ComponentBehaviorDescription*)?
 	 *     )
 	 */
 	protected void sequence_BasicComponent(ISerializationContext context, Component semanticObject) {
@@ -276,11 +280,12 @@ public class CbsmDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * Contexts:
 	 *     BehaviorDescription returns BehaviorDescription
+	 *     BehaviorDescription_Impl returns BehaviorDescription
 	 *
 	 * Constraint:
 	 *     (name=EString (actions+=Action actions+=Action*)?)
 	 */
-	protected void sequence_BehaviorDescription(ISerializationContext context, BehaviorDescription semanticObject) {
+	protected void sequence_BehaviorDescription_Impl(ISerializationContext context, BehaviorDescription semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -340,6 +345,19 @@ public class CbsmDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     BehaviorDescription returns ComponentBehaviorDescription
+	 *     ComponentBehaviorDescription returns ComponentBehaviorDescription
+	 *
+	 * Constraint:
+	 *     (name=EString (actions+=Action actions+=Action*)? providedService=[Signature|EString])
+	 */
+	protected void sequence_ComponentBehaviorDescription(ISerializationContext context, ComponentBehaviorDescription semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Component returns CompositeComponent
 	 *     CompositeComponent returns CompositeComponent
 	 *
@@ -348,7 +366,7 @@ public class CbsmDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         name=EString 
 	 *         (providedRoles+=ProvidedRole providedRoles+=ProvidedRole*)? 
 	 *         (requiredRoles+=RequiredRole requiredRoles+=RequiredRole*)? 
-	 *         (behaviorDescriptions+=BehaviorDescription behaviorDescriptions+=BehaviorDescription*)? 
+	 *         (behaviorDescriptions+=ComponentBehaviorDescription behaviorDescriptions+=ComponentBehaviorDescription*)? 
 	 *         (containedAssemblyContexts+=AssemblyContext containedAssemblyContexts+=AssemblyContext*)? 
 	 *         (connectors+=Connector connectors+=Connector*)?
 	 *     )

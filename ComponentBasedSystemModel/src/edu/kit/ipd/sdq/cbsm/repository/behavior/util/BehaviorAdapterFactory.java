@@ -74,6 +74,10 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 				return createBehaviorDescriptionAdapter();
 			}
 			@Override
+			public Adapter caseComponentBehaviorDescription(ComponentBehaviorDescription object) {
+				return createComponentBehaviorDescriptionAdapter();
+			}
+			@Override
 			public Adapter caseAction(Action object) {
 				return createActionAdapter();
 			}
@@ -132,6 +136,20 @@ public class BehaviorAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBehaviorDescriptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link edu.kit.ipd.sdq.cbsm.repository.behavior.ComponentBehaviorDescription <em>Component Behavior Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see edu.kit.ipd.sdq.cbsm.repository.behavior.ComponentBehaviorDescription
+	 * @generated
+	 */
+	public Adapter createComponentBehaviorDescriptionAdapter() {
 		return null;
 	}
 
