@@ -395,12 +395,17 @@ inherits CBSM::assembly::Connector::Connector2Connector_abstract
 ----------environment----------
 -------------------------------
 
-mapping CBSM::environment::Environment::Environment2ResourceEnvironment() :
+mapping CBSM::environment::Environment::Environment2ResourceEnvironment(
+			defaultLinkResourceType: PCM::resourcetype::CommunicationLinkResourceType) :
 		PCM::resourceenvironment::ResourceEnvironment
-inherits CBSM::core::NamedElement::NamedElement2NamedElement
+--inherits CBSM::core::NamedElement::NamedElement2NamedElement
+-- does not work if NamedElement mapping has no parameter ("non-conformant signature")
 {
-	resourceContainer_ResourceEnvironment := self.containers -> map Container2ResourceContainer();
-	linkingResources__ResourceEnvironment := self.links -> map Link2LinkingResource();
+	entityName := self.name;
+	resourceContainer_ResourceEnvironment := self.containers ->
+		map Container2ResourceContainer();
+	linkingResources__ResourceEnvironment := self.links ->
+		map Link2LinkingResource(defaultLinkResourceType);
 }
 
 mapping CBSM::environment::Container::Container2ResourceContainer() :
@@ -411,14 +416,31 @@ inherits CBSM::core::NamedElement::NamedElement2NamedElement
 		resolveone(PCM::resourceenvironment::ResourceEnvironment);
 }
 
-mapping CBSM::environment::Link::Link2LinkingResource() :
+mapping CBSM::environment::Link::Link2LinkingResource(
+			defaultLinkResourceType: PCM::resourcetype::CommunicationLinkResourceType) :
 		PCM::resourceenvironment::LinkingResource
-inherits CBSM::core::NamedElement::NamedElement2NamedElement
+--inherits CBSM::core::NamedElement::NamedElement2NamedElement
 {
+	entityName := self.name;
 	resourceEnvironment_LinkingResource := self.parentEnvironment.
 		resolveone(PCM::resourceenvironment::ResourceEnvironment);
 	connectedResourceContainers_LinkingResource := self.linkedContainers.
 		resolve(PCM::resourceenvironment::ResourceContainer);
+	-- no equivalent in CBSM, set some reasonable defaults (feature is required)
+	communicationLinkResourceSpecifications_LinkingResource :=
+		object PCM::resourceenvironment::CommunicationLinkResourceSpecification {
+			failureProbability := 0.0;
+			latency_CommunicationLinkResourceSpecification :=
+				object PCM::core::PCMRandomVariable {
+					specification := "1";
+				};
+			throughput_CommunicationLinkResourceSpecification :=
+				object PCM::core::PCMRandomVariable {
+					specification := "1";
+				};
+			communicationLinkResourceType_CommunicationLinkResourceSpecification :=
+				defaultLinkResourceType;
+		}
 }
 
 ------------------------------

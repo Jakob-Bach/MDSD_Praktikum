@@ -11,23 +11,28 @@ modeltype CBSM_ASS "strict" uses "http://sdq.ipd.kit.edu/componentBasedSystemMod
 modeltype PCM_SYS "strict" uses "http://palladiosimulator.org/PalladioComponentModel/System/5.1";
 modeltype CBSM_ENV "strict" uses "http://sdq.ipd.kit.edu/componentBasedSystemModel/environment";
 modeltype PCM_ENV "strict" uses "http://palladiosimulator.org/PalladioComponentModel/ResourceEnvironment/5.1";
+modeltype PCM_RES_TYPE "strict" uses "http://palladiosimulator.org/PalladioComponentModel/ResourceType/5.1";
 modeltype CBSM_ALLO "strict" uses "http://sdq.ipd.kit.edu/componentBasedSystemModel/allocation";
 modeltype PCM_ALLO "strict" uses "http://palladiosimulator.org/PalladioComponentModel/Allocation/5.1";
 
 transformation Allocation2Allocation_Transformation(in cbsmRepository: CBSM_REPO, out pcmRepository: PCM_REPO,
 		in cbsmAssembly: CBSM_ASS, out pcmSystem: PCM_SYS, in cbsmEnvironment: CBSM_ENV,
-		out pcmResourceEnvironment: PCM_ENV, in cbsmAllocation: CBSM_ALLO, out pcmAllocation: PCM_ALLO)
+		in pcmResourceType: PCM_RES_TYPE, out pcmResourceEnvironment: PCM_ENV,
+		in cbsmAllocation: CBSM_ALLO, out pcmAllocation: PCM_ALLO)
 access Assembly2System_Transformation(in cbsmRepository: CBSM_REPO, out pcmRepository: PCM_REPO,
 		in cbsmAssembly: CBSM_ASS, out pcmSystem: PCM_SYS)
 access Environment2ResourceEnvironment_Transformation(in cbsmEnvironment: CBSM_ENV,
-		out pcmResourceEnvironment: PCM_ENV)
+		in pcmResourceType: PCM_RES_TYPE, out pcmResourceEnvironment: PCM_ENV)
 access Simple_Allocation2Allocation_Transformation(in cbsmAllocation: CBSM_ALLO,
 		out pcmAllocation: PCM_ALLO)
 {
 	main()
 	{
-		new Assembly2System_Transformation(cbsmRepository, pcmRepository, cbsmAssembly, pcmSystem).transform();
-		new Environment2ResourceEnvironment_Transformation(cbsmEnvironment, pcmResourceEnvironment).transform();
-		new Simple_Allocation2Allocation_Transformation(cbsmAllocation, pcmAllocation).transform();
+		new Assembly2System_Transformation(cbsmRepository, pcmRepository,
+			cbsmAssembly, pcmSystem).transform();
+		new Environment2ResourceEnvironment_Transformation(cbsmEnvironment,
+			pcmResourceType, pcmResourceEnvironment).transform();
+		new Simple_Allocation2Allocation_Transformation(cbsmAllocation,
+			pcmAllocation).transform();
 	}
 }
