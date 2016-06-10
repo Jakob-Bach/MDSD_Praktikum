@@ -12,3 +12,4 @@ All projects are stored as Eclipse projects, i.e. containing `.project` and `.cl
 - [Xtext from Ecore tutorial](http://rtsys.informatik.uni-kiel.de/confluence/display/TUT/Xtext+1+-+Creating+a+Grammar+for+an+Existing+Metamodel)
 - [QVT-O Eclipse wiki](http://wiki.eclipse.org/QVTo)
 - [ATL Eclipse tutorial](https://wiki.eclipse.org/ATL/Tutorials_-_Create_a_simple_ATL_transformation)
+- [First](https://christiandietrich.wordpress.com/2011/07/29/xtend2-code-generators-with-non-xtext-models/) [Second](https://maxrohde.com/2011/11/06/xtend-tutorial/) [Third](http://rtsys.informatik.uni-kiel.de/confluence/display/TUT/Xtend+1b+-+Code+Generation) Xtend tutorial
