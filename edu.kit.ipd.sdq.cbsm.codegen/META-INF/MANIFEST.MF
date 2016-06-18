@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Codegen
+Bundle-SymbolicName: edu.kit.ipd.sdq.cbsm.codegen;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: edu.kit.ipd.sdq.cbsm.codegen.Activator
+Require-Bundle: ComponentBasedSystemModel,
+ com.google.guava,
+ org.eclipse.core.resources,
+ org.eclipse.core.runtime,
+ org.eclipse.xtend2.lib,
+ org.eclipse.xtend.lib.macro,
+ org.eclipse.xtext,
+ org.eclipse.xtext.generator,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+
