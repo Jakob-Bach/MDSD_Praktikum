@@ -4,6 +4,8 @@ import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -42,9 +44,16 @@ public class CbsmRepositoryCodeGeneratorHandler extends AbstractHandler {
                 		append("/src-gen/").toPortableString());
                 URI uri = URI.createPlatformResourceURI(file.getFullPath().
                 		toPortableString(), true);
+                //Remove older version of file from resource set
+                resourceSet.getResources().clear();
                 Resource resource = resourceSet.getResource(uri, true);
                 generator.doGenerate(resource, fsa);
-                 
+                try {
+                	// "F5" action for project
+                	file.getProject().refreshLocal(IResource.DEPTH_INFINITE, null);
+                } catch (CoreException e) {
+                	e.printStackTrace();
+                }
             }
         }
         return null;
