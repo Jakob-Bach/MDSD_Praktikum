@@ -293,8 +293,10 @@ inherits CBSM::core::NamedElement::NamedElement2NamedElement
 {
 	parentStructure__AssemblyContext := self.parentCompositeElement.
 		resolveone(pcm::core::composition::ComposedStructure);
+	-- mapping could be called from a CompositeComponent whose contained components
+	-- are not transformed yet, therefore postpone resolving
 	encapsulatedComponent__AssemblyContext := self.instantiatedComponent.
-		resolveone(pcm::repository::RepositoryComponent);
+		late resolveone(pcm::repository::RepositoryComponent);
 }
 
 abstract mapping CBSM::assembly::CompositeProvidingAndRequiringElement::
