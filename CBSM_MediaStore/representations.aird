@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description" xmi:id="_owOuoDyVEeaVx71qeP0NEw" selectedViews="_25Rs8DyVEeaVx71qeP0NEw" version="10.0.0.201505222000">
+  <semanticResources>Ecore/mediaStore.allocation</semanticResources>
+  <semanticResources>Ecore/mediaStore.assembly</semanticResources>
+  <semanticResources>Ecore/mediaStore.environment</semanticResources>
+  <semanticResources>Ecore/mediaStore.repository</semanticResources>
+  <semanticResources>PCM_Ecore/mediaStore.allocation</semanticResources>
+  <semanticResources>PCM_Ecore/mediaStore.resourceenvironment</semanticResources>
+  <semanticResources>PCM_Ecore/mediaStore.system</semanticResources>
+  <semanticResources>pathmap://PCM_MODELS/Palladio.resourcetype</semanticResources>
+  <semanticResources>PCM_Ecore/mediaStore.repository</semanticResources>
+  <semanticResources>Xtext/mediaStoreAllocation.cbsmdsl</semanticResources>
+  <semanticResources>Xtext/mediaStoreSystem.cbsmdsl</semanticResources>
+  <semanticResources>Xtext/mediaStoreEnvironment.cbsmdsl</semanticResources>
+  <semanticResources>Xtext/mediaStoreRepository.cbsmdsl</semanticResources>
+  <semanticResources>Xtext/serialized/mediaStoreAllocation.allocation</semanticResources>
+  <semanticResources>Xtext/serialized/mediaStoreEnvironment.environment</semanticResources>
+  <semanticResources>Xtext/serialized/mediaStoreRepository.repository</semanticResources>
+  <semanticResources>Xtext/serialized/mediaStoreSystem.assembly</semanticResources>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_25Rs8DyVEeaVx71qeP0NEw">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']"/>
+  </ownedViews>
+</viewpoint:DAnalysis>
