@@ -142,6 +142,7 @@ public class RepositoryValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(interface_, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(interface_, diagnostics, context);
 		if (result || diagnostics != null) result &= validateInterface_NoSignaturesEquivalent(interface_, diagnostics, context);
+		if (result || diagnostics != null) result &= validateInterface_InterfacesDoesNotInheritItself(interface_, diagnostics, context);
 		return result;
 	}
 
@@ -177,6 +178,35 @@ public class RepositoryValidator extends EObjectValidator {
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
 				 "NoSignaturesEquivalent",
 				 INTERFACE__NO_SIGNATURES_EQUIVALENT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the InterfacesDoesNotInheritItself constraint of '<em>Interface</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String INTERFACE__INTERFACES_DOES_NOT_INHERIT_ITSELF__EEXPRESSION = "not (self.superInterfaces->includes(self))";
+
+	/**
+	 * Validates the InterfacesDoesNotInheritItself constraint of '<em>Interface</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateInterface_InterfacesDoesNotInheritItself(Interface interface_, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(RepositoryPackage.Literals.INTERFACE,
+				 interface_,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "InterfacesDoesNotInheritItself",
+				 INTERFACE__INTERFACES_DOES_NOT_INHERIT_ITSELF__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

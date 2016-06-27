@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -29,6 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link edu.kit.ipd.sdq.cbsm.repository.impl.InterfaceImpl#getSignatures <em>Signatures</em>}</li>
+ *   <li>{@link edu.kit.ipd.sdq.cbsm.repository.impl.InterfaceImpl#getSuperInterfaces <em>Super Interfaces</em>}</li>
  * </ul>
  *
  * @generated
@@ -43,6 +45,16 @@ public class InterfaceImpl extends NamedElementImpl implements Interface {
 	 * @ordered
 	 */
 	protected EList<Signature> signatures;
+
+	/**
+	 * The cached value of the '{@link #getSuperInterfaces() <em>Super Interfaces</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSuperInterfaces()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Interface> superInterfaces;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,6 +92,18 @@ public class InterfaceImpl extends NamedElementImpl implements Interface {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Interface> getSuperInterfaces() {
+		if (superInterfaces == null) {
+			superInterfaces = new EObjectResolvingEList<Interface>(Interface.class, this, RepositoryPackage.INTERFACE__SUPER_INTERFACES);
+		}
+		return superInterfaces;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -99,6 +123,8 @@ public class InterfaceImpl extends NamedElementImpl implements Interface {
 		switch (featureID) {
 			case RepositoryPackage.INTERFACE__SIGNATURES:
 				return getSignatures();
+			case RepositoryPackage.INTERFACE__SUPER_INTERFACES:
+				return getSuperInterfaces();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -116,6 +142,10 @@ public class InterfaceImpl extends NamedElementImpl implements Interface {
 				getSignatures().clear();
 				getSignatures().addAll((Collection<? extends Signature>)newValue);
 				return;
+			case RepositoryPackage.INTERFACE__SUPER_INTERFACES:
+				getSuperInterfaces().clear();
+				getSuperInterfaces().addAll((Collection<? extends Interface>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -131,6 +161,9 @@ public class InterfaceImpl extends NamedElementImpl implements Interface {
 			case RepositoryPackage.INTERFACE__SIGNATURES:
 				getSignatures().clear();
 				return;
+			case RepositoryPackage.INTERFACE__SUPER_INTERFACES:
+				getSuperInterfaces().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -145,6 +178,8 @@ public class InterfaceImpl extends NamedElementImpl implements Interface {
 		switch (featureID) {
 			case RepositoryPackage.INTERFACE__SIGNATURES:
 				return signatures != null && !signatures.isEmpty();
+			case RepositoryPackage.INTERFACE__SUPER_INTERFACES:
+				return superInterfaces != null && !superInterfaces.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

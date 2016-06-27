@@ -32,6 +32,8 @@ inherits CBSM::core::NamedElement::NamedElement2NamedElement
 {
 	signatures__OperationInterface := self.signatures ->
 		map Signature2OperationSignature();
+	parentInterfaces__Interface := self.superInterfaces ->
+		late resolve(PCM::repository::Interface);
 }
 
 abstract mapping CBSM::repository::Role::Role2Role() :

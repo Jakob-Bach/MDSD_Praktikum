@@ -289,6 +289,15 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getInterface_SuperInterfaces() {
+		return (EReference)interfaceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRole() {
 		return roleEClass;
 	}
@@ -499,6 +508,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
 		interfaceEClass = createEClass(INTERFACE);
 		createEReference(interfaceEClass, INTERFACE__SIGNATURES);
+		createEReference(interfaceEClass, INTERFACE__SUPER_INTERFACES);
 
 		roleEClass = createEClass(ROLE);
 
@@ -589,6 +599,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 
 		initEClass(interfaceEClass, Interface.class, "Interface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInterface_Signatures(), this.getSignature(), null, "signatures", null, 0, -1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInterface_SuperInterfaces(), this.getInterface(), null, "superInterfaces", null, 0, -1, Interface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(roleEClass, Role.class, "Role", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -662,7 +673,7 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 		  (interfaceEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "NoSignaturesEquivalent"
+			 "constraints", "NoSignaturesEquivalent InterfacesDoesNotInheritItself"
 		   });	
 		addAnnotation
 		  (signatureEClass, 
@@ -684,7 +695,8 @@ public class RepositoryPackageImpl extends EPackageImpl implements RepositoryPac
 		  (interfaceEClass, 
 		   source, 
 		   new String[] {
-			 "NoSignaturesEquivalent", "self.signatures->forAll(signature1|\n\t\t\t\tnot(self.signatures->exists(signature2|\n\t\t\t\t\tsignature1 <> signature2 and \n\t\t\t\t\tsignature1.name = signature2.name and\n\t\t\t\t\tsignature1.parameters->size() = signature2.parameters->size() and\n\t\t\t\t\tsignature1.parameters->forAll(parameter1|\n\t\t\t\t\t\tsignature2.parameters->at(signature1.parameters->indexOf(parameter1)).type = parameter1.type)\n\t\t\t\t))\n\t\t\t)"
+			 "NoSignaturesEquivalent", "self.signatures->forAll(signature1|\n\t\t\t\tnot(self.signatures->exists(signature2|\n\t\t\t\t\tsignature1 <> signature2 and \n\t\t\t\t\tsignature1.name = signature2.name and\n\t\t\t\t\tsignature1.parameters->size() = signature2.parameters->size() and\n\t\t\t\t\tsignature1.parameters->forAll(parameter1|\n\t\t\t\t\t\tsignature2.parameters->at(signature1.parameters->indexOf(parameter1)).type = parameter1.type)\n\t\t\t\t))\n\t\t\t)",
+			 "InterfacesDoesNotInheritItself", "not (self.superInterfaces->includes(self))"
 		   });	
 		addAnnotation
 		  (signatureEClass, 

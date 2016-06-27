@@ -27,13 +27,16 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Interface" eSuperTypes="#//core/NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-        <details key="constraints" value="NoSignaturesEquivalent"/>
+        <details key="constraints" value="NoSignaturesEquivalent InterfacesDoesNotInheritItself"/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
         <details key="NoSignaturesEquivalent" value="self.signatures->forAll(signature1|&#xA;&#x9;&#x9;&#x9;&#x9;not(self.signatures->exists(signature2|&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;signature1 &lt;> signature2 and &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;signature1.name = signature2.name and&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;signature1.parameters->size() = signature2.parameters->size() and&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;signature1.parameters->forAll(parameter1|&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;signature2.parameters->at(signature1.parameters->indexOf(parameter1)).type = parameter1.type)&#xA;&#x9;&#x9;&#x9;&#x9;))&#xA;&#x9;&#x9;&#x9;)"/>
+        <details key="InterfacesDoesNotInheritItself" value="not (self.superInterfaces->includes(self))"/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="signatures" upperBound="-1"
           eType="#//repository/Signature" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="superInterfaces" upperBound="-1"
+          eType="#//repository/Interface"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Role" abstract="true" eSuperTypes="#//core/NamedElement"/>
     <eClassifiers xsi:type="ecore:EClass" name="ProvidedRole" eSuperTypes="#//repository/Role">

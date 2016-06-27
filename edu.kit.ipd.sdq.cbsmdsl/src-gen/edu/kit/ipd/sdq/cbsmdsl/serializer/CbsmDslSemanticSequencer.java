@@ -431,7 +431,7 @@ public class CbsmDslSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Interface returns Interface
 	 *
 	 * Constraint:
-	 *     (name=EString (signatures+=Signature signatures+=Signature*)?)
+	 *     (name=EString (signatures+=Signature signatures+=Signature*)? (superInterfaces+=[Interface|EString] superInterfaces+=[Interface|EString]*)?)
 	 */
 	protected void sequence_Interface(ISerializationContext context, Interface semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

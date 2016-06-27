@@ -153,13 +153,22 @@ public interface RepositoryPackage extends EPackage {
 	int INTERFACE__SIGNATURES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Super Interfaces</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE__SUPER_INTERFACES = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Interface</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int INTERFACE_FEATURE_COUNT = CorePackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Interface</em>' class.
@@ -688,6 +697,17 @@ public interface RepositoryPackage extends EPackage {
 	EReference getInterface_Signatures();
 
 	/**
+	 * Returns the meta object for the reference list '{@link edu.kit.ipd.sdq.cbsm.repository.Interface#getSuperInterfaces <em>Super Interfaces</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Super Interfaces</em>'.
+	 * @see edu.kit.ipd.sdq.cbsm.repository.Interface#getSuperInterfaces()
+	 * @see #getInterface()
+	 * @generated
+	 */
+	EReference getInterface_SuperInterfaces();
+
+	/**
 	 * Returns the meta object for class '{@link edu.kit.ipd.sdq.cbsm.repository.Role <em>Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -970,6 +990,14 @@ public interface RepositoryPackage extends EPackage {
 		 * @generated
 		 */
 		EReference INTERFACE__SIGNATURES = eINSTANCE.getInterface_Signatures();
+
+		/**
+		 * The meta object literal for the '<em><b>Super Interfaces</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTERFACE__SUPER_INTERFACES = eINSTANCE.getInterface_SuperInterfaces();
 
 		/**
 		 * The meta object literal for the '{@link edu.kit.ipd.sdq.cbsm.repository.impl.RoleImpl <em>Role</em>}' class.

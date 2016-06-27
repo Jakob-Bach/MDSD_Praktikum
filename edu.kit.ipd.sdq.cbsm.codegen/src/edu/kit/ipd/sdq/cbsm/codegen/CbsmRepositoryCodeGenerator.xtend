@@ -13,6 +13,11 @@ import edu.kit.ipd.sdq.cbsm.repository.Component
 import edu.kit.ipd.sdq.cbsm.repository.DataType
 import edu.kit.ipd.sdq.cbsm.repository.Parameter
 import java.util.TreeSet
+import java.util.Collection
+import edu.kit.ipd.sdq.cbsm.repository.ProvidedRole
+import java.util.LinkedList
+import java.util.HashMap
+import java.util.List
 
 class CbsmRepositoryCodeGenerator implements IGenerator {
 	
@@ -70,9 +75,9 @@ class CbsmRepositoryCodeGenerator implements IGenerator {
 				}
 			«ENDFOR»
 			
-			«FOR providedRole: component.providedRoles SEPARATOR '\n'»
-				«FOR signature: providedRole.providedInterface.signatures SEPARATOR '\n'»
-					//Implementing «signature.name» from interface «providedRole.providedInterface.name»
+			«FOR providedInterfaceEntry: component.providedRoles.providedInterfacesAndSignaturesRecursive.entrySet SEPARATOR '\n'»
+				«FOR signature: providedInterfaceEntry.value SEPARATOR '\n'»
+					//Implementing «signature.name» from interface «providedInterfaceEntry.key.name»
 					@Override
 					public «signature.compile» {
 						«FOR requiredRole: component.requiredRoles»
@@ -88,6 +93,10 @@ class CbsmRepositoryCodeGenerator implements IGenerator {
 		}
 	'''
 	
+	/**
+	 * Removes duplicates from the combined list of provided and required interfaces
+	 * (an interface might be both provided and required) and sorts the result.
+	 */
 	def uniqueSortedInterfaceNames(Component component) {
 		val result = new TreeSet<String>
 		component.providedRoles.forEach[providedRole|
@@ -99,10 +108,30 @@ class CbsmRepositoryCodeGenerator implements IGenerator {
 		return result
 	}
 	
+	/**
+	 * Returns a map with all provided interfaces and their corresponding signatures, 
+	 * considering that provided interfaces might have super interfaces.
+	 */
+	def providedInterfacesAndSignaturesRecursive(Collection<ProvidedRole> providedRoles) {
+		val result = new HashMap<Interface, List<Signature>>
+		val interfacesToAnalyze = new LinkedList<Interface>
+		providedRoles.forEach[providedRole|
+			interfacesToAnalyze += providedRole.providedInterface
+		]
+		while (!interfacesToAnalyze.empty) {
+			val interfac = interfacesToAnalyze.remove
+			if (!result.containsKey(interfac)) {
+				result.put(interfac, interfac.signatures)
+			}
+			interfacesToAnalyze += interfac.superInterfaces
+		}
+		return result
+	}
+
 	def compile(Interface interfac, String repositoryName) '''
 		package «repositoryName»;
 		
-		public interface «interfac.name» {
+		public interface «interfac.name» «IF !interfac.superInterfaces.empty»extends «FOR superInterface: interfac.superInterfaces SEPARATOR ', '»«superInterface.name»«ENDFOR» «ENDIF»{
 			
 			«FOR signature: interfac.signatures»
 				«signature.compile»;

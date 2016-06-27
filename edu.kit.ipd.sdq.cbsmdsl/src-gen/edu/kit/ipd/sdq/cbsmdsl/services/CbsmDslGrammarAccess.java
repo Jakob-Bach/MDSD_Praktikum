@@ -748,18 +748,32 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cSignaturesAssignment_4_3_1 = (Assignment)cGroup_4_3.eContents().get(1);
 		private final RuleCall cSignaturesSignatureParserRuleCall_4_3_1_0 = (RuleCall)cSignaturesAssignment_4_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4_4 = (Keyword)cGroup_4.eContents().get(4);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cSuperInterfacesKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Assignment cSuperInterfacesAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final CrossReference cSuperInterfacesInterfaceCrossReference_5_2_0 = (CrossReference)cSuperInterfacesAssignment_5_2.eContents().get(0);
+		private final RuleCall cSuperInterfacesInterfaceEStringParserRuleCall_5_2_0_1 = (RuleCall)cSuperInterfacesInterfaceCrossReference_5_2_0.eContents().get(1);
+		private final Group cGroup_5_3 = (Group)cGroup_5.eContents().get(3);
+		private final Keyword cCommaKeyword_5_3_0 = (Keyword)cGroup_5_3.eContents().get(0);
+		private final Assignment cSuperInterfacesAssignment_5_3_1 = (Assignment)cGroup_5_3.eContents().get(1);
+		private final CrossReference cSuperInterfacesInterfaceCrossReference_5_3_1_0 = (CrossReference)cSuperInterfacesAssignment_5_3_1.eContents().get(0);
+		private final RuleCall cSuperInterfacesInterfaceEStringParserRuleCall_5_3_1_0_1 = (RuleCall)cSuperInterfacesInterfaceCrossReference_5_3_1_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_5_4 = (Keyword)cGroup_5.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//Interface repository::Interface:
 		//	{repository::Interface}
 		//	'Interface'
 		//	name=EString
-		//	'{' ('signatures' '{' signatures+=Signature ("," signatures+=Signature)* '}')?
+		//	'{' ('signatures' '{' signatures+=Signature ("," signatures+=Signature)* '}')? ('superInterfaces' '('
+		//	superInterfaces+=[repository::Interface|EString] ("," superInterfaces+=[repository::Interface|EString])* ')')?
 		//	'}'
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{repository::Interface} 'Interface' name=EString '{' ('signatures' '{' signatures+=Signature (","
-		//signatures+=Signature)* '}')? '}'
+		//signatures+=Signature)* '}')? ('superInterfaces' '(' superInterfaces+=[repository::Interface|EString] (","
+		//superInterfaces+=[repository::Interface|EString])* ')')? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{repository::Interface}
@@ -807,8 +821,45 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_4_4() { return cRightCurlyBracketKeyword_4_4; }
 		
+		//('superInterfaces' '(' superInterfaces+=[repository::Interface|EString] (","
+		//superInterfaces+=[repository::Interface|EString])* ')')?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//'superInterfaces'
+		public Keyword getSuperInterfacesKeyword_5_0() { return cSuperInterfacesKeyword_5_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_5_1() { return cLeftParenthesisKeyword_5_1; }
+		
+		//superInterfaces+=[repository::Interface|EString]
+		public Assignment getSuperInterfacesAssignment_5_2() { return cSuperInterfacesAssignment_5_2; }
+		
+		//[repository::Interface|EString]
+		public CrossReference getSuperInterfacesInterfaceCrossReference_5_2_0() { return cSuperInterfacesInterfaceCrossReference_5_2_0; }
+		
+		//EString
+		public RuleCall getSuperInterfacesInterfaceEStringParserRuleCall_5_2_0_1() { return cSuperInterfacesInterfaceEStringParserRuleCall_5_2_0_1; }
+		
+		//("," superInterfaces+=[repository::Interface|EString])*
+		public Group getGroup_5_3() { return cGroup_5_3; }
+		
+		//","
+		public Keyword getCommaKeyword_5_3_0() { return cCommaKeyword_5_3_0; }
+		
+		//superInterfaces+=[repository::Interface|EString]
+		public Assignment getSuperInterfacesAssignment_5_3_1() { return cSuperInterfacesAssignment_5_3_1; }
+		
+		//[repository::Interface|EString]
+		public CrossReference getSuperInterfacesInterfaceCrossReference_5_3_1_0() { return cSuperInterfacesInterfaceCrossReference_5_3_1_0; }
+		
+		//EString
+		public RuleCall getSuperInterfacesInterfaceEStringParserRuleCall_5_3_1_0_1() { return cSuperInterfacesInterfaceEStringParserRuleCall_5_3_1_0_1; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_5_4() { return cRightParenthesisKeyword_5_4; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 	public class ComponentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "edu.kit.ipd.sdq.cbsmdsl.CbsmDsl.Component");
@@ -3060,7 +3111,8 @@ public class CbsmDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	{repository::Interface}
 	//	'Interface'
 	//	name=EString
-	//	'{' ('signatures' '{' signatures+=Signature ("," signatures+=Signature)* '}')?
+	//	'{' ('signatures' '{' signatures+=Signature ("," signatures+=Signature)* '}')? ('superInterfaces' '('
+	//	superInterfaces+=[repository::Interface|EString] ("," superInterfaces+=[repository::Interface|EString])* ')')?
 	//	'}'
 	public InterfaceElements getInterfaceAccess() {
 		return pInterface;

@@ -13,6 +13,12 @@ import edu.kit.ipd.sdq.cbsm.repository.RequiredRole;
 import edu.kit.ipd.sdq.cbsm.repository.Signature;
 import edu.kit.ipd.sdq.cbsm.repository.SimpleType;
 import edu.kit.ipd.sdq.cbsm.repository.SimpleTypeInstance;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.TreeSet;
 import java.util.function.Consumer;
 import org.eclipse.emf.common.util.EList;
@@ -241,18 +247,19 @@ public class CbsmRepositoryCodeGenerator implements IGenerator {
     _builder.newLine();
     {
       EList<ProvidedRole> _providedRoles_2 = component.getProvidedRoles();
+      HashMap<Interface, List<Signature>> _providedInterfacesAndSignaturesRecursive = this.providedInterfacesAndSignaturesRecursive(_providedRoles_2);
+      Set<Map.Entry<Interface, List<Signature>>> _entrySet = _providedInterfacesAndSignaturesRecursive.entrySet();
       boolean _hasElements_2 = false;
-      for(final ProvidedRole providedRole_1 : _providedRoles_2) {
+      for(final Map.Entry<Interface, List<Signature>> providedInterfaceEntry : _entrySet) {
         if (!_hasElements_2) {
           _hasElements_2 = true;
         } else {
           _builder.appendImmediate("\n", "\t");
         }
         {
-          Interface _providedInterface_1 = providedRole_1.getProvidedInterface();
-          EList<Signature> _signatures = _providedInterface_1.getSignatures();
+          List<Signature> _value = providedInterfaceEntry.getValue();
           boolean _hasElements_3 = false;
-          for(final Signature signature : _signatures) {
+          for(final Signature signature : _value) {
             if (!_hasElements_3) {
               _hasElements_3 = true;
             } else {
@@ -263,8 +270,8 @@ public class CbsmRepositoryCodeGenerator implements IGenerator {
             String _name_11 = signature.getName();
             _builder.append(_name_11, "\t");
             _builder.append(" from interface ");
-            Interface _providedInterface_2 = providedRole_1.getProvidedInterface();
-            String _name_12 = _providedInterface_2.getName();
+            Interface _key = providedInterfaceEntry.getKey();
+            String _name_12 = _key.getName();
             _builder.append(_name_12, "\t");
             _builder.newLineIfNotEmpty();
             _builder.append("\t");
@@ -320,6 +327,10 @@ public class CbsmRepositoryCodeGenerator implements IGenerator {
     return _builder;
   }
   
+  /**
+   * Removes duplicates from the combined list of provided and required interfaces
+   * (an interface might be both provided and required) and sorts the result.
+   */
   public TreeSet<String> uniqueSortedInterfaceNames(final Component component) {
     final TreeSet<String> result = new TreeSet<String>();
     EList<ProvidedRole> _providedRoles = component.getProvidedRoles();
@@ -339,6 +350,34 @@ public class CbsmRepositoryCodeGenerator implements IGenerator {
     return result;
   }
   
+  /**
+   * Returns a map with all provided interfaces and their corresponding signatures,
+   * considering that provided interfaces might have super interfaces.
+   */
+  public HashMap<Interface, List<Signature>> providedInterfacesAndSignaturesRecursive(final Collection<ProvidedRole> providedRoles) {
+    final HashMap<Interface, List<Signature>> result = new HashMap<Interface, List<Signature>>();
+    final LinkedList<Interface> interfacesToAnalyze = new LinkedList<Interface>();
+    final Consumer<ProvidedRole> _function = (ProvidedRole providedRole) -> {
+      Interface _providedInterface = providedRole.getProvidedInterface();
+      interfacesToAnalyze.add(_providedInterface);
+    };
+    providedRoles.forEach(_function);
+    while ((!interfacesToAnalyze.isEmpty())) {
+      {
+        final Interface interfac = interfacesToAnalyze.remove();
+        boolean _containsKey = result.containsKey(interfac);
+        boolean _not = (!_containsKey);
+        if (_not) {
+          EList<Signature> _signatures = interfac.getSignatures();
+          result.put(interfac, _signatures);
+        }
+        EList<Interface> _superInterfaces = interfac.getSuperInterfaces();
+        Iterables.<Interface>addAll(interfacesToAnalyze, _superInterfaces);
+      }
+    }
+    return result;
+  }
+  
   public CharSequence compile(final Interface interfac, final String repositoryName) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("package ");
@@ -349,7 +388,30 @@ public class CbsmRepositoryCodeGenerator implements IGenerator {
     _builder.append("public interface ");
     String _name = interfac.getName();
     _builder.append(_name, "");
-    _builder.append(" {");
+    _builder.append(" ");
+    {
+      EList<Interface> _superInterfaces = interfac.getSuperInterfaces();
+      boolean _isEmpty = _superInterfaces.isEmpty();
+      boolean _not = (!_isEmpty);
+      if (_not) {
+        _builder.append("extends ");
+        {
+          EList<Interface> _superInterfaces_1 = interfac.getSuperInterfaces();
+          boolean _hasElements = false;
+          for(final Interface superInterface : _superInterfaces_1) {
+            if (!_hasElements) {
+              _hasElements = true;
+            } else {
+              _builder.appendImmediate(", ", "");
+            }
+            String _name_1 = superInterface.getName();
+            _builder.append(_name_1, "");
+          }
+        }
+        _builder.append(" ");
+      }
+    }
+    _builder.append("{");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.newLine();

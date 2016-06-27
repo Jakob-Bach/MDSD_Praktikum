@@ -70,6 +70,8 @@ public class CbsmDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInterfaceAccess().getGroup(), "rule__Interface__Group__0");
 					put(grammarAccess.getInterfaceAccess().getGroup_4(), "rule__Interface__Group_4__0");
 					put(grammarAccess.getInterfaceAccess().getGroup_4_3(), "rule__Interface__Group_4_3__0");
+					put(grammarAccess.getInterfaceAccess().getGroup_5(), "rule__Interface__Group_5__0");
+					put(grammarAccess.getInterfaceAccess().getGroup_5_3(), "rule__Interface__Group_5_3__0");
 					put(grammarAccess.getBasicComponentAccess().getGroup(), "rule__BasicComponent__Group__0");
 					put(grammarAccess.getBasicComponentAccess().getGroup_4(), "rule__BasicComponent__Group_4__0");
 					put(grammarAccess.getBasicComponentAccess().getGroup_4_3(), "rule__BasicComponent__Group_4_3__0");
@@ -155,6 +157,8 @@ public class CbsmDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInterfaceAccess().getNameAssignment_2(), "rule__Interface__NameAssignment_2");
 					put(grammarAccess.getInterfaceAccess().getSignaturesAssignment_4_2(), "rule__Interface__SignaturesAssignment_4_2");
 					put(grammarAccess.getInterfaceAccess().getSignaturesAssignment_4_3_1(), "rule__Interface__SignaturesAssignment_4_3_1");
+					put(grammarAccess.getInterfaceAccess().getSuperInterfacesAssignment_5_2(), "rule__Interface__SuperInterfacesAssignment_5_2");
+					put(grammarAccess.getInterfaceAccess().getSuperInterfacesAssignment_5_3_1(), "rule__Interface__SuperInterfacesAssignment_5_3_1");
 					put(grammarAccess.getBasicComponentAccess().getNameAssignment_2(), "rule__BasicComponent__NameAssignment_2");
 					put(grammarAccess.getBasicComponentAccess().getProvidedRolesAssignment_4_2(), "rule__BasicComponent__ProvidedRolesAssignment_4_2");
 					put(grammarAccess.getBasicComponentAccess().getProvidedRolesAssignment_4_3_1(), "rule__BasicComponent__ProvidedRolesAssignment_4_3_1");

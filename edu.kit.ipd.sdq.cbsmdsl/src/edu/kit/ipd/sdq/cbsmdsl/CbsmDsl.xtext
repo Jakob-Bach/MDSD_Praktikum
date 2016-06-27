@@ -67,6 +67,7 @@ Interface returns repository::Interface:
 	name=EString
 	'{'
 		('signatures' '{' signatures+=Signature ( "," signatures+=Signature)* '}' )?
+		('superInterfaces' '(' superInterfaces+=[repository::Interface|EString] ( "," superInterfaces+=[repository::Interface|EString])* ')' )? 
 	'}';
 
 Component returns repository::Component:
