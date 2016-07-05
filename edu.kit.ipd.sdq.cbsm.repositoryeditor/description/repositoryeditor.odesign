@@ -45,7 +45,7 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             </style>
           </subNodeMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="aql:(if (self.name.startsWith('«Component»') then (self.name) else ('«Component» ' + self.name) endif)">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -53,7 +53,7 @@
           </style>
         </containerMappings>
         <containerMappings name="CompositeComponent_Container" labelDirectEdit="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Name_DirectEditLabel']" semanticCandidatesExpression="feature:components" domainClass="assembly.CompositeComponent" reusedNodeMappings="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node'] //@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']">
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="aql:(if (self.name.startsWith('«CompositeComponent»') then (self.name) else ('«CompositeComponent» ' + self.name) endif)">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
