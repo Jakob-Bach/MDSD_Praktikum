@@ -30,15 +30,15 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="Component_Container" semanticCandidatesExpression="aql:(self.components->reject(component|component.oclIsKindOf(assembly::CompositeComponent)))" domainClass="repository.Component">
-          <subNodeMappings name="RequiredRole_Node" semanticCandidatesExpression="feature:requiredRoles" domainClass="repository.RequiredRole">
+        <containerMappings name="Component_Container" labelDirectEdit="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Name_DirectEditLabel']" semanticCandidatesExpression="aql:(self.components->reject(component|component.oclIsKindOf(assembly::CompositeComponent)))" domainClass="repository.Component">
+          <subNodeMappings name="RequiredRole_Node" labelDirectEdit="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Name_DirectEditLabel']" semanticCandidatesExpression="feature:requiredRoles" domainClass="repository.RequiredRole">
             <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             </style>
           </subNodeMappings>
-          <subNodeMappings name="ProvidedRole_Node" semanticCandidatesExpression="feature:providedRoles" domainClass="repository.ProvidedRole">
+          <subNodeMappings name="ProvidedRole_Node" labelDirectEdit="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Name_DirectEditLabel']" semanticCandidatesExpression="feature:providedRoles" domainClass="repository.ProvidedRole">
             <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -52,7 +52,7 @@
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
           </style>
         </containerMappings>
-        <containerMappings name="CompositeComponent_Container" semanticCandidatesExpression="feature:components" domainClass="assembly.CompositeComponent" reusedNodeMappings="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node'] //@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']">
+        <containerMappings name="CompositeComponent_Container" labelDirectEdit="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Name_DirectEditLabel']" semanticCandidatesExpression="feature:components" domainClass="assembly.CompositeComponent" reusedNodeMappings="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node'] //@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']">
           <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -60,9 +60,9 @@
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
           </style>
         </containerMappings>
-        <containerMappings name="Interface_Container" semanticCandidatesExpression="feature:interfaces" domainClass="repository.Interface">
-          <subContainerMappings name="Signature_Container" semanticCandidatesExpression="feature:signatures" domainClass="repository.Signature">
-            <subNodeMappings name="Parameter_Node" semanticCandidatesExpression="feature:parameters" domainClass="repository.Parameter">
+        <containerMappings name="Interface_Container" labelDirectEdit="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Name_DirectEditLabel']" semanticCandidatesExpression="feature:interfaces" domainClass="repository.Interface">
+          <subContainerMappings name="Signature_Container" labelDirectEdit="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Name_DirectEditLabel']" semanticCandidatesExpression="feature:signatures" domainClass="repository.Signature">
+            <subNodeMappings name="Parameter_Node" labelDirectEdit="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Name_DirectEditLabel']" semanticCandidatesExpression="feature:parameters" domainClass="repository.Parameter">
               <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -159,6 +159,12 @@
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:('parameter' + container.parameters->size())"/>
                 </subModelOperations>
               </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="Name_DirectEditLabel" label="Edit name">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
             </initialOperation>
           </ownedTools>
         </toolSections>
