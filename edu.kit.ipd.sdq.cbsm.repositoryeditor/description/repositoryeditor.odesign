@@ -8,24 +8,24 @@
       <metamodel href="http://sdq.ipd.kit.edu/componentBasedSystemModel/repository#//behavior"/>
       <defaultLayer name="Default">
         <edgeMappings name="ProvidedRole_Interface_Edge" deletionDescription="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ProvidedRole_Interface_EdgeDeletion']" sourceMapping="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']" targetMapping="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']" targetFinderExpression="aql:self.providedInterface" reconnections="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ProvidedRole_Interface_ReconnectEdge']">
-          <style sizeComputationExpression="2">
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            <centerLabelStyleDescription>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <style sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="«provides» ">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
         <edgeMappings name="RequiredRole_Interface_Edge" deletionDescription="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='RequiredRole_Interface_EdgeDeletion']" sourceMapping="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']" targetMapping="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']" targetFinderExpression="aql:self.requiredInterface" reconnections="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='RequiredRole_Interface_ReconnectEdge']">
-          <style sizeComputationExpression="2">
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            <centerLabelStyleDescription>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <style sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="«requires» ">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_red']"/>
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
         <edgeMappings name="Interface_SuperInterface_Edge" deletionDescription="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='Interface_SuperInterface_EdgeDeletion']" sourceMapping="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']" targetMapping="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']" targetFinderExpression="aql:self.superInterfaces" reconnections="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='Interface_SuperInterface_ReconnectEdge']">
-          <style sizeComputationExpression="2">
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          <style lineStyle="dash" targetArrow="InputClosedArrow" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_purple']"/>
             <centerLabelStyleDescription>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
@@ -36,28 +36,28 @@
             <style xsi:type="style:SquareDescription" labelExpression="aql:('«Behavior» ' + self.providedService.name)" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
             </style>
           </subNodeMappings>
           <subNodeMappings name="RequiredRole_Node" labelDirectEdit="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Name_DirectEditLabel']" semanticCandidatesExpression="feature:requiredRoles" domainClass="repository.RequiredRole">
             <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
             </style>
           </subNodeMappings>
           <subNodeMappings name="ProvidedRole_Node" labelDirectEdit="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Name_DirectEditLabel']" semanticCandidatesExpression="feature:providedRoles" domainClass="repository.ProvidedRole">
             <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
             </style>
           </subNodeMappings>
           <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="aql:'«Component» ' + self.name">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
           </style>
         </containerMappings>
         <containerMappings name="CompositeComponent_Container" labelDirectEdit="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Name_DirectEditLabel']" semanticCandidatesExpression="feature:components" domainClass="assembly.CompositeComponent" reusedNodeMappings="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node'] //@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']">
@@ -65,11 +65,11 @@
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
           </style>
         </containerMappings>
-        <containerMappings name="Interface_Container" labelDirectEdit="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Name_DirectEditLabel']" semanticCandidatesExpression="feature:interfaces" domainClass="repository.Interface">
-          <subContainerMappings name="Signature_Container" labelDirectEdit="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Name_DirectEditLabel']" semanticCandidatesExpression="feature:signatures" domainClass="repository.Signature">
+        <containerMappings name="Interface_Container" labelDirectEdit="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Name_DirectEditLabel']" semanticCandidatesExpression="feature:interfaces" domainClass="repository.Interface" childrenPresentation="HorizontalStack">
+          <subContainerMappings name="Signature_Container" labelDirectEdit="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Name_DirectEditLabel']" semanticCandidatesExpression="feature:signatures" domainClass="repository.Signature" childrenPresentation="List">
             <subNodeMappings name="Parameter_Node" labelDirectEdit="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Name_DirectEditLabel']" semanticCandidatesExpression="feature:parameters" domainClass="repository.Parameter">
               <style xsi:type="style:SquareDescription" labelExpression="aql:( self.name + ': ' + if (self.type.oclIsTypeOf(repository::ComplexType)) then (self.type.oclAsType(repository::ComplexType).name) else (self.type.oclAsType(repository::SimpleType).typeInstance.toString()) endif) " labelPosition="node" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -77,18 +77,18 @@
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
               </style>
             </subNodeMappings>
-            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="aql:( self.name + ' : ' + if (self.returnType = null) then ('void') else (if (self.returnType.oclIsTypeOf(repository::ComplexType)) then (self.returnType.oclAsType(repository::ComplexType).name) else (self.returnType.oclAsType(repository::SimpleType).typeInstance.toString()) endif) endif)">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="aql:( self.name + '() : ' + if (self.returnType = null) then ('void') else (if (self.returnType.oclIsTypeOf(repository::ComplexType)) then (self.returnType.oclAsType(repository::ComplexType).name) else (self.returnType.oclAsType(repository::SimpleType).typeInstance.toString()) endif) endif)">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
             </style>
           </subContainerMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="aql:'«Interface» ' + self.name">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
           </style>
         </containerMappings>
         <toolSections name="AddRepositoryElements_Section" label="Add repository elements">
