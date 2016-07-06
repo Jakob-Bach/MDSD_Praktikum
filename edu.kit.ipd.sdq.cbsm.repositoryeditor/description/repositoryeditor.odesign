@@ -53,7 +53,7 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             </style>
           </subNodeMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="aql:(if (self.name.startsWith('«Component»') then (self.name) else ('«Component» ' + self.name) endif)">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="aql:'«Component» ' + self.name">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -61,7 +61,7 @@
           </style>
         </containerMappings>
         <containerMappings name="CompositeComponent_Container" labelDirectEdit="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Name_DirectEditLabel']" semanticCandidatesExpression="feature:components" domainClass="assembly.CompositeComponent" reusedNodeMappings="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node'] //@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']">
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="aql:(if (self.name.startsWith('«CompositeComponent»') then (self.name) else ('«CompositeComponent» ' + self.name) endif)">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="aql:'«CompositeComponent» ' + self.name">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -71,13 +71,13 @@
         <containerMappings name="Interface_Container" labelDirectEdit="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Name_DirectEditLabel']" semanticCandidatesExpression="feature:interfaces" domainClass="repository.Interface">
           <subContainerMappings name="Signature_Container" labelDirectEdit="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Name_DirectEditLabel']" semanticCandidatesExpression="feature:signatures" domainClass="repository.Signature">
             <subNodeMappings name="Parameter_Node" labelDirectEdit="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Name_DirectEditLabel']" semanticCandidatesExpression="feature:parameters" domainClass="repository.Parameter">
-              <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW">
+              <style xsi:type="style:SquareDescription" labelExpression="aql:( self.name + ': ' + if (self.type.oclIsTypeOf(repository::ComplexType)) then (self.type.oclAsType(repository::ComplexType).name) else (self.type.oclAsType(repository::SimpleType).typeInstance.toString()) endif) " labelPosition="node" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
               </style>
             </subNodeMappings>
-            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="aql:( self.name + ' : ' + if (self.returnType = null) then ('void') else (if (self.returnType.oclIsTypeOf(repository::ComplexType)) then (self.returnType.oclAsType(repository::ComplexType).name) else (self.returnType.oclAsType(repository::SimpleType).typeInstance.toString()) endif) endif)">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -169,7 +169,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:DirectEditLabel" name="Name_DirectEditLabel" label="Edit name">
+          <ownedTools xsi:type="tool:DirectEditLabel" name="Name_DirectEditLabel" label="Edit name" inputLabelExpression="feature:name">
             <mask mask="{0}"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
@@ -279,6 +279,35 @@
               </firstModelOperations>
             </initialOperation>
             <edgeView name="edgeView"/>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="ChangeSignatures_Section" label="Change signatures">
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="Signature_ReturnType_SelectionWizard" label="Select return type" precondition="aql:self.oclIsKindOf(repository::Signature)" candidatesExpression="aql:self.eContainer().eContainer().oclAsType(repository::Repository).dataTypes" windowTitle="Select return type">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="returnType" valueExpression="var:element"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="Parameter_Type_SelectionWizard" label="Select parameter type" precondition="aql:self.oclIsKindOf(repository::Parameter)" candidatesExpression="aql:self.eContainer().eContainer().eContainer().oclAsType(repository::Repository).dataTypes" windowTitle="Select parameter type">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="var:element"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ToolDescription" name="Signature_RemoveReturnType_Tool" label="Remove return type" precondition="aql:self.oclIsKindOf(repository::Signature)">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:Unset" featureName="returnType"/>
+            </initialOperation>
           </ownedTools>
         </toolSections>
       </defaultLayer>
