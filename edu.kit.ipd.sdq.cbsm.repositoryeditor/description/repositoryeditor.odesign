@@ -10,7 +10,7 @@
         <edgeMappings name="ProvidedRole_Interface_Edge" deletionDescription="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ProvidedRole_Interface_EdgeDeletion']" sourceMapping="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']" targetMapping="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']" targetFinderExpression="aql:self.providedInterface" reconnections="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='ProvidedRole_Interface_ReconnectEdge']">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            <centerLabelStyleDescription>
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql:'&lt;&lt;provides>>'">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
@@ -18,7 +18,7 @@
         <edgeMappings name="RequiredRole_Interface_Edge" deletionDescription="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='RequiredRole_Interface_EdgeDeletion']" sourceMapping="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']" targetMapping="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']" targetFinderExpression="aql:self.requiredInterface" reconnections="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='RequiredRole_Interface_ReconnectEdge']">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            <centerLabelStyleDescription>
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql:'&lt;&lt;requires>>'">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
@@ -53,7 +53,7 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             </style>
           </subNodeMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="aql:(if (self.name.startsWith('«Component»') then (self.name) else ('«Component» ' + self.name) endif)">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="aql:(if (self.name.startsWith('«Component»') then (self.name) else ('«Component» ' + self.name) endif)" iconPath="/edu.kit.ipd.sdq.cbsm.repositoryeditor/icons/icon_Component.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -61,7 +61,7 @@
           </style>
         </containerMappings>
         <containerMappings name="CompositeComponent_Container" labelDirectEdit="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Name_DirectEditLabel']" semanticCandidatesExpression="feature:components" domainClass="assembly.CompositeComponent" reusedNodeMappings="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node'] //@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']">
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="aql:(if (self.name.startsWith('«CompositeComponent»') then (self.name) else ('«CompositeComponent» ' + self.name) endif)">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="aql:(if (self.name.startsWith('«CompositeComponent»') then (self.name) else ('«CompositeComponent» ' + self.name) endif)" iconPath="/edu.kit.ipd.sdq.cbsm.repositoryeditor/icons/icon_Component.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -84,7 +84,7 @@
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
           </subContainerMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" iconPath="/edu.kit.ipd.sdq.cbsm.repositoryeditor/icons/icon_Interface.png">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -92,7 +92,7 @@
           </style>
         </containerMappings>
         <toolSections name="AddRepositoryElements_Section" label="Add repository elements">
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Component_ContainerCreation" label="New Component" containerMappings="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Component_ContainerCreation" label="New Component" containerMappings="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']" iconPath="/edu.kit.ipd.sdq.cbsm.repositoryeditor/icons/icon_Component.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -103,7 +103,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="CompositeComponent_ContainerCreation" label="New CompositeComponent" containerMappings="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='CompositeComponent_Container']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="CompositeComponent_ContainerCreation" label="New CompositeComponent" containerMappings="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='CompositeComponent_Container']" iconPath="/edu.kit.ipd.sdq.cbsm.repositoryeditor/icons/icon_Component.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -114,7 +114,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Interface_ContainerCreation" label="New Interface" containerMappings="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Interface_ContainerCreation" label="New Interface" containerMappings="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']" iconPath="/edu.kit.ipd.sdq.cbsm.repositoryeditor/icons/icon_Interface.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
