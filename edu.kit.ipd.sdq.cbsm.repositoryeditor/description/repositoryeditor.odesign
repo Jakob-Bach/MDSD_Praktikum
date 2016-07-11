@@ -177,7 +177,7 @@
           </ownedTools>
         </toolSections>
         <toolSections name="ConnectRepositoryElements_Section" label="Connect repository elements">
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="ProvidedRole_Interface_EdgeCreation" label="Connect ProvidedRole to Interface" edgeMappings="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="ProvidedRole_Interface_EdgeCreation" label="Connect ProvidedRole to Interface" edgeMappings="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']" iconPath="/edu.kit.ipd.sdq.cbsm.repositoryeditor/icons/ConnectProvidedRole.gif">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -188,7 +188,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="RequiredRole_Interface_EdgeCreation" label="Connect RequiredRole to Interface" edgeMappings="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="RequiredRole_Interface_EdgeCreation" label="Connect RequiredRole to Interface" edgeMappings="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']" iconPath="/edu.kit.ipd.sdq.cbsm.repositoryeditor/icons/ConnectRequiredRole.gif">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -199,7 +199,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Interface_SuperInterface_EdgeCreation" label="Connect Interface to super Interface" edgeMappings="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='Interface_SuperInterface_Edge']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Interface_SuperInterface_EdgeCreation" label="Connect Interface to super Interface" edgeMappings="//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='Interface_SuperInterface_Edge']" iconPath="/edu.kit.ipd.sdq.cbsm.repositoryeditor/icons/ConnectInterface.gif">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -302,7 +302,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:ToolDescription" name="Signature_RemoveReturnType_Tool" label="Remove return type" precondition="aql:self.oclIsKindOf(repository::Signature)">
+          <ownedTools xsi:type="tool_1:ToolDescription" name="Signature_RemoveReturnType_Tool" label="Remove return type" precondition="aql:self.oclIsKindOf(repository::Signature)" iconPath="/org.eclipse.sirius.ui/icons/full/others/delete.gif">
             <element name="element"/>
             <elementView name="elementView"/>
             <initialOperation>
