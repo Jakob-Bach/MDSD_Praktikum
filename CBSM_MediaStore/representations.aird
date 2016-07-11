@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description" xmi:id="_owOuoDyVEeaVx71qeP0NEw" selectedViews="_25Rs8DyVEeaVx71qeP0NEw" version="10.0.0.201505222000">
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assembly="http://sdq.ipd.kit.edu/componentBasedSystemModel/assembly" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:repository="http://sdq.ipd.kit.edu/componentBasedSystemModel/repository" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_owOuoDyVEeaVx71qeP0NEw" selectedViews="_25Rs8DyVEeaVx71qeP0NEw" version="10.1.0.201509162000">
   <semanticResources>Ecore/mediaStore.allocation</semanticResources>
   <semanticResources>Ecore/mediaStore.assembly</semanticResources>
   <semanticResources>Ecore/mediaStore.environment</semanticResources>
@@ -18,6 +18,834 @@
   <semanticResources>Xtext/serialized/mediaStoreRepository.repository</semanticResources>
   <semanticResources>Xtext/serialized/mediaStoreSystem.assembly</semanticResources>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_25Rs8DyVEeaVx71qeP0NEw">
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_75L90EdcEeaeWskVcX6O6g" name="MediaStore_Repository_Diagram">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_75L90UdcEeaeWskVcX6O6g" source="DANNOTATION_CUSTOMIZATION_KEY">
+        <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_75L90kdcEeaeWskVcX6O6g"/>
+      </ownedAnnotationEntries>
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_75NL8EdcEeaeWskVcX6O6g" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_75NL8UdcEeaeWskVcX6O6g" type="Sirius" element="_75L90EdcEeaeWskVcX6O6g" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_75NL80dcEeaeWskVcX6O6g" type="2002" element="_75L900dcEeaeWskVcX6O6g">
+            <children xmi:type="notation:Node" xmi:id="_75OaEEdcEeaeWskVcX6O6g" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_75OaEUdcEeaeWskVcX6O6g" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_75SrgEdcEeaeWskVcX6O6g" type="3007" element="_75L91UdcEeaeWskVcX6O6g">
+                <children xmi:type="notation:Node" xmi:id="_75Srg0dcEeaeWskVcX6O6g" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_75SrhEdcEeaeWskVcX6O6g" y="5"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_75TSkkdcEeaeWskVcX6O6g" type="3003" element="_75L91kdcEeaeWskVcX6O6g">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_75TSk0dcEeaeWskVcX6O6g" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75TSlEdcEeaeWskVcX6O6g"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_75SrgUdcEeaeWskVcX6O6g" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75SrgkdcEeaeWskVcX6O6g" x="14" y="30" width="221" height="46"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_75SrhUdcEeaeWskVcX6O6g" type="3007" element="_75L910dcEeaeWskVcX6O6g">
+                <children xmi:type="notation:Node" xmi:id="_75TSkEdcEeaeWskVcX6O6g" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_75TSkUdcEeaeWskVcX6O6g" y="5"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_75TSlUdcEeaeWskVcX6O6g" type="3003" element="_75L92EdcEeaeWskVcX6O6g">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_75TSlkdcEeaeWskVcX6O6g" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75TSl0dcEeaeWskVcX6O6g"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_75SrhkdcEeaeWskVcX6O6g" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75Srh0dcEeaeWskVcX6O6g" x="33" y="85" width="184" height="46"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_75OaEkdcEeaeWskVcX6O6g"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_75OaE0dcEeaeWskVcX6O6g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_75NL9EdcEeaeWskVcX6O6g" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75NL9UdcEeaeWskVcX6O6g" x="158" y="93" width="297" height="154"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_75PBIEdcEeaeWskVcX6O6g" type="2002" element="_75L92UdcEeaeWskVcX6O6g">
+            <children xmi:type="notation:Node" xmi:id="_75PoMEdcEeaeWskVcX6O6g" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_75PoMUdcEeaeWskVcX6O6g" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_75T5oEdcEeaeWskVcX6O6g" type="3007" element="_75L920dcEeaeWskVcX6O6g">
+                <children xmi:type="notation:Node" xmi:id="_75UgsEdcEeaeWskVcX6O6g" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_75UgsUdcEeaeWskVcX6O6g" y="5"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_75VHwkdcEeaeWskVcX6O6g" type="3003" element="_75L93EdcEeaeWskVcX6O6g">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_75VHw0dcEeaeWskVcX6O6g" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75VHxEdcEeaeWskVcX6O6g"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_75T5oUdcEeaeWskVcX6O6g" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75T5okdcEeaeWskVcX6O6g" x="30" y="30" width="243" height="46"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_75UgskdcEeaeWskVcX6O6g" type="3007" element="_75L93UdcEeaeWskVcX6O6g">
+                <children xmi:type="notation:Node" xmi:id="_75UgtUdcEeaeWskVcX6O6g" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_75UgtkdcEeaeWskVcX6O6g" y="5"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_75Vu0EdcEeaeWskVcX6O6g" type="3003" element="_75L93kdcEeaeWskVcX6O6g">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_75Vu0UdcEeaeWskVcX6O6g" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75Vu0kdcEeaeWskVcX6O6g"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_75Ugs0dcEeaeWskVcX6O6g" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75UgtEdcEeaeWskVcX6O6g" x="30" y="90" width="231" height="46"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_75Ugt0dcEeaeWskVcX6O6g" type="3007" element="_75L930dcEeaeWskVcX6O6g">
+                <children xmi:type="notation:Node" xmi:id="_75VHwEdcEeaeWskVcX6O6g" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_75VHwUdcEeaeWskVcX6O6g" y="5"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_75Vu00dcEeaeWskVcX6O6g" type="3003" element="_75L94EdcEeaeWskVcX6O6g">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_75Vu1EdcEeaeWskVcX6O6g" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75Vu1UdcEeaeWskVcX6O6g"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_75UguEdcEeaeWskVcX6O6g" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75UguUdcEeaeWskVcX6O6g" x="30" y="150" width="254" height="46"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_75PoMkdcEeaeWskVcX6O6g"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_75PoM0dcEeaeWskVcX6O6g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_75PBIUdcEeaeWskVcX6O6g" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75PBIkdcEeaeWskVcX6O6g" x="1054" y="192" width="330" height="219"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_75PoNEdcEeaeWskVcX6O6g" type="2002" element="_75L94UdcEeaeWskVcX6O6g">
+            <children xmi:type="notation:Node" xmi:id="_75PoN0dcEeaeWskVcX6O6g" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_75QPQEdcEeaeWskVcX6O6g" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_75WV4EdcEeaeWskVcX6O6g" type="3007" element="_75L940dcEeaeWskVcX6O6g">
+                <children xmi:type="notation:Node" xmi:id="_75WV40dcEeaeWskVcX6O6g" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_75WV5EdcEeaeWskVcX6O6g" y="5"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_75W88kdcEeaeWskVcX6O6g" type="3003" element="_75L95EdcEeaeWskVcX6O6g">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_75W880dcEeaeWskVcX6O6g" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75W89EdcEeaeWskVcX6O6g"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_75WV4UdcEeaeWskVcX6O6g" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75WV4kdcEeaeWskVcX6O6g" x="30" y="30" width="211" height="46"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_75WV5UdcEeaeWskVcX6O6g" type="3007" element="_75L95UdcEeaeWskVcX6O6g">
+                <children xmi:type="notation:Node" xmi:id="_75W88EdcEeaeWskVcX6O6g" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_75W88UdcEeaeWskVcX6O6g" y="5"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_75XkAEdcEeaeWskVcX6O6g" type="3003" element="_75L95kdcEeaeWskVcX6O6g">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_75XkAUdcEeaeWskVcX6O6g" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75XkAkdcEeaeWskVcX6O6g"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_75WV5kdcEeaeWskVcX6O6g" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75WV50dcEeaeWskVcX6O6g" x="27" y="86" width="209" height="46"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_75QPQUdcEeaeWskVcX6O6g"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_75QPQkdcEeaeWskVcX6O6g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_75PoNUdcEeaeWskVcX6O6g" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75PoNkdcEeaeWskVcX6O6g" x="156" y="-107" width="301" height="166"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_75QPQ0dcEeaeWskVcX6O6g" type="2002" element="_75L950dcEeaeWskVcX6O6g">
+            <children xmi:type="notation:Node" xmi:id="_75QPRkdcEeaeWskVcX6O6g" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_75QPR0dcEeaeWskVcX6O6g" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_75XkA0dcEeaeWskVcX6O6g" type="3007" element="_75L96UdcEeaeWskVcX6O6g">
+                <children xmi:type="notation:Node" xmi:id="_75XkBkdcEeaeWskVcX6O6g" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_75XkB0dcEeaeWskVcX6O6g" y="5"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_75XkCEdcEeaeWskVcX6O6g" type="3003" element="_75L96kdcEeaeWskVcX6O6g">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_75XkCUdcEeaeWskVcX6O6g" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75XkCkdcEeaeWskVcX6O6g"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_75XkBEdcEeaeWskVcX6O6g" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75XkBUdcEeaeWskVcX6O6g" x="30" y="30" width="258" height="46"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_75QPSEdcEeaeWskVcX6O6g"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_75QPSUdcEeaeWskVcX6O6g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_75QPREdcEeaeWskVcX6O6g" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75QPRUdcEeaeWskVcX6O6g" x="1068" y="-107" width="301" height="90"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_75QPSkdcEeaeWskVcX6O6g" type="2002" element="_75L960dcEeaeWskVcX6O6g">
+            <children xmi:type="notation:Node" xmi:id="_75QPTUdcEeaeWskVcX6O6g" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_75Q2UEdcEeaeWskVcX6O6g" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_75YLEEdcEeaeWskVcX6O6g" type="3007" element="_75L97UdcEeaeWskVcX6O6g">
+                <children xmi:type="notation:Node" xmi:id="_75YyIEdcEeaeWskVcX6O6g" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_75YyIUdcEeaeWskVcX6O6g" y="5"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_75YyIkdcEeaeWskVcX6O6g" type="3003" element="_75L97kdcEeaeWskVcX6O6g">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_75YyI0dcEeaeWskVcX6O6g" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75YyJEdcEeaeWskVcX6O6g"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_75YLEUdcEeaeWskVcX6O6g" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75YLEkdcEeaeWskVcX6O6g" x="30" y="30" width="249" height="46"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_75Q2UUdcEeaeWskVcX6O6g"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_75Q2UkdcEeaeWskVcX6O6g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_75QPS0dcEeaeWskVcX6O6g" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75QPTEdcEeaeWskVcX6O6g" x="1073" y="60" width="292" height="90"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_75Q2U0dcEeaeWskVcX6O6g" type="2002" element="_75L970dcEeaeWskVcX6O6g">
+            <children xmi:type="notation:Node" xmi:id="_75Q2VkdcEeaeWskVcX6O6g" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_75Q2V0dcEeaeWskVcX6O6g" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_75ZZMEdcEeaeWskVcX6O6g" type="3007" element="_75L98UdcEeaeWskVcX6O6g">
+                <children xmi:type="notation:Node" xmi:id="_75ZZM0dcEeaeWskVcX6O6g" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_75ZZNEdcEeaeWskVcX6O6g" y="5"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_75aAQkdcEeaeWskVcX6O6g" type="3003" element="_75L98kdcEeaeWskVcX6O6g">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_75aAQ0dcEeaeWskVcX6O6g" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75aAREdcEeaeWskVcX6O6g"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_75ZZMUdcEeaeWskVcX6O6g" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75ZZMkdcEeaeWskVcX6O6g" x="30" y="30" width="235" height="46"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_75ZZNUdcEeaeWskVcX6O6g" type="3007" element="_75L980dcEeaeWskVcX6O6g">
+                <children xmi:type="notation:Node" xmi:id="_75aAQEdcEeaeWskVcX6O6g" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_75aAQUdcEeaeWskVcX6O6g" y="5"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_75aARUdcEeaeWskVcX6O6g" type="3003" element="_75L99EdcEeaeWskVcX6O6g">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_75aARkdcEeaeWskVcX6O6g" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75aAR0dcEeaeWskVcX6O6g"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_75ZZNkdcEeaeWskVcX6O6g" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75ZZN0dcEeaeWskVcX6O6g" x="36" y="90" width="224" height="46"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_75Q2WEdcEeaeWskVcX6O6g"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_75Q2WUdcEeaeWskVcX6O6g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_75Q2VEdcEeaeWskVcX6O6g" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75Q2VUdcEeaeWskVcX6O6g" x="149" y="312" width="315" height="171"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_75Q2WkdcEeaeWskVcX6O6g" type="2002" element="_75L99UdcEeaeWskVcX6O6g">
+            <children xmi:type="notation:Node" xmi:id="_75Q2XUdcEeaeWskVcX6O6g" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_75Q2XkdcEeaeWskVcX6O6g" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_75anUEdcEeaeWskVcX6O6g" type="3009" element="_75L990dcEeaeWskVcX6O6g">
+                <children xmi:type="notation:Node" xmi:id="_75anU0dcEeaeWskVcX6O6g" type="5004"/>
+                <children xmi:type="notation:Node" xmi:id="_75anVEdcEeaeWskVcX6O6g" type="7003">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_75anVUdcEeaeWskVcX6O6g"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_75anVkdcEeaeWskVcX6O6g"/>
+                  <styles xmi:type="notation:DrawerStyle" xmi:id="_75anV0dcEeaeWskVcX6O6g"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_75anUUdcEeaeWskVcX6O6g" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75anUkdcEeaeWskVcX6O6g"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_75bOYEdcEeaeWskVcX6O6g" type="3009" element="_75L9-UdcEeaeWskVcX6O6g">
+                <children xmi:type="notation:Node" xmi:id="_75bOY0dcEeaeWskVcX6O6g" type="5004"/>
+                <children xmi:type="notation:Node" xmi:id="_75b1cEdcEeaeWskVcX6O6g" type="7003">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_75b1cUdcEeaeWskVcX6O6g"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_75b1ckdcEeaeWskVcX6O6g"/>
+                  <styles xmi:type="notation:DrawerStyle" xmi:id="_75b1c0dcEeaeWskVcX6O6g"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_75bOYUdcEeaeWskVcX6O6g" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75bOYkdcEeaeWskVcX6O6g" x="134"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_75Q2X0dcEeaeWskVcX6O6g"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_75Q2YEdcEeaeWskVcX6O6g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_75Q2W0dcEeaeWskVcX6O6g" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75Q2XEdcEeaeWskVcX6O6g" x="648" y="168" height="70"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_75RdYEdcEeaeWskVcX6O6g" type="2002" element="_75L9-0dcEeaeWskVcX6O6g">
+            <children xmi:type="notation:Node" xmi:id="_75RdY0dcEeaeWskVcX6O6g" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_75RdZEdcEeaeWskVcX6O6g" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_75b1dEdcEeaeWskVcX6O6g" type="3009" element="_75L9_UdcEeaeWskVcX6O6g">
+                <children xmi:type="notation:Node" xmi:id="_75ccgkdcEeaeWskVcX6O6g" type="5004"/>
+                <children xmi:type="notation:Node" xmi:id="_75ccg0dcEeaeWskVcX6O6g" type="7003">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_75cchEdcEeaeWskVcX6O6g"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_75cchUdcEeaeWskVcX6O6g"/>
+                  <styles xmi:type="notation:DrawerStyle" xmi:id="_75cchkdcEeaeWskVcX6O6g"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_75ccgEdcEeaeWskVcX6O6g" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75ccgUdcEeaeWskVcX6O6g"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_75cch0dcEeaeWskVcX6O6g" type="3009" element="_75L9_0dcEeaeWskVcX6O6g">
+                <children xmi:type="notation:Node" xmi:id="_75ccikdcEeaeWskVcX6O6g" type="5004"/>
+                <children xmi:type="notation:Node" xmi:id="_75cci0dcEeaeWskVcX6O6g" type="7003">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_75ccjEdcEeaeWskVcX6O6g"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_75ccjUdcEeaeWskVcX6O6g"/>
+                  <styles xmi:type="notation:DrawerStyle" xmi:id="_75ccjkdcEeaeWskVcX6O6g"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_75cciEdcEeaeWskVcX6O6g" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75cciUdcEeaeWskVcX6O6g" x="109"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_75RdZUdcEeaeWskVcX6O6g"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_75RdZkdcEeaeWskVcX6O6g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_75RdYUdcEeaeWskVcX6O6g" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75RdYkdcEeaeWskVcX6O6g" x="673" y="299" height="70"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_75RdZ0dcEeaeWskVcX6O6g" type="2002" element="_75L-AUdcEeaeWskVcX6O6g">
+            <children xmi:type="notation:Node" xmi:id="_75RdakdcEeaeWskVcX6O6g" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_75Rda0dcEeaeWskVcX6O6g" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_75dDkEdcEeaeWskVcX6O6g" type="3009" element="_75L-A0dcEeaeWskVcX6O6g">
+                <children xmi:type="notation:Node" xmi:id="_75dqoEdcEeaeWskVcX6O6g" type="5004"/>
+                <children xmi:type="notation:Node" xmi:id="_75dqoUdcEeaeWskVcX6O6g" type="7003">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_75dqokdcEeaeWskVcX6O6g"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_75dqo0dcEeaeWskVcX6O6g"/>
+                  <styles xmi:type="notation:DrawerStyle" xmi:id="_75dqpEdcEeaeWskVcX6O6g"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_75dDkUdcEeaeWskVcX6O6g" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75dDkkdcEeaeWskVcX6O6g"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_75RdbEdcEeaeWskVcX6O6g"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_75RdbUdcEeaeWskVcX6O6g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_75RdaEdcEeaeWskVcX6O6g" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75RdaUdcEeaeWskVcX6O6g" x="718" y="-107" height="70"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_75SEcEdcEeaeWskVcX6O6g" type="2002" element="_75L-BUdcEeaeWskVcX6O6g">
+            <children xmi:type="notation:Node" xmi:id="_75SEc0dcEeaeWskVcX6O6g" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_75SEdEdcEeaeWskVcX6O6g" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_75dqpUdcEeaeWskVcX6O6g" type="3009" element="_75L-B0dcEeaeWskVcX6O6g">
+                <children xmi:type="notation:Node" xmi:id="_75dqqEdcEeaeWskVcX6O6g" type="5004"/>
+                <children xmi:type="notation:Node" xmi:id="_75eRsEdcEeaeWskVcX6O6g" type="7003">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_75eRsUdcEeaeWskVcX6O6g"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_75eRskdcEeaeWskVcX6O6g"/>
+                  <styles xmi:type="notation:DrawerStyle" xmi:id="_75eRs0dcEeaeWskVcX6O6g"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_75dqpkdcEeaeWskVcX6O6g" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75dqp0dcEeaeWskVcX6O6g"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_75eRtEdcEeaeWskVcX6O6g" type="3009" element="_75L-CUdcEeaeWskVcX6O6g">
+                <children xmi:type="notation:Node" xmi:id="_75eRt0dcEeaeWskVcX6O6g" type="5004"/>
+                <children xmi:type="notation:Node" xmi:id="_75eRuEdcEeaeWskVcX6O6g" type="7003">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_75eRuUdcEeaeWskVcX6O6g"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_75eRukdcEeaeWskVcX6O6g"/>
+                  <styles xmi:type="notation:DrawerStyle" xmi:id="_75eRu0dcEeaeWskVcX6O6g"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_75eRtUdcEeaeWskVcX6O6g" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75eRtkdcEeaeWskVcX6O6g" x="100"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_75SEdUdcEeaeWskVcX6O6g"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_75SEdkdcEeaeWskVcX6O6g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_75SEcUdcEeaeWskVcX6O6g" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75SEckdcEeaeWskVcX6O6g" x="677" y="26" height="70"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_75NL8kdcEeaeWskVcX6O6g"/>
+          <edges xmi:type="notation:Edge" xmi:id="_75ff0EdcEeaeWskVcX6O6g" type="4001" element="_75L-C0dcEeaeWskVcX6O6g" source="_75SrhUdcEeaeWskVcX6O6g" target="_75Q2WkdcEeaeWskVcX6O6g">
+            <children xmi:type="notation:Node" xmi:id="_75ff1EdcEeaeWskVcX6O6g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75ff1UdcEeaeWskVcX6O6g" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_75gG4EdcEeaeWskVcX6O6g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75gG4UdcEeaeWskVcX6O6g" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_75gG4kdcEeaeWskVcX6O6g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75gG40dcEeaeWskVcX6O6g" x="-121" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_75ff0UdcEeaeWskVcX6O6g" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_75ff0kdcEeaeWskVcX6O6g" fontColor="1345869" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_75ff00dcEeaeWskVcX6O6g" points="[92, -18, -395, -13]$[360, -18, -127, -13]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_75gG5EdcEeaeWskVcX6O6g" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_75gG5UdcEeaeWskVcX6O6g" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_75gt8EdcEeaeWskVcX6O6g" type="4001" element="_75L-DkdcEeaeWskVcX6O6g" source="_75Ugt0dcEeaeWskVcX6O6g" target="_75RdYEdcEeaeWskVcX6O6g">
+            <children xmi:type="notation:Node" xmi:id="_75gt9EdcEeaeWskVcX6O6g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75gt9UdcEeaeWskVcX6O6g" x="-4" y="7"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_75gt9kdcEeaeWskVcX6O6g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75gt90dcEeaeWskVcX6O6g" x="48" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_75gt-EdcEeaeWskVcX6O6g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75gt-UdcEeaeWskVcX6O6g" x="-14" y="-10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_75gt8UdcEeaeWskVcX6O6g" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_75gt8kdcEeaeWskVcX6O6g" fontColor="1345869" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_75gt80dcEeaeWskVcX6O6g" points="[-4, -1, 314, 36]$[-157, -1, 161, 36]$[-157, -38, 161, -1]$[-215, -38, 103, -1]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_75gt-kdcEeaeWskVcX6O6g" id="(0.015748031496062992,0.4782608695652174)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_75gt-0dcEeaeWskVcX6O6g" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_75hVAEdcEeaeWskVcX6O6g" type="4001" element="_75L-EUdcEeaeWskVcX6O6g" source="_75WV5UdcEeaeWskVcX6O6g" target="_75SEcEdcEeaeWskVcX6O6g">
+            <children xmi:type="notation:Node" xmi:id="_75hVBEdcEeaeWskVcX6O6g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75hVBUdcEeaeWskVcX6O6g" x="71" y="12"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_75hVBkdcEeaeWskVcX6O6g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75hVB0dcEeaeWskVcX6O6g" x="157" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_75hVCEdcEeaeWskVcX6O6g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75hVCUdcEeaeWskVcX6O6g" x="-45" y="89"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_75hVAUdcEeaeWskVcX6O6g" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_75hVAkdcEeaeWskVcX6O6g" fontColor="1345869" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_75hVA0dcEeaeWskVcX6O6g" points="[105, -2, -378, -54]$[344, -2, -139, -54]$[344, 53, -139, 1]$[385, 53, -98, 1]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_75h8EEdcEeaeWskVcX6O6g" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_75h8EUdcEeaeWskVcX6O6g" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_75h8EkdcEeaeWskVcX6O6g" type="4001" element="_75L-FEdcEeaeWskVcX6O6g" source="_75XkA0dcEeaeWskVcX6O6g" target="_75RdZ0dcEeaeWskVcX6O6g">
+            <children xmi:type="notation:Node" xmi:id="_75ijIEdcEeaeWskVcX6O6g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75ijIUdcEeaeWskVcX6O6g" x="7" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_75ijIkdcEeaeWskVcX6O6g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75ijI0dcEeaeWskVcX6O6g" x="-2" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_75ijJEdcEeaeWskVcX6O6g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75ijJUdcEeaeWskVcX6O6g" x="-85" y="-10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_75h8E0dcEeaeWskVcX6O6g" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_75h8FEdcEeaeWskVcX6O6g" fontColor="1345869" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_75h8FUdcEeaeWskVcX6O6g" points="[-1, -1, 328, 26]$[-96, -1, 233, 26]$[-96, -31, 233, -4]$[-271, -31, 58, -4]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_75ijJkdcEeaeWskVcX6O6g" id="(0.003875968992248062,0.5434782608695652)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_75ijJ0dcEeaeWskVcX6O6g" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_75jKMEdcEeaeWskVcX6O6g" type="4001" element="_75L-F0dcEeaeWskVcX6O6g" source="_75YLEEdcEeaeWskVcX6O6g" target="_75SEcEdcEeaeWskVcX6O6g">
+            <children xmi:type="notation:Node" xmi:id="_75jKNEdcEeaeWskVcX6O6g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75jKNUdcEeaeWskVcX6O6g" x="-11" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_75jKNkdcEeaeWskVcX6O6g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75jKN0dcEeaeWskVcX6O6g" x="-6" y="-6"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_75jKOEdcEeaeWskVcX6O6g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75jKOUdcEeaeWskVcX6O6g" y="-10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_75jKMUdcEeaeWskVcX6O6g" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_75jKMkdcEeaeWskVcX6O6g" fontColor="1345869" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_75jKM0dcEeaeWskVcX6O6g" points="[-124, 1, 333, 60]$[-152, 1, 305, 60]$[-152, -83, 305, -24]$[-358, -83, 99, -24]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_75jKOkdcEeaeWskVcX6O6g" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_75jKO0dcEeaeWskVcX6O6g" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_75jxQEdcEeaeWskVcX6O6g" type="4001" element="_75L-GkdcEeaeWskVcX6O6g" source="_75ZZMEdcEeaeWskVcX6O6g" target="_75RdYEdcEeaeWskVcX6O6g">
+            <children xmi:type="notation:Node" xmi:id="_75jxREdcEeaeWskVcX6O6g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75jxRUdcEeaeWskVcX6O6g" x="14"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_75jxRkdcEeaeWskVcX6O6g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75jxR0dcEeaeWskVcX6O6g" x="168" y="-25"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_75jxSEdcEeaeWskVcX6O6g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75jxSUdcEeaeWskVcX6O6g" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_75jxQUdcEeaeWskVcX6O6g" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_75jxQkdcEeaeWskVcX6O6g" fontColor="1345869" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_75jxQ0dcEeaeWskVcX6O6g" points="[118, -6, -356, 32]$[275, -6, -199, 32]$[275, -37, -199, 1]$[372, -37, -102, 1]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_75jxSkdcEeaeWskVcX6O6g" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_75jxS0dcEeaeWskVcX6O6g" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_75jxTEdcEeaeWskVcX6O6g" type="4001" element="_75L-HUdcEeaeWskVcX6O6g" source="_75SrgEdcEeaeWskVcX6O6g" target="_75RdYEdcEeaeWskVcX6O6g">
+            <children xmi:type="notation:Node" xmi:id="_75kYUEdcEeaeWskVcX6O6g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75kYUUdcEeaeWskVcX6O6g" x="98" y="-97"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_75kYUkdcEeaeWskVcX6O6g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75kYU0dcEeaeWskVcX6O6g" x="4" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_75kYVEdcEeaeWskVcX6O6g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75kYVUdcEeaeWskVcX6O6g" x="-111" y="-150"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_75jxTUdcEeaeWskVcX6O6g" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_75jxTkdcEeaeWskVcX6O6g" fontColor="789660" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_75jxT0dcEeaeWskVcX6O6g" points="[111, 0, -377, -181]$[277, 0, -211, -181]$[277, 160, -211, -21]$[386, 160, -102, -21]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_75kYVkdcEeaeWskVcX6O6g" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_75kYV0dcEeaeWskVcX6O6g" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_75kYWEdcEeaeWskVcX6O6g" type="4001" element="_75L-IEdcEeaeWskVcX6O6g" source="_75T5oEdcEeaeWskVcX6O6g" target="_75SEcEdcEeaeWskVcX6O6g">
+            <children xmi:type="notation:Node" xmi:id="_75k_YEdcEeaeWskVcX6O6g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75k_YUdcEeaeWskVcX6O6g" x="-13" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_75k_YkdcEeaeWskVcX6O6g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75k_Y0dcEeaeWskVcX6O6g" x="-30" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_75k_ZEdcEeaeWskVcX6O6g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75k_ZUdcEeaeWskVcX6O6g" x="-19" y="-10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_75kYWUdcEeaeWskVcX6O6g" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_75kYWkdcEeaeWskVcX6O6g" fontColor="789660" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_75kYW0dcEeaeWskVcX6O6g" points="[-3, -2, 314, 191]$[-96, -2, 221, 191]$[-96, -193, 221, 0]$[-218, -193, 99, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_75k_ZkdcEeaeWskVcX6O6g" id="(0.012345679012345678,0.5434782608695652)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_75k_Z0dcEeaeWskVcX6O6g" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_75lmcEdcEeaeWskVcX6O6g" type="4001" element="_75L-I0dcEeaeWskVcX6O6g" source="_75UgskdcEeaeWskVcX6O6g" target="_75RdZ0dcEeaeWskVcX6O6g">
+            <children xmi:type="notation:Node" xmi:id="_75lmdEdcEeaeWskVcX6O6g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75lmdUdcEeaeWskVcX6O6g" x="-36"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_75lmdkdcEeaeWskVcX6O6g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75lmd0dcEeaeWskVcX6O6g" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_75lmeEdcEeaeWskVcX6O6g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75lmeUdcEeaeWskVcX6O6g" x="30" y="-10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_75lmcUdcEeaeWskVcX6O6g" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_75lmckdcEeaeWskVcX6O6g" fontColor="789660" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_75lmc0dcEeaeWskVcX6O6g" points="[-115, 0, 314, 384]$[-256, 0, 173, 384]$[-256, -380, 173, 4]$[-371, -380, 58, 4]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_75lmekdcEeaeWskVcX6O6g" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_75lme0dcEeaeWskVcX6O6g" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_75mNgEdcEeaeWskVcX6O6g" type="4001" element="_75L-JkdcEeaeWskVcX6O6g" source="_75WV4EdcEeaeWskVcX6O6g" target="_75SEcEdcEeaeWskVcX6O6g">
+            <children xmi:type="notation:Node" xmi:id="_75mNhEdcEeaeWskVcX6O6g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75mNhUdcEeaeWskVcX6O6g" x="65" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_75mNhkdcEeaeWskVcX6O6g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75mNh0dcEeaeWskVcX6O6g" x="55" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_75mNiEdcEeaeWskVcX6O6g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75mNiUdcEeaeWskVcX6O6g" x="-18" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_75mNgUdcEeaeWskVcX6O6g" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_75mNgkdcEeaeWskVcX6O6g" fontColor="789660" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_75mNg0dcEeaeWskVcX6O6g" points="[106, 0, -373, -108]$[280, 0, -199, -108]$[280, 96, -199, -12]$[381, 96, -98, -12]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_75m0kEdcEeaeWskVcX6O6g" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_75m0kUdcEeaeWskVcX6O6g" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_75m0kkdcEeaeWskVcX6O6g" type="4001" element="_75L-KUdcEeaeWskVcX6O6g" source="_75ZZNUdcEeaeWskVcX6O6g" target="_75SEcEdcEeaeWskVcX6O6g">
+            <children xmi:type="notation:Node" xmi:id="_75m0lkdcEeaeWskVcX6O6g" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75m0l0dcEeaeWskVcX6O6g" x="152" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_75m0mEdcEeaeWskVcX6O6g" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75m0mUdcEeaeWskVcX6O6g" x="13" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_75m0mkdcEeaeWskVcX6O6g" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_75m0m0dcEeaeWskVcX6O6g" x="29" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_75m0k0dcEeaeWskVcX6O6g" routing="Rectilinear"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_75m0lEdcEeaeWskVcX6O6g" fontColor="789660" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_75m0lUdcEeaeWskVcX6O6g" points="[112, -2, -361, 369]$[322, -2, -151, 369]$[322, -347, -151, 24]$[375, -347, -98, 24]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_75nboEdcEeaeWskVcX6O6g" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_75nboUdcEeaeWskVcX6O6g" id="(0.5,0.5)"/>
+          </edges>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_75L900dcEeaeWskVcX6O6g" name="«Component» WebGUI">
+        <target xmi:type="repository:Component" href="Ecore/mediaStore.repository#//@components.0"/>
+        <semanticElements xmi:type="repository:Component" href="Ecore/mediaStore.repository#//@components.0"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L91EdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,245,181">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']"/>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_75L91UdcEeaeWskVcX6O6g" name="WebGUI_MediaStore_RequiredRole" outgoingEdges="_75L-HUdcEeaeWskVcX6O6g" width="3" height="3" resizeKind="NSEW">
+          <target xmi:type="repository:RequiredRole" href="Ecore/mediaStore.repository#//@components.0/@requiredRoles.0"/>
+          <semanticElements xmi:type="repository:RequiredRole" href="Ecore/mediaStore.repository#//@components.0/@requiredRoles.0"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_75L91kdcEeaeWskVcX6O6g" labelPosition="node" color="246,139,139">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_75L910dcEeaeWskVcX6O6g" name="WebGUI_HTTP_ProvidedRole" outgoingEdges="_75L-C0dcEeaeWskVcX6O6g" width="3" height="3" resizeKind="NSEW">
+          <target xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.0/@providedRoles.0"/>
+          <semanticElements xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.0/@providedRoles.0"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_75L92EdcEeaeWskVcX6O6g" labelPosition="node" color="204,242,166">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_75L92UdcEeaeWskVcX6O6g" name="«Component» MediaManager">
+        <target xmi:type="repository:Component" href="Ecore/mediaStore.repository#//@components.1"/>
+        <semanticElements xmi:type="repository:Component" href="Ecore/mediaStore.repository#//@components.1"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L92kdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,245,181">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']"/>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_75L920dcEeaeWskVcX6O6g" name="MediaManager_AudioDB_RequiredRole" outgoingEdges="_75L-IEdcEeaeWskVcX6O6g" width="3" height="3" resizeKind="NSEW">
+          <target xmi:type="repository:RequiredRole" href="Ecore/mediaStore.repository#//@components.1/@requiredRoles.0"/>
+          <semanticElements xmi:type="repository:RequiredRole" href="Ecore/mediaStore.repository#//@components.1/@requiredRoles.0"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_75L93EdcEeaeWskVcX6O6g" labelPosition="node" color="246,139,139">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_75L93UdcEeaeWskVcX6O6g" name="MediaManager_Sound_RequiredRole" outgoingEdges="_75L-I0dcEeaeWskVcX6O6g" width="3" height="3" resizeKind="NSEW">
+          <target xmi:type="repository:RequiredRole" href="Ecore/mediaStore.repository#//@components.1/@requiredRoles.1"/>
+          <semanticElements xmi:type="repository:RequiredRole" href="Ecore/mediaStore.repository#//@components.1/@requiredRoles.1"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_75L93kdcEeaeWskVcX6O6g" labelPosition="node" color="246,139,139">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_75L930dcEeaeWskVcX6O6g" name="MediaManager_MediaStore_ProvidedRole" outgoingEdges="_75L-DkdcEeaeWskVcX6O6g" width="3" height="3" resizeKind="NSEW">
+          <target xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.1/@providedRoles.0"/>
+          <semanticElements xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.1/@providedRoles.0"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_75L94EdcEeaeWskVcX6O6g" labelPosition="node" color="204,242,166">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_75L94UdcEeaeWskVcX6O6g" name="«Component» DBCache">
+        <target xmi:type="repository:Component" href="Ecore/mediaStore.repository#//@components.2"/>
+        <semanticElements xmi:type="repository:Component" href="Ecore/mediaStore.repository#//@components.2"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L94kdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,245,181">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']"/>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_75L940dcEeaeWskVcX6O6g" name="DBCache_AudioDB_RequiredRole" outgoingEdges="_75L-JkdcEeaeWskVcX6O6g" width="3" height="3" resizeKind="NSEW">
+          <target xmi:type="repository:RequiredRole" href="Ecore/mediaStore.repository#//@components.2/@requiredRoles.0"/>
+          <semanticElements xmi:type="repository:RequiredRole" href="Ecore/mediaStore.repository#//@components.2/@requiredRoles.0"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_75L95EdcEeaeWskVcX6O6g" labelPosition="node" color="246,139,139">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_75L95UdcEeaeWskVcX6O6g" name="DBCache_AudioDB_ProvidedRole" outgoingEdges="_75L-EUdcEeaeWskVcX6O6g" width="3" height="3" resizeKind="NSEW">
+          <target xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.2/@providedRoles.0"/>
+          <semanticElements xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.2/@providedRoles.0"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_75L95kdcEeaeWskVcX6O6g" labelPosition="node" color="204,242,166">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_75L950dcEeaeWskVcX6O6g" name="«Component» DigitalWatermarking">
+        <target xmi:type="repository:Component" href="Ecore/mediaStore.repository#//@components.3"/>
+        <semanticElements xmi:type="repository:Component" href="Ecore/mediaStore.repository#//@components.3"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L96EdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,245,181">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']"/>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_75L96UdcEeaeWskVcX6O6g" name="DigitalWatermarking_Sound_ProvidedRole" outgoingEdges="_75L-FEdcEeaeWskVcX6O6g" width="3" height="3" resizeKind="NSEW">
+          <target xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.3/@providedRoles.0"/>
+          <semanticElements xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.3/@providedRoles.0"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_75L96kdcEeaeWskVcX6O6g" labelPosition="node" color="204,242,166">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_75L960dcEeaeWskVcX6O6g" name="«Component» PoolingAudioDB">
+        <target xmi:type="repository:Component" href="Ecore/mediaStore.repository#//@components.4"/>
+        <semanticElements xmi:type="repository:Component" href="Ecore/mediaStore.repository#//@components.4"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L97EdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,245,181">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']"/>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_75L97UdcEeaeWskVcX6O6g" name="PoolingAudioDB_AudioDB_ProvidedRole" outgoingEdges="_75L-F0dcEeaeWskVcX6O6g" width="3" height="3" resizeKind="NSEW">
+          <target xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.4/@providedRoles.0"/>
+          <semanticElements xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.4/@providedRoles.0"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_75L97kdcEeaeWskVcX6O6g" labelPosition="node" color="204,242,166">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_75L970dcEeaeWskVcX6O6g" name="«CompositeComponent» MediaStore">
+        <target xmi:type="assembly:CompositeComponent" href="Ecore/mediaStore.repository#//@components.5"/>
+        <semanticElements xmi:type="assembly:CompositeComponent" href="Ecore/mediaStore.repository#//@components.5"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L98EdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="252,175,62">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='CompositeComponent_Container']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='CompositeComponent_Container']"/>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_75L98UdcEeaeWskVcX6O6g" name="MediaStore_MediaStore_ProvidedRole" outgoingEdges="_75L-GkdcEeaeWskVcX6O6g" width="3" height="3" resizeKind="NSEW">
+          <target xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.5/@providedRoles.0"/>
+          <semanticElements xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.5/@providedRoles.0"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_75L98kdcEeaeWskVcX6O6g" labelPosition="node" color="204,242,166">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_75L980dcEeaeWskVcX6O6g" name="MediaStore_AudioDB_RequiredRole" outgoingEdges="_75L-KUdcEeaeWskVcX6O6g" width="3" height="3" resizeKind="NSEW">
+          <target xmi:type="repository:RequiredRole" href="Ecore/mediaStore.repository#//@components.5/@requiredRoles.0"/>
+          <semanticElements xmi:type="repository:RequiredRole" href="Ecore/mediaStore.repository#//@components.5/@requiredRoles.0"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_75L99EdcEeaeWskVcX6O6g" labelPosition="node" color="246,139,139">
+            <description xmi:type="style:SquareDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_75L99UdcEeaeWskVcX6O6g" name="«Interface» HTTP" incomingEdges="_75L-C0dcEeaeWskVcX6O6g" childrenPresentation="HorizontalStack">
+        <target xmi:type="repository:Interface" href="Ecore/mediaStore.repository#//@interfaces.0"/>
+        <semanticElements xmi:type="repository:Interface" href="Ecore/mediaStore.repository#//@interfaces.0"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L99kdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="217,196,215">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']"/>
+        <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_75L990dcEeaeWskVcX6O6g" name="HTTPDownload() : void">
+          <target xmi:type="repository:Signature" href="Ecore/mediaStore.repository#//@interfaces.0/@signatures.0"/>
+          <semanticElements xmi:type="repository:Signature" href="Ecore/mediaStore.repository#//@interfaces.0/@signatures.0"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L9-EdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_75L9-UdcEeaeWskVcX6O6g" name="HTTPUpload() : void">
+          <target xmi:type="repository:Signature" href="Ecore/mediaStore.repository#//@interfaces.0/@signatures.1"/>
+          <semanticElements xmi:type="repository:Signature" href="Ecore/mediaStore.repository#//@interfaces.0/@signatures.1"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L9-kdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_75L9-0dcEeaeWskVcX6O6g" name="«Interface» MediaStore" incomingEdges="_75L-DkdcEeaeWskVcX6O6g _75L-GkdcEeaeWskVcX6O6g _75L-HUdcEeaeWskVcX6O6g" childrenPresentation="HorizontalStack">
+        <target xmi:type="repository:Interface" href="Ecore/mediaStore.repository#//@interfaces.1"/>
+        <semanticElements xmi:type="repository:Interface" href="Ecore/mediaStore.repository#//@interfaces.1"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L9_EdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="217,196,215">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']"/>
+        <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_75L9_UdcEeaeWskVcX6O6g" name="download() : void">
+          <target xmi:type="repository:Signature" href="Ecore/mediaStore.repository#//@interfaces.1/@signatures.0"/>
+          <semanticElements xmi:type="repository:Signature" href="Ecore/mediaStore.repository#//@interfaces.1/@signatures.0"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L9_kdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_75L9_0dcEeaeWskVcX6O6g" name="upload() : void">
+          <target xmi:type="repository:Signature" href="Ecore/mediaStore.repository#//@interfaces.1/@signatures.1"/>
+          <semanticElements xmi:type="repository:Signature" href="Ecore/mediaStore.repository#//@interfaces.1/@signatures.1"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L-AEdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_75L-AUdcEeaeWskVcX6O6g" name="«Interface» Sound" incomingEdges="_75L-FEdcEeaeWskVcX6O6g _75L-I0dcEeaeWskVcX6O6g" childrenPresentation="HorizontalStack">
+        <target xmi:type="repository:Interface" href="Ecore/mediaStore.repository#//@interfaces.2"/>
+        <semanticElements xmi:type="repository:Interface" href="Ecore/mediaStore.repository#//@interfaces.2"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L-AkdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="217,196,215">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']"/>
+        <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_75L-A0dcEeaeWskVcX6O6g" name="watermark() : void">
+          <target xmi:type="repository:Signature" href="Ecore/mediaStore.repository#//@interfaces.2/@signatures.0"/>
+          <semanticElements xmi:type="repository:Signature" href="Ecore/mediaStore.repository#//@interfaces.2/@signatures.0"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L-BEdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_75L-BUdcEeaeWskVcX6O6g" name="«Interface» AudioDB" incomingEdges="_75L-EUdcEeaeWskVcX6O6g _75L-F0dcEeaeWskVcX6O6g _75L-IEdcEeaeWskVcX6O6g _75L-JkdcEeaeWskVcX6O6g _75L-KUdcEeaeWskVcX6O6g" childrenPresentation="HorizontalStack">
+        <target xmi:type="repository:Interface" href="Ecore/mediaStore.repository#//@interfaces.3"/>
+        <semanticElements xmi:type="repository:Interface" href="Ecore/mediaStore.repository#//@interfaces.3"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L-BkdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="217,196,215">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']"/>
+        <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_75L-B0dcEeaeWskVcX6O6g" name="queryDB() : void">
+          <target xmi:type="repository:Signature" href="Ecore/mediaStore.repository#//@interfaces.3/@signatures.0"/>
+          <semanticElements xmi:type="repository:Signature" href="Ecore/mediaStore.repository#//@interfaces.3/@signatures.0"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L-CEdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_75L-CUdcEeaeWskVcX6O6g" name="addFile() : void">
+          <target xmi:type="repository:Signature" href="Ecore/mediaStore.repository#//@interfaces.3/@signatures.1"/>
+          <semanticElements xmi:type="repository:Signature" href="Ecore/mediaStore.repository#//@interfaces.3/@signatures.1"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L-CkdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_75L-C0dcEeaeWskVcX6O6g" name="«provides» " sourceNode="_75L910dcEeaeWskVcX6O6g" targetNode="_75L99UdcEeaeWskVcX6O6g">
+        <target xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.0/@providedRoles.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_75L-DEdcEeaeWskVcX6O6g" size="2" routingStyle="manhattan" strokeColor="77,137,20">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_75L-DUdcEeaeWskVcX6O6g" showIcon="false" labelColor="77,137,20"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_75L-DkdcEeaeWskVcX6O6g" name="«provides» " sourceNode="_75L930dcEeaeWskVcX6O6g" targetNode="_75L9-0dcEeaeWskVcX6O6g">
+        <target xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.1/@providedRoles.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_75L-D0dcEeaeWskVcX6O6g" size="2" routingStyle="manhattan" strokeColor="77,137,20">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_75L-EEdcEeaeWskVcX6O6g" showIcon="false" labelColor="77,137,20"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_75L-EUdcEeaeWskVcX6O6g" name="«provides» " sourceNode="_75L95UdcEeaeWskVcX6O6g" targetNode="_75L-BUdcEeaeWskVcX6O6g">
+        <target xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.2/@providedRoles.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_75L-EkdcEeaeWskVcX6O6g" size="2" routingStyle="manhattan" strokeColor="77,137,20">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_75L-E0dcEeaeWskVcX6O6g" showIcon="false" labelColor="77,137,20"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_75L-FEdcEeaeWskVcX6O6g" name="«provides» " sourceNode="_75L96UdcEeaeWskVcX6O6g" targetNode="_75L-AUdcEeaeWskVcX6O6g">
+        <target xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.3/@providedRoles.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_75L-FUdcEeaeWskVcX6O6g" size="2" routingStyle="manhattan" strokeColor="77,137,20">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_75L-FkdcEeaeWskVcX6O6g" showIcon="false" labelColor="77,137,20"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_75L-F0dcEeaeWskVcX6O6g" name="«provides» " sourceNode="_75L97UdcEeaeWskVcX6O6g" targetNode="_75L-BUdcEeaeWskVcX6O6g">
+        <target xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.4/@providedRoles.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_75L-GEdcEeaeWskVcX6O6g" size="2" routingStyle="manhattan" strokeColor="77,137,20">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_75L-GUdcEeaeWskVcX6O6g" showIcon="false" labelColor="77,137,20"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_75L-GkdcEeaeWskVcX6O6g" name="«provides» " sourceNode="_75L98UdcEeaeWskVcX6O6g" targetNode="_75L9-0dcEeaeWskVcX6O6g">
+        <target xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.5/@providedRoles.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_75L-G0dcEeaeWskVcX6O6g" size="2" routingStyle="manhattan" strokeColor="77,137,20">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_75L-HEdcEeaeWskVcX6O6g" showIcon="false" labelColor="77,137,20"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_75L-HUdcEeaeWskVcX6O6g" name="«requires» " sourceNode="_75L91UdcEeaeWskVcX6O6g" targetNode="_75L9-0dcEeaeWskVcX6O6g">
+        <target xmi:type="repository:RequiredRole" href="Ecore/mediaStore.repository#//@components.0/@requiredRoles.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_75L-HkdcEeaeWskVcX6O6g" size="2" routingStyle="manhattan" strokeColor="156,12,12">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_75L-H0dcEeaeWskVcX6O6g" showIcon="false" labelColor="156,12,12"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_75L-IEdcEeaeWskVcX6O6g" name="«requires» " sourceNode="_75L920dcEeaeWskVcX6O6g" targetNode="_75L-BUdcEeaeWskVcX6O6g">
+        <target xmi:type="repository:RequiredRole" href="Ecore/mediaStore.repository#//@components.1/@requiredRoles.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_75L-IUdcEeaeWskVcX6O6g" size="2" routingStyle="manhattan" strokeColor="156,12,12">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_75L-IkdcEeaeWskVcX6O6g" showIcon="false" labelColor="156,12,12"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_75L-I0dcEeaeWskVcX6O6g" name="«requires» " sourceNode="_75L93UdcEeaeWskVcX6O6g" targetNode="_75L-AUdcEeaeWskVcX6O6g">
+        <target xmi:type="repository:RequiredRole" href="Ecore/mediaStore.repository#//@components.1/@requiredRoles.1"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_75L-JEdcEeaeWskVcX6O6g" size="2" routingStyle="manhattan" strokeColor="156,12,12">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_75L-JUdcEeaeWskVcX6O6g" showIcon="false" labelColor="156,12,12"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_75L-JkdcEeaeWskVcX6O6g" name="«requires» " sourceNode="_75L940dcEeaeWskVcX6O6g" targetNode="_75L-BUdcEeaeWskVcX6O6g">
+        <target xmi:type="repository:RequiredRole" href="Ecore/mediaStore.repository#//@components.2/@requiredRoles.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_75L-J0dcEeaeWskVcX6O6g" size="2" routingStyle="manhattan" strokeColor="156,12,12">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_75L-KEdcEeaeWskVcX6O6g" showIcon="false" labelColor="156,12,12"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_75L-KUdcEeaeWskVcX6O6g" name="«requires» " sourceNode="_75L980dcEeaeWskVcX6O6g" targetNode="_75L-BUdcEeaeWskVcX6O6g">
+        <target xmi:type="repository:RequiredRole" href="Ecore/mediaStore.repository#//@components.5/@requiredRoles.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_75L-KkdcEeaeWskVcX6O6g" size="2" routingStyle="manhattan" strokeColor="156,12,12">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_75L-K0dcEeaeWskVcX6O6g" showIcon="false" labelColor="156,12,12"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']"/>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_75L-LEdcEeaeWskVcX6O6g"/>
+      <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer"/>
+      <target xmi:type="repository:Repository" href="Ecore/mediaStore.repository#/"/>
+    </ownedRepresentations>
     <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']"/>
   </ownedViews>
 </viewpoint:DAnalysis>
