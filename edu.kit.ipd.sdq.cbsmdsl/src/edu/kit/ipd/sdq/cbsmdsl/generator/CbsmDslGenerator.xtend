@@ -20,12 +20,23 @@ import edu.kit.ipd.sdq.cbsm.allocation.Allocation
  */
 class CbsmDslGenerator extends AbstractGenerator {
 
+	/**
+	 * Serializes .cbsmdsl files as XMI on save.
+	 *
+	 * See http://stackoverflow.com/questions/35839786/xtext-export-model-as-xmi-xml
+	 * and https://www.eclipse.org/forums/index.php/t/292631/
+	 */
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		EcoreUtil.resolveAll(resource);
 		val representedObject = resource.contents.get(0);
 		var resourceURI = resource.URI.trimFileExtension;
 		val fileName = resourceURI.segment(resourceURI.segments.length-1);
+		// Serialized file should be stored in a sub-directory.
 		resourceURI = resourceURI.trimSegments(1).appendSegment("serialized").appendSegment(fileName);
+		// Get the type of top-level element (which determines the file extension
+		// of the Ecore file). In the DSL, all top-level elements can be stored with
+		// the same extension (.cbsmdsl) and the represented object is the first
+		// object in the file.
 		if (representedObject instanceof Repository) {
 			resourceURI = resourceURI.appendFileExtension("repository");
 		} else if (representedObject instanceof edu.kit.ipd.sdq.cbsm.assembly.System) {
@@ -39,6 +50,7 @@ class CbsmDslGenerator extends AbstractGenerator {
 				+ " is not supported for serialization."
 			);
 		}
+		// Serialize
 		val xmiResource = resource.resourceSet.createResource(resourceURI);
 		xmiResource.contents.add(representedObject);
 		try {

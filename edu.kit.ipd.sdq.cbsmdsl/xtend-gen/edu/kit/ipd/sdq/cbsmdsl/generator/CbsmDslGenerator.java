@@ -26,6 +26,12 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
  */
 @SuppressWarnings("all")
 public class CbsmDslGenerator extends AbstractGenerator {
+  /**
+   * Serializes .cbsmdsl files as XMI on save.
+   * 
+   * See http://stackoverflow.com/questions/35839786/xtext-export-model-as-xmi-xml
+   * and https://www.eclipse.org/forums/index.php/t/292631/
+   */
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
     EcoreUtil.resolveAll(resource);
