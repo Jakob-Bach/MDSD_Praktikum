@@ -1,24 +1,38 @@
 # MDSD_Praktikum
 
-## Import hints
-All projects are stored as Eclipse projects, i.e. containing `.project` and `.classpath` files, which means they can be imported as existing projects and their structure/nature should be recognized automatically. However, generated binary files are not commited, so if you want to use the Xtext grammar in nested Eclipse applications, you have to generate the Xtext artifacts first (`GenerateCbsmDsl.mwe2`). 
+## Releases
 
-## Useful links
+The tags/releases of this repository represent the different milestones created and presented during the semester. Please read the release notes for more detailed information.
 
-Some of the tutorials and documentations that were used during the project.
+## Projects and files in this repository
 
-- [Course page](https://sdqweb.ipd.kit.edu/wiki/Praktikum_Modellgetriebene_Software-Entwicklung_SS16)
-- [OCL - OCLinEcore in the Eclipse wiki](https://wiki.eclipse.org/OCL/OCLinEcore)
-- [OCL - Reference](https://wiki.eclipse.org/Acceleo/OCL_Operations_Reference)
-- [Xtext - Official website / 15 minutes tutorial](http://www.eclipse.org/Xtext/documentation/102_domainmodelwalkthrough.html)
-- [Xtext - Xtext from Ecore tutorial](http://rtsys.informatik.uni-kiel.de/confluence/display/TUT/Xtext+1+-+Creating+a+Grammar+for+an+Existing+Metamodel)
-- [Xtext - XMI serialization forum entry 1](http://stackoverflow.com/questions/35839786/xtext-export-model-as-xmi-xml) [forum entry 2](https://www.eclipse.org/forums/index.php/t/292631/)
-- [QVT - Specification version 1.2](http://www.omg.org/spec/QVT/1.2/PDF/)
-- [QVT - SDQ wiki examples and hints](https://sdqweb.ipd.kit.edu/wiki/QVT)
-- [ATL - Eclipse tutorial](https://wiki.eclipse.org/ATL/Tutorials_-_Create_a_simple_ATL_transformation)
-- [Xtend - Code generation tutorial based on workflow](https://christiandietrich.wordpress.com/2011/07/29/xtend2-code-generators-with-non-xtext-models/)
-- [Xtend - Code generation tutorial based on context menu](https://christiandietrich.wordpress.com/2011/10/15/xtext-calling-the-generator-from-a-context-menu/)
-- [Xtend - Hello world tutorial](https://maxrohde.com/2011/11/06/xtend-tutorial/)
-- [Xtend - Documentation](http://www.eclipse.org/xtend/documentation/index.html) 
-- [Sirius - Eclipse tutorials](http://www.eclipse.org/sirius/getstarted.html)
-- [Sirius - Documentation](http://www.eclipse.org/sirius/doc/)
+|Project/file|Task|Description|
+|---|---|---|
+|`CBSM_MediaStore`|all|MediaStore examples for tasks 1-5|
+|`edu.kit.ipd.sdq.cbsm.codegen`|4|Xtend code generator|
+|`edu.kit.ipd.sdq.cbsm.edit`|1|side project of the Ecore meta-model|
+|`edu.kit.ipd.sdq.cbsm.editor`|1|side project of the Ecore meta-model|
+|`edu.kit.ipd.sdq.cbsm.repositoryeditor`|5|Sirius editor|
+|`edu.kit.ipd.sdq.cbsm.tests`|1|side project of the Ecore meta-model|
+|`edu.kit.ipd.sdq.cbsm.transform`|3|QVT-O transformation|
+|`edu.kit.ipd.sdq.cbsm`|1|Ecore meta-model|
+|`edu.kit.ipd.sdq.cbsmdsl.ide`|2|side project of the Xtext grammar|
+|`edu.kit.ipd.sdq.cbsmdsl.tests`|2|side project of the Xtext grammar|
+|`edu.kit.ipd.sdq.cbsmdsl.ui.tests`|2|side project of the Xtext grammar|
+|`edu.kit.ipd.sdq.cbsmdsl.ui`|2|side project of the Xtext grammar|
+|`edu.kit.ipd.sdq.cbsmdsl`|2|Xtext grammar|
+|`FAQ.md`|all|assumptions, special design decisions and usage hints|
+|`MetaModelChanges.md`|1b+c|history of meta-model refactorings after task 1a|
+|`README.md`|all|You are here :-)|
+
+### Structure of `CBSM_MediaStore`
+
+|Folder|Task|Description|Origin|
+|---|---|---|---|
+|`Ecore`|1|Ecore MediaStore example|manually created|
+|`Ecore/src-gen`|4|Xtend MediaStore example|generated from Ecore MediaStore example|
+|`PCM_Ecore`|3|QVT-O MediaStore example|generated from Ecore MediaStore example|
+|`Xtext`|2|Xtext MediaStore example|manually created|
+|`Xtext/serialized`|2|Xtext MediaStore example|generated from Xtext MediaStore example|
+|`representations.aird`|5|Sirius Ecore MediaStore example|elements generated from Ecore MediaStore example, layouted manually|
+

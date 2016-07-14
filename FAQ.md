@@ -45,3 +45,24 @@ All projects are stored as Eclipse projects, i.e. containing `.project` and `.cl
 - The `repositoryeditor` project should be imported into the workspace of an Eclipse application (which is started with the Ecore meta-model plug-ins) to prevent some referencing errors.
 - The validation of `repositoryeditor.odesign` shows a mysterious error ("Nothing will be left after calling oclAsType:") for the element *Interface_SuperInterface_EdgeDeletion*. Nevertheless, the affected action works without problems in the diagram.
 - The diagram created for the MediaStore example can be found in the `representations.aird` file. If you cannot choose it as a child element there, you might first to right-click on the whole `CBSM_MediaStore` project and use the *Viewpoints Selection* dialog.
+
+
+## Useful technology links
+
+Some of the tutorials and documentations that were used during the project.
+
+- [Course page](https://sdqweb.ipd.kit.edu/wiki/Praktikum_Modellgetriebene_Software-Entwicklung_SS16)
+- [OCL - OCLinEcore in the Eclipse wiki](https://wiki.eclipse.org/OCL/OCLinEcore)
+- [OCL - Reference](https://wiki.eclipse.org/Acceleo/OCL_Operations_Reference)
+- [Xtext - Official website / 15 minutes tutorial](http://www.eclipse.org/Xtext/documentation/102_domainmodelwalkthrough.html)
+- [Xtext - Xtext from Ecore tutorial](http://rtsys.informatik.uni-kiel.de/confluence/display/TUT/Xtext+1+-+Creating+a+Grammar+for+an+Existing+Metamodel)
+- [Xtext - XMI serialization forum entry 1](http://stackoverflow.com/questions/35839786/xtext-export-model-as-xmi-xml) [forum entry 2](https://www.eclipse.org/forums/index.php/t/292631/)
+- [QVT - Specification version 1.2](http://www.omg.org/spec/QVT/1.2/PDF/)
+- [QVT - SDQ wiki examples and hints](https://sdqweb.ipd.kit.edu/wiki/QVT)
+- [ATL - Eclipse tutorial](https://wiki.eclipse.org/ATL/Tutorials_-_Create_a_simple_ATL_transformation)
+- [Xtend - Code generation tutorial based on workflow](https://christiandietrich.wordpress.com/2011/07/29/xtend2-code-generators-with-non-xtext-models/)
+- [Xtend - Code generation tutorial based on context menu](https://christiandietrich.wordpress.com/2011/10/15/xtext-calling-the-generator-from-a-context-menu/)
+- [Xtend - Hello world tutorial](https://maxrohde.com/2011/11/06/xtend-tutorial/)
+- [Xtend - Documentation](http://www.eclipse.org/xtend/documentation/index.html) 
+- [Sirius - Eclipse tutorials](http://www.eclipse.org/sirius/getstarted.html)
+- [Sirius - Documentation](http://www.eclipse.org/sirius/doc/)
