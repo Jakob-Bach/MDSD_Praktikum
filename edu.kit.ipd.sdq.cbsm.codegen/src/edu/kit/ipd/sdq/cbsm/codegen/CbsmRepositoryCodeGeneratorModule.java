@@ -5,6 +5,10 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.xtext.generator.IGenerator;
 import org.eclipse.xtext.resource.generic.AbstractGenericResourceRuntimeModule;
 
+/**
+ * Contains some configuration stuff which is used for dependency injection
+ * in {@link CbsmRepositoryCodeGeneratorHandler}.
+ */
 public class CbsmRepositoryCodeGeneratorModule extends AbstractGenericResourceRuntimeModule {
 
 	@Override

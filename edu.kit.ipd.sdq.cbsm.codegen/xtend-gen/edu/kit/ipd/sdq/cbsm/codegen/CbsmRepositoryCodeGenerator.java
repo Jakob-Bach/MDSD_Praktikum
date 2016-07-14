@@ -352,7 +352,8 @@ public class CbsmRepositoryCodeGenerator implements IGenerator {
   
   /**
    * Returns a map with all provided interfaces and their corresponding signatures,
-   * considering that provided interfaces might have super interfaces.
+   * considering that provided interfaces might have super interfaces (transitive
+   * closure).
    */
   public HashMap<Interface, List<Signature>> providedInterfacesAndSignaturesRecursive(final Collection<ProvidedRole> providedRoles) {
     final HashMap<Interface, List<Signature>> result = new HashMap<Interface, List<Signature>>();

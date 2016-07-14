@@ -24,6 +24,9 @@ class CbsmRepositoryCodeGenerator implements IGenerator {
 	override doGenerate(Resource resource, IFileSystemAccess fsa) {
 		EcoreUtil.resolveAll(resource)
 		resource.contents.filter(Repository).forEach[repository|
+			// Transform the contents of the repository.
+			// Data types are transformed where they are used as parameters
+			// and ComplexTypes should not be considered.
 			repository.interfaces.forEach[interfac|
 				fsa.generateFile(repository.name + '/' + interfac.name + '.java',
 					interfac.compile(repository.name))
@@ -32,6 +35,8 @@ class CbsmRepositoryCodeGenerator implements IGenerator {
 				fsa.generateFile(component.name + '/' + component.name + 'Impl.java',
 					component.compile(repository.name))
 			]
+			// One helper class per repository that provides null-check routines
+			// for the attributes related to required roles.
 			fsa.generateFile(repository.name + '/Helper.java', repository.compile)
 		]
 	}
@@ -110,7 +115,8 @@ class CbsmRepositoryCodeGenerator implements IGenerator {
 	
 	/**
 	 * Returns a map with all provided interfaces and their corresponding signatures, 
-	 * considering that provided interfaces might have super interfaces.
+	 * considering that provided interfaces might have super interfaces (transitive
+	 * closure).
 	 */
 	def providedInterfacesAndSignaturesRecursive(Collection<ProvidedRole> providedRoles) {
 		val result = new HashMap<Interface, List<Signature>>
@@ -169,7 +175,7 @@ class CbsmRepositoryCodeGenerator implements IGenerator {
 	
 	def defaultReturnValue(DataType dataType) {
 		if (dataType == null) {
-			return ''
+			return '' // void methods can have a return; statement
 		} else if (dataType instanceof ComplexType) {
 			return 'null'
 		} else if (dataType instanceof SimpleType) {
