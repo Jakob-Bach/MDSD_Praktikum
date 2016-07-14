@@ -30,7 +30,7 @@ Workflow {
 		language = StandardLanguage {
 			name = "edu.kit.ipd.sdq.cbsmdsl.CbsmDsl"
 			fileExtensions = "cbsmdsl"
-			referencedResource = "platform:/resource/ComponentBasedSystemModel/model/componentBasedSystemModel.genmodel"
+			referencedResource = "platform:/resource/edu.kit.ipd.sdq.cbsm/model/componentBasedSystemModel.genmodel"
 			
 			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment2 auto-inject {}
 

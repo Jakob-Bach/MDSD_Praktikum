@@ -5,7 +5,7 @@ Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: edu.kit.ipd.sdq.cbsmdsl; singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: ComponentBasedSystemModel,
+Require-Bundle: edu.kit.ipd.sdq.cbsm,
  org.eclipse.xtext,
  org.eclipse.xtext.xbase,
  org.eclipse.equinox.common;bundle-version="3.5.0",

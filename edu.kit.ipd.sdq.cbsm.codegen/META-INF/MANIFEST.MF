@@ -4,7 +4,7 @@ Bundle-Name: Codegen
 Bundle-SymbolicName: edu.kit.ipd.sdq.cbsm.codegen;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: edu.kit.ipd.sdq.cbsm.codegen.Activator
-Require-Bundle: ComponentBasedSystemModel,
+Require-Bundle: edu.kit.ipd.sdq.cbsm,
  com.google.guava,
  org.eclipse.core.resources,
  org.eclipse.core.runtime,

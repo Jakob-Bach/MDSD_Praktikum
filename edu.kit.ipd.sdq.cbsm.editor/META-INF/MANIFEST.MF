@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: ComponentBasedSystemModel.editor;singleton:=true
+Bundle-SymbolicName: edu.kit.ipd.sdq.cbsm.editor;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: edu.kit.ipd.sdq.cbsm.core.presentation.ComponentBasedSystemModelEditorPlugin$Implementation
@@ -16,7 +16,7 @@ Export-Package: edu.kit.ipd.sdq.cbsm.allocation.presentation,
  edu.kit.ipd.sdq.cbsm.repository.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
- ComponentBasedSystemModel.edit;visibility:=reexport,
+ edu.kit.ipd.sdq.cbsm.edit;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport

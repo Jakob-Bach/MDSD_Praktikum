@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ASCII"?>
 <uriMap:MappingContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uriMap="http:///www.eclipse.org/m2m/qvt/oml/MModelUriMap/1.0.0">
-  <mapping sourceURI="http://sdq.ipd.kit.edu/componentBasedSystemModel" targetURI="platform:/resource/ComponentBasedSystemModel/model/componentBasedSystemModel.ecore"/>
-  <mapping sourceURI="http://sdq.ipd.kit.edu/componentBasedSystemModel/repository" targetURI="platform:/resource/ComponentBasedSystemModel/model/componentBasedSystemModel.ecore#//repository"/>
-  <mapping sourceURI="http://sdq.ipd.kit.edu/componentBasedSystemModel/assembly" targetURI="platform:/resource/ComponentBasedSystemModel/model/componentBasedSystemModel.ecore#//assembly"/>
-  <mapping sourceURI="http://sdq.ipd.kit.edu/componentBasedSystemModel/environment" targetURI="platform:/resource/ComponentBasedSystemModel/model/componentBasedSystemModel.ecore#//environment"/>
-  <mapping sourceURI="http://sdq.ipd.kit.edu/componentBasedSystemModel/allocation" targetURI="platform:/resource/ComponentBasedSystemModel/model/componentBasedSystemModel.ecore#//allocation"/>
-  <mapping sourceURI="http://sdq.ipd.kit.edu/componentBasedSystemModel/repository/behavior" targetURI="platform:/resource/ComponentBasedSystemModel/model/componentBasedSystemModel.ecore#//repository/behavior"/>
+  <mapping sourceURI="http://sdq.ipd.kit.edu/componentBasedSystemModel" targetURI="platform:/resource/edu.kit.ipd.sdq.cbsm/model/componentBasedSystemModel.ecore"/>
+  <mapping sourceURI="http://sdq.ipd.kit.edu/componentBasedSystemModel/repository" targetURI="platform:/resource/edu.kit.ipd.sdq.cbsm/model/componentBasedSystemModel.ecore#//repository"/>
+  <mapping sourceURI="http://sdq.ipd.kit.edu/componentBasedSystemModel/assembly" targetURI="platform:/resource/edu.kit.ipd.sdq.cbsm/model/componentBasedSystemModel.ecore#//assembly"/>
+  <mapping sourceURI="http://sdq.ipd.kit.edu/componentBasedSystemModel/environment" targetURI="platform:/resource/edu.kit.ipd.sdq.cbsm/model/componentBasedSystemModel.ecore#//environment"/>
+  <mapping sourceURI="http://sdq.ipd.kit.edu/componentBasedSystemModel/allocation" targetURI="platform:/resource/edu.kit.ipd.sdq.cbsm/model/componentBasedSystemModel.ecore#//allocation"/>
+  <mapping sourceURI="http://sdq.ipd.kit.edu/componentBasedSystemModel/repository/behavior" targetURI="platform:/resource/edu.kit.ipd.sdq.cbsm/model/componentBasedSystemModel.ecore#//repository/behavior"/>
 </uriMap:MappingContainer>

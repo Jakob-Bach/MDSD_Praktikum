@@ -7,7 +7,7 @@ Bundle-SymbolicName: edu.kit.ipd.sdq.cbsmdsl.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: edu.kit.ipd.sdq.cbsmdsl,
  edu.kit.ipd.sdq.cbsmdsl.ide,
- ComponentBasedSystemModel,
+ edu.kit.ipd.sdq.cbsm,
  org.eclipse.xtext.ui,
  org.eclipse.xtext.ui.shared,
  org.eclipse.xtext.ui.codetemplates.ui,

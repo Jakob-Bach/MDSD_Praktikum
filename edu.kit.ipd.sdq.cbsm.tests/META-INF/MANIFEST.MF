@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: ComponentBasedSystemModel.tests;singleton:=true
+Bundle-SymbolicName: edu.kit.ipd.sdq.cbsm.tests;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
@@ -14,7 +14,7 @@ Export-Package: edu.kit.ipd.sdq.cbsm.allocation.tests,
  edu.kit.ipd.sdq.cbsm.repository.behavior.tests,
  edu.kit.ipd.sdq.cbsm.repository.tests
 Require-Bundle: org.eclipse.core.runtime,
- ComponentBasedSystemModel;visibility:=reexport,
+ edu.kit.ipd.sdq.cbsm;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.junit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

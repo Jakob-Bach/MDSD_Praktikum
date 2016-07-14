@@ -6,7 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: edu.kit.ipd.sdq.cbsmdsl.ui.tests; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: edu.kit.ipd.sdq.cbsmdsl.ui,
- ComponentBasedSystemModel,
+ edu.kit.ipd.sdq.cbsm,
  org.junit;bundle-version="4.7.0",
  org.eclipse.xtext.junit4,
  org.eclipse.xtext.xbase.junit,

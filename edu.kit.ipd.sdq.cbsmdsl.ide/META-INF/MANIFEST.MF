@@ -6,7 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: edu.kit.ipd.sdq.cbsmdsl.ide; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: edu.kit.ipd.sdq.cbsmdsl,
- ComponentBasedSystemModel,
+ edu.kit.ipd.sdq.cbsm,
  org.eclipse.xtext.ide,
  org.eclipse.xtext.xbase.ide
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
