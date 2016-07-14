@@ -491,16 +491,16 @@
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L91EdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,245,181">
-          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@style"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@style"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']"/>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']"/>
         <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_75L91UdcEeaeWskVcX6O6g" name="WebGUI_MediaStore_RequiredRole" outgoingEdges="_75L-HUdcEeaeWskVcX6O6g" width="3" height="3" resizeKind="NSEW">
           <target xmi:type="repository:RequiredRole" href="Ecore/mediaStore.repository#//@components.0/@requiredRoles.0"/>
           <semanticElements xmi:type="repository:RequiredRole" href="Ecore/mediaStore.repository#//@components.0/@requiredRoles.0"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_75L91kdcEeaeWskVcX6O6g" labelPosition="node" color="246,139,139">
-            <description xmi:type="style:SquareDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']/@style"/>
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']/@style"/>
           </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']"/>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']"/>
         </ownedDiagramElements>
         <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_75L910dcEeaeWskVcX6O6g" name="WebGUI_HTTP_ProvidedRole" outgoingEdges="_75L-C0dcEeaeWskVcX6O6g" width="3" height="3" resizeKind="NSEW">
           <target xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.0/@providedRoles.0"/>
@@ -509,9 +509,9 @@
           <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
           <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_75L92EdcEeaeWskVcX6O6g" labelPosition="node" color="204,242,166">
-            <description xmi:type="style:SquareDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']/@style"/>
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']/@style"/>
           </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']"/>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']"/>
         </ownedDiagramElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_75L92UdcEeaeWskVcX6O6g" name="«Component» MediaManager">
@@ -521,16 +521,16 @@
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L92kdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,245,181">
-          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@style"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@style"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']"/>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']"/>
         <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_75L920dcEeaeWskVcX6O6g" name="MediaManager_AudioDB_RequiredRole" outgoingEdges="_75L-IEdcEeaeWskVcX6O6g" width="3" height="3" resizeKind="NSEW">
           <target xmi:type="repository:RequiredRole" href="Ecore/mediaStore.repository#//@components.1/@requiredRoles.0"/>
           <semanticElements xmi:type="repository:RequiredRole" href="Ecore/mediaStore.repository#//@components.1/@requiredRoles.0"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_75L93EdcEeaeWskVcX6O6g" labelPosition="node" color="246,139,139">
-            <description xmi:type="style:SquareDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']/@style"/>
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']/@style"/>
           </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']"/>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']"/>
         </ownedDiagramElements>
         <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_75L93UdcEeaeWskVcX6O6g" name="MediaManager_Sound_RequiredRole" outgoingEdges="_75L-I0dcEeaeWskVcX6O6g" width="3" height="3" resizeKind="NSEW">
           <target xmi:type="repository:RequiredRole" href="Ecore/mediaStore.repository#//@components.1/@requiredRoles.1"/>
@@ -539,9 +539,9 @@
           <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
           <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_75L93kdcEeaeWskVcX6O6g" labelPosition="node" color="246,139,139">
-            <description xmi:type="style:SquareDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']/@style"/>
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']/@style"/>
           </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']"/>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']"/>
         </ownedDiagramElements>
         <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_75L930dcEeaeWskVcX6O6g" name="MediaManager_MediaStore_ProvidedRole" outgoingEdges="_75L-DkdcEeaeWskVcX6O6g" width="3" height="3" resizeKind="NSEW">
           <target xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.1/@providedRoles.0"/>
@@ -550,9 +550,9 @@
           <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
           <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_75L94EdcEeaeWskVcX6O6g" labelPosition="node" color="204,242,166">
-            <description xmi:type="style:SquareDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']/@style"/>
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']/@style"/>
           </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']"/>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']"/>
         </ownedDiagramElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_75L94UdcEeaeWskVcX6O6g" name="«Component» DBCache">
@@ -562,16 +562,16 @@
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L94kdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,245,181">
-          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@style"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@style"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']"/>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']"/>
         <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_75L940dcEeaeWskVcX6O6g" name="DBCache_AudioDB_RequiredRole" outgoingEdges="_75L-JkdcEeaeWskVcX6O6g" width="3" height="3" resizeKind="NSEW">
           <target xmi:type="repository:RequiredRole" href="Ecore/mediaStore.repository#//@components.2/@requiredRoles.0"/>
           <semanticElements xmi:type="repository:RequiredRole" href="Ecore/mediaStore.repository#//@components.2/@requiredRoles.0"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_75L95EdcEeaeWskVcX6O6g" labelPosition="node" color="246,139,139">
-            <description xmi:type="style:SquareDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']/@style"/>
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']/@style"/>
           </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']"/>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']"/>
         </ownedDiagramElements>
         <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_75L95UdcEeaeWskVcX6O6g" name="DBCache_AudioDB_ProvidedRole" outgoingEdges="_75L-EUdcEeaeWskVcX6O6g" width="3" height="3" resizeKind="NSEW">
           <target xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.2/@providedRoles.0"/>
@@ -580,9 +580,9 @@
           <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
           <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_75L95kdcEeaeWskVcX6O6g" labelPosition="node" color="204,242,166">
-            <description xmi:type="style:SquareDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']/@style"/>
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']/@style"/>
           </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']"/>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']"/>
         </ownedDiagramElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_75L950dcEeaeWskVcX6O6g" name="«Component» DigitalWatermarking">
@@ -592,16 +592,16 @@
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L96EdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,245,181">
-          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@style"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@style"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']"/>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']"/>
         <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_75L96UdcEeaeWskVcX6O6g" name="DigitalWatermarking_Sound_ProvidedRole" outgoingEdges="_75L-FEdcEeaeWskVcX6O6g" width="3" height="3" resizeKind="NSEW">
           <target xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.3/@providedRoles.0"/>
           <semanticElements xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.3/@providedRoles.0"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_75L96kdcEeaeWskVcX6O6g" labelPosition="node" color="204,242,166">
-            <description xmi:type="style:SquareDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']/@style"/>
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']/@style"/>
           </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']"/>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']"/>
         </ownedDiagramElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_75L960dcEeaeWskVcX6O6g" name="«Component» PoolingAudioDB">
@@ -611,16 +611,16 @@
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L97EdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,245,181">
-          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@style"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@style"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']"/>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']"/>
         <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_75L97UdcEeaeWskVcX6O6g" name="PoolingAudioDB_AudioDB_ProvidedRole" outgoingEdges="_75L-F0dcEeaeWskVcX6O6g" width="3" height="3" resizeKind="NSEW">
           <target xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.4/@providedRoles.0"/>
           <semanticElements xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.4/@providedRoles.0"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_75L97kdcEeaeWskVcX6O6g" labelPosition="node" color="204,242,166">
-            <description xmi:type="style:SquareDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']/@style"/>
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']/@style"/>
           </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']"/>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']"/>
         </ownedDiagramElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_75L970dcEeaeWskVcX6O6g" name="«CompositeComponent» MediaStore">
@@ -630,16 +630,16 @@
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L98EdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="252,175,62">
-          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='CompositeComponent_Container']/@style"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='CompositeComponent_Container']/@style"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='CompositeComponent_Container']"/>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='CompositeComponent_Container']"/>
         <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_75L98UdcEeaeWskVcX6O6g" name="MediaStore_MediaStore_ProvidedRole" outgoingEdges="_75L-GkdcEeaeWskVcX6O6g" width="3" height="3" resizeKind="NSEW">
           <target xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.5/@providedRoles.0"/>
           <semanticElements xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.5/@providedRoles.0"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_75L98kdcEeaeWskVcX6O6g" labelPosition="node" color="204,242,166">
-            <description xmi:type="style:SquareDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']/@style"/>
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']/@style"/>
           </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']"/>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='ProvidedRole_Node']"/>
         </ownedDiagramElements>
         <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_75L980dcEeaeWskVcX6O6g" name="MediaStore_AudioDB_RequiredRole" outgoingEdges="_75L-KUdcEeaeWskVcX6O6g" width="3" height="3" resizeKind="NSEW">
           <target xmi:type="repository:RequiredRole" href="Ecore/mediaStore.repository#//@components.5/@requiredRoles.0"/>
@@ -648,9 +648,9 @@
           <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
           <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_75L99EdcEeaeWskVcX6O6g" labelPosition="node" color="246,139,139">
-            <description xmi:type="style:SquareDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']/@style"/>
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']/@style"/>
           </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']"/>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Component_Container']/@subNodeMappings[name='RequiredRole_Node']"/>
         </ownedDiagramElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_75L99UdcEeaeWskVcX6O6g" name="«Interface» HTTP" incomingEdges="_75L-C0dcEeaeWskVcX6O6g" childrenPresentation="HorizontalStack">
@@ -660,24 +660,24 @@
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L99kdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="217,196,215">
-          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@style"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@style"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']"/>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']"/>
         <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_75L990dcEeaeWskVcX6O6g" name="HTTPDownload() : void">
           <target xmi:type="repository:Signature" href="Ecore/mediaStore.repository#//@interfaces.0/@signatures.0"/>
           <semanticElements xmi:type="repository:Signature" href="Ecore/mediaStore.repository#//@interfaces.0/@signatures.0"/>
           <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L9-EdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
-            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']/@style"/>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']/@style"/>
           </ownedStyle>
-          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']"/>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']"/>
         </ownedDiagramElements>
         <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_75L9-UdcEeaeWskVcX6O6g" name="HTTPUpload() : void">
           <target xmi:type="repository:Signature" href="Ecore/mediaStore.repository#//@interfaces.0/@signatures.1"/>
           <semanticElements xmi:type="repository:Signature" href="Ecore/mediaStore.repository#//@interfaces.0/@signatures.1"/>
           <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L9-kdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
-            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']/@style"/>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']/@style"/>
           </ownedStyle>
-          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']"/>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']"/>
         </ownedDiagramElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_75L9-0dcEeaeWskVcX6O6g" name="«Interface» MediaStore" incomingEdges="_75L-DkdcEeaeWskVcX6O6g _75L-GkdcEeaeWskVcX6O6g _75L-HUdcEeaeWskVcX6O6g" childrenPresentation="HorizontalStack">
@@ -687,24 +687,24 @@
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L9_EdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="217,196,215">
-          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@style"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@style"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']"/>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']"/>
         <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_75L9_UdcEeaeWskVcX6O6g" name="download() : void">
           <target xmi:type="repository:Signature" href="Ecore/mediaStore.repository#//@interfaces.1/@signatures.0"/>
           <semanticElements xmi:type="repository:Signature" href="Ecore/mediaStore.repository#//@interfaces.1/@signatures.0"/>
           <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L9_kdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
-            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']/@style"/>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']/@style"/>
           </ownedStyle>
-          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']"/>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']"/>
         </ownedDiagramElements>
         <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_75L9_0dcEeaeWskVcX6O6g" name="upload() : void">
           <target xmi:type="repository:Signature" href="Ecore/mediaStore.repository#//@interfaces.1/@signatures.1"/>
           <semanticElements xmi:type="repository:Signature" href="Ecore/mediaStore.repository#//@interfaces.1/@signatures.1"/>
           <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L-AEdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
-            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']/@style"/>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']/@style"/>
           </ownedStyle>
-          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']"/>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']"/>
         </ownedDiagramElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_75L-AUdcEeaeWskVcX6O6g" name="«Interface» Sound" incomingEdges="_75L-FEdcEeaeWskVcX6O6g _75L-I0dcEeaeWskVcX6O6g" childrenPresentation="HorizontalStack">
@@ -714,16 +714,16 @@
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L-AkdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="217,196,215">
-          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@style"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@style"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']"/>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']"/>
         <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_75L-A0dcEeaeWskVcX6O6g" name="watermark() : void">
           <target xmi:type="repository:Signature" href="Ecore/mediaStore.repository#//@interfaces.2/@signatures.0"/>
           <semanticElements xmi:type="repository:Signature" href="Ecore/mediaStore.repository#//@interfaces.2/@signatures.0"/>
           <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L-BEdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
-            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']/@style"/>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']/@style"/>
           </ownedStyle>
-          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']"/>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']"/>
         </ownedDiagramElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_75L-BUdcEeaeWskVcX6O6g" name="«Interface» AudioDB" incomingEdges="_75L-EUdcEeaeWskVcX6O6g _75L-F0dcEeaeWskVcX6O6g _75L-IEdcEeaeWskVcX6O6g _75L-JkdcEeaeWskVcX6O6g _75L-KUdcEeaeWskVcX6O6g" childrenPresentation="HorizontalStack">
@@ -733,119 +733,119 @@
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L-BkdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="217,196,215">
-          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@style"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@style"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']"/>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']"/>
         <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_75L-B0dcEeaeWskVcX6O6g" name="queryDB() : void">
           <target xmi:type="repository:Signature" href="Ecore/mediaStore.repository#//@interfaces.3/@signatures.0"/>
           <semanticElements xmi:type="repository:Signature" href="Ecore/mediaStore.repository#//@interfaces.3/@signatures.0"/>
           <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L-CEdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
-            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']/@style"/>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']/@style"/>
           </ownedStyle>
-          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']"/>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']"/>
         </ownedDiagramElements>
         <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_75L-CUdcEeaeWskVcX6O6g" name="addFile() : void">
           <target xmi:type="repository:Signature" href="Ecore/mediaStore.repository#//@interfaces.3/@signatures.1"/>
           <semanticElements xmi:type="repository:Signature" href="Ecore/mediaStore.repository#//@interfaces.3/@signatures.1"/>
           <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_75L-CkdcEeaeWskVcX6O6g" borderSize="1" borderSizeComputationExpression="1" foregroundColor="194,239,255">
-            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']/@style"/>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']/@style"/>
           </ownedStyle>
-          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']"/>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@containerMappings[name='Interface_Container']/@subContainerMappings[name='Signature_Container']"/>
         </ownedDiagramElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_75L-C0dcEeaeWskVcX6O6g" name="«provides» " sourceNode="_75L910dcEeaeWskVcX6O6g" targetNode="_75L99UdcEeaeWskVcX6O6g">
         <target xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.0/@providedRoles.0"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_75L-DEdcEeaeWskVcX6O6g" size="2" routingStyle="manhattan" strokeColor="77,137,20">
-          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']/@style"/>
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']/@style"/>
           <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_75L-DUdcEeaeWskVcX6O6g" showIcon="false" labelColor="77,137,20"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']"/>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_75L-DkdcEeaeWskVcX6O6g" name="«provides» " sourceNode="_75L930dcEeaeWskVcX6O6g" targetNode="_75L9-0dcEeaeWskVcX6O6g">
         <target xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.1/@providedRoles.0"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_75L-D0dcEeaeWskVcX6O6g" size="2" routingStyle="manhattan" strokeColor="77,137,20">
-          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']/@style"/>
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']/@style"/>
           <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_75L-EEdcEeaeWskVcX6O6g" showIcon="false" labelColor="77,137,20"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']"/>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_75L-EUdcEeaeWskVcX6O6g" name="«provides» " sourceNode="_75L95UdcEeaeWskVcX6O6g" targetNode="_75L-BUdcEeaeWskVcX6O6g">
         <target xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.2/@providedRoles.0"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_75L-EkdcEeaeWskVcX6O6g" size="2" routingStyle="manhattan" strokeColor="77,137,20">
-          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']/@style"/>
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']/@style"/>
           <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_75L-E0dcEeaeWskVcX6O6g" showIcon="false" labelColor="77,137,20"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']"/>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_75L-FEdcEeaeWskVcX6O6g" name="«provides» " sourceNode="_75L96UdcEeaeWskVcX6O6g" targetNode="_75L-AUdcEeaeWskVcX6O6g">
         <target xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.3/@providedRoles.0"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_75L-FUdcEeaeWskVcX6O6g" size="2" routingStyle="manhattan" strokeColor="77,137,20">
-          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']/@style"/>
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']/@style"/>
           <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_75L-FkdcEeaeWskVcX6O6g" showIcon="false" labelColor="77,137,20"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']"/>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_75L-F0dcEeaeWskVcX6O6g" name="«provides» " sourceNode="_75L97UdcEeaeWskVcX6O6g" targetNode="_75L-BUdcEeaeWskVcX6O6g">
         <target xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.4/@providedRoles.0"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_75L-GEdcEeaeWskVcX6O6g" size="2" routingStyle="manhattan" strokeColor="77,137,20">
-          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']/@style"/>
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']/@style"/>
           <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_75L-GUdcEeaeWskVcX6O6g" showIcon="false" labelColor="77,137,20"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']"/>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_75L-GkdcEeaeWskVcX6O6g" name="«provides» " sourceNode="_75L98UdcEeaeWskVcX6O6g" targetNode="_75L9-0dcEeaeWskVcX6O6g">
         <target xmi:type="repository:ProvidedRole" href="Ecore/mediaStore.repository#//@components.5/@providedRoles.0"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_75L-G0dcEeaeWskVcX6O6g" size="2" routingStyle="manhattan" strokeColor="77,137,20">
-          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']/@style"/>
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']/@style"/>
           <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_75L-HEdcEeaeWskVcX6O6g" showIcon="false" labelColor="77,137,20"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']"/>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='ProvidedRole_Interface_Edge']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_75L-HUdcEeaeWskVcX6O6g" name="«requires» " sourceNode="_75L91UdcEeaeWskVcX6O6g" targetNode="_75L9-0dcEeaeWskVcX6O6g">
         <target xmi:type="repository:RequiredRole" href="Ecore/mediaStore.repository#//@components.0/@requiredRoles.0"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_75L-HkdcEeaeWskVcX6O6g" size="2" routingStyle="manhattan" strokeColor="156,12,12">
-          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']/@style"/>
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']/@style"/>
           <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_75L-H0dcEeaeWskVcX6O6g" showIcon="false" labelColor="156,12,12"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']"/>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_75L-IEdcEeaeWskVcX6O6g" name="«requires» " sourceNode="_75L920dcEeaeWskVcX6O6g" targetNode="_75L-BUdcEeaeWskVcX6O6g">
         <target xmi:type="repository:RequiredRole" href="Ecore/mediaStore.repository#//@components.1/@requiredRoles.0"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_75L-IUdcEeaeWskVcX6O6g" size="2" routingStyle="manhattan" strokeColor="156,12,12">
-          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']/@style"/>
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']/@style"/>
           <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_75L-IkdcEeaeWskVcX6O6g" showIcon="false" labelColor="156,12,12"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']"/>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_75L-I0dcEeaeWskVcX6O6g" name="«requires» " sourceNode="_75L93UdcEeaeWskVcX6O6g" targetNode="_75L-AUdcEeaeWskVcX6O6g">
         <target xmi:type="repository:RequiredRole" href="Ecore/mediaStore.repository#//@components.1/@requiredRoles.1"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_75L-JEdcEeaeWskVcX6O6g" size="2" routingStyle="manhattan" strokeColor="156,12,12">
-          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']/@style"/>
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']/@style"/>
           <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_75L-JUdcEeaeWskVcX6O6g" showIcon="false" labelColor="156,12,12"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']"/>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_75L-JkdcEeaeWskVcX6O6g" name="«requires» " sourceNode="_75L940dcEeaeWskVcX6O6g" targetNode="_75L-BUdcEeaeWskVcX6O6g">
         <target xmi:type="repository:RequiredRole" href="Ecore/mediaStore.repository#//@components.2/@requiredRoles.0"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_75L-J0dcEeaeWskVcX6O6g" size="2" routingStyle="manhattan" strokeColor="156,12,12">
-          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']/@style"/>
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']/@style"/>
           <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_75L-KEdcEeaeWskVcX6O6g" showIcon="false" labelColor="156,12,12"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']"/>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_75L-KUdcEeaeWskVcX6O6g" name="«requires» " sourceNode="_75L980dcEeaeWskVcX6O6g" targetNode="_75L-BUdcEeaeWskVcX6O6g">
         <target xmi:type="repository:RequiredRole" href="Ecore/mediaStore.repository#//@components.5/@requiredRoles.0"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_75L-KkdcEeaeWskVcX6O6g" size="2" routingStyle="manhattan" strokeColor="156,12,12">
-          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']/@style"/>
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']/@style"/>
           <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_75L-K0dcEeaeWskVcX6O6g" showIcon="false" labelColor="156,12,12"/>
         </ownedStyle>
-        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']"/>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer/@edgeMappings[name='RequiredRole_Interface_Edge']"/>
       </ownedDiagramElements>
-      <description xmi:type="description_1:DiagramDescription" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']"/>
+      <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']"/>
       <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_75L-LEdcEeaeWskVcX6O6g"/>
-      <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer"/>
+      <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']/@ownedRepresentations[name='CBSM_Repository_Diagram']/@defaultLayer"/>
       <target xmi:type="repository:Repository" href="Ecore/mediaStore.repository#/"/>
     </ownedRepresentations>
-    <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']"/>
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/edu.kit.ipd.sdq.cbsm.repositoryeditor/description/repositoryeditor.odesign#//@ownedViewpoints[name='CBSM_Repository']"/>
   </ownedViews>
 </viewpoint:DAnalysis>
