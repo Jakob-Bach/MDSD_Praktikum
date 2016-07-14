@@ -21,7 +21,7 @@
 <stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.featureName8" value=""/>
 <stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.featureName9" value=""/>
 <booleanAttribute key="org.eclipse.m2m.qvt.oml.interpreter.isInrementalUpdate" value="false"/>
-<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.module" value="platform:/resource/edu.kit.ipd.sdq.cbsm.transfrom/transforms/Allocation2Allocation_Transformation.qvto"/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.module" value="platform:/resource/edu.kit.ipd.sdq.cbsm.transform/transforms/Allocation2Allocation_Transformation.qvto"/>
 <stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.targetModel1" value="platform:/resource/CBSM_MediaStore/Ecore/mediaStore.repository"/>
 <stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.targetModel2" value="platform:/resource/CBSM_MediaStore/PCM_Ecore/mediaStore.repository"/>
 <stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.targetModel3" value="platform:/resource/CBSM_MediaStore/Ecore/mediaStore.assembly"/>

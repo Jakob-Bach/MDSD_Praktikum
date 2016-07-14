@@ -9,7 +9,7 @@
 <stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.featureName2" value=""/>
 <stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.featureName3" value=""/>
 <booleanAttribute key="org.eclipse.m2m.qvt.oml.interpreter.isInrementalUpdate" value="false"/>
-<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.module" value="platform:/resource/edu.kit.ipd.sdq.cbsm.transfrom/transforms/Environment2ResourceEnvironment_Transformation.qvto"/>
+<stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.module" value="platform:/resource/edu.kit.ipd.sdq.cbsm.transform/transforms/Environment2ResourceEnvironment_Transformation.qvto"/>
 <stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.targetModel1" value="platform:/resource/CBSM_MediaStore/Ecore/mediaStore.environment"/>
 <stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.targetModel2" value="pathmap://PCM_MODELS/Palladio.resourcetype"/>
 <stringAttribute key="org.eclipse.m2m.qvt.oml.interpreter.targetModel3" value="platform:/resource/CBSM_MediaStore/PCM_Ecore/mediaStore.resourceenvironment"/>

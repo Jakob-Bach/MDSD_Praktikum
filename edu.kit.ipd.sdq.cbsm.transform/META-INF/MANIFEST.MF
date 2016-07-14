@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Transfrom Plug-in
-Bundle-SymbolicName: edu.kit.ipd.sdq.cbsm.transfrom
+Bundle-SymbolicName: edu.kit.ipd.sdq.cbsm.transform
 Bundle-Version: 1.0.0
 Bundle-Vendor: 
 Require-Bundle: org.eclipse.core.runtime,
