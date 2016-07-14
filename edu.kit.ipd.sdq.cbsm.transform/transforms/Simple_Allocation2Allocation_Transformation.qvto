@@ -6,6 +6,9 @@ modeltype PCM "strict" uses "http://palladiosimulator.org/PalladioComponentModel
 modeltype CBSM_ALLO "strict" uses "http://sdq.ipd.kit.edu/componentBasedSystemModel/allocation";
 modeltype PCM_ALLO "strict" uses "http://palladiosimulator.org/PalladioComponentModel/Allocation/5.1";
 
+-- resulting file might be incomplete / invalid regarding the OCL constrains, because allocation
+-- references elements from a system and an environment; use "Allocation2Allocation_Transformation" 
+-- for a simultaneous transformation
 transformation Simple_Allocation2Allocation_Transformation(in cbsmAllocation: CBSM_ALLO,
 		out pcmAllocation: PCM_ALLO)
 access CBSM2PCM_Library

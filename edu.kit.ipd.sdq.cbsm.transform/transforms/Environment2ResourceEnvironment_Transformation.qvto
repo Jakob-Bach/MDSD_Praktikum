@@ -13,6 +13,9 @@ access CBSM2PCM_Library
 {
 	main()
 	{
+		-- There is no element in our meta-model similar to PCM's ResourceType (which is
+		-- part of a separate .resourcetype file); fortunately there is a default file
+		-- in the Palladio plug-in which we reference here and pass it to the transformation rules.
 		var defaultLinkResourceType := pcmResourceType.objectsOfKind(
 			PCM_RES_TYPE::CommunicationLinkResourceType) -> asSequence() -> first();
 		cbsmEnvironment.objectsOfType(CBSM_ENV::Environment) ->

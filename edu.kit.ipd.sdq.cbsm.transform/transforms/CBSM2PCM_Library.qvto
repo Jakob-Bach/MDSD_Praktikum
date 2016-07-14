@@ -13,6 +13,8 @@ abstract mapping CBSM::core::NamedElement::NamedElement2NamedElement() :
 	entityName := self.name;
 }
 
+-- No element similar to ViewType in PCM, therefore no mapping here.
+
 ------------------------------
 ----------repository----------
 ------------------------------
@@ -26,12 +28,16 @@ inherits CBSM::core::NamedElement::NamedElement2NamedElement
 	components__Repository := self.components -> map Component2RepositoryComponent();
 }
 
+-- Map to PCM's Operation... EClasses where necessary (super-classes as Interface,
+-- Signature, ProvidedRole, RequiredRole are abstract in PCM).
 mapping CBSM::repository::Interface::Interface2OperationInterface() :
 		PCM::repository::OperationInterface
 inherits CBSM::core::NamedElement::NamedElement2NamedElement
 {
 	signatures__OperationInterface := self.signatures ->
 		map Signature2OperationSignature();
+	-- use "late resolve" because super-interface might appear later in
+	-- the .repository file
 	parentInterfaces__Interface := self.superInterfaces ->
 		late resolve(PCM::repository::Interface);
 }
@@ -40,7 +46,8 @@ abstract mapping CBSM::repository::Role::Role2Role() :
 		PCM::repository::Role
 inherits CBSM::core::NamedElement::NamedElement2NamedElement
 {
-
+	-- nothing to map here, but this file contains mapping rules for >all< CBSM
+	-- elements (that have a PCM counter-part) to ensure completeness
 }
 
 mapping CBSM::repository::ProvidedRole::ProvidedRole2OperationProvidedRole() :
@@ -83,7 +90,7 @@ inherits CBSM::core::NamedElement::NamedElement2NamedElement,
 		CBSM::repository::ProvidingAndRequiringElement::
 				ProvidingAndRequiringElement2InterfaceProvidingRequiringEntity
 {
-
+	-- nothing to map here
 }
 
 mapping CBSM::repository::Component::Component2BasicComponent() :
@@ -121,8 +128,9 @@ mapping CBSM::repository::ComplexType::ComplexType2CompositeDataType() :
 		PCM::repository::CompositeDataType
 inherits CBSM::core::NamedElement::NamedElement2NamedElement
 {
-	-- there is no ComplexDataType in PCM, but Composite- and CollectionDataType;
-	-- we chose CompositeDataType here
+	-- There is no ComplexDataType in PCM, but Composite- and CollectionDataType;
+	-- we chose CompositeDataType here (seems to be more general in a semantic
+	-- sense).
 }
 
 query CBSM::repository::SimpleType::isCollectionDataType() : Boolean =
@@ -136,6 +144,7 @@ mapping CBSM::repository::SimpleType::SimpleType2PrimitiveDataType() :
 		PCM::repository::DataType
 {
 	init {
+		-- Some of CBSM's SimpleTypes have no primitive equivalent in PCM.
 		if (self.isCollectionDataType() or self.isCompositeDataType()) {
 			/*CollectionDataTypes have a mandatory feature "innerType" which we could
 			not set, therefore CompositeDataType returned in that case, too*/
@@ -238,7 +247,7 @@ mapping CBSM::repository::behavior::InternalAction::InternalAction2InternalActio
 		PCM::seff::InternalAction
 inherits CBSM::repository::behavior::Action::Action2AbstractAction_abstract
 {
-
+	-- nothing to map here
 }
 
 mapping CBSM::repository::behavior::ExternalCall::ExternalCall2ExternalCallAction() :
@@ -257,12 +266,13 @@ inherits CBSM::repository::behavior::Action::Action2AbstractAction_abstract
 {
 	bodyBehaviour_Loop := self.loopBehavior.
 		map BehaviorDescription2ResourceDemandingBehavior();
+	-- CBSM has no information about the iteration behavior, so set an iteration
+	-- count of 1 (probability = 1.0).
 	iterationCount_LoopAction := object PCM::core::PCMRandomVariable {
 		specification := "1";
 	};
 }
 
--- assume equal probability for all branches
 query CBSM::repository::behavior::Branch::getBranchProbability() : Real =
 	1 / self.branchPaths->size();
 
@@ -270,6 +280,8 @@ mapping CBSM::repository::behavior::Branch::Branch2BranchAction() :
 		PCM::seff::BranchAction
 inherits CBSM::repository::behavior::Action::Action2AbstractAction_abstract
 {
+	-- CBSM has no information about the branching behavior, so set equal probabilty
+	-- to all paths.
 	var probability = self.getBranchProbability();
 	branches_Branch := self.branchPaths -> map BranchPath2ProbabilisticBranchTransition();
 	branches_Branch.oclAsType(PCM::seff::ProbabilisticBranchTransition)->forEach(path) {
@@ -295,8 +307,9 @@ inherits CBSM::core::NamedElement::NamedElement2NamedElement
 {
 	parentStructure__AssemblyContext := self.parentCompositeElement.
 		resolveone(pcm::core::composition::ComposedStructure);
-	-- mapping could be called from a CompositeComponent whose contained components
-	-- are not transformed yet, therefore postpone resolving
+	-- The mapping could be called from a CompositeComponent whose contained
+	-- components are not transformed yet (appear later in the .repository file),
+	-- therefore postpone resolving.
 	encapsulatedComponent__AssemblyContext := self.instantiatedComponent.
 		late resolveone(pcm::repository::RepositoryComponent);
 }
@@ -318,7 +331,7 @@ inherits CBSM::repository::Component::Component2RepositoryComponent_abstract,
 		CBSM::assembly::CompositeProvidingAndRequiringElement::
 			CompositeProvidingAndRequiringElement2ComposedProvidingRequiringEntity
 {
-
+	-- nothing to map here
 }
 
 mapping CBSM::assembly::System::System2System() :
@@ -327,7 +340,7 @@ inherits CBSM::core::NamedElement::NamedElement2NamedElement,
 		CBSM::assembly::CompositeProvidingAndRequiringElement::
 		CompositeProvidingAndRequiringElement2ComposedProvidingRequiringEntity
 {
-
+	-- nothing to map here
 }
 
 mapping CBSM::assembly::Connector::Connector2Connector() :
@@ -345,14 +358,14 @@ abstract mapping CBSM::assembly::Connector::Connector2Connector_abstract() :
 		PCM::core::composition::Connector
 inherits CBSM::core::NamedElement::NamedElement2NamedElement
 {
-
+	-- nothing to map here
 }
 
 abstract mapping CBSM::assembly::DelegationConnector::DelegationConnector2DelegationConnector() :
 		PCM::core::composition::DelegationConnector
 inherits CBSM::assembly::Connector::Connector2Connector_abstract
 {
-
+	-- nothing to map here
 }
 
 mapping CBSM::assembly::ProvidedDelegationConnector::

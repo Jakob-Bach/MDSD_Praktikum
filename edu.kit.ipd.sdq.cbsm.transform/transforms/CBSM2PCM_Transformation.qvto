@@ -13,6 +13,8 @@ modeltype PCM_RES_TYPE "strict" uses "http://palladiosimulator.org/PalladioCompo
 modeltype CBSM_ALLO "strict" uses "http://sdq.ipd.kit.edu/componentBasedSystemModel/allocation";
 modeltype PCM_ALLO "strict" uses "http://palladiosimulator.org/PalladioComponentModel/Allocation/5.1";
 
+-- This file was mainly created because of the intuitive name for a complete transformation,
+-- but simply calls another transformation, so it does not add any functionality.
 transformation CBSM2PCM_Transformation(in cbsmRepository: CBSM_REPO, out pcmRepository: PCM_REPO,
 		in cbsmAssembly: CBSM_ASS, out pcmSystem: PCM_SYS, in cbsmEnvironment: CBSM_ENV,
 		in pcmResourceType: PCM_RES_TYPE, out pcmResourceEnvironment: PCM_ENV,

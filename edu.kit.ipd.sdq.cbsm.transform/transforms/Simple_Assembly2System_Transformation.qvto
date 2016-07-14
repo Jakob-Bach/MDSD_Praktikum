@@ -6,6 +6,9 @@ modeltype PCM "strict" uses "http://palladiosimulator.org/PalladioComponentModel
 modeltype CBSM_ASS "strict" uses "http://sdq.ipd.kit.edu/componentBasedSystemModel/assembly";
 modeltype PCM_SYS "strict" uses "http://palladiosimulator.org/PalladioComponentModel/System/5.1";
 
+-- resulting file might be incomplete / invalid regarding the OCL constrains, because system
+-- references elements from a repository; use "Assembly2System_Transformation" for a 
+-- simultaneous transformation
 transformation Simple_Assembly2System_Transformation(in cbsmAssembly: CBSM_ASS, out pcmSystem: PCM_SYS)
 access CBSM2PCM_Library
 {
