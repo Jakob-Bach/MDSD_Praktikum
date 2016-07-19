@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<repository:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assembly="http://sdq.ipd.kit.edu/componentBasedSystemModel/assembly" xmlns:repository="http://sdq.ipd.kit.edu/componentBasedSystemModel/repository" name="MediaStore_Repository">
+<repository:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:assembly="http://sdq.ipd.kit.edu/componentBasedSystemModel/assembly" xmlns:behavior="http://sdq.ipd.kit.edu/componentBasedSystemModel/repository/behavior" xmlns:repository="http://sdq.ipd.kit.edu/componentBasedSystemModel/repository" name="MediaStore_Repository">
   <interfaces name="HTTP">
     <signatures name="HTTPDownload"/>
     <signatures name="HTTPUpload"/>
@@ -14,6 +14,11 @@
   <interfaces name="AudioDB">
     <signatures name="queryDB"/>
     <signatures name="addFile"/>
+  </interfaces>
+  <interfaces name="EnhancedAudioDB" superInterfaces="//@interfaces.3">
+    <signatures name="removeFile" returnType="//@dataTypes.0">
+      <parameters name="file" type="//@dataTypes.2"/>
+    </signatures>
   </interfaces>
   <components name="WebGUI">
     <providedRoles name="WebGUI_HTTP_ProvidedRole" providedInterface="//@interfaces.0"/>
@@ -34,15 +39,44 @@
   <components name="PoolingAudioDB">
     <providedRoles name="PoolingAudioDB_AudioDB_ProvidedRole" providedInterface="//@interfaces.3"/>
   </components>
+  <components name="EnhancedPoolingAudioDB">
+    <providedRoles name="EnhancedPoolingAudioDB_EnhancedAudioDB_ProvidedRole" providedInterface="//@interfaces.4"/>
+    <requiredRoles name="EnhancedPoolingAudioDB_Sound_RequiredRole" requiredInterface="//@interfaces.2"/>
+    <behaviorDescriptions name="RemoveFile_BehaviorDescription" providedService="//@interfaces.4/@signatures.0">
+      <actions xsi:type="behavior:InternalAction" name="PrepareDeletion" successor="//@components.5/@behaviorDescriptions.0/@actions.1"/>
+      <actions xsi:type="behavior:ExternalCall" name="CheckWatermark" predecessor="//@components.5/@behaviorDescriptions.0/@actions.0" successor="//@components.5/@behaviorDescriptions.0/@actions.2" requiredService="//@interfaces.2/@signatures.0" requiredRoleOfService="//@components.5/@requiredRoles.0"/>
+      <actions xsi:type="behavior:Loop" name="SearchFile" predecessor="//@components.5/@behaviorDescriptions.0/@actions.1" successor="//@components.5/@behaviorDescriptions.0/@actions.3">
+        <loopBehavior name="SearchFile_BehaviorDescription">
+          <actions xsi:type="behavior:InternalAction" name="LookUpFile"/>
+        </loopBehavior>
+      </actions>
+      <actions xsi:type="behavior:InternalAction" name="DeleteFile" predecessor="//@components.5/@behaviorDescriptions.0/@actions.2" successor="//@components.5/@behaviorDescriptions.0/@actions.4"/>
+      <actions xsi:type="behavior:Branch" name="ReturnResult" predecessor="//@components.5/@behaviorDescriptions.0/@actions.3">
+        <branchPaths name="Success_BranchPath">
+          <branchBehavior name="Success_BehaviorDescription">
+            <actions xsi:type="behavior:InternalAction" name="ReturnSuccess"/>
+          </branchBehavior>
+        </branchPaths>
+        <branchPaths name="Failure_BranchPath">
+          <branchBehavior name="Failure_BehaviorDescription">
+            <actions xsi:type="behavior:InternalAction" name="ReturnFailure"/>
+          </branchBehavior>
+        </branchPaths>
+      </actions>
+    </behaviorDescriptions>
+  </components>
   <components xsi:type="assembly:CompositeComponent" name="MediaStore">
     <providedRoles name="MediaStore_MediaStore_ProvidedRole" providedInterface="//@interfaces.1"/>
     <requiredRoles name="MediaStore_AudioDB_RequiredRole" requiredInterface="//@interfaces.3"/>
     <containedAssemblyContexts name="MediaManager_AssemblyContext" instantiatedComponent="//@components.1"/>
     <containedAssemblyContexts name="DigitalWatermarking_AssemblyContext" instantiatedComponent="//@components.3"/>
     <containedAssemblyContexts name="DBCache_AssemblyContext" instantiatedComponent="//@components.2"/>
-    <connectors xsi:type="assembly:ProvidedDelegationConnector" name="MediaManager_MediaStore_DelegationConnector" innerAssemblyContext="//@components.5/@containedAssemblyContexts.0" innerProvidedRole="//@components.1/@providedRoles.0" outerProvidedRole="//@components.5/@providedRoles.0"/>
-    <connectors xsi:type="assembly:RequiredDelegationConnector" name="DBCache_MediaStore_DelegationConnector" innerAssemblyContext="//@components.5/@containedAssemblyContexts.2" innerRequiredRole="//@components.2/@requiredRoles.0" outerRequiredRole="//@components.5/@requiredRoles.0"/>
-    <connectors xsi:type="assembly:AssemblyConnector" name="DigitalWatermarking_MediaManager_AssemblyConnector" connectedProvidedRole="//@components.3/@providedRoles.0" connectedRequiredRole="//@components.1/@requiredRoles.1" connectedProvidedAssemblyContext="//@components.5/@containedAssemblyContexts.1" connectedRequiredAssemblyContext="//@components.5/@containedAssemblyContexts.0"/>
-    <connectors xsi:type="assembly:AssemblyConnector" name="DBCache_MediaManager_AssemblyConnector" connectedProvidedRole="//@components.2/@providedRoles.0" connectedRequiredRole="//@components.1/@requiredRoles.0" connectedProvidedAssemblyContext="//@components.5/@containedAssemblyContexts.2" connectedRequiredAssemblyContext="//@components.5/@containedAssemblyContexts.0"/>
+    <connectors xsi:type="assembly:ProvidedDelegationConnector" name="MediaManager_MediaStore_DelegationConnector" innerAssemblyContext="//@components.6/@containedAssemblyContexts.0" innerProvidedRole="//@components.1/@providedRoles.0" outerProvidedRole="//@components.6/@providedRoles.0"/>
+    <connectors xsi:type="assembly:RequiredDelegationConnector" name="DBCache_MediaStore_DelegationConnector" innerAssemblyContext="//@components.6/@containedAssemblyContexts.2" innerRequiredRole="//@components.2/@requiredRoles.0" outerRequiredRole="//@components.6/@requiredRoles.0"/>
+    <connectors xsi:type="assembly:AssemblyConnector" name="DigitalWatermarking_MediaManager_AssemblyConnector" connectedProvidedRole="//@components.3/@providedRoles.0" connectedRequiredRole="//@components.1/@requiredRoles.1" connectedProvidedAssemblyContext="//@components.6/@containedAssemblyContexts.1" connectedRequiredAssemblyContext="//@components.6/@containedAssemblyContexts.0"/>
+    <connectors xsi:type="assembly:AssemblyConnector" name="DBCache_MediaManager_AssemblyConnector" connectedProvidedRole="//@components.2/@providedRoles.0" connectedRequiredRole="//@components.1/@requiredRoles.0" connectedProvidedAssemblyContext="//@components.6/@containedAssemblyContexts.2" connectedRequiredAssemblyContext="//@components.6/@containedAssemblyContexts.0"/>
   </components>
+  <dataTypes xsi:type="repository:SimpleType"/>
+  <dataTypes xsi:type="repository:SimpleType" typeInstance="String"/>
+  <dataTypes xsi:type="repository:ComplexType" name="File"/>
 </repository:Repository>

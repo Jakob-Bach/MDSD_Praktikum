@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resourceenvironment:ResourceEnvironment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:resourceenvironment="http://palladiosimulator.org/PalladioComponentModel/ResourceEnvironment/5.1" xsi:schemaLocation="http://palladiosimulator.org/PalladioComponentModel/ResourceEnvironment/5.1 http://palladiosimulator.org/PalladioComponentModel/5.1#//resourceenvironment" entityName="MediaStore_Environment">
-  <linkingResources__ResourceEnvironment id="_PA_fAS2cEea3vI9cdIJdVQ" entityName="ApplicationServer_DatabaseServer_Link" connectedResourceContainers_LinkingResource="_PA_fAC2cEea3vI9cdIJdVQ _PA-38S2cEea3vI9cdIJdVQ">
-    <communicationLinkResourceSpecifications_LinkingResource id="_PA_fAi2cEea3vI9cdIJdVQ">
+  <linkingResources__ResourceEnvironment id="_7Vq6wE3jEeaYH6DnPRLdqQ" entityName="ApplicationServer_DatabaseServer_Link" connectedResourceContainers_LinkingResource="_7VqTsU3jEeaYH6DnPRLdqQ _7VqTsE3jEeaYH6DnPRLdqQ">
+    <communicationLinkResourceSpecifications_LinkingResource id="_7Vrh0E3jEeaYH6DnPRLdqQ">
       <communicationLinkResourceType_CommunicationLinkResourceSpecification href="pathmap://PCM_MODELS/Palladio.resourcetype#_o3sScH2AEdyH8uerKnHYug"/>
       <latency_CommunicationLinkResourceSpecification specification="1"/>
       <throughput_CommunicationLinkResourceSpecification specification="1"/>
     </communicationLinkResourceSpecifications_LinkingResource>
   </linkingResources__ResourceEnvironment>
-  <resourceContainer_ResourceEnvironment id="_PA_fAC2cEea3vI9cdIJdVQ" entityName="DatabaseServer"/>
-  <resourceContainer_ResourceEnvironment id="_PA-38S2cEea3vI9cdIJdVQ" entityName="ApplicationServer"/>
+  <resourceContainer_ResourceEnvironment id="_7VqTsU3jEeaYH6DnPRLdqQ" entityName="DatabaseServer"/>
+  <resourceContainer_ResourceEnvironment id="_7VqTsE3jEeaYH6DnPRLdqQ" entityName="ApplicationServer"/>
 </resourceenvironment:ResourceEnvironment>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<allocation:Allocation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:allocation="http://palladiosimulator.org/PalladioComponentModel/Allocation/5.1" xsi:schemaLocation="http://palladiosimulator.org/PalladioComponentModel/Allocation/5.1 http://palladiosimulator.org/PalladioComponentModel/5.1#//allocation" id="_PA_fAy2cEea3vI9cdIJdVQ" entityName="MediaStore_Allocation">
+<allocation:Allocation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:allocation="http://palladiosimulator.org/PalladioComponentModel/Allocation/5.1" xsi:schemaLocation="http://palladiosimulator.org/PalladioComponentModel/Allocation/5.1 http://palladiosimulator.org/PalladioComponentModel/5.1#//allocation" id="_7VsI4E3jEeaYH6DnPRLdqQ" entityName="MediaStore_Allocation">
   <targetResourceEnvironment_Allocation href="mediaStore.resourceenvironment#/"/>
-  <system_Allocation href="mediaStore.system#_PA9p0C2cEea3vI9cdIJdVQ"/>
-  <allocationContexts_Allocation id="_PBAGES2cEea3vI9cdIJdVQ" entityName="PoolingAudioDB_AllocationContext">
-    <resourceContainer_AllocationContext href="mediaStore.resourceenvironment#_PA_fAC2cEea3vI9cdIJdVQ"/>
-    <assemblyContext_AllocationContext href="mediaStore.system#_PA-Q4i2cEea3vI9cdIJdVQ"/>
+  <system_Allocation href="mediaStore.system#_7VlbME3jEeaYH6DnPRLdqQ"/>
+  <allocationContexts_Allocation id="_7Vsv8E3jEeaYH6DnPRLdqQ" entityName="WebGUI_AllocationContext">
+    <resourceContainer_AllocationContext href="mediaStore.resourceenvironment#_7VqTsE3jEeaYH6DnPRLdqQ"/>
+    <assemblyContext_AllocationContext href="mediaStore.system#_7VmpUE3jEeaYH6DnPRLdqQ"/>
   </allocationContexts_Allocation>
-  <allocationContexts_Allocation id="_PA_fBC2cEea3vI9cdIJdVQ" entityName="WebGUI_AllocationContext">
-    <resourceContainer_AllocationContext href="mediaStore.resourceenvironment#_PA-38S2cEea3vI9cdIJdVQ"/>
-    <assemblyContext_AllocationContext href="mediaStore.system#_PA-Q4C2cEea3vI9cdIJdVQ"/>
+  <allocationContexts_Allocation id="_7Vt-EE3jEeaYH6DnPRLdqQ" entityName="PoolingAudioDB_AllocationContext">
+    <resourceContainer_AllocationContext href="mediaStore.resourceenvironment#_7VqTsU3jEeaYH6DnPRLdqQ"/>
+    <assemblyContext_AllocationContext href="mediaStore.system#_7VnQYE3jEeaYH6DnPRLdqQ"/>
   </allocationContexts_Allocation>
-  <allocationContexts_Allocation id="_PBAGEC2cEea3vI9cdIJdVQ" entityName="MediaStore_AllocationContext">
-    <resourceContainer_AllocationContext href="mediaStore.resourceenvironment#_PA-38S2cEea3vI9cdIJdVQ"/>
-    <assemblyContext_AllocationContext href="mediaStore.system#_PA-Q4S2cEea3vI9cdIJdVQ"/>
+  <allocationContexts_Allocation id="_7VtXAE3jEeaYH6DnPRLdqQ" entityName="MediaStore_AllocationContext">
+    <resourceContainer_AllocationContext href="mediaStore.resourceenvironment#_7VqTsE3jEeaYH6DnPRLdqQ"/>
+    <assemblyContext_AllocationContext href="mediaStore.system#_7VmpUU3jEeaYH6DnPRLdqQ"/>
   </allocationContexts_Allocation>
 </allocation:Allocation>

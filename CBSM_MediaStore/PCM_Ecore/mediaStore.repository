@@ -1,48 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<repository:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:composition="http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.1" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.1" xsi:schemaLocation="http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.1 http://palladiosimulator.org/PalladioComponentModel/5.1#//core/composition http://palladiosimulator.org/PalladioComponentModel/Repository/5.1 http://palladiosimulator.org/PalladioComponentModel/5.1#//repository" id="_PA4xUC2cEea3vI9cdIJdVQ" entityName="MediaStore_Repository">
-  <components__Repository xsi:type="repository:BasicComponent" id="_PA70oy2cEea3vI9cdIJdVQ" entityName="PoolingAudioDB">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_PA70pC2cEea3vI9cdIJdVQ" entityName="PoolingAudioDB_AudioDB_ProvidedRole" providedInterface__OperationProvidedRole="_PA5_cy2cEea3vI9cdIJdVQ"/>
+<repository:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:composition="http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.1" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.1" xmlns:seff="http://palladiosimulator.org/PalladioComponentModel/SEFF/5.1" xsi:schemaLocation="http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.1 http://palladiosimulator.org/PalladioComponentModel/5.1#//core/composition http://palladiosimulator.org/PalladioComponentModel/Repository/5.1 http://palladiosimulator.org/PalladioComponentModel/5.1#//repository http://palladiosimulator.org/PalladioComponentModel/SEFF/5.1 http://palladiosimulator.org/PalladioComponentModel/5.1#//seff" id="_7KzHgE3jEeaYH6DnPRLdqQ" entityName="MediaStore_Repository">
+  <components__Repository xsi:type="repository:BasicComponent" id="_7PvR4E3jEeaYH6DnPRLdqQ" entityName="DigitalWatermarking">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_7PvR4U3jEeaYH6DnPRLdqQ" entityName="DigitalWatermarking_Sound_ProvidedRole" providedInterface__OperationProvidedRole="_7PO7kE3jEeaYH6DnPRLdqQ"/>
   </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_PA7Nky2cEea3vI9cdIJdVQ" entityName="DBCache">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_PA7NlC2cEea3vI9cdIJdVQ" entityName="DBCache_AudioDB_ProvidedRole" providedInterface__OperationProvidedRole="_PA5_cy2cEea3vI9cdIJdVQ"/>
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_PA70oC2cEea3vI9cdIJdVQ" entityName="DBCache_AudioDB_RequiredRole" requiredInterface__OperationRequiredRole="_PA5_cy2cEea3vI9cdIJdVQ"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_7PqZYE3jEeaYH6DnPRLdqQ" entityName="WebGUI">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_7PrAcE3jEeaYH6DnPRLdqQ" entityName="WebGUI_HTTP_ProvidedRole" providedInterface__OperationProvidedRole="_7PFKkE3jEeaYH6DnPRLdqQ"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_7PsOkE3jEeaYH6DnPRLdqQ" entityName="WebGUI_MediaStore_RequiredRole" requiredInterface__OperationRequiredRole="_7PL4QE3jEeaYH6DnPRLdqQ"/>
   </components__Repository>
-  <components__Repository xsi:type="repository:CompositeComponent" id="_PA8bsC2cEea3vI9cdIJdVQ" entityName="MediaStore">
-    <assemblyContexts__ComposedStructure id="_PA9CwC2cEea3vI9cdIJdVQ" entityName="DBCache_AssemblyContext" encapsulatedComponent__AssemblyContext="_PA7Nky2cEea3vI9cdIJdVQ"/>
-    <assemblyContexts__ComposedStructure id="_PA8btC2cEea3vI9cdIJdVQ" entityName="DigitalWatermarking_AssemblyContext" encapsulatedComponent__AssemblyContext="_PA70oS2cEea3vI9cdIJdVQ"/>
-    <assemblyContexts__ComposedStructure id="_PA8bsy2cEea3vI9cdIJdVQ" entityName="MediaManager_AssemblyContext" encapsulatedComponent__AssemblyContext="_PA6mgy2cEea3vI9cdIJdVQ"/>
-    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_PA9CxC2cEea3vI9cdIJdVQ" entityName="DBCache_MediaManager_AssemblyConnector" requiringAssemblyContext_AssemblyConnector="_PA8bsy2cEea3vI9cdIJdVQ" providingAssemblyContext_AssemblyConnector="_PA9CwC2cEea3vI9cdIJdVQ" providedRole_AssemblyConnector="_PA7NlC2cEea3vI9cdIJdVQ" requiredRole_AssemblyConnector="_PA7NkS2cEea3vI9cdIJdVQ"/>
-    <connectors__ComposedStructure xsi:type="composition:RequiredDelegationConnector" id="_PA9Cwi2cEea3vI9cdIJdVQ" entityName="DBCache_MediaStore_DelegationConnector" innerRequiredRole_RequiredDelegationConnector="_PA70oC2cEea3vI9cdIJdVQ" outerRequiredRole_RequiredDelegationConnector="_PA8bsi2cEea3vI9cdIJdVQ" assemblyContext_RequiredDelegationConnector="_PA9CwC2cEea3vI9cdIJdVQ"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_PA9CwS2cEea3vI9cdIJdVQ" entityName="MediaManager_MediaStore_DelegationConnector" innerProvidedRole_ProvidedDelegationConnector="_PA7NkC2cEea3vI9cdIJdVQ" outerProvidedRole_ProvidedDelegationConnector="_PA8bsS2cEea3vI9cdIJdVQ" assemblyContext_ProvidedDelegationConnector="_PA8bsy2cEea3vI9cdIJdVQ"/>
-    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_PA9Cwy2cEea3vI9cdIJdVQ" entityName="DigitalWatermarking_MediaManager_AssemblyConnector" requiringAssemblyContext_AssemblyConnector="_PA8bsy2cEea3vI9cdIJdVQ" providingAssemblyContext_AssemblyConnector="_PA8btC2cEea3vI9cdIJdVQ" providedRole_AssemblyConnector="_PA70oi2cEea3vI9cdIJdVQ" requiredRole_AssemblyConnector="_PA7Nki2cEea3vI9cdIJdVQ"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_PA8bsS2cEea3vI9cdIJdVQ" entityName="MediaStore_MediaStore_ProvidedRole" providedInterface__OperationProvidedRole="_PA5YYy2cEea3vI9cdIJdVQ"/>
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_PA8bsi2cEea3vI9cdIJdVQ" entityName="MediaStore_AudioDB_RequiredRole" requiredInterface__OperationRequiredRole="_PA5_cy2cEea3vI9cdIJdVQ"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_7Pv48E3jEeaYH6DnPRLdqQ" entityName="PoolingAudioDB">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_7Pv48U3jEeaYH6DnPRLdqQ" entityName="PoolingAudioDB_AudioDB_ProvidedRole" providedInterface__OperationProvidedRole="_7PQJsE3jEeaYH6DnPRLdqQ"/>
   </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_PA6mgC2cEea3vI9cdIJdVQ" entityName="WebGUI">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_PA6mgS2cEea3vI9cdIJdVQ" entityName="WebGUI_HTTP_ProvidedRole" providedInterface__OperationProvidedRole="_PA5YYC2cEea3vI9cdIJdVQ"/>
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_PA6mgi2cEea3vI9cdIJdVQ" entityName="WebGUI_MediaStore_RequiredRole" requiredInterface__OperationRequiredRole="_PA5YYy2cEea3vI9cdIJdVQ"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_7PuDwE3jEeaYH6DnPRLdqQ" entityName="DBCache">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_7Puq0E3jEeaYH6DnPRLdqQ" entityName="DBCache_AudioDB_ProvidedRole" providedInterface__OperationProvidedRole="_7PQJsE3jEeaYH6DnPRLdqQ"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_7Puq0U3jEeaYH6DnPRLdqQ" entityName="DBCache_AudioDB_RequiredRole" requiredInterface__OperationRequiredRole="_7PQJsE3jEeaYH6DnPRLdqQ"/>
   </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_PA6mgy2cEea3vI9cdIJdVQ" entityName="MediaManager">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_PA7NkC2cEea3vI9cdIJdVQ" entityName="MediaManager_MediaStore_ProvidedRole" providedInterface__OperationProvidedRole="_PA5YYy2cEea3vI9cdIJdVQ"/>
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_PA7NkS2cEea3vI9cdIJdVQ" entityName="MediaManager_AudioDB_RequiredRole" requiredInterface__OperationRequiredRole="_PA5_cy2cEea3vI9cdIJdVQ"/>
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_PA7Nki2cEea3vI9cdIJdVQ" entityName="MediaManager_Sound_RequiredRole" requiredInterface__OperationRequiredRole="_PA5_cS2cEea3vI9cdIJdVQ"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_7Ps1oE3jEeaYH6DnPRLdqQ" entityName="MediaManager">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_7Ps1oU3jEeaYH6DnPRLdqQ" entityName="MediaManager_MediaStore_ProvidedRole" providedInterface__OperationProvidedRole="_7PL4QE3jEeaYH6DnPRLdqQ"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_7PtcsU3jEeaYH6DnPRLdqQ" entityName="MediaManager_Sound_RequiredRole" requiredInterface__OperationRequiredRole="_7PO7kE3jEeaYH6DnPRLdqQ"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_7PtcsE3jEeaYH6DnPRLdqQ" entityName="MediaManager_AudioDB_RequiredRole" requiredInterface__OperationRequiredRole="_7PQJsE3jEeaYH6DnPRLdqQ"/>
   </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_PA70oS2cEea3vI9cdIJdVQ" entityName="DigitalWatermarking">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_PA70oi2cEea3vI9cdIJdVQ" entityName="DigitalWatermarking_Sound_ProvidedRole" providedInterface__OperationProvidedRole="_PA5_cS2cEea3vI9cdIJdVQ"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_7PwgAE3jEeaYH6DnPRLdqQ" entityName="EnhancedPoolingAudioDB">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_7PxHEE3jEeaYH6DnPRLdqQ" entityName="EnhancedPoolingAudioDB_EnhancedAudioDB_ProvidedRole" providedInterface__OperationProvidedRole="_7PR-4E3jEeaYH6DnPRLdqQ"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_7PxHEU3jEeaYH6DnPRLdqQ" entityName="EnhancedPoolingAudioDB_Sound_RequiredRole" requiredInterface__OperationRequiredRole="_7PO7kE3jEeaYH6DnPRLdqQ"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_7QzB0E3jEeaYH6DnPRLdqQ" describedService__SEFF="_7PSl8E3jEeaYH6DnPRLdqQ">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_7Q_PEE3jEeaYH6DnPRLdqQ" entityName="RemoveFile_BehaviorDescription_Start" successor_AbstractAction="_7RiosE3jEeaYH6DnPRLdqQ"/>
+      <steps_Behaviour xsi:type="seff:InternalAction" id="_7RiosE3jEeaYH6DnPRLdqQ" entityName="PrepareDeletion" predecessor_AbstractAction="_7Q_PEE3jEeaYH6DnPRLdqQ" successor_AbstractAction="_7SN-IE3jEeaYH6DnPRLdqQ"/>
+      <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_7SN-IE3jEeaYH6DnPRLdqQ" entityName="CheckWatermark" predecessor_AbstractAction="_7RiosE3jEeaYH6DnPRLdqQ" successor_AbstractAction="_7ScnoE3jEeaYH6DnPRLdqQ" calledService_ExternalService="_7PPioE3jEeaYH6DnPRLdqQ" role_ExternalService="_7PxHEU3jEeaYH6DnPRLdqQ"/>
+      <steps_Behaviour xsi:type="seff:LoopAction" id="_7ScnoE3jEeaYH6DnPRLdqQ" entityName="SearchFile" predecessor_AbstractAction="_7SN-IE3jEeaYH6DnPRLdqQ" successor_AbstractAction="_7TJyQE3jEeaYH6DnPRLdqQ">
+        <bodyBehaviour_Loop id="_7TFg0E3jEeaYH6DnPRLdqQ">
+          <steps_Behaviour xsi:type="seff:StartAction" id="_7TGH4E3jEeaYH6DnPRLdqQ" entityName="SearchFile_BehaviorDescription_Start" successor_AbstractAction="_7TGu8E3jEeaYH6DnPRLdqQ"/>
+          <steps_Behaviour xsi:type="seff:InternalAction" id="_7TGu8E3jEeaYH6DnPRLdqQ" entityName="LookUpFile" predecessor_AbstractAction="_7TGH4E3jEeaYH6DnPRLdqQ" successor_AbstractAction="_7TGH4U3jEeaYH6DnPRLdqQ"/>
+          <steps_Behaviour xsi:type="seff:StopAction" id="_7TGH4U3jEeaYH6DnPRLdqQ" entityName="SearchFile_BehaviorDescription_Stop" predecessor_AbstractAction="_7TGu8E3jEeaYH6DnPRLdqQ"/>
+        </bodyBehaviour_Loop>
+        <iterationCount_LoopAction specification="1"/>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:InternalAction" id="_7TJyQE3jEeaYH6DnPRLdqQ" entityName="DeleteFile" predecessor_AbstractAction="_7ScnoE3jEeaYH6DnPRLdqQ" successor_AbstractAction="_7Tsk0E3jEeaYH6DnPRLdqQ"/>
+      <steps_Behaviour xsi:type="seff:BranchAction" id="_7Tsk0E3jEeaYH6DnPRLdqQ" entityName="ReturnResult" predecessor_AbstractAction="_7TJyQE3jEeaYH6DnPRLdqQ" successor_AbstractAction="_7RBEQE3jEeaYH6DnPRLdqQ">
+        <branches_Branch xsi:type="seff:ProbabilisticBranchTransition" id="_7UYhUE3jEeaYH6DnPRLdqQ" entityName="Success_BranchPath" branchProbability="0.5">
+          <branchBehaviour_BranchTransition id="_7UZIYE3jEeaYH6DnPRLdqQ">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_7UZIYU3jEeaYH6DnPRLdqQ" entityName="Success_BehaviorDescription_Start" successor_AbstractAction="_7UZvcE3jEeaYH6DnPRLdqQ"/>
+            <steps_Behaviour xsi:type="seff:InternalAction" id="_7UZvcE3jEeaYH6DnPRLdqQ" entityName="ReturnSuccess" predecessor_AbstractAction="_7UZIYU3jEeaYH6DnPRLdqQ" successor_AbstractAction="_7UZIYk3jEeaYH6DnPRLdqQ"/>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_7UZIYk3jEeaYH6DnPRLdqQ" entityName="Success_BehaviorDescription_Stop" predecessor_AbstractAction="_7UZvcE3jEeaYH6DnPRLdqQ"/>
+          </branchBehaviour_BranchTransition>
+        </branches_Branch>
+        <branches_Branch xsi:type="seff:ProbabilisticBranchTransition" id="_7UaWgE3jEeaYH6DnPRLdqQ" entityName="Failure_BranchPath" branchProbability="0.5">
+          <branchBehaviour_BranchTransition id="_7Ua9kE3jEeaYH6DnPRLdqQ">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_7Ua9kU3jEeaYH6DnPRLdqQ" entityName="Failure_BehaviorDescription_Start" successor_AbstractAction="_7UbkoE3jEeaYH6DnPRLdqQ"/>
+            <steps_Behaviour xsi:type="seff:InternalAction" id="_7UbkoE3jEeaYH6DnPRLdqQ" entityName="ReturnFailure" predecessor_AbstractAction="_7Ua9kU3jEeaYH6DnPRLdqQ" successor_AbstractAction="_7Ua9kk3jEeaYH6DnPRLdqQ"/>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_7Ua9kk3jEeaYH6DnPRLdqQ" entityName="Failure_BehaviorDescription_Stop" predecessor_AbstractAction="_7UbkoE3jEeaYH6DnPRLdqQ"/>
+          </branchBehaviour_BranchTransition>
+        </branches_Branch>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_7RBEQE3jEeaYH6DnPRLdqQ" entityName="RemoveFile_BehaviorDescription_Stop" predecessor_AbstractAction="_7Tsk0E3jEeaYH6DnPRLdqQ"/>
+    </serviceEffectSpecifications__BasicComponent>
   </components__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_PA5YYC2cEea3vI9cdIJdVQ" entityName="HTTP">
-    <signatures__OperationInterface id="_PA5YYi2cEea3vI9cdIJdVQ" entityName="HTTPUpload"/>
-    <signatures__OperationInterface id="_PA5YYS2cEea3vI9cdIJdVQ" entityName="HTTPDownload"/>
+  <components__Repository xsi:type="repository:CompositeComponent" id="_7VZ1AE3jEeaYH6DnPRLdqQ" entityName="MediaStore">
+    <assemblyContexts__ComposedStructure id="_7VdfYE3jEeaYH6DnPRLdqQ" entityName="MediaManager_AssemblyContext" encapsulatedComponent__AssemblyContext="_7Ps1oE3jEeaYH6DnPRLdqQ"/>
+    <assemblyContexts__ComposedStructure id="_7VfUkE3jEeaYH6DnPRLdqQ" entityName="DBCache_AssemblyContext" encapsulatedComponent__AssemblyContext="_7PuDwE3jEeaYH6DnPRLdqQ"/>
+    <assemblyContexts__ComposedStructure id="_7VetgE3jEeaYH6DnPRLdqQ" entityName="DigitalWatermarking_AssemblyContext" encapsulatedComponent__AssemblyContext="_7PvR4E3jEeaYH6DnPRLdqQ"/>
+    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_7Vi-8E3jEeaYH6DnPRLdqQ" entityName="DigitalWatermarking_MediaManager_AssemblyConnector" requiringAssemblyContext_AssemblyConnector="_7VdfYE3jEeaYH6DnPRLdqQ" providingAssemblyContext_AssemblyConnector="_7VetgE3jEeaYH6DnPRLdqQ" providedRole_AssemblyConnector="_7PvR4U3jEeaYH6DnPRLdqQ" requiredRole_AssemblyConnector="_7PtcsU3jEeaYH6DnPRLdqQ"/>
+    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_7VjmAE3jEeaYH6DnPRLdqQ" entityName="DBCache_MediaManager_AssemblyConnector" requiringAssemblyContext_AssemblyConnector="_7VdfYE3jEeaYH6DnPRLdqQ" providingAssemblyContext_AssemblyConnector="_7VfUkE3jEeaYH6DnPRLdqQ" providedRole_AssemblyConnector="_7Puq0E3jEeaYH6DnPRLdqQ" requiredRole_AssemblyConnector="_7PtcsE3jEeaYH6DnPRLdqQ"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_7VgisE3jEeaYH6DnPRLdqQ" entityName="MediaManager_MediaStore_DelegationConnector" innerProvidedRole_ProvidedDelegationConnector="_7Ps1oU3jEeaYH6DnPRLdqQ" outerProvidedRole_ProvidedDelegationConnector="_7VbDIE3jEeaYH6DnPRLdqQ" assemblyContext_ProvidedDelegationConnector="_7VdfYE3jEeaYH6DnPRLdqQ"/>
+    <connectors__ComposedStructure xsi:type="composition:RequiredDelegationConnector" id="_7Vhw0E3jEeaYH6DnPRLdqQ" entityName="DBCache_MediaStore_DelegationConnector" innerRequiredRole_RequiredDelegationConnector="_7Puq0U3jEeaYH6DnPRLdqQ" outerRequiredRole_RequiredDelegationConnector="_7VcRQE3jEeaYH6DnPRLdqQ" assemblyContext_RequiredDelegationConnector="_7VfUkE3jEeaYH6DnPRLdqQ"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_7VbDIE3jEeaYH6DnPRLdqQ" entityName="MediaStore_MediaStore_ProvidedRole" providedInterface__OperationProvidedRole="_7PL4QE3jEeaYH6DnPRLdqQ"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_7VcRQE3jEeaYH6DnPRLdqQ" entityName="MediaStore_AudioDB_RequiredRole" requiredInterface__OperationRequiredRole="_7PQJsE3jEeaYH6DnPRLdqQ"/>
+  </components__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_7PL4QE3jEeaYH6DnPRLdqQ" entityName="MediaStore">
+    <signatures__OperationInterface id="_7PNtcE3jEeaYH6DnPRLdqQ" entityName="upload"/>
+    <signatures__OperationInterface id="_7PNGYE3jEeaYH6DnPRLdqQ" entityName="download"/>
   </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_PA5_cS2cEea3vI9cdIJdVQ" entityName="Sound">
-    <signatures__OperationInterface id="_PA5_ci2cEea3vI9cdIJdVQ" entityName="watermark"/>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_7PR-4E3jEeaYH6DnPRLdqQ" entityName="EnhancedAudioDB" parentInterfaces__Interface="_7PQJsE3jEeaYH6DnPRLdqQ">
+    <signatures__OperationInterface id="_7PSl8E3jEeaYH6DnPRLdqQ" entityName="removeFile" returnType__OperationSignature="//@dataTypes__Repository.2">
+      <parameters__OperationSignature dataType__Parameter="_7PBgME3jEeaYH6DnPRLdqQ" parameterName="file"/>
+    </signatures__OperationInterface>
   </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_PA5YYy2cEea3vI9cdIJdVQ" entityName="MediaStore">
-    <signatures__OperationInterface id="_PA5YZC2cEea3vI9cdIJdVQ" entityName="download"/>
-    <signatures__OperationInterface id="_PA5_cC2cEea3vI9cdIJdVQ" entityName="upload"/>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_7PFKkE3jEeaYH6DnPRLdqQ" entityName="HTTP">
+    <signatures__OperationInterface id="_7PIN4E3jEeaYH6DnPRLdqQ" entityName="HTTPUpload"/>
+    <signatures__OperationInterface id="_7PGYsE3jEeaYH6DnPRLdqQ" entityName="HTTPDownload"/>
   </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_PA5_cy2cEea3vI9cdIJdVQ" entityName="AudioDB">
-    <signatures__OperationInterface id="_PA5_dS2cEea3vI9cdIJdVQ" entityName="addFile"/>
-    <signatures__OperationInterface id="_PA5_dC2cEea3vI9cdIJdVQ" entityName="queryDB"/>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_7PO7kE3jEeaYH6DnPRLdqQ" entityName="Sound">
+    <signatures__OperationInterface id="_7PPioE3jEeaYH6DnPRLdqQ" entityName="watermark"/>
   </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_7PQJsE3jEeaYH6DnPRLdqQ" entityName="AudioDB">
+    <signatures__OperationInterface id="_7PRX0E3jEeaYH6DnPRLdqQ" entityName="addFile"/>
+    <signatures__OperationInterface id="_7PQwwE3jEeaYH6DnPRLdqQ" entityName="queryDB"/>
+  </interfaces__Repository>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_7PBgME3jEeaYH6DnPRLdqQ" entityName="File"/>
+  <dataTypes__Repository xsi:type="repository:PrimitiveDataType" type="STRING"/>
+  <dataTypes__Repository xsi:type="repository:PrimitiveDataType" type="BOOL"/>
 </repository:Repository>
