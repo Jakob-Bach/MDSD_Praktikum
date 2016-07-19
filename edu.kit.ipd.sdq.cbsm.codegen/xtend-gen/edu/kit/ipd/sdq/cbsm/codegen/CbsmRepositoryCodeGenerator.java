@@ -14,11 +14,7 @@ import edu.kit.ipd.sdq.cbsm.repository.Signature;
 import edu.kit.ipd.sdq.cbsm.repository.SimpleType;
 import edu.kit.ipd.sdq.cbsm.repository.SimpleTypeInstance;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
 import java.util.TreeSet;
 import java.util.function.Consumer;
 import org.eclipse.emf.common.util.EList;
@@ -247,19 +243,18 @@ public class CbsmRepositoryCodeGenerator implements IGenerator {
     _builder.newLine();
     {
       EList<ProvidedRole> _providedRoles_2 = component.getProvidedRoles();
-      HashMap<Interface, List<Signature>> _providedInterfacesAndSignaturesRecursive = this.providedInterfacesAndSignaturesRecursive(_providedRoles_2);
-      Set<Map.Entry<Interface, List<Signature>>> _entrySet = _providedInterfacesAndSignaturesRecursive.entrySet();
+      LinkedList<Interface> _providedInterfacesAndSignaturesRecursive = this.providedInterfacesAndSignaturesRecursive(_providedRoles_2);
       boolean _hasElements_2 = false;
-      for(final Map.Entry<Interface, List<Signature>> providedInterfaceEntry : _entrySet) {
+      for(final Interface providedInterface : _providedInterfacesAndSignaturesRecursive) {
         if (!_hasElements_2) {
           _hasElements_2 = true;
         } else {
           _builder.appendImmediate("\n", "\t");
         }
         {
-          List<Signature> _value = providedInterfaceEntry.getValue();
+          EList<Signature> _signatures = providedInterface.getSignatures();
           boolean _hasElements_3 = false;
-          for(final Signature signature : _value) {
+          for(final Signature signature : _signatures) {
             if (!_hasElements_3) {
               _hasElements_3 = true;
             } else {
@@ -270,8 +265,7 @@ public class CbsmRepositoryCodeGenerator implements IGenerator {
             String _name_11 = signature.getName();
             _builder.append(_name_11, "\t");
             _builder.append(" from interface ");
-            Interface _key = providedInterfaceEntry.getKey();
-            String _name_12 = _key.getName();
+            String _name_12 = providedInterface.getName();
             _builder.append(_name_12, "\t");
             _builder.newLineIfNotEmpty();
             _builder.append("\t");
@@ -351,12 +345,11 @@ public class CbsmRepositoryCodeGenerator implements IGenerator {
   }
   
   /**
-   * Returns a map with all provided interfaces and their corresponding signatures,
-   * considering that provided interfaces might have super interfaces (transitive
-   * closure).
+   * Returns a list with all provided interfaces, considering that provided interfaces
+   * might have super-interfaces (transitive closure).
    */
-  public HashMap<Interface, List<Signature>> providedInterfacesAndSignaturesRecursive(final Collection<ProvidedRole> providedRoles) {
-    final HashMap<Interface, List<Signature>> result = new HashMap<Interface, List<Signature>>();
+  public LinkedList<Interface> providedInterfacesAndSignaturesRecursive(final Collection<ProvidedRole> providedRoles) {
+    final LinkedList<Interface> result = new LinkedList<Interface>();
     final LinkedList<Interface> interfacesToAnalyze = new LinkedList<Interface>();
     final Consumer<ProvidedRole> _function = (ProvidedRole providedRole) -> {
       Interface _providedInterface = providedRole.getProvidedInterface();
@@ -366,11 +359,10 @@ public class CbsmRepositoryCodeGenerator implements IGenerator {
     while ((!interfacesToAnalyze.isEmpty())) {
       {
         final Interface interfac = interfacesToAnalyze.remove();
-        boolean _containsKey = result.containsKey(interfac);
-        boolean _not = (!_containsKey);
+        boolean _contains = result.contains(interfac);
+        boolean _not = (!_contains);
         if (_not) {
-          EList<Signature> _signatures = interfac.getSignatures();
-          result.put(interfac, _signatures);
+          result.add(interfac);
         }
         EList<Interface> _superInterfaces = interfac.getSuperInterfaces();
         Iterables.<Interface>addAll(interfacesToAnalyze, _superInterfaces);

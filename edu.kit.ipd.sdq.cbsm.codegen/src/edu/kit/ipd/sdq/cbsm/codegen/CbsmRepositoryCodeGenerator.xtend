@@ -1,23 +1,21 @@
 package edu.kit.ipd.sdq.cbsm.codegen
 
 import edu.kit.ipd.sdq.cbsm.repository.ComplexType
+import edu.kit.ipd.sdq.cbsm.repository.Component
+import edu.kit.ipd.sdq.cbsm.repository.DataType
 import edu.kit.ipd.sdq.cbsm.repository.Interface
+import edu.kit.ipd.sdq.cbsm.repository.Parameter
+import edu.kit.ipd.sdq.cbsm.repository.ProvidedRole
 import edu.kit.ipd.sdq.cbsm.repository.Repository
+import edu.kit.ipd.sdq.cbsm.repository.Signature
 import edu.kit.ipd.sdq.cbsm.repository.SimpleType
+import java.util.Collection
+import java.util.LinkedList
+import java.util.TreeSet
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.emf.ecore.util.EcoreUtil
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
-import edu.kit.ipd.sdq.cbsm.repository.Signature
-import edu.kit.ipd.sdq.cbsm.repository.Component
-import edu.kit.ipd.sdq.cbsm.repository.DataType
-import edu.kit.ipd.sdq.cbsm.repository.Parameter
-import java.util.TreeSet
-import java.util.Collection
-import edu.kit.ipd.sdq.cbsm.repository.ProvidedRole
-import java.util.LinkedList
-import java.util.HashMap
-import java.util.List
 
 class CbsmRepositoryCodeGenerator implements IGenerator {
 	
@@ -80,9 +78,9 @@ class CbsmRepositoryCodeGenerator implements IGenerator {
 				}
 			«ENDFOR»
 			
-			«FOR providedInterfaceEntry: component.providedRoles.providedInterfacesAndSignaturesRecursive.entrySet SEPARATOR '\n'»
-				«FOR signature: providedInterfaceEntry.value SEPARATOR '\n'»
-					//Implementing «signature.name» from interface «providedInterfaceEntry.key.name»
+			«FOR providedInterface: component.providedRoles.providedInterfacesAndSignaturesRecursive SEPARATOR '\n'»
+				«FOR signature: providedInterface.signatures SEPARATOR '\n'»
+					//Implementing «signature.name» from interface «providedInterface.name»
 					@Override
 					public «signature.compile» {
 						«FOR requiredRole: component.requiredRoles»
@@ -114,20 +112,19 @@ class CbsmRepositoryCodeGenerator implements IGenerator {
 	}
 	
 	/**
-	 * Returns a map with all provided interfaces and their corresponding signatures, 
-	 * considering that provided interfaces might have super interfaces (transitive
-	 * closure).
+	 * Returns a list with all provided interfaces, considering that provided interfaces 
+	 * might have super-interfaces (transitive closure).
 	 */
 	def providedInterfacesAndSignaturesRecursive(Collection<ProvidedRole> providedRoles) {
-		val result = new HashMap<Interface, List<Signature>>
+		val result = new LinkedList<Interface>
 		val interfacesToAnalyze = new LinkedList<Interface>
 		providedRoles.forEach[providedRole|
 			interfacesToAnalyze += providedRole.providedInterface
 		]
 		while (!interfacesToAnalyze.empty) {
 			val interfac = interfacesToAnalyze.remove
-			if (!result.containsKey(interfac)) {
-				result.put(interfac, interfac.signatures)
+			if (!result.contains(interfac)) {
+				result += interfac
 			}
 			interfacesToAnalyze += interfac.superInterfaces
 		}
